@@ -81,3 +81,18 @@ deploy:
   type: git
   repo: https://github.com/daniel18qzx/daniel18qzx.github.io.git
   branch: master
+
+#symbols_count_time
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: false
+  total_time: false
+  exclude_codeblock: false
+
+#search
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
