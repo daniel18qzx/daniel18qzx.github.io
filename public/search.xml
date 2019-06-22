@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[hello world]]></title>
-    <url>%2F2019%2F06%2F20%2Ftest%2F1%2F</url>
-    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+    <title><![CDATA[两股票历史价格比较]]></title>
+    <url>%2F2019%2F06%2F22%2FQuant%E9%87%8F%E5%8C%96%E4%BA%A4%E6%98%93%2F%E9%A1%B9%E7%9B%AE%2F1%2F</url>
+    <content type="text"><![CDATA[项目任务 获取财务数据 填充缺失值 数据归一化 折线图 代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context() 获取财务数据1234567s_pf = '600000's_gd = '601818'sdate = '2018-01-01'edate = '2018-12-31'df_pf = ts.get_hist_data(s_pf, start = sdate, end = edate).sort_index(axis = 0, ascending = True)df_gd = ts.get_hist_data(s_gd, start = sdate, end = edate).sort_index(axis = 0, ascending = True) 数据处理1234567df = pd.concat([df_pf.close, df_gd.close], axis = 1, keys = ['pf_clse','gd_close'])df.ffill(axis = 0, inplace = True)df['pf_one'] = df_pf.close / float(df_pf.close[0]) * 100df['gd_one'] = df_gd.close / float(df_gd.close[0]) * 100display(df.corr(method = 'pearson', min_periods = 1)) 画图12df.pf_one.plot(figsize = (20,15))df.gd_one.plot(figsize = (20,15)) 参考： 廖雪峰Python数据分析 Tushare官网]]></content>
       <categories>
-        <category>test</category>
+        <category>Quant量化交易</category>
+        <category>项目</category>
       </categories>
   </entry>
 </search>
