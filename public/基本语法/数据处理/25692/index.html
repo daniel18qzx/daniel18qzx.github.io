@@ -1,0 +1,1880 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="csv I/O12345678import pandas as pddisplay(pd.read_csv(&apos;2019-06-30_数据抽取_data1.csv&apos;))display(pd.read_table(&apos;2019-06-30_数据抽取_data1.csv&apos;, sep=&apos;,&apos;))display(pd.read_csv(&apos;2019-06-30_数据抽取_data2.csv&apos;, header=N">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据抽取">
+<meta property="og:url" content="https://daniel18qzx.github.io/基本语法/数据处理/25692/index.html">
+<meta property="og:site_name" content="菜鸟分析狮">
+<meta property="og:description" content="csv I/O12345678import pandas as pddisplay(pd.read_csv(&apos;2019-06-30_数据抽取_data1.csv&apos;))display(pd.read_table(&apos;2019-06-30_数据抽取_data1.csv&apos;, sep=&apos;,&apos;))display(pd.read_csv(&apos;2019-06-30_数据抽取_data2.csv&apos;, header=N">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-07-07T15:50:31.764Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数据抽取">
+<meta name="twitter:description" content="csv I/O12345678import pandas as pddisplay(pd.read_csv(&apos;2019-06-30_数据抽取_data1.csv&apos;))display(pd.read_table(&apos;2019-06-30_数据抽取_data1.csv&apos;, sep=&apos;,&apos;))display(pd.read_csv(&apos;2019-06-30_数据抽取_data2.csv&apos;, header=N">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://daniel18qzx.github.io/基本语法/数据处理/25692/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>数据抽取 | 菜鸟分析狮</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">菜鸟分析狮</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">没有难处理的数据，没有难写的报告</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-homemenu"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/基本语法/数据处理/25692/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟分析狮">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">数据抽取
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-06-30 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-30T00:00:00+08:00">2019-06-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-07 23:50:31" itemprop="dateModified" datetime="2019-07-07T23:50:31+08:00">2019-07-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基本语法/" itemprop="url" rel="index"><span itemprop="name">基本语法</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基本语法/数据处理/" itemprop="url" rel="index"><span itemprop="name">数据处理</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/基本语法/数据处理/25692/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/基本语法/数据处理/25692/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">26k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">43 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="csv-I-O"><a href="#csv-I-O" class="headerlink" title="csv I/O"></a>csv I/O</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">display(pd.read_csv(<span class="string">'2019-06-30_数据抽取_data1.csv'</span>))</span><br><span class="line">display(pd.read_table(<span class="string">'2019-06-30_数据抽取_data1.csv'</span>, sep=<span class="string">','</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">'2019-06-30_数据抽取_data2.csv'</span>, header=<span class="literal">None</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">'2019-06-30_数据抽取_data2.csv'</span>, names=[<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'c'</span>, <span class="string">'d'</span>, <span class="string">'message'</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># data.to_csv('output.csv')</span></span><br></pre></td></tr></table></figure>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th {
+    vertical-align: top;
+}
+
+.dataframe thead th {
+    text-align: right;
+}</code></pre><p></style><p></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">obj = \</span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">&#123;"姓名": "张三",</span></span><br><span class="line"><span class="string"> "住处": ["天朝", "挖煤国", "万恶的资本主义日不落帝国"],</span></span><br><span class="line"><span class="string"> "宠物": null,</span></span><br><span class="line"><span class="string"> "兄弟": [&#123;"姓名": "李四", "年龄": 25, "宠物": "汪星人"&#125;,</span></span><br><span class="line"><span class="string">              &#123;"姓名": "王五", "年龄": 23, "宠物": "喵星人"&#125;]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">result = json.loads(obj)  <span class="comment">#&lt;class 'dict'&gt;</span></span><br><span class="line">result = json.dumps(result, ensure_ascii=<span class="literal">False</span>)  <span class="comment">#&lt;class 'str'&gt;</span></span><br><span class="line">print(result)</span><br></pre></td></tr></table></figure>
+
+<pre><code>{&quot;姓名&quot;: &quot;张三&quot;, &quot;住处&quot;: [&quot;天朝&quot;, &quot;挖煤国&quot;, &quot;万恶的资本主义日不落帝国&quot;], &quot;宠物&quot;: null, &quot;兄弟&quot;: [{&quot;姓名&quot;: &quot;李四&quot;, &quot;年龄&quot;: 25, &quot;宠物&quot;: &quot;汪星人&quot;}, {&quot;姓名&quot;: &quot;王五&quot;, &quot;年龄&quot;: 23, &quot;宠物&quot;: &quot;喵星人&quot;}]}</code></pre><h2 id="XML-HTML"><a href="#XML-HTML" class="headerlink" title="XML/HTML"></a>XML/HTML</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml.html <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">parsed = parse(urlopen(<span class="string">'https://ask.julyedu.com/'</span>))</span><br><span class="line"></span><br><span class="line">doc = parsed.getroot()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#拿所有&lt;a&gt;</span></span><br><span class="line">urls = [lnk.get(<span class="string">'href'</span>) <span class="keyword">for</span> lnk <span class="keyword">in</span> doc.findall(<span class="string">'.//a'</span>)]</span><br><span class="line">urls</span><br></pre></td></tr></table></figure>
+
+<pre><code>[&apos;http://www.julyedu.com/weekend/train9?v=m1&apos;,
+ &apos;https://www.julyedu.com&apos;,
+ &apos;https://www.julyedu.com/category/index&apos;,
+ &apos;https://www.julyedu.com/question&apos;,
+ &apos;https://oj.julyedu.com/&apos;,
+ &apos;http://jingsai.julyedu.com/&apos;,
+ &apos;https://www.julyedu.com/video/index&apos;,
+ &apos;https://ask.julyedu.com&apos;,
+ &apos;https://www.julyedu.com/active/qiye&apos;,
+ None,
+ &apos;https://www.julyedu.com/cart&apos;,
+ &apos;https://passport.julyedu.com/login?redirect=http%3A%2F%2Fask.julyedu.com%2F&apos;,
+ &apos;https://www.julyedu.com&apos;,
+ &apos;https://passport.julyedu.com/login?redirect=https%3A%2F%2Fask.julyedu.com%2F&apos;,
+ &apos;https://www.julyedu.com&apos;,
+ &apos;https://www.julyedu.com/category/index&apos;,
+ &apos;https://www.julyedu.com/question/index&apos;,
+ &apos;https://www.julyedu.com/video/index&apos;,
+ &apos;https://ask.julyedu.com&apos;,
+ &apos;https://www.julyedu.com/cart/&apos;,
+ &apos;https://ask.julyedu.com/explore/&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/explore/category-15&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/explore/category-18&apos;,
+ &apos;https://ask.julyedu.com/explore/category-17&apos;,
+ &apos;https://ask.julyedu.com/explore/category-10&apos;,
+ &apos;https://ask.julyedu.com/explore/category-16&apos;,
+ &apos;https://ask.julyedu.com/explore/category-14&apos;,
+ &apos;https://ask.julyedu.com/explore/category-11&apos;,
+ &apos;https://ask.julyedu.com/explore/category-4&apos;,
+ &apos;https://ask.julyedu.com/setting/privacy/#notifications&apos;,
+ &apos;javascript:;&apos;,
+ &apos;https://ask.julyedu.com/notifications/&apos;,
+ &apos;&apos;,
+ &apos;https://ask.julyedu.com/sort_type-hot__day-7&apos;,
+ &apos;https://ask.julyedu.com/sort_type-unresponsive&apos;,
+ &apos;&apos;,
+ &apos;https://ask.julyedu.com/sort_type-hot__day-7&apos;,
+ &apos;https://ask.julyedu.com/sort_type-unresponsive&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88655&apos;,
+ &apos;https://ask.julyedu.com/question/88655#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-14&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88654&apos;,
+ &apos;https://ask.julyedu.com/question/88654#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88653&apos;,
+ &apos;https://ask.julyedu.com/question/88653#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88652&apos;,
+ &apos;https://ask.julyedu.com/question/88652#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88651&apos;,
+ &apos;https://ask.julyedu.com/question/88651#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88650&apos;,
+ &apos;https://ask.julyedu.com/question/88650#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-14&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88649&apos;,
+ &apos;https://ask.julyedu.com/question/88649#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88648&apos;,
+ &apos;https://ask.julyedu.com/question/88648#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88647&apos;,
+ &apos;https://ask.julyedu.com/question/88647#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-15&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88646&apos;,
+ &apos;https://ask.julyedu.com/question/88646#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1007&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://dwz.cn/O9VznNuY&apos;,
+ &apos;https://ask.julyedu.com/uploads/article/20190621/489e6c00af84ab51a832781134568131.png&apos;,
+ &apos;https://ask.julyedu.com/uploads/article/20190621/424770863c018c01543b2630ed9f0153.png&apos;,
+ &apos;https://ask.julyedu.com/article/1007&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1006&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://dwz.cn/bwUTiuHL&apos;,
+ &apos;https://ask.julyedu.com/article/1006&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1005&apos;,
+ &apos;https://ask.julyedu.com/explore/category-15&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://dwz.cn/ZmFmFUmY&apos;,
+ &apos;https://ask.julyedu.com/article/1005&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1004&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://dwz.cn/kFJZuxek&apos;,
+ &apos;https://ask.julyedu.com/uploads/article/20190619/eab24a8a5b30672d260dd446d7b21c8b.png&apos;,
+ &apos;https://ask.julyedu.com/article/1004&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88645&apos;,
+ &apos;https://ask.julyedu.com/question/88645#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1003&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://dwz.cn/Ar8fDfbn&apos;,
+ &apos;https://ask.julyedu.com/uploads/article/20190618/ad20b22eee771ee56e4f674f341ee397.png&apos;,
+ &apos;https://ask.julyedu.com/article/1003&apos;,
+ &apos;https://ask.julyedu.com/people/Darlingpan&apos;,
+ &apos;https://ask.julyedu.com/question/86722&apos;,
+ &apos;https://ask.julyedu.com/people/%E8%8E%B9%E5%AE%9D%E5%AE%9D&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E8%8E%B9%E5%AE%9D%E5%AE%9D&apos;,
+ &apos;https://ask.julyedu.com/people/Darlingpan&apos;,
+ &apos;https://ask.julyedu.com/question/85510&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7545057&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7545057&apos;,
+ &apos;https://ask.julyedu.com/people/zdl&apos;,
+ &apos;https://ask.julyedu.com/question/88644&apos;,
+ &apos;https://ask.julyedu.com/question/88644#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/zdl&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1002&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://dwz.cn/kRg2NTm0&apos;,
+ &apos;https://ask.julyedu.com/article/1002&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88643&apos;,
+ &apos;https://ask.julyedu.com/question/88643#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/question/88642&apos;,
+ &apos;https://ask.julyedu.com/question/88642#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/question/88641&apos;,
+ &apos;https://ask.julyedu.com/question/88641#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&apos;,
+ &apos;https://ask.julyedu.com/question/88640&apos;,
+ &apos;https://ask.julyedu.com/question/88640#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-4&apos;,
+ &apos;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88639&apos;,
+ &apos;https://ask.julyedu.com/question/88639#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88638&apos;,
+ &apos;https://ask.julyedu.com/question/88638#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1001&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1001&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1000&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/1000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/article/999&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/uploads/article/20190605/6dcda1628e00ed7dfab23d18431f6c9b.png&apos;,
+ &apos;https://ask.julyedu.com/article/999&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88634&apos;,
+ &apos;https://ask.julyedu.com/question/88634#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88633&apos;,
+ &apos;https://ask.julyedu.com/question/88633#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-18&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88632&apos;,
+ &apos;https://ask.julyedu.com/question/88632#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-14&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E9%80%86%E8%BD%AC&apos;,
+ &apos;https://ask.julyedu.com/question/88584&apos;,
+ &apos;https://ask.julyedu.com/people/%E8%8B%A5%E6%99%B4&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7479632&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/qq%E7%94%A8%E6%88%B7497804&apos;,
+ &apos;https://ask.julyedu.com/people/&apos;,
+ &apos;https://ask.julyedu.com/question/86859&apos;,
+ &apos;https://ask.julyedu.com/people/%E5%BE%AE%E4%BF%A1%E7%94%A8%E6%88%B7488524&apos;,
+ &apos;https://ask.julyedu.com/people/%E5%BE%AE%E4%BF%A1%E7%94%A8%E6%88%B7480301&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/Michael+Michael&apos;,
+ &apos;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&apos;,
+ &apos;https://ask.julyedu.com/question/88631&apos;,
+ &apos;https://ask.julyedu.com/question/88631#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/question/88629&apos;,
+ &apos;https://ask.julyedu.com/question/88629#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/question/88630&apos;,
+ &apos;https://ask.julyedu.com/question/88630#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/question/88628&apos;,
+ &apos;https://ask.julyedu.com/question/88628#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88627&apos;,
+ &apos;https://ask.julyedu.com/question/88627#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88626&apos;,
+ &apos;https://ask.julyedu.com/question/88626#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88625&apos;,
+ &apos;https://ask.julyedu.com/question/88625#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88624&apos;,
+ &apos;https://ask.julyedu.com/question/88624#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88623&apos;,
+ &apos;https://ask.julyedu.com/question/88623#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-14&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88622&apos;,
+ &apos;https://ask.julyedu.com/question/88622#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-1&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88621&apos;,
+ &apos;https://ask.julyedu.com/question/88621#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/question/88619&apos;,
+ &apos;https://ask.julyedu.com/question/88619#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-7&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&apos;,
+ &apos;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&apos;,
+ &apos;https://ask.julyedu.com/question/88617&apos;,
+ &apos;https://ask.julyedu.com/question/88617#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&apos;,
+ &apos;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&apos;,
+ &apos;https://ask.julyedu.com/question/88618&apos;,
+ &apos;https://ask.julyedu.com/question/88618#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/question/88616&apos;,
+ &apos;https://ask.julyedu.com/question/88616#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-5&apos;,
+ &apos;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&apos;,
+ &apos;https://ask.julyedu.com/people/afei3009&apos;,
+ &apos;https://ask.julyedu.com/question/88615&apos;,
+ &apos;https://ask.julyedu.com/question/88615#!answer_form&apos;,
+ &apos;https://ask.julyedu.com/explore/category-13&apos;,
+ &apos;https://ask.julyedu.com/people/afei3009&apos;,
+ &apos;javascript:;&apos;,
+ &apos;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-2&apos;,
+ &apos;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-3&apos;,
+ &apos;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-4&apos;,
+ &apos;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-2&apos;,
+ &apos;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-56&apos;,
+ &apos;https://ask.julyedu.com/topic/channel-hot&apos;,
+ &apos;https://ask.julyedu.com/topic/python&apos;,
+ &apos;https://ask.julyedu.com/topic/python&apos;,
+ &apos;https://ask.julyedu.com/topic/活动&apos;,
+ &apos;https://ask.julyedu.com/topic/活动&apos;,
+ &apos;https://ask.julyedu.com/topic/GAN&apos;,
+ &apos;https://ask.julyedu.com/topic/GAN&apos;,
+ &apos;https://ask.julyedu.com/topic/面试&apos;,
+ &apos;https://ask.julyedu.com/topic/面试&apos;,
+ &apos;https://ask.julyedu.com/people/&apos;,
+ &apos;https://ask.julyedu.com/people/xiaoyan2015&apos;,
+ &apos;https://ask.julyedu.com/people/xiaoyan2015&apos;,
+ &apos;https://ask.julyedu.com/people/qyzx_zhx&apos;,
+ &apos;https://ask.julyedu.com/people/qyzx_zhx&apos;,
+ &apos;https://ask.julyedu.com/people/%E7%A4%BE%E5%8C%BA%E5%B0%8F%E7%AE%A1%E5%AE%B6&apos;,
+ &apos;https://ask.julyedu.com/people/%E7%A4%BE%E5%8C%BA%E5%B0%8F%E7%AE%A1%E5%AE%B6&apos;,
+ &apos;https://ask.julyedu.com/people/unasm&apos;,
+ &apos;https://ask.julyedu.com/people/unasm&apos;,
+ &apos;https://ask.julyedu.com/people/Alina&apos;,
+ &apos;https://ask.julyedu.com/people/Alina&apos;,
+ &apos;http://www.julyedu.com/weekend/train9?v=m1&apos;,
+ &apos;http://q.url.cn/AB8aue?_type=wpa&amp;qidian=true&apos;,
+ &apos;http://www.julyedu.com/distribution/index&apos;,
+ &apos;http://weibo.com/askjulyedu&apos;,
+ None,
+ &apos;https://www.julyedu.com/help/index/about&apos;,
+ &apos;https://www.julyedu.com/help/index/contact&apos;,
+ &apos;https://www.julyedu.com/help/index/join&apos;,
+ &apos;https://ask.julyedu.com/question/55&apos;,
+ &apos;https://tianchi.aliyun.com&apos;,
+ &apos;https://cloud.tencent.com/developer/edu&apos;,
+ &apos;https://www.aidaxue.com/?ch=qyzx&apos;,
+ &apos;https://www.epubit.com&apos;,
+ &apos;http://www.miitbeian.gov.cn/&apos;,
+ &apos;https://www.cnzz.com/stat/website.php?web_id=1259748782&apos;,
+ &apos;https://www.julyedu.com&apos;,
+ &apos;https://www.julyedu.com/help/index/about&apos;,
+ &apos;https://www.julyedu.com/help/index/join&apos;,
+ &apos;http://weibo.com/askjulyedu&apos;,
+ &apos;javascript:&apos;,
+ &apos;https://tianchi.aliyun.com&apos;,
+ &apos;https://cloud.tencent.com/developer/edu&apos;,
+ &apos;https://www.aidaxue.com/?ch=qyzx&apos;,
+ &apos;https://www.epubit.com&apos;]</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a href="https://www.julyedu.com/course/getDetail/66/" target="_blank" rel="noopener">廖雪峰Python数据分析</a></li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/基本语法/Pandas/6703/" rel="next" title="Pandas基本语法">
+                <i class="fa fa-chevron-left"></i> Pandas基本语法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/金融分析/项目/29975/" rel="prev" title="两股票历史价格比较">
+                两股票历史价格比较 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Dan">
+            
+              <p class="site-author-name" itemprop="name">Dan</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">9</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/daniel18qzx" title="GitHub &rarr; https://github.com/daniel18qzx" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.linkedin.com/in/danielchiu15/" title="Linkedin &rarr; https://www.linkedin.com/in/danielchiu15/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#csv-I-O"><span class="nav-number">1.</span> <span class="nav-text">csv I/O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#json"><span class="nav-number">2.</span> <span class="nav-text">json</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XML-HTML"><span class="nav-number">3.</span> <span class="nav-text">XML/HTML</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Daniel Chiu. All Rights Reserved.</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '基本语法/数据处理/25692/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
