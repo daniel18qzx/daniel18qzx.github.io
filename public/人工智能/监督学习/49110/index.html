@@ -93,11 +93,11 @@
   <meta name="description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="支持向量机">
-<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/监督学习/49107/index.html">
+<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/监督学习/49110/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
 <meta property="og:description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-07-21T15:51:43.542Z">
+<meta property="og:updated_time" content="2019-07-21T16:07:10.895Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持向量机">
 <meta name="twitter:description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
@@ -108,7 +108,7 @@
 
   
   
-  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/监督学习/49107/">
+  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/监督学习/49110/">
 
 
 
@@ -333,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/监督学习/49107/">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/监督学习/49110/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dan">
@@ -376,12 +376,24 @@
                 
               
 
-              <time title="Created: 2019-07-21 00:00:00 / Modified: 23:51:43" itemprop="dateCreated datePublished" datetime="2019-07-21T00:00:00+08:00">2019-07-21</time>
+              <time title="Created: 2019-07-21 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-21T00:00:00+08:00">2019-07-21</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-07-22 00:07:10" itemprop="dateModified" datetime="2019-07-22T00:07:10+08:00">2019-07-22</time>
               
             
           </span>
@@ -424,8 +436,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/人工智能/监督学习/49107/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/监督学习/49107/" itemprop="commentCount"></span>
+                <a href="/人工智能/监督学习/49110/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/监督学习/49110/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -491,7 +503,7 @@
         <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li>能适应”样本数少，特征维度高”的数据集</li>
 </ul>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h4><ol>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h3 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h3><ol>
 <li>学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个</li>
 <li>尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化<ul>
 <li>平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)的超平面距离应越大越好</li>
@@ -499,14 +511,14 @@
 </ul>
 </li>
 </ol>
-<h4 id="当数据出现噪声"><a href="#当数据出现噪声" class="headerlink" title="当数据出现噪声"></a>当数据出现噪声</h4><ol>
+<h3 id="当数据出现噪声"><a href="#当数据出现噪声" class="headerlink" title="当数据出现噪声"></a>当数据出现噪声</h3><ol>
 <li>当数据出现噪声，Margin过低时会导致模型过拟合，此时应加入”软间隔(Soft Margin)”概念<ul>
 <li>要尽可能正确地分类训练数据(松弛因子超参数C大)</li>
 <li>Margin 要尽可能大(松弛因子超参数C小)</li>
 </ul>
 </li>
 </ol>
-<h4 id="当数据在现有维度中找不到最优超平面"><a href="#当数据在现有维度中找不到最优超平面" class="headerlink" title="当数据在现有维度中找不到最优超平面"></a>当数据在现有维度中找不到最优超平面</h4><ol>
+<h3 id="当数据在现有维度中找不到最优超平面"><a href="#当数据在现有维度中找不到最优超平面" class="headerlink" title="当数据在现有维度中找不到最优超平面"></a>当数据在现有维度中找不到最优超平面</h3><ol>
 <li>任何有限维度的非线性问题在更高维度的空间里总可以变化成线性可分问题</li>
 <li>SVM使用拉格朗日乘子法(Lagrange Multiplier)实现对超平面求解问题的升维，不需真的升维，而是将求超平面参数的目标转换为用高维中数据点向量两两点积值求解的二次规划问题</li>
 <li>核函数(Kernel Function)就是一种输入两个低维空间向量，返回高维空间点积的函数。一些常用的核函数如下：<ul>
@@ -754,7 +766,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本原则"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当数据出现噪声"><span class="nav-number">2.0.2.</span> <span class="nav-text">当数据出现噪声</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当数据在现有维度中找不到最优超平面"><span class="nav-number">2.0.3.</span> <span class="nav-text">当数据在现有维度中找不到最优超平面</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本原则"><span class="nav-number">2.1.</span> <span class="nav-text">基本原则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当数据出现噪声"><span class="nav-number">2.2.</span> <span class="nav-text">当数据出现噪声</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#当数据在现有维度中找不到最优超平面"><span class="nav-number">2.3.</span> <span class="nav-text">当数据在现有维度中找不到最优超平面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li></ol></div>
             
 
           </div>
@@ -942,7 +954,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '人工智能/监督学习/49107/'
+    refer: '人工智能/监督学习/49110/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
