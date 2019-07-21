@@ -90,13 +90,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="菜鸟分析狮">
-<meta property="og:url" content="https://daniel18qzx.github.io/categories/人工智能/线性回归/index.html">
+  <meta name="description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="支持向量机">
+<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/监督学习/49107/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
+<meta property="og:description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-07-21T15:37:24.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸟分析狮">
+<meta name="twitter:title" content="支持向量机">
+<meta name="twitter:description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
 
 
 
@@ -104,7 +108,7 @@
 
   
   
-  <link rel="canonical" href="https://daniel18qzx.github.io/categories/人工智能/线性回归/">
+  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/监督学习/49107/">
 
 
 
@@ -114,7 +118,7 @@
   };
 </script>
 
-  <title>Category: 线性回归 | 菜鸟分析狮</title>
+  <title>支持向量机 | 菜鸟分析狮</title>
   
 
 
@@ -162,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -221,7 +225,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
 
     
     
@@ -309,77 +313,292 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>线性回归<small>Category</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/监督学习/49107/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟分析狮">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/人工智能/线性回归/52662/" itemprop="url">
-            
-              <span itemprop="name">线性回归</span>
-            
-          </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">支持向量机
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-14T00:00:00+08:00" content="2019-07-14">
-          07-14
-        </time>
-      </div>
+              
+            
+          </h2>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-07-21 00:00:00 / Modified: 23:37:24" itemprop="dateCreated datePublished" datetime="2019-07-21T00:00:00+08:00">2019-07-21</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/监督学习/" itemprop="url" rel="index"><span itemprop="name">监督学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/人工智能/监督学习/49107/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/监督学习/49107/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">1.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">2 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>能适应”样本数少，特征维度高”的数据集</li>
+</ul>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><h4 id="基本原则"><a href="#基本原则" class="headerlink" title="基本原则"></a>基本原则</h4><ol>
+<li>学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个</li>
+<li>尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化<ul>
+<li>平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)的超平面距离应越大越好</li>
+<li>最优超平面到上述两超平面的距离应相等(此处距离即为间隔Margin)</li>
+</ul>
+</li>
+</ol>
+<h4 id="当数据出现噪声"><a href="#当数据出现噪声" class="headerlink" title="当数据出现噪声"></a>当数据出现噪声</h4><ol>
+<li>当数据出现噪声，Margin过低时会导致模型过拟合，此时应加入”软间隔(Soft Margin)”概念<ul>
+<li>要尽可能正确地分类训练数据(松弛因子超参数C大)</li>
+<li>Margin 要尽可能大(松弛因子超参数C小)</li>
+</ul>
+</li>
+</ol>
+<h4 id="当数据在现有维度中找不到最优超平面"><a href="#当数据在现有维度中找不到最优超平面" class="headerlink" title="当数据在现有维度中找不到最优超平面"></a>当数据在现有维度中找不到最优超平面</h4><ol>
+<li>任何有限维度的非线性问题在更高维度的空间里总可以变化成线性可分问题</li>
+<li>SVM使用拉格朗日乘子法(Lagrange Multiplier)实现对超平面求解问题的升维，不需真的升维，而是将求超平面参数的目标转换为用高维中数据点向量两两点积值求解的二次规划问题</li>
+<li>核函数(Kernel Function)就是一种输入两个低维空间向量，返回高维空间点积的函数。一些常用的核函数如下：<ul>
+<li>线性核(Linear)：直接返回输入向量的点积，速度最快，因为实际上没有升维，适用于本身特征维度较高、样本数量很大的场景</li>
+<li>多项式核(Polynomial)：其中超参数d是提升到的维度<br>$$k(p,q)=(p<em>q+1)</em>d$$</li>
+<li>高斯迳向基核(Gaussian Radial Basis Function)：应用最广泛，gamma值越大越容易过拟合<br>$$k(p,q)=exp(-\gamma*||p-q||^2)$$</li>
+<li>Sigmoid核：<br>$$k(p,q)=tanh(a*p\cdot q+r)$$</li>
+</ul>
+</li>
+</ol>
+<h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line"></span><br><span class="line">x = [[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">2</span>]]</span><br><span class="line">y = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">clf = svm.SVC(kernel = <span class="string">"rbf"</span>)</span><br><span class="line">clf.fit(x,y)</span><br><span class="line"></span><br><span class="line">t = [[<span class="number">2</span>,<span class="number">1</span>],[<span class="number">0</span>,<span class="number">1</span>]]</span><br><span class="line">print(clf.predict(t))</span><br><span class="line">print(clf.decision_function(t))  <span class="comment"># 返回数据到超平面的距离，越大则分类可靠性越高</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>[2 1]
+[ 0.52444566 -0.52444566]</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a href="http://www.broadview.com.cn/book/5337" target="_blank" rel="noopener">从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战</a></li>
+<li><a href="https://blog.csdn.net/DP323/article/details/80535863" target="_blank" rel="noopener">SVM 原理详解，通俗易懂</a></li>
+</ol>
 
       
     </div>
 
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/人工智能/基础概念/45545/" rel="next" title="梯度下降">
+                <i class="fa fa-chevron-left"></i> 梯度下降
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -399,8 +618,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -417,7 +645,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -462,7 +690,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -513,6 +743,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">2.</span> <span class="nav-text">步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基本原则"><span class="nav-number">2.0.1.</span> <span class="nav-text">基本原则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当数据出现噪声"><span class="nav-number">2.0.2.</span> <span class="nav-text">当数据出现噪声</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#当数据在现有维度中找不到最优超平面"><span class="nav-number">2.0.3.</span> <span class="nav-text">当数据在现有维度中找不到最优超平面</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#SVM"><span class="nav-number">3.</span> <span class="nav-text">SVM</span></a></li></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -672,6 +919,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -687,6 +938,23 @@
 
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '人工智能/监督学习/49107/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   

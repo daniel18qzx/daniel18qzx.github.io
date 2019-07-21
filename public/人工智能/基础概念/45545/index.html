@@ -90,21 +90,17 @@
 
 
 
-  <meta name="description" content="创建数据123456def make_data(nDim):    x0 = np.linspace(1, np.pi, 50)    x = np.vstack([[x0,], [i**x0 for i in range(2, nDim+1)]])    y = np.sin(x0) + np.random.normal(0,0.15,len(x0))        return x.trans">
+  <meta name="description" content="步骤 任取一点作为起始点 查看在当前节点向哪个方向移动能得到最小的z值，并向该方向移动 重复步骤直到找不到更小的z值  SGD的出现计算普通梯度下降时，每次都必须遍历所有样本，计算资源过大。SGD是每次采用单一或小批量样本的方差和作为损失值。  迭代次数虽变多，但每次迭代速度快，整体还是比较有效率达到最适点 由于数据存在噪声，不代表每次迭代都是正确的，但整体还是往最适点方向前进 由于是随机选取样本">
 <meta property="og:type" content="article">
-<meta property="og:title" content="线性回归">
-<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/线性回归/52662/index.html">
+<meta property="og:title" content="梯度下降">
+<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/基础概念/45545/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="创建数据123456def make_data(nDim):    x0 = np.linspace(1, np.pi, 50)    x = np.vstack([[x0,], [i**x0 for i in range(2, nDim+1)]])    y = np.sin(x0) + np.random.normal(0,0.15,len(x0))        return x.trans">
+<meta property="og:description" content="步骤 任取一点作为起始点 查看在当前节点向哪个方向移动能得到最小的z值，并向该方向移动 重复步骤直到找不到更小的z值  SGD的出现计算普通梯度下降时，每次都必须遍历所有样本，计算资源过大。SGD是每次采用单一或小批量样本的方差和作为损失值。  迭代次数虽变多，但每次迭代速度快，整体还是比较有效率达到最适点 由于数据存在噪声，不代表每次迭代都是正确的，但整体还是往最适点方向前进 由于是随机选取样本">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_1.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_2.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_3.png">
-<meta property="og:updated_time" content="2019-07-15T16:54:41.887Z">
+<meta property="og:updated_time" content="2019-07-19T17:10:48.536Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="线性回归">
-<meta name="twitter:description" content="创建数据123456def make_data(nDim):    x0 = np.linspace(1, np.pi, 50)    x = np.vstack([[x0,], [i**x0 for i in range(2, nDim+1)]])    y = np.sin(x0) + np.random.normal(0,0.15,len(x0))        return x.trans">
-<meta name="twitter:image" content="https://daniel18qzx.github.io/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_1.png">
+<meta name="twitter:title" content="梯度下降">
+<meta name="twitter:description" content="步骤 任取一点作为起始点 查看在当前节点向哪个方向移动能得到最小的z值，并向该方向移动 重复步骤直到找不到更小的z值  SGD的出现计算普通梯度下降时，每次都必须遍历所有样本，计算资源过大。SGD是每次采用单一或小批量样本的方差和作为损失值。  迭代次数虽变多，但每次迭代速度快，整体还是比较有效率达到最适点 由于数据存在噪声，不代表每次迭代都是正确的，但整体还是往最适点方向前进 由于是随机选取样本">
 
 
 
@@ -112,7 +108,7 @@
 
   
   
-  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/线性回归/52662/">
+  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/基础概念/45545/">
 
 
 
@@ -122,7 +118,7 @@
   };
 </script>
 
-  <title>线性回归 | 菜鸟分析狮</title>
+  <title>梯度下降 | 菜鸟分析狮</title>
   
 
 
@@ -337,7 +333,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/线性回归/52662/">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/基础概念/45545/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dan">
@@ -354,7 +350,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">线性回归
+          <h2 class="post-title" itemprop="name headline">梯度下降
 
               
             
@@ -380,24 +376,12 @@
                 
               
 
-              <time title="Created: 2019-07-14 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-14T00:00:00+08:00">2019-07-14</time>
+              <time title="Created: 2019-07-20 00:00:00 / Modified: 01:10:48" itemprop="dateCreated datePublished" datetime="2019-07-20T00:00:00+08:00">2019-07-20</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-07-16 00:54:41" itemprop="dateModified" datetime="2019-07-16T00:54:41+08:00">2019-07-16</time>
               
             
           </span>
@@ -421,7 +405,7 @@
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/线性回归/" itemprop="url" rel="index"><span itemprop="name">线性回归</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/基础概念/" itemprop="url" rel="index"><span itemprop="name">基础概念</span></a></span>
 
                 
                 
@@ -440,8 +424,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/人工智能/线性回归/52662/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/线性回归/52662/" itemprop="commentCount"></span>
+                <a href="/人工智能/基础概念/45545/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/基础概念/45545/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -470,7 +454,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">2.6k</span>
+                <span title="Symbols count in article">752</span>
               
 
               
@@ -484,7 +468,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">4 mins.</span>
+                <span title="Reading time">1 mins.</span>
               
             </div>
           
@@ -504,24 +488,24 @@
       
 
       
-        <h2 id="创建数据"><a href="#创建数据" class="headerlink" title="创建数据"></a>创建数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_data</span><span class="params">(nDim)</span>:</span></span><br><span class="line">    x0 = np.linspace(<span class="number">1</span>, np.pi, <span class="number">50</span>)</span><br><span class="line">    x = np.vstack([[x0,], [i**x0 <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>, nDim+<span class="number">1</span>)]])</span><br><span class="line">    y = np.sin(x0) + np.random.normal(<span class="number">0</span>,<span class="number">0.15</span>,len(x0))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> x.transpose(), y</span><br></pre></td></tr></table></figure>
+        <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
+<li>任取一点作为起始点</li>
+<li>查看在当前节点向哪个方向移动能得到最小的z值，并向该方向移动</li>
+<li>重复步骤直到找不到更小的z值</li>
+</ol>
+<h2 id="SGD的出现"><a href="#SGD的出现" class="headerlink" title="SGD的出现"></a>SGD的出现</h2><p>计算普通梯度下降时，每次都必须遍历所有样本，计算资源过大。SGD是每次采用单一或小批量样本的方差和作为损失值。</p>
+<ul>
+<li>迭代次数虽变多，但每次迭代速度快，整体还是比较有效率达到最适点</li>
+<li>由于数据存在噪声，不代表每次迭代都是正确的，但整体还是往最适点方向前进</li>
+<li>由于是随机选取样本，有可能跨过local minimum，去到global minimum</li>
+</ul>
+<h2 id="SGDRegressor"><a href="#SGDRegressor" class="headerlink" title="SGDRegressor"></a>SGDRegressor</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> SGDRegressor</span><br><span class="line"></span><br><span class="line">x = [[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">1</span>],[<span class="number">5</span>,<span class="number">4</span>]]</span><br><span class="line">y = [<span class="number">0</span>,<span class="number">2</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">reg = SGDRegressor(penalty = <span class="string">"l2"</span>, max_iter = <span class="number">10000</span>)</span><br><span class="line"><span class="comment"># penalty: none, l1(Lasso,绝对值), l2(Ridge,平方), elasticent</span></span><br><span class="line"><span class="comment"># max_iter防止连续抖动</span></span><br><span class="line">reg.fit(x,y)</span><br><span class="line"></span><br><span class="line">print(reg.predict([[<span class="number">4</span>,<span class="number">3</span>]]))</span><br><span class="line">print(reg.coef_)</span><br><span class="line">print(reg.intercept_)</span><br></pre></td></tr></table></figure>
 
-<h2 id="最小二乘法-Ordinary-Least-Squares-OLS"><a href="#最小二乘法-Ordinary-Least-Squares-OLS" class="headerlink" title="最小二乘法 Ordinary Least Squares (OLS)"></a>最小二乘法 Ordinary Least Squares (OLS)</h2><p>目标函数：<br>$$argmin(\sum_{}^{} {(\hat{y}-y)^2})$$</p>
-<p>不足：OLS为了更好的拟合数据，会使用较大的w值，进而导致过度拟合。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> enumerate(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.LinearRegression()</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">'*'</span>, color = <span class="string">'r'</span>, label = <span class="string">'samples'</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(y))], linestyle = <span class="string">'--'</span>, label = <span class="string">'model'</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">'upper right'</span>)</span><br><span class="line">    plt.title(<span class="string">'Dimensions: %s'</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-07-14_线性回归_1.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<pre><code>[1.97845294]
+[ 1.56550035 -1.47798393]
+[0.15040332]</code></pre><h2 id="SGDClassifier"><a href="#SGDClassifier" class="headerlink" title="SGDClassifier"></a>SGDClassifier</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">clf = SGDRegressor(penalty = <span class="string">"l2"</span>, max_iter = <span class="number">10000</span>)</span><br><span class="line">clf.fit(x,y)</span><br><span class="line"></span><br><span class="line">print(clf.predict([[<span class="number">4</span>,<span class="number">3</span>]]))</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_1.png" alt></p>
-<h2 id="岭回归-Ridge-Regression-Tikhonov-Regularization"><a href="#岭回归-Ridge-Regression-Tikhonov-Regularization" class="headerlink" title="岭回归 Ridge Regression (Tikhonov Regularization)"></a>岭回归 Ridge Regression (Tikhonov Regularization)</h2><p>目标函数：<br>$$argmin(\sum_{}^{} {(\hat{y}-y)^2}+\alpha \sum_{}^{} {w^2})$$</p>
-<p>优化：为惩罚OLS每个w逐渐增加导致过度拟合的问题，新增的项为L2惩罚项(L2 Penalty)。<br>特点：w有可能特别小的绝对值，但很难达成0，造成贡献很小的系数还是要放，影响性能。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> enumerate(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.Ridge(alpha = <span class="number">100</span>)</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">'*'</span>, color = <span class="string">'r'</span>, label = <span class="string">'samples'</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(y))], linestyle = <span class="string">'--'</span>, label = <span class="string">'model'</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">'upper right'</span>)</span><br><span class="line">    plt.title(<span class="string">'Dimensions: %s'</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-07-14_线性回归_2.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-
-<p><img src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_2.png" alt></p>
-<h2 id="Lasso-回归"><a href="#Lasso-回归" class="headerlink" title="Lasso 回归"></a>Lasso 回归</h2><p>目标函数：<br>$$argmin(\sum_{}^{} {(\hat{y}-y)^2}+\alpha \sum_{}^{} {|w|})$$</p>
-<p>优化：为惩罚OLS每个w逐渐增加导致过度拟合的问题，新增的项为L1惩罚项(L1 Penalty)。<br>特点：比L2惩罚项严厉很多，可以产生稀疏回归参数，即多数回归参数为零。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> enumerate(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.Lasso(alpha = <span class="number">100</span>)</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">'*'</span>, color = <span class="string">'r'</span>, label = <span class="string">'samples'</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> range(len(y))], linestyle = <span class="string">'--'</span>, label = <span class="string">'model'</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">'upper right'</span>)</span><br><span class="line">    plt.title(<span class="string">'Dimensions: %s'</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-07-14_线性回归_3.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-
-<p><img src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_3.png" alt></p>
-<blockquote>
+<pre><code>[1.97839971]</code></pre><blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
@@ -561,8 +545,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/基本语法/数据处理/58780/" rel="next" title="正則表達式">
-                <i class="fa fa-chevron-left"></i> 正則表達式
+              <a href="/人工智能/监督学习/52662/" rel="next" title="线性回归">
+                <i class="fa fa-chevron-left"></i> 线性回归
               </a>
             
           </div>
@@ -571,8 +555,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/基本语法/Scipy/61322/" rel="prev" title="Scipy基本语法">
-                Scipy基本语法 <i class="fa fa-chevron-right"></i>
+              <a href="/人工智能/监督学习/49107/" rel="prev" title="支持向量机">
+                支持向量机 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +633,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">11</span>
+                    <span class="site-state-item-count">13</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -694,7 +678,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">categories</span>
                   </a>
                 </div>
@@ -756,7 +742,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数据"><span class="nav-number">1.</span> <span class="nav-text">创建数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小二乘法-Ordinary-Least-Squares-OLS"><span class="nav-number">2.</span> <span class="nav-text">最小二乘法 Ordinary Least Squares (OLS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#岭回归-Ridge-Regression-Tikhonov-Regularization"><span class="nav-number">3.</span> <span class="nav-text">岭回归 Ridge Regression (Tikhonov Regularization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lasso-回归"><span class="nav-number">4.</span> <span class="nav-text">Lasso 回归</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#步骤"><span class="nav-number">1.</span> <span class="nav-text">步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SGD的出现"><span class="nav-number">2.</span> <span class="nav-text">SGD的出现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SGDRegressor"><span class="nav-number">3.</span> <span class="nav-text">SGDRegressor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SGDClassifier"><span class="nav-number">4.</span> <span class="nav-text">SGDClassifier</span></a></li></ol></div>
             
 
           </div>
@@ -944,7 +930,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '人工智能/线性回归/52662/'
+    refer: '人工智能/基础概念/45545/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
