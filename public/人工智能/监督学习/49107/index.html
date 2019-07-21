@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="菜鸟分析狮">
 <meta property="og:description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-07-21T15:37:24.931Z">
+<meta property="og:updated_time" content="2019-07-21T15:51:43.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="支持向量机">
 <meta name="twitter:description" content="特性 能适应”样本数少，特征维度高”的数据集  步骤基本原则 学习数据空间中的一个超平面达到二值分类目的，在普通线性可分问题中，符合分类要求的超平面会有无穷多个 尽可能找到最能平均分配两类数据中空白区域的超平面，亦即使得”与超平面距离最小的数据点的距离”最大化 平行于最优超平面(Optional Hyperplane)，且含括两类数据中最靠近超平面的点(此两数据点即为Support Vector)">
@@ -376,7 +376,7 @@
                 
               
 
-              <time title="Created: 2019-07-21 00:00:00 / Modified: 23:37:24" itemprop="dateCreated datePublished" datetime="2019-07-21T00:00:00+08:00">2019-07-21</time>
+              <time title="Created: 2019-07-21 00:00:00 / Modified: 23:51:43" itemprop="dateCreated datePublished" datetime="2019-07-21T00:00:00+08:00">2019-07-21</time>
             
 
             
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.1k</span>
+                <span title="Symbols count in article"></span>
               
 
               
@@ -468,7 +468,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time"></span>
               
             </div>
           
@@ -511,16 +511,16 @@
 <li>SVM使用拉格朗日乘子法(Lagrange Multiplier)实现对超平面求解问题的升维，不需真的升维，而是将求超平面参数的目标转换为用高维中数据点向量两两点积值求解的二次规划问题</li>
 <li>核函数(Kernel Function)就是一种输入两个低维空间向量，返回高维空间点积的函数。一些常用的核函数如下：<ul>
 <li>线性核(Linear)：直接返回输入向量的点积，速度最快，因为实际上没有升维，适用于本身特征维度较高、样本数量很大的场景</li>
-<li>多项式核(Polynomial)：其中超参数d是提升到的维度<br>$$k(p,q)=(p<em>q+1)</em>d$$</li>
-<li>高斯迳向基核(Gaussian Radial Basis Function)：应用最广泛，gamma值越大越容易过拟合<br>$$k(p,q)=exp(-\gamma*||p-q||^2)$$</li>
-<li>Sigmoid核：<br>$$k(p,q)=tanh(a*p\cdot q+r)$$</li>
+<li>多项式核(Polynomial)：其中超参数d是提升到的维度<script type="math/tex; mode=display">k(p,q)=(p*q+1)*d</script></li>
+<li>高斯迳向基核(Gaussian Radial Basis Function)：应用最广泛，gamma值越大越容易过拟合<script type="math/tex; mode=display">k(p,q)=exp(-\gamma*||p-q||^2)</script></li>
+<li>Sigmoid核：<script type="math/tex; mode=display">k(p,q)=tanh(a*p\cdot q+r)</script></li>
 </ul>
 </li>
 </ol>
 <h2 id="SVM"><a href="#SVM" class="headerlink" title="SVM"></a>SVM</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> svm</span><br><span class="line"></span><br><span class="line">x = [[<span class="number">0</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">2</span>]]</span><br><span class="line">y = [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line">clf = svm.SVC(kernel = <span class="string">"rbf"</span>)</span><br><span class="line">clf.fit(x,y)</span><br><span class="line"></span><br><span class="line">t = [[<span class="number">2</span>,<span class="number">1</span>],[<span class="number">0</span>,<span class="number">1</span>]]</span><br><span class="line">print(clf.predict(t))</span><br><span class="line">print(clf.decision_function(t))  <span class="comment"># 返回数据到超平面的距离，越大则分类可靠性越高</span></span><br></pre></td></tr></table></figure>
-
 <pre><code>[2 1]
-[ 0.52444566 -0.52444566]</code></pre><blockquote>
+[ 0.52444566 -0.52444566]
+</code></pre><blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
@@ -1287,6 +1287,53 @@
   
 
   
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+  
+
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
+      processEscapes: true,
+      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    },
+    TeX: {
+      
+      equationNumbers: {
+        autoNumber: 'AMS'
+      }
+    }
+  });
+  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
+    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
+      if (data.display) {
+        var next = data.script.nextSibling;
+        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
+        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
+      }
+    });
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for (i = 0; i < all.length; i += 1) {
+      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
+    }
+  });
+</script>
+<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
 
   
 

@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.9k</span>
+                <span title="Symbols count in article"></span>
               
 
               
@@ -480,7 +480,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">3 mins.</span>
+                <span title="Reading time"></span>
               
             </div>
           
@@ -501,9 +501,7 @@
 
       
         <h2 id="re用法"><a href="#re用法" class="headerlink" title="re用法"></a>re用法</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">re_all</span><span class="params">(regex)</span>:</span></span><br><span class="line">    log = <span class="string">'Thu Mar 14 19:27:38 1991::jvfcho@iwrptlqmyok.edu::668950058-6-11\n'</span></span><br><span class="line">    print(log)</span><br><span class="line">    print(<span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"===返回匹配的字符串（re.search().group()）==="</span>)</span><br><span class="line">    print(re.search(regex,log).group())</span><br><span class="line">    print(<span class="string">""</span>)</span><br><span class="line">    </span><br><span class="line">    print(<span class="string">"===列表返回匹配的所有子串(re.findall())==="</span>)</span><br><span class="line">    print(re.findall(regex,log))</span><br><span class="line">    print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"===返回匹配开始的位置（re.search().start()）==="</span>)</span><br><span class="line">    print(re.search(regex,log).start())</span><br><span class="line">    print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"===返回匹配结束的位置（re.search().end()）==="</span>)</span><br><span class="line">    print(re.search(regex,log).end())</span><br><span class="line">    print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">    print(<span class="string">"===返回匹配位置（re.search().span()）==="</span>)</span><br><span class="line">    print(re.search(regex,log).span())</span><br><span class="line">    print(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
-
 <h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = <span class="string">'(Mon|Tue|Wed|Thu|Fri|Sat|Sun)'</span>  <span class="comment"># |是or</span></span><br><span class="line">re_all(regex)</span><br></pre></td></tr></table></figure>
-
 <pre><code>Thu Mar 14 19:27:38 1991::jvfcho@iwrptlqmyok.edu::668950058-6-11
 
 
@@ -511,7 +509,7 @@
 Thu
 
 ===列表返回匹配的所有子串(re.findall())===
-[&apos;Thu&apos;]
+[&#39;Thu&#39;]
 
 ===返回匹配开始的位置（re.search().start()）===
 0
@@ -520,8 +518,8 @@ Thu
 3
 
 ===返回匹配位置（re.search().span()）===
-(0, 3)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = <span class="string">'([0-9]&#123;1,2&#125;):([0-9]&#123;1,2&#125;):([0-9]&#123;1,2&#125;).'</span>  <span class="comment"># ()是子組，會依次返回; &#123;&#125;是幾個; *是無數個</span></span><br><span class="line">re_all(regex)</span><br></pre></td></tr></table></figure>
-
+(0, 3)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = <span class="string">'([0-9]&#123;1,2&#125;):([0-9]&#123;1,2&#125;):([0-9]&#123;1,2&#125;).'</span>  <span class="comment"># ()是子組，會依次返回; &#123;&#125;是幾個; *是無數個</span></span><br><span class="line">re_all(regex)</span><br></pre></td></tr></table></figure>
 <pre><code>Thu Mar 14 19:27:38 1991::jvfcho@iwrptlqmyok.edu::668950058-6-11
 
 
@@ -529,7 +527,7 @@ Thu
 19:27:38 
 
 ===列表返回匹配的所有子串(re.findall())===
-[(&apos;19&apos;, &apos;27&apos;, &apos;38&apos;)]
+[(&#39;19&#39;, &#39;27&#39;, &#39;38&#39;)]
 
 ===返回匹配开始的位置（re.search().start()）===
 11
@@ -538,8 +536,8 @@ Thu
 20
 
 ===返回匹配位置（re.search().span()）===
-(11, 20)</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = <span class="string">'([a-z]*)@([a-z]*).(com|edu|net|org|gov)'</span></span><br><span class="line">re_all(regex)</span><br></pre></td></tr></table></figure>
-
+(11, 20)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">regex = <span class="string">'([a-z]*)@([a-z]*).(com|edu|net|org|gov)'</span></span><br><span class="line">re_all(regex)</span><br></pre></td></tr></table></figure>
 <pre><code>Thu Mar 14 19:27:38 1991::jvfcho@iwrptlqmyok.edu::668950058-6-11
 
 
@@ -547,7 +545,7 @@ Thu
 jvfcho@iwrptlqmyok.edu
 
 ===列表返回匹配的所有子串(re.findall())===
-[(&apos;jvfcho&apos;, &apos;iwrptlqmyok&apos;, &apos;edu&apos;)]
+[(&#39;jvfcho&#39;, &#39;iwrptlqmyok&#39;, &#39;edu&#39;)]
 
 ===返回匹配开始的位置（re.search().start()）===
 26
@@ -556,7 +554,8 @@ jvfcho@iwrptlqmyok.edu
 48
 
 ===返回匹配位置（re.search().span()）===
-(26, 48)</code></pre><blockquote>
+(26, 48)
+</code></pre><blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
@@ -1327,6 +1326,13 @@ jvfcho@iwrptlqmyok.edu
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

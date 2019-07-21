@@ -90,19 +90,19 @@
 
 
 
-  <meta name="description" content="项目任务 获取财务数据 填充缺失值 数据归一化 折线图  代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context()  获取财务数据1234567s_pf =">
+  <meta name="description" content="项目任务 获取财务数据 填充缺失值 数据归一化 折线图  代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context() 获取财务数据1234567s_pf =">
 <meta property="og:type" content="article">
 <meta property="og:title" content="两股票历史价格比较">
 <meta property="og:url" content="https://daniel18qzx.github.io/金融分析/项目/29975/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="项目任务 获取财务数据 填充缺失值 数据归一化 折线图  代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context()  获取财务数据1234567s_pf =">
+<meta property="og:description" content="项目任务 获取财务数据 填充缺失值 数据归一化 折线图  代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context() 获取财务数据1234567s_pf =">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-07-01_%E4%B8%A4%E8%82%A1%E7%A5%A8%E5%8E%86%E5%8F%B2%E4%BB%B7%E6%A0%BC%E6%AF%94%E8%BE%83_1.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-07-01_两股票历史价格比较_1.png">
 <meta property="og:updated_time" content="2019-07-07T15:43:01.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="两股票历史价格比较">
-<meta name="twitter:description" content="项目任务 获取财务数据 填充缺失值 数据归一化 折线图  代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context()  获取财务数据1234567s_pf =">
-<meta name="twitter:image" content="https://daniel18qzx.github.io/img/2019-07-01_%E4%B8%A4%E8%82%A1%E7%A5%A8%E5%8E%86%E5%8F%B2%E4%BB%B7%E6%A0%BC%E6%AF%94%E8%BE%83_1.png">
+<meta name="twitter:description" content="项目任务 获取财务数据 填充缺失值 数据归一化 折线图  代码依赖123456import matplotlib.pyplot as pltimport numpy as npimport pandas as pdimport tushare as tsimport sslcontext = ssl._create_unverified_context() 获取财务数据1234567s_pf =">
+<meta name="twitter:image" content="https://daniel18qzx.github.io/img/2019-07-01_两股票历史价格比较_1.png">
 
 
 
@@ -468,7 +468,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.5k</span>
+                <span title="Symbols count in article"></span>
               
 
               
@@ -482,7 +482,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">3 mins.</span>
+                <span title="Reading time"></span>
               
             </div>
           
@@ -509,24 +509,22 @@
 <li>折线图</li>
 </ol>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> tushare <span class="keyword">as</span> ts</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line">context = ssl._create_unverified_context()</span><br></pre></td></tr></table></figure>
-
 <h3 id="获取财务数据"><a href="#获取财务数据" class="headerlink" title="获取财务数据"></a>获取财务数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s_pf = <span class="string">'600000'</span></span><br><span class="line">s_gd = <span class="string">'601818'</span></span><br><span class="line">sdate = <span class="string">'2018-01-01'</span></span><br><span class="line">edate = <span class="string">'2018-12-31'</span></span><br><span class="line"></span><br><span class="line">df_pf = ts.get_hist_data(s_pf, start = sdate, end = edate).sort_index(axis = <span class="number">0</span>, ascending = <span class="literal">True</span>)</span><br><span class="line">df_gd = ts.get_hist_data(s_gd, start = sdate, end = edate).sort_index(axis = <span class="number">0</span>, ascending = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df = pd.concat([df_pf.close, df_gd.close], axis = <span class="number">1</span>, keys = [<span class="string">'pf_clse'</span>,<span class="string">'gd_close'</span>])</span><br><span class="line">df.ffill(axis = <span class="number">0</span>, inplace = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df[<span class="string">'pf_one'</span>] = df_pf.close / float(df_pf.close[<span class="number">0</span>]) * <span class="number">100</span></span><br><span class="line">df[<span class="string">'gd_one'</span>] = df_gd.close / float(df_gd.close[<span class="number">0</span>]) * <span class="number">100</span></span><br><span class="line"></span><br><span class="line">display(df.corr(method = <span class="string">'pearson'</span>, min_periods = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-<pre><code>.dataframe tbody tr th {
-    vertical-align: top;
-}
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th {
-    text-align: right;
-}</code></pre><p></style><p></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -572,8 +570,7 @@
 
 
 <h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df.pf_one.plot(figsize = (<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line">df.gd_one.plot(figsize = (<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-07-01_两股票历史价格比较_1.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-
-<p><img src="/img/2019-07-01_%E4%B8%A4%E8%82%A1%E7%A5%A8%E5%8E%86%E5%8F%B2%E4%BB%B7%E6%A0%BC%E6%AF%94%E8%BE%83_1.png" alt></p>
+<p><img src="/img/2019-07-01_两股票历史价格比较_1.png" alt></p>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -1345,6 +1342,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

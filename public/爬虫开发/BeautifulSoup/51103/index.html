@@ -90,12 +90,12 @@
 
 
 
-  <meta name="description" content="请求12import requestsresult = requests.get(&quot;https://news.163.com/&quot;)  12# 从返回result的状态码中，了解到是否请求成功result.status_code  2001result.encoding  &amp;apos;GBK&amp;apos;12content = result.contentprint (content[:1000])">
+  <meta name="description" content="请求12import requestsresult = requests.get(&quot;https://news.163.com/&quot;) 12# 从返回result的状态码中，了解到是否请求成功result.status_code 200 1result.encoding &amp;#39;GBK&amp;#39; 12content = result.contentprint (content[:1000]) #前1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基本爬虫">
 <meta property="og:url" content="https://daniel18qzx.github.io/爬虫开发/BeautifulSoup/51103/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="请求12import requestsresult = requests.get(&quot;https://news.163.com/&quot;)  12# 从返回result的状态码中，了解到是否请求成功result.status_code  2001result.encoding  &amp;apos;GBK&amp;apos;12content = result.contentprint (content[:1000])">
+<meta property="og:description" content="请求12import requestsresult = requests.get(&quot;https://news.163.com/&quot;) 12# 从返回result的状态码中，了解到是否请求成功result.status_code 200 1result.encoding &amp;#39;GBK&amp;#39; 12content = result.contentprint (content[:1000]) #前1">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:image" content="https://daniel18qzx.github.io/爬虫开发/BeautifulSoup/51103/%3C%=newrow.resources[0].urls[0]%%3E">
 <meta property="og:image" content="https://daniel18qzx.github.io/爬虫开发/BeautifulSoup/51103/%3C%=newrow.resources[0].urls[0]%%3E">
@@ -115,7 +115,7 @@
 <meta property="og:updated_time" content="2019-07-07T15:45:55.560Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基本爬虫">
-<meta name="twitter:description" content="请求12import requestsresult = requests.get(&quot;https://news.163.com/&quot;)  12# 从返回result的状态码中，了解到是否请求成功result.status_code  2001result.encoding  &amp;apos;GBK&amp;apos;12content = result.contentprint (content[:1000])">
+<meta name="twitter:description" content="请求12import requestsresult = requests.get(&quot;https://news.163.com/&quot;) 12# 从返回result的状态码中，了解到是否请求成功result.status_code 200 1result.encoding &amp;#39;GBK&amp;#39; 12content = result.contentprint (content[:1000]) #前1">
 <meta name="twitter:image" content="https://daniel18qzx.github.io/爬虫开发/BeautifulSoup/51103/%3C%=newrow.resources[0].urls[0]%%3E">
 
 
@@ -482,7 +482,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">78k</span>
+                <span title="Symbols count in article"></span>
               
 
               
@@ -496,7 +496,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2:10</span>
+                <span title="Reading time"></span>
               
             </div>
           
@@ -517,17 +517,14 @@
 
       
         <h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">result = requests.get(<span class="string">"https://news.163.com/"</span>)</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 从返回result的状态码中，了解到是否请求成功</span></span><br><span class="line">result.status_code</span><br></pre></td></tr></table></figure>
-
-<pre><code>200</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result.encoding</span><br></pre></td></tr></table></figure>
-
-<pre><code>&apos;GBK&apos;</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content = result.content</span><br><span class="line"><span class="keyword">print</span> (content[:<span class="number">1000</span>]) <span class="comment">#前1000个字符</span></span><br></pre></td></tr></table></figure>
-
-<pre><code>b&apos; &lt;!DOCTYPE HTML&gt;\n&lt;!--[if IE 6 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie6 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 7 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie7 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 8 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie8 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 9 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie9&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if (gte IE 10)|!(IE)]&gt;&lt;!--&gt; &lt;html id=&quot;ne_wrap&quot; phone=&quot;1&quot;&gt; &lt;!--&lt;![endif]--&gt;\n&lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;\n&lt;meta name=&quot;model_url&quot; content=&quot;http://news.163.com/special/index2015/&quot; /&gt;\n&lt;title&gt;\xcd\xf8\xd2\xd7\xd0\xc2\xce\xc5&lt;/title&gt;\n&lt;base target=&quot;_blank&quot; /&gt;\n&lt;meta name=&quot;keywords&quot; content=&quot;\xd0\xc2\xce\xc5,\xd0\xc2\xce\xc5\xd6\xd0\xd0\xc4,\xd0\xc2\xce\xc5\xc6\xb5\xb5\xc0,\xca\xb1\xca\xc2\xb1\xa8\xb5\xc0&quot; /&gt;\n&lt;meta name=&quot;description&quot; content=&quot;\xd0\xc2\xce\xc5,\xd0\xc2\xce\xc5\xd6\xd0\xd0\xc4,\xb0\xfc\xba\xac\xd3\xd0\xca\xb1\xd5\xfe\xd0\xc2\xce\xc5,\xb9\xfa\xc4\xda\xd0\xc2\xce\xc5,\xb9\xfa\xbc\xca\xd0\xc2\xce\xc5,\xc9\xe7\xbb\xe1\xd0\xc2\xce\xc5,\xca\xb1\xca\xc2\xc6\xc0\xc2\xdb,\xd0\xc2\xce\xc5\xcd\xbc\xc6\xac,\xd0\xc2\xce\xc5\xd7\xa8\xcc\xe2,\xd0\xc2\xce\xc5\xc2\xdb\xcc\xb3,\xbe\xfc\xca\xc2,\xc0\xfa\xca\xb7,\xb5\xc4\xd7\xa8\xd2\xb5\xca\xb1\xca\xc2\xb1\xa8\xb5\xc0\xc3\xc5\xbb\xa7\xcd\xf8\xd5\xbe&quot; /&gt;\n  &lt;script type=&quot;text/javascript&quot; _keep=&quot;true&quot;&gt;\n    var matchStr =window.location.href;\n    var reURL = /^(https):\\/\\/.+$/;\n    if(!reURL.test(matchStr)){\n        windo&apos;</code></pre><h2 id="模拟登入"><a href="#模拟登入" class="headerlink" title="模拟登入"></a>模拟登入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = requests.session()</span><br><span class="line">data = &#123;<span class="string">'user'</span>:<span class="string">'用户名'</span>,<span class="string">'passdw'</span>:<span class="string">'密码'</span>&#125;</span><br><span class="line"><span class="comment">#post 换成登录的地址，</span></span><br><span class="line">res=s.post(<span class="string">'http://www.xxx.net/index.php?action=login'</span>,data);</span><br><span class="line"><span class="comment">#换成抓取的地址</span></span><br><span class="line">s.get(<span class="string">'http://www.xxx.net/archives/155/'</span>);</span><br></pre></td></tr></table></figure>
-
+<pre><code>200
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">result.encoding</span><br></pre></td></tr></table></figure>
+<pre><code>&#39;GBK&#39;
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">content = result.content</span><br><span class="line"><span class="keyword">print</span> (content[:<span class="number">1000</span>]) <span class="comment">#前1000个字符</span></span><br></pre></td></tr></table></figure>
+<pre><code>b&#39; &lt;!DOCTYPE HTML&gt;\n&lt;!--[if IE 6 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie6 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 7 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie7 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 8 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie8 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if IE 9 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie9&quot;&gt; &lt;![endif]--&gt;\n&lt;!--[if (gte IE 10)|!(IE)]&gt;&lt;!--&gt; &lt;html id=&quot;ne_wrap&quot; phone=&quot;1&quot;&gt; &lt;!--&lt;![endif]--&gt;\n&lt;head&gt;\n&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;\n&lt;meta name=&quot;model_url&quot; content=&quot;http://news.163.com/special/index2015/&quot; /&gt;\n&lt;title&gt;\xcd\xf8\xd2\xd7\xd0\xc2\xce\xc5&lt;/title&gt;\n&lt;base target=&quot;_blank&quot; /&gt;\n&lt;meta name=&quot;keywords&quot; content=&quot;\xd0\xc2\xce\xc5,\xd0\xc2\xce\xc5\xd6\xd0\xd0\xc4,\xd0\xc2\xce\xc5\xc6\xb5\xb5\xc0,\xca\xb1\xca\xc2\xb1\xa8\xb5\xc0&quot; /&gt;\n&lt;meta name=&quot;description&quot; content=&quot;\xd0\xc2\xce\xc5,\xd0\xc2\xce\xc5\xd6\xd0\xd0\xc4,\xb0\xfc\xba\xac\xd3\xd0\xca\xb1\xd5\xfe\xd0\xc2\xce\xc5,\xb9\xfa\xc4\xda\xd0\xc2\xce\xc5,\xb9\xfa\xbc\xca\xd0\xc2\xce\xc5,\xc9\xe7\xbb\xe1\xd0\xc2\xce\xc5,\xca\xb1\xca\xc2\xc6\xc0\xc2\xdb,\xd0\xc2\xce\xc5\xcd\xbc\xc6\xac,\xd0\xc2\xce\xc5\xd7\xa8\xcc\xe2,\xd0\xc2\xce\xc5\xc2\xdb\xcc\xb3,\xbe\xfc\xca\xc2,\xc0\xfa\xca\xb7,\xb5\xc4\xd7\xa8\xd2\xb5\xca\xb1\xca\xc2\xb1\xa8\xb5\xc0\xc3\xc5\xbb\xa7\xcd\xf8\xd5\xbe&quot; /&gt;\n  &lt;script type=&quot;text/javascript&quot; _keep=&quot;true&quot;&gt;\n    var matchStr =window.location.href;\n    var reURL = /^(https):\\/\\/.+$/;\n    if(!reURL.test(matchStr)){\n        windo&#39;
+</code></pre><h2 id="模拟登入"><a href="#模拟登入" class="headerlink" title="模拟登入"></a>模拟登入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">s = requests.session()</span><br><span class="line">data = &#123;<span class="string">'user'</span>:<span class="string">'用户名'</span>,<span class="string">'passdw'</span>:<span class="string">'密码'</span>&#125;</span><br><span class="line"><span class="comment">#post 换成登录的地址，</span></span><br><span class="line">res=s.post(<span class="string">'http://www.xxx.net/index.php?action=login'</span>,data);</span><br><span class="line"><span class="comment">#换成抓取的地址</span></span><br><span class="line">s.get(<span class="string">'http://www.xxx.net/archives/155/'</span>);</span><br></pre></td></tr></table></figure>
 <h2 id="BeautifulSoup"><a href="#BeautifulSoup" class="headerlink" title="BeautifulSoup"></a>BeautifulSoup</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">"ignore"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line">soup = BeautifulSoup(content, fromEncoding=<span class="string">"GB2312"</span>) <span class="comment">#注意这个地方</span></span><br><span class="line">print(soup)</span><br></pre></td></tr></table></figure>
-
 <pre><code>&lt;!DOCTYPE HTML&gt;
 &lt;!--[if IE 6 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie6 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;&lt;!--[if IE 7 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie7 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;&lt;!--[if IE 8 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie8 ne_ua_ielte8&quot;&gt; &lt;![endif]--&gt;&lt;!--[if IE 9 ]&gt; &lt;html id=&quot;ne_wrap&quot; class=&quot;ne_ua_ie9&quot;&gt; &lt;![endif]--&gt;&lt;!--[if (gte IE 10)|!(IE)]&gt;&lt;!--&gt;&lt;html id=&quot;ne_wrap&quot; phone=&quot;1&quot;&gt; &lt;!--&lt;![endif]--&gt;
 &lt;head&gt;
@@ -1769,9 +1766,9 @@ var HouseNavBendiTxt = {
         } 
     }else{
         var url = &quot;//ipservice.163.com/locate/api/getLocByIp?key=C6E22B7D480E3312C74EC7EF013E50C5&amp;callback=BENDI_NAV_CALLBACK&quot;;
-        var script = document.createElement(&apos;script&apos;);
-        script.setAttribute(&apos;src&apos;, url);
-        document.getElementsByTagName(&apos;head&apos;)[0].appendChild(script);
+        var script = document.createElement(&#39;script&#39;);
+        script.setAttribute(&#39;src&#39;, url);
+        document.getElementsByTagName(&#39;head&#39;)[0].appendChild(script);
     }
 &lt;/script&gt;
 &lt;div class=&quot;index2016_content&quot;&gt;
@@ -1795,7 +1792,7 @@ var HouseNavBendiTxt = {
             &lt;input type=&quot;hidden&quot; name=&quot;suser&quot; value=&quot;user163&quot;&gt;
             &lt;input type=&quot;hidden&quot; name=&quot;ue&quot; value=&quot;gbk&quot;&gt;
             &lt;div class=&quot;search-input&quot;&gt; &lt;span class=&quot;hidden&quot;&gt;搜索&lt;/span&gt;
-                &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;searchInput_top&quot; onfocus=&quot;this.value=&apos;&apos;&quot; value=&quot;输入关键字&quot; class=&quot;text-box &quot;&gt;
+                &lt;input type=&quot;text&quot; name=&quot;q&quot; id=&quot;searchInput_top&quot; onfocus=&quot;this.value=&#39;&#39;&quot; value=&quot;输入关键字&quot; class=&quot;text-box &quot;&gt;
                 &lt;input type=&quot;submit&quot; name=&quot;Submit&quot; value=&quot;&quot; tabindex=&quot;0&quot; title=&quot;搜索&quot; class=&quot;search-submit&quot; id=&quot;sb_form_go&quot;&gt;
             &lt;/div&gt;
         &lt;/form&gt;
@@ -2246,15 +2243,15 @@ var HouseNavBendiTxt = {
                         &lt;div class=&quot;np_pic&quot;&gt;
                             &lt;a href=&quot;&lt;%=newrow.docurl%&gt;&quot;&gt;
                                 &lt;span class=&quot;p_img3&quot;&gt;
-                                &lt;%if(newrow.imgurl.indexOf(&apos;gif&apos;) != -1){%>
+                                &lt;%if(newrow.imgurl.indexOf(&#39;gif&#39;) != -1){%>
                                     <img src=" <%="newrow.imgurl%">" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%} else {%> 
                                     <img src="<%=newrow.imgurl%>?imageView&thumbnail=190y120&quality=85" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
-                                    <%}%&gt; &lt; span&gt; &lt;span class="&quot;p_img3&quot;&gt;" &lt;%if(newrow.add1.indexof(&apos;gif&apos;) !="-1){%">
+                                    <%}%&gt; &lt; span&gt; &lt;span class="&quot;p_img3&quot;&gt;" &lt;%if(newrow.add1.indexof(&#39;gif&#39;) !="-1){%">
                                     <img src="<%=newrow.add1%>" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%} else {%> 
                                     <img src="<%=newrow.add1%>?imageView&thumbnail=190y120&quality=85" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/index2016_rmd/images/pic3_error0106.jpg';">
-                                    <%}%&gt; &lt; span&gt; &lt;span class="&quot;p_img3&quot;&gt;" &lt;%if(newrow.add2.indexof(&apos;gif&apos;) !="-1){%">
+                                    <%}%&gt; &lt; span&gt; &lt;span class="&quot;p_img3&quot;&gt;" &lt;%if(newrow.add2.indexof(&#39;gif&#39;) !="-1){%">
                                     <img src="<%=newrow.add2%>" width="190" height="120" class="pic_last" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%} else {%> 
                                     <img src="<%=newrow.add2%>?imageView&thumbnail=190y120&quality=85" width="190" height="120" class="pic_last" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
@@ -2277,7 +2274,7 @@ var HouseNavBendiTxt = {
                                             <span class="post_recommend_tie_text"><i>跟贴</i><%=newrow.tienum%></%=newrow.tienum%></span>
                                         </div>
                                     </a>
-                                    <%}%&gt; &lt;div class="&quot;ne-shares-parent" right&quot;&gt; &lt;span href="&quot;#share&quot;" title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" &gt; ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; &lt;a ne-click="&quot;share(&apos;yixin&apos;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; &lt; span&gt; a&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; div&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%} else if(newrow.add1 &amp;&amp; \.jpg$|\.png$|\.jpeg$|\.gif$ .test(newrow.add1)){%>
+                                    <%}%&gt; &lt;div class="&quot;ne-shares-parent" right&quot;&gt; &lt;span href="&quot;#share&quot;" title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" &gt; ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; &lt;a ne-click="&quot;share(&#39;yixin&#39;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; &lt; span&gt; a&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; div&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%} else if(newrow.add1 &amp;&amp; \.jpg$|\.png$|\.jpeg$|\.gif$ .test(newrow.add1)){%>
                         <div class="data_row news_special clearfix <%if(__i == 0){%>news_first <%}%&gt;&quot;&gt;
                         &lt;div class=&quot;news_title&quot;&gt;
                             &lt;h3&gt;&lt;a href=&quot;&lt;%=newrow.docurl%&gt;&quot;&gt;&lt;%=newrow.title%&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -2287,7 +2284,7 @@ var HouseNavBendiTxt = {
                                     <%}else if(newrow.label !="&quot;&quot;){%">
                                         <a href="<%=newrow.tlink%>" class="link link_more">
                                         <em><%=newrow.label%></%=newrow.label%></em></a>
-                                    <%}%&gt; &lt;%}%&gt; &lt; div&gt; &lt;a href="&quot;&lt;%=newrow.docurl%&gt;&quot;" class="&quot;ns_pic&quot;&gt;" &lt;%if(newrow.add1.indexof(&apos;gif&apos;) !="-1){%">
+                                    <%}%&gt; &lt;%}%&gt; &lt; div&gt; &lt;a href="&quot;&lt;%=newrow.docurl%&gt;&quot;" class="&quot;ns_pic&quot;&gt;" &lt;%if(newrow.add1.indexof(&#39;gif&#39;) !="-1){%">
                                 <img src="<%=newrow.add1%>" alt="<%=newrow.title%>" width="600" height="300" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/special_error0106.jpg';">
                                 <%} else {%> 
                                 <img src="<%=newrow.add1%>?imageView&thumbnail=600y300&quality=85" alt="<%=newrow.title%>" width="600" height="300" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/special_error0106.jpg';">
@@ -2311,7 +2308,7 @@ var HouseNavBendiTxt = {
                                             <a href="<%=k.akey_link%>"><%=k.keyname%></%=k.keyname%></a>
                                         <%})%&gt; &lt; div&gt; &lt;%}%&gt; &lt;%if(newrow.time){%>
                                         <span class="time"><%=formattime(newrow.time)%></%=formattime(newrow.time)%></span>
-                                    <%}%&gt; &lt; div&gt; &lt;div class="&quot;share-join" clearfix&quot;&gt; &lt;a right&quot; href="&quot;&lt;%=newrow.commenturl%&gt;&quot;" &gt; &lt;span icons&quot;&gt;&lt;%="newrow.tienum" ? newrow.tienum : 0%&gt;&lt; span&gt; a&gt; right&quot;&gt; title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; ne-click="&quot;share(&apos;yixin&apos;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%} else if(newrow.pics3 &amp;&amp; newrow.pics3.length>
+                                    <%}%&gt; &lt; div&gt; &lt;div class="&quot;share-join" clearfix&quot;&gt; &lt;a right&quot; href="&quot;&lt;%=newrow.commenturl%&gt;&quot;" &gt; &lt;span icons&quot;&gt;&lt;%="newrow.tienum" ? newrow.tienum : 0%&gt;&lt; span&gt; a&gt; right&quot;&gt; title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; ne-click="&quot;share(&#39;yixin&#39;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%} else if(newrow.pics3 &amp;&amp; newrow.pics3.length>
                         <div class="data_row news_photoview clearfix <%if(__i == 0){%>news_first <%}%&gt;&quot;&gt;
                         &lt;div class=&quot;news_title&quot;&gt;
                             &lt;h3&gt;&lt;a href=&quot;&lt;%=newrow.docurl%&gt;&quot;&gt;&lt;%=newrow.title%&gt;&lt;/a&gt;&lt;/h3&gt;
@@ -2334,7 +2331,7 @@ var HouseNavBendiTxt = {
                                             <a href="<%=k.akey_link%>"><%=k.keyname%></%=k.keyname%></a>
                                         <%})%&gt; &lt; div&gt; &lt;%}%&gt; &lt;%if(newrow.time){%>
                                         <span class="time"><%=formattime(newrow.time)%></%=formattime(newrow.time)%></span>
-                                    <%}%&gt; &lt; div&gt; &lt;div class="&quot;share-join" clearfix&quot;&gt; &lt;a right&quot; href="&quot;&lt;%=newrow.commenturl%&gt;&quot;" &gt; &lt;span icons&quot;&gt;&lt;%="newrow.tienum%&gt;&lt;/span&gt;" a&gt; right&quot;&gt; title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; ne-click="&quot;share(&apos;yixin&apos;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; span&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%} else {%>
+                                    <%}%&gt; &lt; div&gt; &lt;div class="&quot;share-join" clearfix&quot;&gt; &lt;a right&quot; href="&quot;&lt;%=newrow.commenturl%&gt;&quot;" &gt; &lt;span icons&quot;&gt;&lt;%="newrow.tienum%&gt;&lt;/span&gt;" a&gt; right&quot;&gt; title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; ne-click="&quot;share(&#39;yixin&#39;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; span&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%} else {%>
                         <div class="data_row news_article clearfix <%if(__i == 0){%>news_first<%}%&gt;&quot; i={{__i}}&gt;
                         &lt;div class=&quot;na_detail clearfix no_pic&quot;&gt;
                             &lt;div class=&quot;news_title&quot;&gt;
@@ -2353,8 +2350,7 @@ var HouseNavBendiTxt = {
                                             <a href="<%=k.akey_link%>"><%=k.keyname%></%=k.keyname%></a>
                                         <%})%&gt; &lt; div&gt; &lt;%}%&gt; &lt;%if(newrow.time){%>
                                         <span class="time"><%=formattime(newrow.time)%></%=formattime(newrow.time)%></span>
-                                    <%}%&gt; &lt; div&gt; &lt;div class="&quot;share-join" clearfix&quot;&gt; &lt;a right&quot; href="&quot;&lt;%=newrow.commenturl%&gt;&quot;" &gt; &lt;span icons&quot;&gt;&lt;%="newrow.tienum" ? newrow.tienum : 0%&gt;&lt; span&gt; a&gt; right&quot;&gt; title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; ne-click="&quot;share(&apos;yixin&apos;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%}%&gt; script&gt; id="&quot;load_more_foot&quot;&gt;&lt;/div&gt;" ne-hide="&quot;{{myState.counter" || mystate.counter="=" 0}}&quot; ne-visible="&quot;{{myState.counter" navlist[mystate.ndnavindex].totalpage &amp;&amp; !mystate.loading}}&quot;&gt; &lt;i&gt;+&lt; &lt;span&gt;加载更多&lt; ne-show="&quot;{{myState.loading}}&quot;&gt;" &lt;span&gt;加载中...&lt; &lt;!-- 信息流 结束 --&gt; 中间新闻 右侧栏目 开始 广告 300*30 新闻首页焦点图上方l特殊标识广告 开始--&gt; mb10&quot; width="&quot;300&quot;" height="&quot;30&quot;" src="&quot;http://img1.126.net/channel11/024018300301009.jpg&quot;" alt="&quot;广告&quot;&gt;&lt;/a&gt;" &lt;!--新闻首页焦点图上方l特殊标识广告 结束--&gt; 焦点图 clearfix&quot; &lt;img &lt;h3&gt;三金西瓜霜独家冠名网易封面故事&lt; h3&gt; &lt;h3&gt;浒苔绿潮开始在山东沿海登陆&lt; &lt;h3&gt;广西南宁抓获涉传人员286名&lt; &lt;h3&gt;民主党初选辩论次日:拜登现身&lt; channel_relative_2016&quot;&gt; &lt;li&gt;&lt;a 右侧960原创栏目 &lt;h2&gt; &lt;span&gt;新闻各有态度&lt; h2&gt; 回声 数读 cell_sd cell_hover&quot;&gt; &lt;p tag_sd&quot; &lt;h3&gt; 中国哪里的地铁最拥挤？ &lt;ul&gt; 人间 cell_rj&quot;&gt; tag_rj&quot; 小白作者的变现之路 大国小民 cell_dgxm&quot;&gt; tag_dgxm&quot;&gt;大国小民&lt; 当不了官发不了财的读书人 三三有梗 cell_dada&quot;&gt; tag_dada&quot;&gt;三三有梗&lt; 据说99%的人在图书馆一定会碰上...... 三三映画 我去1990 cell_wq1990&quot;&gt; tag_wq1990&quot;&gt;我去1990&lt; 直男幼稚行为大赏 ktv 以后有多惨&lt; a&gt;&lt; 轻松一刻 cell_qsyk&quot;&gt; tag_qsyk&quot;&gt;轻松一刻&lt; 彩票一直都不中，我却忍不住要买 槽值 cell_caozhi&quot;&gt; tag_caozhi&quot;&gt;槽值&lt; 佟丽娅，这次你赢了 谈心社 cell_tanxinshe&quot;&gt; tag_tanxinshe&quot;&gt;谈心社&lt; 王宝强母亲去世：来日方长是人生的错觉 看客 cell_kanke&quot;&gt; tag_kanke&quot; 我奶茶都戒了，日本人才知道它的好 身体密码 cell_stpwd&quot;&gt; tag_stpwd&quot; 防晒，99%的人都做错了…… 无数中年人仍会被高考吓醒&lt; 哒哒 mod_ad_1 mod_ad_r&quot;&gt; 300*250 adtype="&quot;rightAd&quot;" right_ad_item&quot; requesturl="&quot;https://nex.163.com/q?app=7BE0FC82&amp;amp;c=news&amp;amp;l=31&amp;amp;site=netease&amp;amp;affiliate=news&amp;amp;cat=homepage&amp;amp;type=logo300x250&amp;amp;location=1&quot;&gt;&lt;/div&gt;" 新闻策划 mod_pageh5&quot;&gt; h5_border&quot;&gt; &lt;h3&gt;他凭什么甩开同龄人，做职场前5%？&lt; &lt;h3&gt;一个人成熟的标志：与负面情绪和解&lt; &lt;h3&gt;情商高的人，走到哪儿都大受欢迎&lt; &lt;h3&gt;每天5分钟，告别办公室综合症&lt; scrollbtl&quot; scrollbtnr&quot; ne-repeat="&quot;1..state.total&quot;" div&gt;&lt; 新闻专题 mod_news_special&quot;&gt; &lt;h2 &lt;span&gt;hot&lt; &lt;strong&gt;&lt;a 高层动态 mod_high_dynamic&quot;&gt; idx_cm_list_h&quot;&gt; 开始对朝鲜进行国事访问&lt; mod_ad_2 军事 航空 mod_war&quot;&gt; &lt;i&gt;・&lt; body&gt;&lt; html&gt;< code></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></div></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></%if(newrow.tlastid></%})%&gt;></div></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></%if(newrow.tlastid></%}%&gt;&quot;&gt;></%}%&gt;></%}></%if(newrow.imgurl.indexof('gif')></div></%}%&gt;></%}></%}%&gt;></%}else></div></%}%&gt;></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></%if(newrow.tlastid></%}%&gt;></%}></%}%&gt;></%}></%}%&gt;></%}></div></%}></%}></%}></%}else></%}%&gt;></code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samples = soup.find_all(<span class="string">"a"</span>)</span><br><span class="line">samples</span><br></pre></td></tr></table></figure>
-
+                                    <%}%&gt; &lt; div&gt; &lt;div class="&quot;share-join" clearfix&quot;&gt; &lt;a right&quot; href="&quot;&lt;%=newrow.commenturl%&gt;&quot;" &gt; &lt;span icons&quot;&gt;&lt;%="newrow.tienum" ? newrow.tienum : 0%&gt;&lt; span&gt; a&gt; right&quot;&gt; title="&quot;分享&quot;" ne-module="&quot;/modules/shares/shares.js&quot;" ne-state="&quot;cls.hover:ne-shares-open;title:&lt;%=newrow.title%&gt;;url:&lt;%=newrow.docurl%&gt;;pic:&lt;%=newrow.imgurl%&gt;&quot;" ne-role="&quot;share-wrap&quot;&gt;" &lt;ul &lt;li&gt; ne-click="&quot;share(&#39;yixin&#39;)&quot;" &lt;i ep-share-yixin&quot;&gt;&lt; i&gt; li&gt; ne-mouseover="&quot;initWeixin()&quot;" target="&quot;_self&quot;" ep-share-weixin&quot;&gt;&lt; ep-share-sina&quot;&gt;&lt; &lt;li ep-share-qzone&quot;&gt;&lt; ul&gt; &lt;p&gt;用微信扫码二维码&lt; p&gt;&lt;p&gt;分享至好友和朋友圈&lt; p&gt; &lt;%}%&gt; script&gt; id="&quot;load_more_foot&quot;&gt;&lt;/div&gt;" ne-hide="&quot;{{myState.counter" || mystate.counter="=" 0}}&quot; ne-visible="&quot;{{myState.counter" navlist[mystate.ndnavindex].totalpage &amp;&amp; !mystate.loading}}&quot;&gt; &lt;i&gt;+&lt; &lt;span&gt;加载更多&lt; ne-show="&quot;{{myState.loading}}&quot;&gt;" &lt;span&gt;加载中...&lt; &lt;!-- 信息流 结束 --&gt; 中间新闻 右侧栏目 开始 广告 300*30 新闻首页焦点图上方l特殊标识广告 开始--&gt; mb10&quot; width="&quot;300&quot;" height="&quot;30&quot;" src="&quot;http://img1.126.net/channel11/024018300301009.jpg&quot;" alt="&quot;广告&quot;&gt;&lt;/a&gt;" &lt;!--新闻首页焦点图上方l特殊标识广告 结束--&gt; 焦点图 clearfix&quot; &lt;img &lt;h3&gt;三金西瓜霜独家冠名网易封面故事&lt; h3&gt; &lt;h3&gt;浒苔绿潮开始在山东沿海登陆&lt; &lt;h3&gt;广西南宁抓获涉传人员286名&lt; &lt;h3&gt;民主党初选辩论次日:拜登现身&lt; channel_relative_2016&quot;&gt; &lt;li&gt;&lt;a 右侧960原创栏目 &lt;h2&gt; &lt;span&gt;新闻各有态度&lt; h2&gt; 回声 数读 cell_sd cell_hover&quot;&gt; &lt;p tag_sd&quot; &lt;h3&gt; 中国哪里的地铁最拥挤？ &lt;ul&gt; 人间 cell_rj&quot;&gt; tag_rj&quot; 小白作者的变现之路 大国小民 cell_dgxm&quot;&gt; tag_dgxm&quot;&gt;大国小民&lt; 当不了官发不了财的读书人 三三有梗 cell_dada&quot;&gt; tag_dada&quot;&gt;三三有梗&lt; 据说99%的人在图书馆一定会碰上...... 三三映画 我去1990 cell_wq1990&quot;&gt; tag_wq1990&quot;&gt;我去1990&lt; 直男幼稚行为大赏 ktv 以后有多惨&lt; a&gt;&lt; 轻松一刻 cell_qsyk&quot;&gt; tag_qsyk&quot;&gt;轻松一刻&lt; 彩票一直都不中，我却忍不住要买 槽值 cell_caozhi&quot;&gt; tag_caozhi&quot;&gt;槽值&lt; 佟丽娅，这次你赢了 谈心社 cell_tanxinshe&quot;&gt; tag_tanxinshe&quot;&gt;谈心社&lt; 王宝强母亲去世：来日方长是人生的错觉 看客 cell_kanke&quot;&gt; tag_kanke&quot; 我奶茶都戒了，日本人才知道它的好 身体密码 cell_stpwd&quot;&gt; tag_stpwd&quot; 防晒，99%的人都做错了…… 无数中年人仍会被高考吓醒&lt; 哒哒 mod_ad_1 mod_ad_r&quot;&gt; 300*250 adtype="&quot;rightAd&quot;" right_ad_item&quot; requesturl="&quot;https://nex.163.com/q?app=7BE0FC82&amp;amp;c=news&amp;amp;l=31&amp;amp;site=netease&amp;amp;affiliate=news&amp;amp;cat=homepage&amp;amp;type=logo300x250&amp;amp;location=1&quot;&gt;&lt;/div&gt;" 新闻策划 mod_pageh5&quot;&gt; h5_border&quot;&gt; &lt;h3&gt;他凭什么甩开同龄人，做职场前5%？&lt; &lt;h3&gt;一个人成熟的标志：与负面情绪和解&lt; &lt;h3&gt;情商高的人，走到哪儿都大受欢迎&lt; &lt;h3&gt;每天5分钟，告别办公室综合症&lt; scrollbtl&quot; scrollbtnr&quot; ne-repeat="&quot;1..state.total&quot;" div&gt;&lt; 新闻专题 mod_news_special&quot;&gt; &lt;h2 &lt;span&gt;hot&lt; &lt;strong&gt;&lt;a 高层动态 mod_high_dynamic&quot;&gt; idx_cm_list_h&quot;&gt; 开始对朝鲜进行国事访问&lt; mod_ad_2 军事 航空 mod_war&quot;&gt; &lt;i&gt;・&lt; body&gt;&lt; html&gt; < code></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></div></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></%if(newrow.tlastid></%})%&gt;></div></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></%if(newrow.tlastid></%}%&gt;&quot;&gt;></%}%&gt;></%}></%if(newrow.imgurl.indexof('gif')></div></%}%&gt;></%}></%}%&gt;></%}else></div></%}%&gt;></%}%&gt;></%})%&gt;></%bowlder.each(newrow.keywords,function(k){%></div></%}%&gt;></%}else></%if(newrow.tlastid></%}%&gt;></%}></%}%&gt;></%}></%}%&gt;></%}></div></%}></%}></%}></%}else></%}%&gt;></code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">samples = soup.find_all(<span class="string">"a"</span>)</span><br><span class="line">samples</span><br></pre></td></tr></table></figure>
 <pre><code>[&lt;a class=&quot;ntes-nav-index-title ntes-nav-entry-wide c-fl&quot; href=&quot;http://www.163.com/&quot; title=&quot;网易首页&quot;&gt;网易首页&lt;/a&gt;,
  &lt;a class=&quot;ntes-nav-select-title ntes-nav-entry-bgblack JS_NTES_LOG_FE&quot; href=&quot;http://www.163.com/#f=topnav&quot;&gt;应用
              &lt;em class=&quot;ntes-nav-select-arr&quot;&gt;&lt;/em&gt;
@@ -3087,7 +3083,8 @@ var HouseNavBendiTxt = {
  &lt;a href=&quot;http://war.163.com/&quot;&gt;军事&lt;/a&gt;,
  &lt;a href=&quot;http://news.163.com/air/&quot;&gt;航空&lt;/a&gt;,
  &lt;a href=&quot;http://war.163.com/photoview/4T8E0001/2301528.html&quot;&gt;
- &lt;/a&gt;]</code></pre><blockquote>
+ &lt;/a&gt;]
+</code></pre><blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
@@ -3858,6 +3855,13 @@ var HouseNavBendiTxt = {
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

@@ -90,17 +90,17 @@
 
 
 
-  <meta name="description" content="数据物理常数1234567from scipy import constants    # 圆周率print(C.pi)# 引力常数print(C.g)  3.141592653589793 9.80665积分1234567891011from scipy import integrate# 定积分Y = lambda x: x**2+3print(integrate.quad(Y, -2, 4)">
+  <meta name="description" content="数据物理常数1234567from scipy import constants    # 圆周率print(C.pi)# 引力常数print(C.g) 3.141592653589793 9.80665 积分1234567891011from scipy import integrate# 定积分Y = lambda x: x**2+3print(integrate.quad(Y, -2, 4)">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scipy基本语法">
 <meta property="og:url" content="https://daniel18qzx.github.io/基本语法/Scipy/61322/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="数据物理常数1234567from scipy import constants    # 圆周率print(C.pi)# 引力常数print(C.g)  3.141592653589793 9.80665积分1234567891011from scipy import integrate# 定积分Y = lambda x: x**2+3print(integrate.quad(Y, -2, 4)">
+<meta property="og:description" content="数据物理常数1234567from scipy import constants    # 圆周率print(C.pi)# 引力常数print(C.g) 3.141592653589793 9.80665 积分1234567891011from scipy import integrate# 定积分Y = lambda x: x**2+3print(integrate.quad(Y, -2, 4)">
 <meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2019-07-13T18:12:07.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scipy基本语法">
-<meta name="twitter:description" content="数据物理常数1234567from scipy import constants    # 圆周率print(C.pi)# 引力常数print(C.g)  3.141592653589793 9.80665积分1234567891011from scipy import integrate# 定积分Y = lambda x: x**2+3print(integrate.quad(Y, -2, 4)">
+<meta name="twitter:description" content="数据物理常数1234567from scipy import constants    # 圆周率print(C.pi)# 引力常数print(C.g) 3.141592653589793 9.80665 积分1234567891011from scipy import integrate# 定积分Y = lambda x: x**2+3print(integrate.quad(Y, -2, 4)">
 
 
 
@@ -454,7 +454,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">950</span>
+                <span title="Symbols count in article"></span>
               
 
               
@@ -468,7 +468,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time"></span>
               
             </div>
           
@@ -489,19 +489,19 @@
 
       
         <h2 id="数据物理常数"><a href="#数据物理常数" class="headerlink" title="数据物理常数"></a>数据物理常数</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> constants</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 圆周率</span></span><br><span class="line">print(C.pi)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引力常数</span></span><br><span class="line">print(C.g)</span><br></pre></td></tr></table></figure>
-
 <pre><code>3.141592653589793
-9.80665</code></pre><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> integrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line">print(integrate.quad(Y, <span class="number">-2</span>, <span class="number">4</span>)) <span class="comment"># (-2, 4)是上下限  # 返回值第二个是误差预估</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数值采样积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line">x = np.linspace(<span class="number">-2</span>, <span class="number">4</span>, <span class="number">10</span>)</span><br><span class="line">y = Y(x)</span><br><span class="line">print(integrate.trapz(y, x))</span><br></pre></td></tr></table></figure>
-
+9.80665
+</code></pre><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> integrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line">print(integrate.quad(Y, <span class="number">-2</span>, <span class="number">4</span>)) <span class="comment"># (-2, 4)是上下限  # 返回值第二个是误差预估</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数值采样积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line">x = np.linspace(<span class="number">-2</span>, <span class="number">4</span>, <span class="number">10</span>)</span><br><span class="line">y = Y(x)</span><br><span class="line">print(integrate.trapz(y, x))</span><br></pre></td></tr></table></figure>
 <pre><code>(42.0, 4.662936703425657e-13)
-42.44444444444444</code></pre><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line">Y = <span class="keyword">lambda</span> x: x[<span class="number">0</span>]**<span class="number">3</span> + x[<span class="number">1</span>]**<span class="number">3</span> + np.cos(x[<span class="number">2</span>]+<span class="number">1</span>)</span><br><span class="line">x0 = np.zeros(<span class="number">4</span>)</span><br><span class="line">res = optimize.minimize(Y, x0)</span><br><span class="line"></span><br><span class="line">print(res.x) <span class="comment">#x</span></span><br><span class="line">print(Y(res.x)) <span class="comment">#y</span></span><br></pre></td></tr></table></figure>
-
+42.44444444444444
+</code></pre><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line">Y = <span class="keyword">lambda</span> x: x[<span class="number">0</span>]**<span class="number">3</span> + x[<span class="number">1</span>]**<span class="number">3</span> + np.cos(x[<span class="number">2</span>]+<span class="number">1</span>)</span><br><span class="line">x0 = np.zeros(<span class="number">4</span>)</span><br><span class="line">res = optimize.minimize(Y, x0)</span><br><span class="line"></span><br><span class="line">print(res.x) <span class="comment">#x</span></span><br><span class="line">print(Y(res.x)) <span class="comment">#y</span></span><br></pre></td></tr></table></figure>
 <pre><code>[0.         0.         2.14159739 0.        ]
--0.9999999999887697</code></pre><h2 id="拟合"><a href="#拟合" class="headerlink" title="拟合"></a>拟合</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, a, b, c)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a * np.exp(-b * x) + c</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">4</span>, <span class="number">50</span>)</span><br><span class="line">y = func(x, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">popt, pcov = optimize.curve_fit(func, x, y)</span><br><span class="line">popt</span><br></pre></td></tr></table></figure>
-
-<pre><code>array([1., 2., 3.])</code></pre><h2 id="方程式求解"><a href="#方程式求解" class="headerlink" title="方程式求解"></a>方程式求解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [x[<span class="number">0</span>]+x[<span class="number">1</span>],x[<span class="number">0</span>]+<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">sol = optimize.root(func, [<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">sol.x</span><br></pre></td></tr></table></figure>
-
-<pre><code>array([-10.,  10.])</code></pre><blockquote>
+-0.9999999999887697
+</code></pre><h2 id="拟合"><a href="#拟合" class="headerlink" title="拟合"></a>拟合</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x, a, b, c)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> a * np.exp(-b * x) + c</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">4</span>, <span class="number">50</span>)</span><br><span class="line">y = func(x, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">popt, pcov = optimize.curve_fit(func, x, y)</span><br><span class="line">popt</span><br></pre></td></tr></table></figure>
+<pre><code>array([1., 2., 3.])
+</code></pre><h2 id="方程式求解"><a href="#方程式求解" class="headerlink" title="方程式求解"></a>方程式求解</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">return</span> [x[<span class="number">0</span>]+x[<span class="number">1</span>],x[<span class="number">0</span>]+<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">sol = optimize.root(func, [<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">sol.x</span><br></pre></td></tr></table></figure>
+<pre><code>array([-10.,  10.])
+</code></pre><blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
@@ -1271,6 +1271,13 @@
   
 
   
+  
+
+  
+  
+
+  
+
 
   
 

@@ -82,7 +82,7 @@ deploy:
   repo: https://github.com/daniel18qzx/daniel18qzx.github.io.git
   branch: master
 
-#symbols_count_time
+# symbols_count_time
 symbols_count_time:
   symbols: true
   time: true
@@ -90,7 +90,7 @@ symbols_count_time:
   total_time: false
   exclude_codeblock: false
 
-#search
+# search
 search:
   path: search.xml
   field: post
