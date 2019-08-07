@@ -1,0 +1,3262 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="金融数据描述">
+<meta property="og:url" content="https://daniel18qzx.github.io/基本语法/项目/5276/index.html">
+<meta property="og:site_name" content="菜鸟分析狮">
+<meta property="og:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_1.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_2.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_3.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_4.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_5.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_6.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_7.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_8.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_9.png">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_10.png">
+<meta property="og:updated_time" content="2019-08-07T10:26:40.766Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="金融数据描述">
+<meta name="twitter:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
+<meta name="twitter:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_1.png">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://daniel18qzx.github.io/基本语法/项目/5276/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>金融数据描述 | 菜鸟分析狮</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">菜鸟分析狮</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">没有难处理的数据，没有难写的报告</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-homemenu"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/基本语法/项目/5276/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟分析狮">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">金融数据描述
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-01T00:00:00+08:00">2019-08-01</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-07 18:26:40" itemprop="dateModified" datetime="2019-08-07T18:26:40+08:00">2019-08-07</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基本语法/" itemprop="url" rel="index"><span itemprop="name">基本语法</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基本语法/项目/" itemprop="url" rel="index"><span itemprop="name">项目</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/基本语法/项目/5276/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/基本语法/项目/5276/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">47k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">1:18</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u"2019-08-01_金融数据描述_data1.csv"</span>,encoding = <span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>custid</th>
+      <th>trade_no</th>
+      <th>bank_card_no</th>
+      <th>low_volume_percent</th>
+      <th>middle_volume_percent</th>
+      <th>take_amount_in_later_12_month_highest</th>
+      <th>trans_amount_increase_rate_lately</th>
+      <th>trans_activity_month</th>
+      <th>trans_activity_day</th>
+      <th>...</th>
+      <th>loans_max_limit</th>
+      <th>loans_avg_limit</th>
+      <th>consfin_credit_limit</th>
+      <th>consfin_credibility</th>
+      <th>consfin_org_count_current</th>
+      <th>consfin_product_count</th>
+      <th>consfin_max_limit</th>
+      <th>consfin_avg_limit</th>
+      <th>latest_query_day</th>
+      <th>loans_latest_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>2791858</td>
+      <td>20180507115231274000000023057383</td>
+      <td>卡号1</td>
+      <td>0.01</td>
+      <td>0.99</td>
+      <td>0</td>
+      <td>0.90</td>
+      <td>0.55</td>
+      <td>0.313</td>
+      <td>...</td>
+      <td>2900.0</td>
+      <td>1688.0</td>
+      <td>1200.0</td>
+      <td>75.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1200.0</td>
+      <td>1200.0</td>
+      <td>12.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10</td>
+      <td>534047</td>
+      <td>20180507121002192000000023073000</td>
+      <td>卡号1</td>
+      <td>0.02</td>
+      <td>0.94</td>
+      <td>2000</td>
+      <td>1.28</td>
+      <td>1.00</td>
+      <td>0.458</td>
+      <td>...</td>
+      <td>3500.0</td>
+      <td>1758.0</td>
+      <td>15100.0</td>
+      <td>80.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>22800.0</td>
+      <td>9360.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>2849787</td>
+      <td>20180507125159718000000023114911</td>
+      <td>卡号1</td>
+      <td>0.04</td>
+      <td>0.96</td>
+      <td>0</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.114</td>
+      <td>...</td>
+      <td>1600.0</td>
+      <td>1250.0</td>
+      <td>4200.0</td>
+      <td>87.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4200.0</td>
+      <td>4200.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13</td>
+      <td>1809708</td>
+      <td>20180507121358683000000388283484</td>
+      <td>卡号1</td>
+      <td>0.00</td>
+      <td>0.96</td>
+      <td>2000</td>
+      <td>0.13</td>
+      <td>0.57</td>
+      <td>0.777</td>
+      <td>...</td>
+      <td>3200.0</td>
+      <td>1541.0</td>
+      <td>16300.0</td>
+      <td>80.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>30000.0</td>
+      <td>12180.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>14</td>
+      <td>2499829</td>
+      <td>20180507115448545000000388205844</td>
+      <td>卡号1</td>
+      <td>0.01</td>
+      <td>0.99</td>
+      <td>0</td>
+      <td>0.46</td>
+      <td>1.00</td>
+      <td>0.175</td>
+      <td>...</td>
+      <td>2300.0</td>
+      <td>1630.0</td>
+      <td>8300.0</td>
+      <td>79.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>8400.0</td>
+      <td>8250.0</td>
+      <td>22.0</td>
+      <td>120.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 90 columns</p>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4754 entries, 0 to 4753
+Data columns (total 90 columns):
+Unnamed: 0                                    4754 non-null int64
+custid                                        4754 non-null int64
+trade_no                                      4754 non-null object
+bank_card_no                                  4754 non-null object
+low_volume_percent                            4752 non-null float64
+middle_volume_percent                         4752 non-null float64
+take_amount_in_later_12_month_highest         4754 non-null int64
+trans_amount_increase_rate_lately             4751 non-null float64
+trans_activity_month                          4752 non-null float64
+trans_activity_day                            4752 non-null float64
+transd_mcc                                    4752 non-null float64
+trans_days_interval_filter                    4746 non-null float64
+trans_days_interval                           4752 non-null float64
+regional_mobility                             4752 non-null float64
+student_feature                               1756 non-null float64
+repayment_capability                          4754 non-null int64
+is_high_user                                  4754 non-null int64
+number_of_trans_from_2011                     4752 non-null float64
+first_transaction_time                        4752 non-null float64
+historical_trans_amount                       4754 non-null int64
+historical_trans_day                          4752 non-null float64
+rank_trad_1_month                             4752 non-null float64
+trans_amount_3_month                          4754 non-null int64
+avg_consume_less_12_valid_month               4752 non-null float64
+abs                                           4754 non-null int64
+top_trans_count_last_1_month                  4752 non-null float64
+avg_price_last_12_month                       4754 non-null int64
+avg_price_top_last_12_valid_month             4650 non-null float64
+reg_preference_for_trad                       4752 non-null object
+trans_top_time_last_1_month                   4746 non-null float64
+trans_top_time_last_6_month                   4746 non-null float64
+consume_top_time_last_1_month                 4746 non-null float64
+consume_top_time_last_6_month                 4746 non-null float64
+cross_consume_count_last_1_month              4328 non-null float64
+trans_fail_top_count_enum_last_1_month        4738 non-null float64
+trans_fail_top_count_enum_last_6_month        4738 non-null float64
+trans_fail_top_count_enum_last_12_month       4738 non-null float64
+consume_mini_time_last_1_month                4728 non-null float64
+max_cumulative_consume_later_1_month          4754 non-null int64
+max_consume_count_later_6_month               4746 non-null float64
+railway_consume_count_last_12_month           4742 non-null float64
+pawns_auctions_trusts_consume_last_1_month    4754 non-null int64
+pawns_auctions_trusts_consume_last_6_month    4754 non-null int64
+jewelry_consume_count_last_6_month            4742 non-null float64
+status                                        4754 non-null int64
+source                                        4754 non-null object
+first_transaction_day                         4752 non-null float64
+trans_day_last_12_month                       4752 non-null float64
+id_name                                       4478 non-null object
+apply_score                                   4450 non-null float64
+apply_credibility                             4450 non-null float64
+query_org_count                               4450 non-null float64
+query_finance_count                           4450 non-null float64
+query_cash_count                              4450 non-null float64
+query_sum_count                               4450 non-null float64
+latest_query_time                             4450 non-null object
+latest_one_month_apply                        4450 non-null float64
+latest_three_month_apply                      4450 non-null float64
+latest_six_month_apply                        4450 non-null float64
+loans_score                                   4457 non-null float64
+loans_credibility_behavior                    4457 non-null float64
+loans_count                                   4457 non-null float64
+loans_settle_count                            4457 non-null float64
+loans_overdue_count                           4457 non-null float64
+loans_org_count_behavior                      4457 non-null float64
+consfin_org_count_behavior                    4457 non-null float64
+loans_cash_count                              4457 non-null float64
+latest_one_month_loan                         4457 non-null float64
+latest_three_month_loan                       4457 non-null float64
+latest_six_month_loan                         4457 non-null float64
+history_suc_fee                               4457 non-null float64
+history_fail_fee                              4457 non-null float64
+latest_one_month_suc                          4457 non-null float64
+latest_one_month_fail                         4457 non-null float64
+loans_long_time                               4457 non-null float64
+loans_latest_time                             4457 non-null object
+loans_credit_limit                            4457 non-null float64
+loans_credibility_limit                       4457 non-null float64
+loans_org_count_current                       4457 non-null float64
+loans_product_count                           4457 non-null float64
+loans_max_limit                               4457 non-null float64
+loans_avg_limit                               4457 non-null float64
+consfin_credit_limit                          4457 non-null float64
+consfin_credibility                           4457 non-null float64
+consfin_org_count_current                     4457 non-null float64
+consfin_product_count                         4457 non-null float64
+consfin_max_limit                             4457 non-null float64
+consfin_avg_limit                             4457 non-null float64
+latest_query_day                              4450 non-null float64
+loans_latest_day                              4457 non-null float64
+dtypes: float64(70), int64(13), object(7)
+memory usage: 3.3+ MB
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedic = &#123;&#125; <span class="comment"># 类型字典</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> df.columns:</span><br><span class="line">    typedic[str(df[name].dtype)] = typedic.get(str(df[name].dtype),[])+[name]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> typedic.items():</span><br><span class="line">    print(<span class="string">"&#123;&#125;格式共有&#123;&#125;个: &#123;&#125;"</span>.format(key,len(value),value))</span><br><span class="line">    print(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>int64格式共有13个: [&#39;Unnamed: 0&#39;, &#39;custid&#39;, &#39;take_amount_in_later_12_month_highest&#39;, &#39;repayment_capability&#39;, &#39;is_high_user&#39;, &#39;historical_trans_amount&#39;, &#39;trans_amount_3_month&#39;, &#39;abs&#39;, &#39;avg_price_last_12_month&#39;, &#39;max_cumulative_consume_later_1_month&#39;, &#39;pawns_auctions_trusts_consume_last_1_month&#39;, &#39;pawns_auctions_trusts_consume_last_6_month&#39;, &#39;status&#39;]
+
+object格式共有7个: [&#39;trade_no&#39;, &#39;bank_card_no&#39;, &#39;reg_preference_for_trad&#39;, &#39;source&#39;, &#39;id_name&#39;, &#39;latest_query_time&#39;, &#39;loans_latest_time&#39;]
+
+float64格式共有70个: [&#39;low_volume_percent&#39;, &#39;middle_volume_percent&#39;, &#39;trans_amount_increase_rate_lately&#39;, &#39;trans_activity_month&#39;, &#39;trans_activity_day&#39;, &#39;transd_mcc&#39;, &#39;trans_days_interval_filter&#39;, &#39;trans_days_interval&#39;, &#39;regional_mobility&#39;, &#39;student_feature&#39;, &#39;number_of_trans_from_2011&#39;, &#39;first_transaction_time&#39;, &#39;historical_trans_day&#39;, &#39;rank_trad_1_month&#39;, &#39;avg_consume_less_12_valid_month&#39;, &#39;top_trans_count_last_1_month&#39;, &#39;avg_price_top_last_12_valid_month&#39;, &#39;trans_top_time_last_1_month&#39;, &#39;trans_top_time_last_6_month&#39;, &#39;consume_top_time_last_1_month&#39;, &#39;consume_top_time_last_6_month&#39;, &#39;cross_consume_count_last_1_month&#39;, &#39;trans_fail_top_count_enum_last_1_month&#39;, &#39;trans_fail_top_count_enum_last_6_month&#39;, &#39;trans_fail_top_count_enum_last_12_month&#39;, &#39;consume_mini_time_last_1_month&#39;, &#39;max_consume_count_later_6_month&#39;, &#39;railway_consume_count_last_12_month&#39;, &#39;jewelry_consume_count_last_6_month&#39;, &#39;first_transaction_day&#39;, &#39;trans_day_last_12_month&#39;, &#39;apply_score&#39;, &#39;apply_credibility&#39;, &#39;query_org_count&#39;, &#39;query_finance_count&#39;, &#39;query_cash_count&#39;, &#39;query_sum_count&#39;, &#39;latest_one_month_apply&#39;, &#39;latest_three_month_apply&#39;, &#39;latest_six_month_apply&#39;, &#39;loans_score&#39;, &#39;loans_credibility_behavior&#39;, &#39;loans_count&#39;, &#39;loans_settle_count&#39;, &#39;loans_overdue_count&#39;, &#39;loans_org_count_behavior&#39;, &#39;consfin_org_count_behavior&#39;, &#39;loans_cash_count&#39;, &#39;latest_one_month_loan&#39;, &#39;latest_three_month_loan&#39;, &#39;latest_six_month_loan&#39;, &#39;history_suc_fee&#39;, &#39;history_fail_fee&#39;, &#39;latest_one_month_suc&#39;, &#39;latest_one_month_fail&#39;, &#39;loans_long_time&#39;, &#39;loans_credit_limit&#39;, &#39;loans_credibility_limit&#39;, &#39;loans_org_count_current&#39;, &#39;loans_product_count&#39;, &#39;loans_max_limit&#39;, &#39;loans_avg_limit&#39;, &#39;consfin_credit_limit&#39;, &#39;consfin_credibility&#39;, &#39;consfin_org_count_current&#39;, &#39;consfin_product_count&#39;, &#39;consfin_max_limit&#39;, &#39;consfin_avg_limit&#39;, &#39;latest_query_day&#39;, &#39;loans_latest_day&#39;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columns</span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;Unnamed: 0&#39;, &#39;custid&#39;, &#39;trade_no&#39;, &#39;bank_card_no&#39;,
+       &#39;low_volume_percent&#39;, &#39;middle_volume_percent&#39;,
+       &#39;take_amount_in_later_12_month_highest&#39;,
+       &#39;trans_amount_increase_rate_lately&#39;, &#39;trans_activity_month&#39;,
+       &#39;trans_activity_day&#39;, &#39;transd_mcc&#39;, &#39;trans_days_interval_filter&#39;,
+       &#39;trans_days_interval&#39;, &#39;regional_mobility&#39;, &#39;student_feature&#39;,
+       &#39;repayment_capability&#39;, &#39;is_high_user&#39;, &#39;number_of_trans_from_2011&#39;,
+       &#39;first_transaction_time&#39;, &#39;historical_trans_amount&#39;,
+       &#39;historical_trans_day&#39;, &#39;rank_trad_1_month&#39;, &#39;trans_amount_3_month&#39;,
+       &#39;avg_consume_less_12_valid_month&#39;, &#39;abs&#39;,
+       &#39;top_trans_count_last_1_month&#39;, &#39;avg_price_last_12_month&#39;,
+       &#39;avg_price_top_last_12_valid_month&#39;, &#39;reg_preference_for_trad&#39;,
+       &#39;trans_top_time_last_1_month&#39;, &#39;trans_top_time_last_6_month&#39;,
+       &#39;consume_top_time_last_1_month&#39;, &#39;consume_top_time_last_6_month&#39;,
+       &#39;cross_consume_count_last_1_month&#39;,
+       &#39;trans_fail_top_count_enum_last_1_month&#39;,
+       &#39;trans_fail_top_count_enum_last_6_month&#39;,
+       &#39;trans_fail_top_count_enum_last_12_month&#39;,
+       &#39;consume_mini_time_last_1_month&#39;,
+       &#39;max_cumulative_consume_later_1_month&#39;,
+       &#39;max_consume_count_later_6_month&#39;,
+       &#39;railway_consume_count_last_12_month&#39;,
+       &#39;pawns_auctions_trusts_consume_last_1_month&#39;,
+       &#39;pawns_auctions_trusts_consume_last_6_month&#39;,
+       &#39;jewelry_consume_count_last_6_month&#39;, &#39;status&#39;, &#39;source&#39;,
+       &#39;first_transaction_day&#39;, &#39;trans_day_last_12_month&#39;, &#39;id_name&#39;,
+       &#39;apply_score&#39;, &#39;apply_credibility&#39;, &#39;query_org_count&#39;,
+       &#39;query_finance_count&#39;, &#39;query_cash_count&#39;, &#39;query_sum_count&#39;,
+       &#39;latest_query_time&#39;, &#39;latest_one_month_apply&#39;,
+       &#39;latest_three_month_apply&#39;, &#39;latest_six_month_apply&#39;, &#39;loans_score&#39;,
+       &#39;loans_credibility_behavior&#39;, &#39;loans_count&#39;, &#39;loans_settle_count&#39;,
+       &#39;loans_overdue_count&#39;, &#39;loans_org_count_behavior&#39;,
+       &#39;consfin_org_count_behavior&#39;, &#39;loans_cash_count&#39;,
+       &#39;latest_one_month_loan&#39;, &#39;latest_three_month_loan&#39;,
+       &#39;latest_six_month_loan&#39;, &#39;history_suc_fee&#39;, &#39;history_fail_fee&#39;,
+       &#39;latest_one_month_suc&#39;, &#39;latest_one_month_fail&#39;, &#39;loans_long_time&#39;,
+       &#39;loans_latest_time&#39;, &#39;loans_credit_limit&#39;, &#39;loans_credibility_limit&#39;,
+       &#39;loans_org_count_current&#39;, &#39;loans_product_count&#39;, &#39;loans_max_limit&#39;,
+       &#39;loans_avg_limit&#39;, &#39;consfin_credit_limit&#39;, &#39;consfin_credibility&#39;,
+       &#39;consfin_org_count_current&#39;, &#39;consfin_product_count&#39;,
+       &#39;consfin_max_limit&#39;, &#39;consfin_avg_limit&#39;, &#39;latest_query_day&#39;,
+       &#39;loans_latest_day&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><h2 id="可视化各特征"><a href="#可视化各特征" class="headerlink" title="可视化各特征"></a>可视化各特征</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">name_list_1 = [</span><br><span class="line">       <span class="string">'low_volume_percent'</span>, <span class="string">'middle_volume_percent'</span>,</span><br><span class="line">       <span class="string">'take_amount_in_later_12_month_highest'</span>,</span><br><span class="line">       <span class="string">'trans_amount_increase_rate_lately'</span>, <span class="string">'trans_activity_month'</span>,</span><br><span class="line">       <span class="string">'trans_activity_day'</span>, <span class="string">'transd_mcc'</span>, <span class="string">'trans_days_interval_filter'</span>,</span><br><span class="line">       <span class="string">'trans_days_interval'</span>, <span class="string">'regional_mobility'</span>, <span class="string">'student_feature'</span>,</span><br><span class="line">       <span class="string">'repayment_capability'</span>, <span class="string">'is_high_user'</span>, <span class="string">'number_of_trans_from_2011'</span>,</span><br><span class="line">       <span class="string">'first_transaction_time'</span></span><br><span class="line">       ]</span><br><span class="line">name_list_2 = [</span><br><span class="line">       <span class="string">'historical_trans_amount'</span>,</span><br><span class="line">       <span class="string">'historical_trans_day'</span>, <span class="string">'rank_trad_1_month'</span>, <span class="string">'trans_amount_3_month'</span>,</span><br><span class="line">       <span class="string">'avg_consume_less_12_valid_month'</span>, <span class="string">'abs'</span>,</span><br><span class="line">       <span class="string">'top_trans_count_last_1_month'</span>, <span class="string">'avg_price_last_12_month'</span>,</span><br><span class="line">       <span class="string">'avg_price_top_last_12_valid_month'</span>, <span class="string">'reg_preference_for_trad'</span>,</span><br><span class="line">       <span class="string">'trans_top_time_last_1_month'</span>, <span class="string">'trans_top_time_last_6_month'</span>,</span><br><span class="line">       <span class="string">'consume_top_time_last_1_month'</span>, <span class="string">'consume_top_time_last_6_month'</span>,</span><br><span class="line">       <span class="string">'cross_consume_count_last_1_month'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_3 = [</span><br><span class="line">       <span class="string">'trans_fail_top_count_enum_last_1_month'</span>,</span><br><span class="line">       <span class="string">'trans_fail_top_count_enum_last_6_month'</span>,</span><br><span class="line">       <span class="string">'trans_fail_top_count_enum_last_12_month'</span>,</span><br><span class="line">       <span class="string">'consume_mini_time_last_1_month'</span>,</span><br><span class="line">       <span class="string">'max_cumulative_consume_later_1_month'</span>,</span><br><span class="line">       <span class="string">'max_consume_count_later_6_month'</span>,</span><br><span class="line">       <span class="string">'railway_consume_count_last_12_month'</span>,</span><br><span class="line">       <span class="string">'pawns_auctions_trusts_consume_last_1_month'</span>,</span><br><span class="line">       <span class="string">'pawns_auctions_trusts_consume_last_6_month'</span>,</span><br><span class="line">       <span class="string">'jewelry_consume_count_last_6_month'</span>, </span><br><span class="line">       <span class="string">'first_transaction_day'</span>, <span class="string">'trans_day_last_12_month'</span>, <span class="string">'apply_score'</span>,</span><br><span class="line">       <span class="string">'apply_credibility'</span>, <span class="string">'query_org_count'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_4 = [</span><br><span class="line">      <span class="string">'query_finance_count'</span>, <span class="string">'query_cash_count'</span>, <span class="string">'query_sum_count'</span>,</span><br><span class="line">       <span class="string">'latest_query_time'</span>, <span class="string">'latest_one_month_apply'</span>,</span><br><span class="line">       <span class="string">'latest_three_month_apply'</span>, <span class="string">'latest_six_month_apply'</span>, <span class="string">'loans_score'</span>,</span><br><span class="line">       <span class="string">'loans_credibility_behavior'</span>, <span class="string">'loans_count'</span>, <span class="string">'loans_settle_count'</span>,</span><br><span class="line">       <span class="string">'loans_overdue_count'</span>, <span class="string">'loans_org_count_behavior'</span>,</span><br><span class="line">       <span class="string">'consfin_org_count_behavior'</span>, <span class="string">'loans_cash_count'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_5 = [</span><br><span class="line">      <span class="string">'latest_one_month_loan'</span>, <span class="string">'latest_three_month_loan'</span>,</span><br><span class="line">       <span class="string">'latest_six_month_loan'</span>, <span class="string">'history_suc_fee'</span>, <span class="string">'history_fail_fee'</span>,</span><br><span class="line">       <span class="string">'latest_one_month_suc'</span>, <span class="string">'latest_one_month_fail'</span>, <span class="string">'loans_long_time'</span>,</span><br><span class="line">       <span class="string">'loans_latest_time'</span>, <span class="string">'loans_credit_limit'</span>, <span class="string">'loans_credibility_limit'</span>,</span><br><span class="line">       <span class="string">'loans_org_count_current'</span>, <span class="string">'loans_product_count'</span>, <span class="string">'loans_max_limit'</span>,</span><br><span class="line">       <span class="string">'loans_avg_limit'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_6 = [</span><br><span class="line">      <span class="string">'consfin_credit_limit'</span>, <span class="string">'consfin_credibility'</span>,</span><br><span class="line">       <span class="string">'consfin_org_count_current'</span>, <span class="string">'consfin_product_count'</span>,</span><br><span class="line">       <span class="string">'consfin_max_limit'</span>, <span class="string">'consfin_avg_limit'</span>, <span class="string">'latest_query_day'</span>,</span><br><span class="line">       <span class="string">'loans_latest_day'</span></span><br><span class="line">       ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_1):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_1.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_1.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_2):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_2.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_2.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_3):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_3.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_3.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_4):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_4.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_4.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_5):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_5.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_5.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">3</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_6):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_6.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_6.png" alt></p>
+<p>从以上分布图可以看出，连续型数据的特征基本上符合正态分布，指数分布或者泊松分布等，但在[‘rank_trad_1_month’,’trans_top_time_last_1_month’,’trans_top_time_last_6_month’,’consume_top_time_last_1_month’,’consume_top_time_last_6_month’,’loans_credit_limit’,’loans_credibility_limit’,’loans_max_limit’,’consfin_credibility’]这几个特征上出现数据于最左最右位置会出现骤升。从业务层面考虑，暂时未得出满意结论，待确认特征取数逻辑后再分析。<br>  还有，’avg_price_last_12_month’,’consfin_credit_limit’这两个特征虽然是连续型特征，但由图上看，出现标签分段，考虑继续探索，查看是否存在分段。</p>
+<p>  另外几个离散型特征，如’reg_preference_for_trad’,’regional_mobility’等，在标签status上区别明显，感觉是对模型有用的特征。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">'consfin_credit_limit'</span>,x = <span class="string">'status'</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_7.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_7.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">'avg_price_last_12_month'</span>,x = <span class="string">'status'</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_8.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_8.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">'rank_trad_1_month'</span>,x = <span class="string">'status'</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_9.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_9.png" alt></p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><p>将所有object格式的改为数值格式，其中有部分无用特征则可直接删除</p>
+<p>由上可看出需处理包含：[‘trade_no’, ‘bank_card_no’, ‘reg_preference_for_trad’, ‘source’, ‘id_name’, ‘latest_query_time’, ‘loans_latest_time’]</p>
+<h3 id="无用特征删除"><a href="#无用特征删除" class="headerlink" title="无用特征删除"></a>无用特征删除</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'source'</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>xs    4754
+Name: source, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">to_drop = [<span class="string">'trade_no'</span>, <span class="string">'bank_card_no'</span>, <span class="string">'student_feature'</span>,<span class="string">'cross_consume_count_last_1_month'</span>, <span class="string">'id_name'</span>, <span class="string">'source'</span>]</span><br><span class="line">df = df.drop(to_drop, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="缺失填充"><a href="#缺失填充" class="headerlink" title="缺失填充"></a>缺失填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'reg_preference_for_trad'</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>一线城市    3403
+三线城市    1064
+境外       150
+二线城市     131
+其他城市       4
+NaN        2
+Name: reg_preference_for_trad, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'reg_preference_for_trad'</span>].fillna(<span class="string">'其他城市'</span>,inplace = <span class="literal">True</span>)</span><br><span class="line">df[<span class="string">'reg_preference_for_trad'</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>一线城市    3403
+三线城市    1064
+境外       150
+二线城市     131
+其他城市       6
+Name: reg_preference_for_trad, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().sum().sort_values(ascending = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>latest_three_month_apply                      304
+query_finance_count                           304
+latest_six_month_apply                        304
+latest_query_time                             304
+query_sum_count                               304
+query_cash_count                              304
+latest_one_month_apply                        304
+query_org_count                               304
+apply_credibility                             304
+apply_score                                   304
+latest_query_day                              304
+latest_three_month_loan                       297
+loans_score                                   297
+loans_credibility_behavior                    297
+loans_count                                   297
+loans_settle_count                            297
+loans_overdue_count                           297
+loans_org_count_behavior                      297
+consfin_org_count_behavior                    297
+loans_cash_count                              297
+latest_one_month_loan                         297
+loans_latest_day                              297
+latest_six_month_loan                         297
+loans_product_count                           297
+history_suc_fee                               297
+consfin_avg_limit                             297
+consfin_product_count                         297
+consfin_org_count_current                     297
+consfin_credibility                           297
+consfin_credit_limit                          297
+                                             ... 
+trans_amount_increase_rate_lately               3
+trans_days_interval                             2
+regional_mobility                               2
+number_of_trans_from_2011                       2
+middle_volume_percent                           2
+transd_mcc                                      2
+trans_activity_day                              2
+trans_activity_month                            2
+low_volume_percent                              2
+historical_trans_day                            2
+first_transaction_time                          2
+first_transaction_day                           2
+rank_trad_1_month                               2
+avg_consume_less_12_valid_month                 2
+trans_day_last_12_month                         2
+top_trans_count_last_1_month                    2
+max_cumulative_consume_later_1_month            0
+custid                                          0
+status                                          0
+take_amount_in_later_12_month_highest           0
+pawns_auctions_trusts_consume_last_6_month      0
+pawns_auctions_trusts_consume_last_1_month      0
+reg_preference_for_trad                         0
+historical_trans_amount                         0
+avg_price_last_12_month                         0
+abs                                             0
+repayment_capability                            0
+is_high_user                                    0
+trans_amount_3_month                            0
+Unnamed: 0                                      0
+Length: 84, dtype: int64
+</code></pre><h2 id="特征间探索"><a href="#特征间探索" class="headerlink" title="特征间探索"></a>特征间探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">corr = df[:].corr()</span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sb.heatmap(corr)</span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_10.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img src="/img/2019-08-01_金融数据描述_10.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">corr</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>custid</th>
+      <th>low_volume_percent</th>
+      <th>middle_volume_percent</th>
+      <th>take_amount_in_later_12_month_highest</th>
+      <th>trans_amount_increase_rate_lately</th>
+      <th>trans_activity_month</th>
+      <th>trans_activity_day</th>
+      <th>transd_mcc</th>
+      <th>trans_days_interval_filter</th>
+      <th>...</th>
+      <th>loans_max_limit</th>
+      <th>loans_avg_limit</th>
+      <th>consfin_credit_limit</th>
+      <th>consfin_credibility</th>
+      <th>consfin_org_count_current</th>
+      <th>consfin_product_count</th>
+      <th>consfin_max_limit</th>
+      <th>consfin_avg_limit</th>
+      <th>latest_query_day</th>
+      <th>loans_latest_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Unnamed: 0</th>
+      <td>1.000000</td>
+      <td>-0.007628</td>
+      <td>0.002861</td>
+      <td>-0.022844</td>
+      <td>-0.019728</td>
+      <td>0.014076</td>
+      <td>-0.021715</td>
+      <td>-0.001027</td>
+      <td>-0.006975</td>
+      <td>-0.021338</td>
+      <td>...</td>
+      <td>0.012189</td>
+      <td>-0.004457</td>
+      <td>0.005967</td>
+      <td>0.007746</td>
+      <td>0.012062</td>
+      <td>0.009583</td>
+      <td>0.004020</td>
+      <td>0.008860</td>
+      <td>0.020774</td>
+      <td>0.026387</td>
+    </tr>
+    <tr>
+      <th>custid</th>
+      <td>-0.007628</td>
+      <td>1.000000</td>
+      <td>0.031430</td>
+      <td>0.090599</td>
+      <td>-0.030282</td>
+      <td>-0.001299</td>
+      <td>-0.118811</td>
+      <td>-0.216062</td>
+      <td>-0.147485</td>
+      <td>0.144513</td>
+      <td>...</td>
+      <td>-0.236185</td>
+      <td>-0.152017</td>
+      <td>-0.093180</td>
+      <td>-0.041979</td>
+      <td>-0.129297</td>
+      <td>-0.139197</td>
+      <td>-0.115324</td>
+      <td>-0.076767</td>
+      <td>0.099208</td>
+      <td>0.098628</td>
+    </tr>
+    <tr>
+      <th>low_volume_percent</th>
+      <td>0.002861</td>
+      <td>0.031430</td>
+      <td>1.000000</td>
+      <td>-0.151504</td>
+      <td>-0.066047</td>
+      <td>0.005331</td>
+      <td>0.023895</td>
+      <td>-0.093754</td>
+      <td>-0.095780</td>
+      <td>0.054680</td>
+      <td>...</td>
+      <td>-0.140173</td>
+      <td>-0.128145</td>
+      <td>-0.083987</td>
+      <td>-0.032534</td>
+      <td>-0.074851</td>
+      <td>-0.067226</td>
+      <td>-0.096647</td>
+      <td>-0.094627</td>
+      <td>0.069301</td>
+      <td>0.047500</td>
+    </tr>
+    <tr>
+      <th>middle_volume_percent</th>
+      <td>-0.022844</td>
+      <td>0.090599</td>
+      <td>-0.151504</td>
+      <td>1.000000</td>
+      <td>-0.135050</td>
+      <td>0.001608</td>
+      <td>-0.031743</td>
+      <td>-0.055491</td>
+      <td>-0.094736</td>
+      <td>0.010146</td>
+      <td>...</td>
+      <td>-0.145599</td>
+      <td>-0.110230</td>
+      <td>-0.153241</td>
+      <td>0.003266</td>
+      <td>-0.007761</td>
+      <td>-0.014847</td>
+      <td>-0.169575</td>
+      <td>-0.174126</td>
+      <td>-0.001628</td>
+      <td>-0.003253</td>
+    </tr>
+    <tr>
+      <th>take_amount_in_later_12_month_highest</th>
+      <td>-0.019728</td>
+      <td>-0.030282</td>
+      <td>-0.066047</td>
+      <td>-0.135050</td>
+      <td>1.000000</td>
+      <td>-0.006699</td>
+      <td>0.060997</td>
+      <td>0.112582</td>
+      <td>0.181435</td>
+      <td>-0.055318</td>
+      <td>...</td>
+      <td>0.071798</td>
+      <td>0.038880</td>
+      <td>0.039328</td>
+      <td>0.015841</td>
+      <td>0.021387</td>
+      <td>0.021337</td>
+      <td>0.054433</td>
+      <td>0.040634</td>
+      <td>-0.000570</td>
+      <td>-0.010231</td>
+    </tr>
+    <tr>
+      <th>trans_amount_increase_rate_lately</th>
+      <td>0.014076</td>
+      <td>-0.001299</td>
+      <td>0.005331</td>
+      <td>0.001608</td>
+      <td>-0.006699</td>
+      <td>1.000000</td>
+      <td>0.015389</td>
+      <td>-0.003061</td>
+      <td>-0.011644</td>
+      <td>0.013220</td>
+      <td>...</td>
+      <td>0.007119</td>
+      <td>0.000119</td>
+      <td>0.028868</td>
+      <td>0.006174</td>
+      <td>-0.019901</td>
+      <td>-0.019603</td>
+      <td>0.007123</td>
+      <td>0.040865</td>
+      <td>-0.001457</td>
+      <td>0.027221</td>
+    </tr>
+    <tr>
+      <th>trans_activity_month</th>
+      <td>-0.021715</td>
+      <td>-0.118811</td>
+      <td>0.023895</td>
+      <td>-0.031743</td>
+      <td>0.060997</td>
+      <td>0.015389</td>
+      <td>1.000000</td>
+      <td>0.063373</td>
+      <td>0.069272</td>
+      <td>-0.091630</td>
+      <td>...</td>
+      <td>0.061847</td>
+      <td>0.037275</td>
+      <td>-0.036822</td>
+      <td>-0.000400</td>
+      <td>0.003332</td>
+      <td>0.005534</td>
+      <td>-0.022388</td>
+      <td>-0.043764</td>
+      <td>-0.024161</td>
+      <td>-0.014880</td>
+    </tr>
+    <tr>
+      <th>trans_activity_day</th>
+      <td>-0.001027</td>
+      <td>-0.216062</td>
+      <td>-0.093754</td>
+      <td>-0.055491</td>
+      <td>0.112582</td>
+      <td>-0.003061</td>
+      <td>0.063373</td>
+      <td>1.000000</td>
+      <td>0.674547</td>
+      <td>-0.491304</td>
+      <td>...</td>
+      <td>0.445155</td>
+      <td>0.202242</td>
+      <td>0.096622</td>
+      <td>0.181157</td>
+      <td>0.553486</td>
+      <td>0.551140</td>
+      <td>0.224509</td>
+      <td>0.085255</td>
+      <td>-0.188965</td>
+      <td>-0.299110</td>
+    </tr>
+    <tr>
+      <th>transd_mcc</th>
+      <td>-0.006975</td>
+      <td>-0.147485</td>
+      <td>-0.095780</td>
+      <td>-0.094736</td>
+      <td>0.181435</td>
+      <td>-0.011644</td>
+      <td>0.069272</td>
+      <td>0.674547</td>
+      <td>1.000000</td>
+      <td>-0.407126</td>
+      <td>...</td>
+      <td>0.313715</td>
+      <td>0.165959</td>
+      <td>0.066250</td>
+      <td>0.131905</td>
+      <td>0.371197</td>
+      <td>0.374660</td>
+      <td>0.156951</td>
+      <td>0.057663</td>
+      <td>-0.120330</td>
+      <td>-0.211593</td>
+    </tr>
+    <tr>
+      <th>trans_days_interval_filter</th>
+      <td>-0.021338</td>
+      <td>0.144513</td>
+      <td>0.054680</td>
+      <td>0.010146</td>
+      <td>-0.055318</td>
+      <td>0.013220</td>
+      <td>-0.091630</td>
+      <td>-0.491304</td>
+      <td>-0.407126</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>-0.222970</td>
+      <td>-0.118522</td>
+      <td>-0.055205</td>
+      <td>-0.142221</td>
+      <td>-0.287044</td>
+      <td>-0.286212</td>
+      <td>-0.111345</td>
+      <td>-0.045801</td>
+      <td>0.069560</td>
+      <td>0.163433</td>
+    </tr>
+    <tr>
+      <th>trans_days_interval</th>
+      <td>-0.006297</td>
+      <td>0.200145</td>
+      <td>0.062421</td>
+      <td>-0.000383</td>
+      <td>-0.053329</td>
+      <td>0.000521</td>
+      <td>-0.151579</td>
+      <td>-0.542118</td>
+      <td>-0.447308</td>
+      <td>0.690819</td>
+      <td>...</td>
+      <td>-0.271875</td>
+      <td>-0.163049</td>
+      <td>-0.034716</td>
+      <td>-0.102588</td>
+      <td>-0.285654</td>
+      <td>-0.286510</td>
+      <td>-0.105000</td>
+      <td>-0.024740</td>
+      <td>0.102343</td>
+      <td>0.178628</td>
+    </tr>
+    <tr>
+      <th>regional_mobility</th>
+      <td>0.011694</td>
+      <td>-0.134926</td>
+      <td>-0.042939</td>
+      <td>0.009671</td>
+      <td>0.024089</td>
+      <td>-0.026960</td>
+      <td>-0.219911</td>
+      <td>0.143697</td>
+      <td>0.114936</td>
+      <td>-0.124350</td>
+      <td>...</td>
+      <td>0.099696</td>
+      <td>0.062712</td>
+      <td>0.092796</td>
+      <td>0.054084</td>
+      <td>0.147120</td>
+      <td>0.145322</td>
+      <td>0.091150</td>
+      <td>0.079245</td>
+      <td>-0.051839</td>
+      <td>-0.107139</td>
+    </tr>
+    <tr>
+      <th>student_feature</th>
+      <td>0.014227</td>
+      <td>0.026639</td>
+      <td>-0.007327</td>
+      <td>0.018852</td>
+      <td>-0.013524</td>
+      <td>-0.002682</td>
+      <td>0.004966</td>
+      <td>0.011653</td>
+      <td>0.005921</td>
+      <td>-0.005412</td>
+      <td>...</td>
+      <td>0.021982</td>
+      <td>0.007634</td>
+      <td>0.001860</td>
+      <td>0.009800</td>
+      <td>0.020368</td>
+      <td>0.017777</td>
+      <td>0.000096</td>
+      <td>0.004799</td>
+      <td>-0.020274</td>
+      <td>-0.031571</td>
+    </tr>
+    <tr>
+      <th>repayment_capability</th>
+      <td>-0.006726</td>
+      <td>-0.026254</td>
+      <td>-0.041522</td>
+      <td>-0.178436</td>
+      <td>0.055174</td>
+      <td>-0.000572</td>
+      <td>0.024737</td>
+      <td>0.189494</td>
+      <td>0.115434</td>
+      <td>-0.048998</td>
+      <td>...</td>
+      <td>0.128100</td>
+      <td>0.066266</td>
+      <td>0.052900</td>
+      <td>0.007068</td>
+      <td>0.046341</td>
+      <td>0.046471</td>
+      <td>0.063720</td>
+      <td>0.052120</td>
+      <td>-0.020964</td>
+      <td>-0.049951</td>
+    </tr>
+    <tr>
+      <th>is_high_user</th>
+      <td>-0.002995</td>
+      <td>-0.004640</td>
+      <td>0.018546</td>
+      <td>-0.029172</td>
+      <td>0.068763</td>
+      <td>-0.002017</td>
+      <td>0.044231</td>
+      <td>-0.034766</td>
+      <td>-0.080892</td>
+      <td>0.146678</td>
+      <td>...</td>
+      <td>-0.006073</td>
+      <td>0.014809</td>
+      <td>0.001286</td>
+      <td>-0.000752</td>
+      <td>-0.020497</td>
+      <td>-0.017732</td>
+      <td>0.007764</td>
+      <td>0.013155</td>
+      <td>-0.011908</td>
+      <td>-0.015299</td>
+    </tr>
+    <tr>
+      <th>number_of_trans_from_2011</th>
+      <td>0.016355</td>
+      <td>-0.276856</td>
+      <td>-0.031668</td>
+      <td>-0.084995</td>
+      <td>0.056183</td>
+      <td>-0.013609</td>
+      <td>-0.198322</td>
+      <td>0.286353</td>
+      <td>0.262917</td>
+      <td>-0.181413</td>
+      <td>...</td>
+      <td>0.195444</td>
+      <td>0.142227</td>
+      <td>0.105527</td>
+      <td>0.066191</td>
+      <td>0.212621</td>
+      <td>0.215217</td>
+      <td>0.138342</td>
+      <td>0.088776</td>
+      <td>-0.087938</td>
+      <td>-0.140635</td>
+    </tr>
+    <tr>
+      <th>historical_trans_amount</th>
+      <td>0.002346</td>
+      <td>-0.179652</td>
+      <td>-0.117333</td>
+      <td>-0.255846</td>
+      <td>0.102959</td>
+      <td>-0.002527</td>
+      <td>0.016522</td>
+      <td>0.526801</td>
+      <td>0.392433</td>
+      <td>-0.254563</td>
+      <td>...</td>
+      <td>0.324514</td>
+      <td>0.165218</td>
+      <td>0.137554</td>
+      <td>0.073505</td>
+      <td>0.288324</td>
+      <td>0.288420</td>
+      <td>0.201670</td>
+      <td>0.138920</td>
+      <td>-0.087267</td>
+      <td>-0.156048</td>
+    </tr>
+    <tr>
+      <th>historical_trans_day</th>
+      <td>0.004245</td>
+      <td>-0.345875</td>
+      <td>-0.068345</td>
+      <td>-0.116128</td>
+      <td>0.112908</td>
+      <td>-0.006987</td>
+      <td>0.052108</td>
+      <td>0.855832</td>
+      <td>0.603820</td>
+      <td>-0.424616</td>
+      <td>...</td>
+      <td>0.430792</td>
+      <td>0.223623</td>
+      <td>0.111262</td>
+      <td>0.142560</td>
+      <td>0.472101</td>
+      <td>0.473890</td>
+      <td>0.219427</td>
+      <td>0.097498</td>
+      <td>-0.171007</td>
+      <td>-0.267034</td>
+    </tr>
+    <tr>
+      <th>rank_trad_1_month</th>
+      <td>0.011515</td>
+      <td>0.116798</td>
+      <td>0.102996</td>
+      <td>0.139914</td>
+      <td>-0.089095</td>
+      <td>0.028153</td>
+      <td>-0.017110</td>
+      <td>-0.517923</td>
+      <td>-0.481565</td>
+      <td>0.345540</td>
+      <td>...</td>
+      <td>-0.235028</td>
+      <td>-0.121879</td>
+      <td>-0.120020</td>
+      <td>-0.133787</td>
+      <td>-0.328297</td>
+      <td>-0.327323</td>
+      <td>-0.180749</td>
+      <td>-0.115613</td>
+      <td>0.139572</td>
+      <td>0.243659</td>
+    </tr>
+    <tr>
+      <th>trans_amount_3_month</th>
+      <td>-0.003329</td>
+      <td>-0.069252</td>
+      <td>-0.063526</td>
+      <td>-0.189438</td>
+      <td>0.074279</td>
+      <td>-0.003598</td>
+      <td>0.010864</td>
+      <td>0.293735</td>
+      <td>0.250140</td>
+      <td>-0.139654</td>
+      <td>...</td>
+      <td>0.186909</td>
+      <td>0.084463</td>
+      <td>0.065007</td>
+      <td>0.033856</td>
+      <td>0.151395</td>
+      <td>0.153457</td>
+      <td>0.094556</td>
+      <td>0.063275</td>
+      <td>-0.044342</td>
+      <td>-0.099134</td>
+    </tr>
+    <tr>
+      <th>avg_consume_less_12_valid_month</th>
+      <td>-0.001742</td>
+      <td>-0.087905</td>
+      <td>-0.042251</td>
+      <td>-0.154257</td>
+      <td>0.031360</td>
+      <td>0.006201</td>
+      <td>0.014532</td>
+      <td>0.081550</td>
+      <td>0.194729</td>
+      <td>-0.017535</td>
+      <td>...</td>
+      <td>0.054239</td>
+      <td>0.010832</td>
+      <td>0.024610</td>
+      <td>0.026514</td>
+      <td>0.103333</td>
+      <td>0.101638</td>
+      <td>0.044864</td>
+      <td>0.011955</td>
+      <td>-0.069481</td>
+      <td>-0.090181</td>
+    </tr>
+    <tr>
+      <th>abs</th>
+      <td>-0.004830</td>
+      <td>-0.059940</td>
+      <td>-0.059972</td>
+      <td>-0.247023</td>
+      <td>0.081978</td>
+      <td>-0.003474</td>
+      <td>0.038276</td>
+      <td>0.306292</td>
+      <td>0.160103</td>
+      <td>-0.054408</td>
+      <td>...</td>
+      <td>0.152274</td>
+      <td>0.105389</td>
+      <td>0.072716</td>
+      <td>0.009934</td>
+      <td>0.071542</td>
+      <td>0.074592</td>
+      <td>0.102727</td>
+      <td>0.090651</td>
+      <td>-0.042772</td>
+      <td>-0.065586</td>
+    </tr>
+    <tr>
+      <th>top_trans_count_last_1_month</th>
+      <td>0.021195</td>
+      <td>0.101220</td>
+      <td>0.037765</td>
+      <td>0.059410</td>
+      <td>-0.063713</td>
+      <td>0.029701</td>
+      <td>-0.026923</td>
+      <td>-0.503568</td>
+      <td>-0.475823</td>
+      <td>0.381422</td>
+      <td>...</td>
+      <td>-0.199205</td>
+      <td>-0.082819</td>
+      <td>-0.071977</td>
+      <td>-0.138804</td>
+      <td>-0.323863</td>
+      <td>-0.324179</td>
+      <td>-0.128756</td>
+      <td>-0.058697</td>
+      <td>0.140451</td>
+      <td>0.247943</td>
+    </tr>
+    <tr>
+      <th>avg_price_last_12_month</th>
+      <td>0.011454</td>
+      <td>-0.090752</td>
+      <td>-0.286213</td>
+      <td>-0.556220</td>
+      <td>0.129908</td>
+      <td>-0.004808</td>
+      <td>-0.006858</td>
+      <td>0.068127</td>
+      <td>0.067431</td>
+      <td>-0.003254</td>
+      <td>...</td>
+      <td>0.204154</td>
+      <td>0.186553</td>
+      <td>0.183277</td>
+      <td>-0.017057</td>
+      <td>0.019580</td>
+      <td>0.017570</td>
+      <td>0.179284</td>
+      <td>0.205885</td>
+      <td>-0.033386</td>
+      <td>-0.020140</td>
+    </tr>
+    <tr>
+      <th>avg_price_top_last_12_valid_month</th>
+      <td>-0.018637</td>
+      <td>0.124158</td>
+      <td>0.509637</td>
+      <td>0.369498</td>
+      <td>-0.123202</td>
+      <td>-0.030556</td>
+      <td>0.011839</td>
+      <td>-0.138470</td>
+      <td>-0.145411</td>
+      <td>0.064464</td>
+      <td>...</td>
+      <td>-0.316923</td>
+      <td>-0.285338</td>
+      <td>-0.172475</td>
+      <td>-0.002851</td>
+      <td>-0.087684</td>
+      <td>-0.080339</td>
+      <td>-0.197348</td>
+      <td>-0.195194</td>
+      <td>0.079399</td>
+      <td>0.062422</td>
+    </tr>
+    <tr>
+      <th>trans_top_time_last_1_month</th>
+      <td>-0.007772</td>
+      <td>-0.003624</td>
+      <td>-0.023020</td>
+      <td>-0.015316</td>
+      <td>0.028547</td>
+      <td>-0.021723</td>
+      <td>0.018931</td>
+      <td>0.092705</td>
+      <td>0.143620</td>
+      <td>-0.127328</td>
+      <td>...</td>
+      <td>0.039372</td>
+      <td>0.019334</td>
+      <td>0.005990</td>
+      <td>0.060674</td>
+      <td>0.059770</td>
+      <td>0.056594</td>
+      <td>0.021747</td>
+      <td>0.000811</td>
+      <td>-0.030739</td>
+      <td>-0.069952</td>
+    </tr>
+    <tr>
+      <th>trans_top_time_last_6_month</th>
+      <td>0.012229</td>
+      <td>0.063470</td>
+      <td>0.064055</td>
+      <td>0.025356</td>
+      <td>-0.079647</td>
+      <td>0.032999</td>
+      <td>-0.016856</td>
+      <td>-0.519642</td>
+      <td>-0.400228</td>
+      <td>0.541678</td>
+      <td>...</td>
+      <td>-0.227717</td>
+      <td>-0.111353</td>
+      <td>-0.055343</td>
+      <td>-0.151634</td>
+      <td>-0.336984</td>
+      <td>-0.334724</td>
+      <td>-0.106172</td>
+      <td>-0.042912</td>
+      <td>0.088539</td>
+      <td>0.199473</td>
+    </tr>
+    <tr>
+      <th>consume_top_time_last_1_month</th>
+      <td>-0.012425</td>
+      <td>-0.013828</td>
+      <td>-0.030325</td>
+      <td>-0.024816</td>
+      <td>0.022475</td>
+      <td>-0.020937</td>
+      <td>0.021517</td>
+      <td>0.126348</td>
+      <td>0.162267</td>
+      <td>-0.155562</td>
+      <td>...</td>
+      <td>0.053634</td>
+      <td>0.023311</td>
+      <td>0.018442</td>
+      <td>0.073859</td>
+      <td>0.083782</td>
+      <td>0.080835</td>
+      <td>0.038965</td>
+      <td>0.012452</td>
+      <td>-0.044495</td>
+      <td>-0.078152</td>
+    </tr>
+    <tr>
+      <th>consume_top_time_last_6_month</th>
+      <td>0.010297</td>
+      <td>0.071615</td>
+      <td>0.026853</td>
+      <td>0.033989</td>
+      <td>-0.062038</td>
+      <td>0.032106</td>
+      <td>-0.009154</td>
+      <td>-0.506739</td>
+      <td>-0.371122</td>
+      <td>0.489491</td>
+      <td>...</td>
+      <td>-0.228478</td>
+      <td>-0.109085</td>
+      <td>-0.055605</td>
+      <td>-0.128403</td>
+      <td>-0.331808</td>
+      <td>-0.329305</td>
+      <td>-0.105383</td>
+      <td>-0.042412</td>
+      <td>0.083349</td>
+      <td>0.194636</td>
+    </tr>
+    <tr>
+      <th>cross_consume_count_last_1_month</th>
+      <td>-0.019612</td>
+      <td>-0.015749</td>
+      <td>0.056716</td>
+      <td>-0.076003</td>
+      <td>0.042310</td>
+      <td>-0.004524</td>
+      <td>-0.001588</td>
+      <td>0.217779</td>
+      <td>0.236684</td>
+      <td>-0.098826</td>
+      <td>...</td>
+      <td>0.101269</td>
+      <td>0.038369</td>
+      <td>0.032169</td>
+      <td>0.024935</td>
+      <td>0.129515</td>
+      <td>0.131031</td>
+      <td>0.041163</td>
+      <td>0.025667</td>
+      <td>-0.026850</td>
+      <td>-0.081532</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>loans_score</th>
+      <td>-0.014716</td>
+      <td>-0.006276</td>
+      <td>-0.007019</td>
+      <td>-0.039519</td>
+      <td>-0.003928</td>
+      <td>0.010481</td>
+      <td>-0.020418</td>
+      <td>-0.211471</td>
+      <td>-0.141698</td>
+      <td>0.105373</td>
+      <td>...</td>
+      <td>-0.145502</td>
+      <td>-0.071344</td>
+      <td>0.076157</td>
+      <td>-0.043698</td>
+      <td>-0.242594</td>
+      <td>-0.249384</td>
+      <td>-0.004854</td>
+      <td>0.085289</td>
+      <td>0.035587</td>
+      <td>-0.019444</td>
+    </tr>
+    <tr>
+      <th>loans_credibility_behavior</th>
+      <td>-0.000191</td>
+      <td>-0.023587</td>
+      <td>0.037414</td>
+      <td>-0.031636</td>
+      <td>-0.017790</td>
+      <td>-0.003788</td>
+      <td>0.002694</td>
+      <td>-0.059242</td>
+      <td>-0.028579</td>
+      <td>0.016791</td>
+      <td>...</td>
+      <td>-0.109592</td>
+      <td>-0.059538</td>
+      <td>0.113228</td>
+      <td>0.202241</td>
+      <td>0.132995</td>
+      <td>0.141105</td>
+      <td>0.112848</td>
+      <td>0.110999</td>
+      <td>0.014235</td>
+      <td>-0.034587</td>
+    </tr>
+    <tr>
+      <th>loans_count</th>
+      <td>0.008971</td>
+      <td>-0.104423</td>
+      <td>-0.103643</td>
+      <td>0.093372</td>
+      <td>0.034853</td>
+      <td>-0.011057</td>
+      <td>0.010844</td>
+      <td>0.713700</td>
+      <td>0.433028</td>
+      <td>-0.340780</td>
+      <td>...</td>
+      <td>0.454809</td>
+      <td>0.167113</td>
+      <td>0.097746</td>
+      <td>0.189068</td>
+      <td>0.669975</td>
+      <td>0.658099</td>
+      <td>0.240708</td>
+      <td>0.067635</td>
+      <td>-0.194495</td>
+      <td>-0.388366</td>
+    </tr>
+    <tr>
+      <th>loans_settle_count</th>
+      <td>0.008509</td>
+      <td>-0.106395</td>
+      <td>-0.115451</td>
+      <td>0.084747</td>
+      <td>0.044691</td>
+      <td>-0.011398</td>
+      <td>0.006203</td>
+      <td>0.723008</td>
+      <td>0.440667</td>
+      <td>-0.346732</td>
+      <td>...</td>
+      <td>0.466131</td>
+      <td>0.175771</td>
+      <td>0.109141</td>
+      <td>0.183622</td>
+      <td>0.633814</td>
+      <td>0.618343</td>
+      <td>0.239062</td>
+      <td>0.079620</td>
+      <td>-0.198341</td>
+      <td>-0.374859</td>
+    </tr>
+    <tr>
+      <th>loans_overdue_count</th>
+      <td>-0.002123</td>
+      <td>-0.047870</td>
+      <td>0.003258</td>
+      <td>0.055341</td>
+      <td>-0.018406</td>
+      <td>-0.009483</td>
+      <td>0.026175</td>
+      <td>0.319103</td>
+      <td>0.193574</td>
+      <td>-0.145065</td>
+      <td>...</td>
+      <td>0.189896</td>
+      <td>0.071337</td>
+      <td>0.001805</td>
+      <td>0.089767</td>
+      <td>0.389047</td>
+      <td>0.396295</td>
+      <td>0.109103</td>
+      <td>-0.020359</td>
+      <td>-0.069116</td>
+      <td>-0.166293</td>
+    </tr>
+    <tr>
+      <th>loans_org_count_behavior</th>
+      <td>0.002662</td>
+      <td>-0.107997</td>
+      <td>-0.113256</td>
+      <td>0.086219</td>
+      <td>0.020780</td>
+      <td>-0.012629</td>
+      <td>0.014655</td>
+      <td>0.698811</td>
+      <td>0.451913</td>
+      <td>-0.330187</td>
+      <td>...</td>
+      <td>0.462677</td>
+      <td>0.133557</td>
+      <td>0.065915</td>
+      <td>0.231726</td>
+      <td>0.799828</td>
+      <td>0.784147</td>
+      <td>0.257087</td>
+      <td>0.038651</td>
+      <td>-0.216354</td>
+      <td>-0.402870</td>
+    </tr>
+    <tr>
+      <th>consfin_org_count_behavior</th>
+      <td>0.012062</td>
+      <td>-0.129297</td>
+      <td>-0.074851</td>
+      <td>-0.007761</td>
+      <td>0.021387</td>
+      <td>-0.019901</td>
+      <td>0.003332</td>
+      <td>0.553486</td>
+      <td>0.371197</td>
+      <td>-0.287044</td>
+      <td>...</td>
+      <td>0.357549</td>
+      <td>0.137506</td>
+      <td>0.102057</td>
+      <td>0.297390</td>
+      <td>1.000000</td>
+      <td>0.988027</td>
+      <td>0.345697</td>
+      <td>0.074170</td>
+      <td>-0.185038</td>
+      <td>-0.399885</td>
+    </tr>
+    <tr>
+      <th>loans_cash_count</th>
+      <td>-0.002987</td>
+      <td>-0.078110</td>
+      <td>-0.115566</td>
+      <td>0.123857</td>
+      <td>0.016962</td>
+      <td>-0.006482</td>
+      <td>0.018475</td>
+      <td>0.662281</td>
+      <td>0.420938</td>
+      <td>-0.298750</td>
+      <td>...</td>
+      <td>0.443326</td>
+      <td>0.108990</td>
+      <td>0.034866</td>
+      <td>0.156549</td>
+      <td>0.555002</td>
+      <td>0.539896</td>
+      <td>0.164961</td>
+      <td>0.012515</td>
+      <td>-0.197164</td>
+      <td>-0.337008</td>
+    </tr>
+    <tr>
+      <th>latest_one_month_loan</th>
+      <td>-0.001009</td>
+      <td>-0.082016</td>
+      <td>-0.034938</td>
+      <td>-0.017258</td>
+      <td>0.008845</td>
+      <td>-0.010482</td>
+      <td>0.010030</td>
+      <td>0.251331</td>
+      <td>0.152255</td>
+      <td>-0.109048</td>
+      <td>...</td>
+      <td>0.216387</td>
+      <td>0.078718</td>
+      <td>0.057899</td>
+      <td>0.087776</td>
+      <td>0.328566</td>
+      <td>0.334659</td>
+      <td>0.136317</td>
+      <td>0.039233</td>
+      <td>-0.167327</td>
+      <td>-0.564125</td>
+    </tr>
+    <tr>
+      <th>latest_three_month_loan</th>
+      <td>0.009841</td>
+      <td>-0.102432</td>
+      <td>-0.041141</td>
+      <td>-0.007416</td>
+      <td>0.009611</td>
+      <td>-0.012746</td>
+      <td>0.024060</td>
+      <td>0.277217</td>
+      <td>0.180567</td>
+      <td>-0.132316</td>
+      <td>...</td>
+      <td>0.235019</td>
+      <td>0.083134</td>
+      <td>0.055062</td>
+      <td>0.099953</td>
+      <td>0.410173</td>
+      <td>0.415173</td>
+      <td>0.158521</td>
+      <td>0.038337</td>
+      <td>-0.172112</td>
+      <td>-0.556912</td>
+    </tr>
+    <tr>
+      <th>latest_six_month_loan</th>
+      <td>0.013859</td>
+      <td>-0.084090</td>
+      <td>-0.080426</td>
+      <td>0.080167</td>
+      <td>0.034499</td>
+      <td>-0.007440</td>
+      <td>0.023376</td>
+      <td>0.618386</td>
+      <td>0.381795</td>
+      <td>-0.294128</td>
+      <td>...</td>
+      <td>0.395462</td>
+      <td>0.110447</td>
+      <td>0.067585</td>
+      <td>0.169560</td>
+      <td>0.653119</td>
+      <td>0.646769</td>
+      <td>0.214958</td>
+      <td>0.040151</td>
+      <td>-0.201667</td>
+      <td>-0.457269</td>
+    </tr>
+    <tr>
+      <th>history_suc_fee</th>
+      <td>0.005751</td>
+      <td>-0.154554</td>
+      <td>-0.068576</td>
+      <td>0.038832</td>
+      <td>0.036804</td>
+      <td>-0.013452</td>
+      <td>0.008331</td>
+      <td>0.707752</td>
+      <td>0.432147</td>
+      <td>-0.361614</td>
+      <td>...</td>
+      <td>0.439947</td>
+      <td>0.158091</td>
+      <td>0.129951</td>
+      <td>0.194162</td>
+      <td>0.682134</td>
+      <td>0.674063</td>
+      <td>0.258122</td>
+      <td>0.092018</td>
+      <td>-0.197019</td>
+      <td>-0.392292</td>
+    </tr>
+    <tr>
+      <th>history_fail_fee</th>
+      <td>0.005633</td>
+      <td>-0.039117</td>
+      <td>0.009093</td>
+      <td>0.055486</td>
+      <td>-0.019751</td>
+      <td>-0.006480</td>
+      <td>0.033715</td>
+      <td>0.269878</td>
+      <td>0.148111</td>
+      <td>-0.115664</td>
+      <td>...</td>
+      <td>0.164983</td>
+      <td>0.047106</td>
+      <td>0.008807</td>
+      <td>0.098387</td>
+      <td>0.399674</td>
+      <td>0.411005</td>
+      <td>0.130966</td>
+      <td>-0.011496</td>
+      <td>-0.060527</td>
+      <td>-0.199490</td>
+    </tr>
+    <tr>
+      <th>latest_one_month_suc</th>
+      <td>0.000168</td>
+      <td>-0.078523</td>
+      <td>-0.025131</td>
+      <td>-0.022327</td>
+      <td>0.022699</td>
+      <td>-0.009579</td>
+      <td>0.009873</td>
+      <td>0.228821</td>
+      <td>0.146654</td>
+      <td>-0.111359</td>
+      <td>...</td>
+      <td>0.194397</td>
+      <td>0.056937</td>
+      <td>0.023565</td>
+      <td>0.092642</td>
+      <td>0.349219</td>
+      <td>0.360903</td>
+      <td>0.119473</td>
+      <td>0.014118</td>
+      <td>-0.167496</td>
+      <td>-0.459412</td>
+    </tr>
+    <tr>
+      <th>latest_one_month_fail</th>
+      <td>0.013939</td>
+      <td>-0.041356</td>
+      <td>0.021126</td>
+      <td>-0.018844</td>
+      <td>-0.004671</td>
+      <td>-0.005436</td>
+      <td>0.017951</td>
+      <td>0.133230</td>
+      <td>0.080658</td>
+      <td>-0.053043</td>
+      <td>...</td>
+      <td>0.104707</td>
+      <td>0.041028</td>
+      <td>-0.000725</td>
+      <td>0.053177</td>
+      <td>0.228943</td>
+      <td>0.244784</td>
+      <td>0.078403</td>
+      <td>-0.011238</td>
+      <td>-0.051815</td>
+      <td>-0.232811</td>
+    </tr>
+    <tr>
+      <th>loans_long_time</th>
+      <td>0.000992</td>
+      <td>-0.216323</td>
+      <td>-0.074834</td>
+      <td>0.040822</td>
+      <td>0.012660</td>
+      <td>-0.002678</td>
+      <td>0.030914</td>
+      <td>0.384281</td>
+      <td>0.301560</td>
+      <td>-0.317888</td>
+      <td>...</td>
+      <td>0.368329</td>
+      <td>0.268476</td>
+      <td>0.144168</td>
+      <td>0.229963</td>
+      <td>0.345921</td>
+      <td>0.337877</td>
+      <td>0.198060</td>
+      <td>0.134422</td>
+      <td>-0.134214</td>
+      <td>-0.214274</td>
+    </tr>
+    <tr>
+      <th>loans_credit_limit</th>
+      <td>-0.006194</td>
+      <td>-0.160582</td>
+      <td>-0.138446</td>
+      <td>-0.086706</td>
+      <td>0.050185</td>
+      <td>0.013118</td>
+      <td>0.036172</td>
+      <td>0.229054</td>
+      <td>0.177929</td>
+      <td>-0.146462</td>
+      <td>...</td>
+      <td>0.745694</td>
+      <td>0.901755</td>
+      <td>0.085200</td>
+      <td>0.057358</td>
+      <td>0.151520</td>
+      <td>0.152471</td>
+      <td>0.123290</td>
+      <td>0.087213</td>
+      <td>-0.111170</td>
+      <td>-0.157736</td>
+    </tr>
+    <tr>
+      <th>loans_credibility_limit</th>
+      <td>-0.033850</td>
+      <td>-0.000850</td>
+      <td>-0.051545</td>
+      <td>0.090824</td>
+      <td>-0.025575</td>
+      <td>0.003868</td>
+      <td>-0.005513</td>
+      <td>0.161363</td>
+      <td>0.154721</td>
+      <td>-0.083218</td>
+      <td>...</td>
+      <td>0.328845</td>
+      <td>0.456704</td>
+      <td>-0.022646</td>
+      <td>-0.029875</td>
+      <td>0.115503</td>
+      <td>0.114720</td>
+      <td>0.021164</td>
+      <td>-0.036374</td>
+      <td>-0.127687</td>
+      <td>-0.138313</td>
+    </tr>
+    <tr>
+      <th>loans_org_count_current</th>
+      <td>-0.002987</td>
+      <td>-0.078110</td>
+      <td>-0.115566</td>
+      <td>0.123857</td>
+      <td>0.016962</td>
+      <td>-0.006482</td>
+      <td>0.018475</td>
+      <td>0.662281</td>
+      <td>0.420938</td>
+      <td>-0.298750</td>
+      <td>...</td>
+      <td>0.443326</td>
+      <td>0.108990</td>
+      <td>0.034866</td>
+      <td>0.156549</td>
+      <td>0.555002</td>
+      <td>0.539896</td>
+      <td>0.164961</td>
+      <td>0.012515</td>
+      <td>-0.197164</td>
+      <td>-0.337008</td>
+    </tr>
+    <tr>
+      <th>loans_product_count</th>
+      <td>-0.001941</td>
+      <td>-0.072159</td>
+      <td>-0.114296</td>
+      <td>0.122741</td>
+      <td>0.018572</td>
+      <td>-0.007575</td>
+      <td>0.019401</td>
+      <td>0.656939</td>
+      <td>0.416980</td>
+      <td>-0.295409</td>
+      <td>...</td>
+      <td>0.441316</td>
+      <td>0.108962</td>
+      <td>0.031936</td>
+      <td>0.155744</td>
+      <td>0.553607</td>
+      <td>0.539424</td>
+      <td>0.163650</td>
+      <td>0.009397</td>
+      <td>-0.199549</td>
+      <td>-0.348389</td>
+    </tr>
+    <tr>
+      <th>loans_max_limit</th>
+      <td>0.012189</td>
+      <td>-0.236185</td>
+      <td>-0.140173</td>
+      <td>-0.145599</td>
+      <td>0.071798</td>
+      <td>0.007119</td>
+      <td>0.061847</td>
+      <td>0.445155</td>
+      <td>0.313715</td>
+      <td>-0.222970</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>0.716175</td>
+      <td>0.108760</td>
+      <td>0.101659</td>
+      <td>0.357549</td>
+      <td>0.354231</td>
+      <td>0.208389</td>
+      <td>0.109425</td>
+      <td>-0.190074</td>
+      <td>-0.282204</td>
+    </tr>
+    <tr>
+      <th>loans_avg_limit</th>
+      <td>-0.004457</td>
+      <td>-0.152017</td>
+      <td>-0.128145</td>
+      <td>-0.110230</td>
+      <td>0.038880</td>
+      <td>0.000119</td>
+      <td>0.037275</td>
+      <td>0.202242</td>
+      <td>0.165959</td>
+      <td>-0.118522</td>
+      <td>...</td>
+      <td>0.716175</td>
+      <td>1.000000</td>
+      <td>0.091117</td>
+      <td>0.031452</td>
+      <td>0.137506</td>
+      <td>0.137271</td>
+      <td>0.130307</td>
+      <td>0.098641</td>
+      <td>-0.099086</td>
+      <td>-0.144835</td>
+    </tr>
+    <tr>
+      <th>consfin_credit_limit</th>
+      <td>0.005967</td>
+      <td>-0.093180</td>
+      <td>-0.083987</td>
+      <td>-0.153241</td>
+      <td>0.039328</td>
+      <td>0.028868</td>
+      <td>-0.036822</td>
+      <td>0.096622</td>
+      <td>0.066250</td>
+      <td>-0.055205</td>
+      <td>...</td>
+      <td>0.108760</td>
+      <td>0.091117</td>
+      <td>1.000000</td>
+      <td>0.241837</td>
+      <td>0.102057</td>
+      <td>0.081338</td>
+      <td>0.788637</td>
+      <td>0.901470</td>
+      <td>-0.047756</td>
+      <td>-0.110230</td>
+    </tr>
+    <tr>
+      <th>consfin_credibility</th>
+      <td>0.007746</td>
+      <td>-0.041979</td>
+      <td>-0.032534</td>
+      <td>0.003266</td>
+      <td>0.015841</td>
+      <td>0.006174</td>
+      <td>-0.000400</td>
+      <td>0.181157</td>
+      <td>0.131905</td>
+      <td>-0.142221</td>
+      <td>...</td>
+      <td>0.101659</td>
+      <td>0.031452</td>
+      <td>0.241837</td>
+      <td>1.000000</td>
+      <td>0.297390</td>
+      <td>0.288275</td>
+      <td>0.216232</td>
+      <td>0.275861</td>
+      <td>-0.085131</td>
+      <td>-0.230984</td>
+    </tr>
+    <tr>
+      <th>consfin_org_count_current</th>
+      <td>0.012062</td>
+      <td>-0.129297</td>
+      <td>-0.074851</td>
+      <td>-0.007761</td>
+      <td>0.021387</td>
+      <td>-0.019901</td>
+      <td>0.003332</td>
+      <td>0.553486</td>
+      <td>0.371197</td>
+      <td>-0.287044</td>
+      <td>...</td>
+      <td>0.357549</td>
+      <td>0.137506</td>
+      <td>0.102057</td>
+      <td>0.297390</td>
+      <td>1.000000</td>
+      <td>0.988027</td>
+      <td>0.345697</td>
+      <td>0.074170</td>
+      <td>-0.185038</td>
+      <td>-0.399885</td>
+    </tr>
+    <tr>
+      <th>consfin_product_count</th>
+      <td>0.009583</td>
+      <td>-0.139197</td>
+      <td>-0.067226</td>
+      <td>-0.014847</td>
+      <td>0.021337</td>
+      <td>-0.019603</td>
+      <td>0.005534</td>
+      <td>0.551140</td>
+      <td>0.374660</td>
+      <td>-0.286212</td>
+      <td>...</td>
+      <td>0.354231</td>
+      <td>0.137271</td>
+      <td>0.081338</td>
+      <td>0.288275</td>
+      <td>0.988027</td>
+      <td>1.000000</td>
+      <td>0.329687</td>
+      <td>0.054292</td>
+      <td>-0.183685</td>
+      <td>-0.402011</td>
+    </tr>
+    <tr>
+      <th>consfin_max_limit</th>
+      <td>0.004020</td>
+      <td>-0.115324</td>
+      <td>-0.096647</td>
+      <td>-0.169575</td>
+      <td>0.054433</td>
+      <td>0.007123</td>
+      <td>-0.022388</td>
+      <td>0.224509</td>
+      <td>0.156951</td>
+      <td>-0.111345</td>
+      <td>...</td>
+      <td>0.208389</td>
+      <td>0.130307</td>
+      <td>0.788637</td>
+      <td>0.216232</td>
+      <td>0.345697</td>
+      <td>0.329687</td>
+      <td>1.000000</td>
+      <td>0.790580</td>
+      <td>-0.096890</td>
+      <td>-0.193945</td>
+    </tr>
+    <tr>
+      <th>consfin_avg_limit</th>
+      <td>0.008860</td>
+      <td>-0.076767</td>
+      <td>-0.094627</td>
+      <td>-0.174126</td>
+      <td>0.040634</td>
+      <td>0.040865</td>
+      <td>-0.043764</td>
+      <td>0.085255</td>
+      <td>0.057663</td>
+      <td>-0.045801</td>
+      <td>...</td>
+      <td>0.109425</td>
+      <td>0.098641</td>
+      <td>0.901470</td>
+      <td>0.275861</td>
+      <td>0.074170</td>
+      <td>0.054292</td>
+      <td>0.790580</td>
+      <td>1.000000</td>
+      <td>-0.042131</td>
+      <td>-0.088072</td>
+    </tr>
+    <tr>
+      <th>latest_query_day</th>
+      <td>0.020774</td>
+      <td>0.099208</td>
+      <td>0.069301</td>
+      <td>-0.001628</td>
+      <td>-0.000570</td>
+      <td>-0.001457</td>
+      <td>-0.024161</td>
+      <td>-0.188965</td>
+      <td>-0.120330</td>
+      <td>0.069560</td>
+      <td>...</td>
+      <td>-0.190074</td>
+      <td>-0.099086</td>
+      <td>-0.047756</td>
+      <td>-0.085131</td>
+      <td>-0.185038</td>
+      <td>-0.183685</td>
+      <td>-0.096890</td>
+      <td>-0.042131</td>
+      <td>1.000000</td>
+      <td>0.230078</td>
+    </tr>
+    <tr>
+      <th>loans_latest_day</th>
+      <td>0.026387</td>
+      <td>0.098628</td>
+      <td>0.047500</td>
+      <td>-0.003253</td>
+      <td>-0.010231</td>
+      <td>0.027221</td>
+      <td>-0.014880</td>
+      <td>-0.299110</td>
+      <td>-0.211593</td>
+      <td>0.163433</td>
+      <td>...</td>
+      <td>-0.282204</td>
+      <td>-0.144835</td>
+      <td>-0.110230</td>
+      <td>-0.230984</td>
+      <td>-0.399885</td>
+      <td>-0.402011</td>
+      <td>-0.193945</td>
+      <td>-0.088072</td>
+      <td>0.230078</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>82 rows × 82 columns</p>
+</div>
+
+
+
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">DataWhale数据挖掘实战营</a></li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/人工智能/监督学习/51507/" rel="next" title="决策树">
+                <i class="fa fa-chevron-left"></i> 决策树
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Dan">
+            
+              <p class="site-author-name" itemprop="name">Dan</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/daniel18qzx" title="GitHub &rarr; https://github.com/daniel18qzx" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.linkedin.com/in/danielchiu15/" title="Linkedin &rarr; https://www.linkedin.com/in/danielchiu15/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化各特征"><span class="nav-number">2.</span> <span class="nav-text">可视化各特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">3.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无用特征删除"><span class="nav-number">3.1.</span> <span class="nav-text">无用特征删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺失填充"><span class="nav-number">3.2.</span> <span class="nav-text">缺失填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征间探索"><span class="nav-number">4.</span> <span class="nav-text">特征间探索</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Daniel Chiu. All Rights Reserved.</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '基本语法/项目/5276/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
