@@ -1,0 +1,1642 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
+
+<link rel="stylesheet" href="/css/main.css?v=7.1.2">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
+
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '7.1.2',
+    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: true,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="特征工程">
+<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/数据挖掘/17541/index.html">
+<meta property="og:site_name" content="菜鸟分析狮">
+<meta property="og:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-08-09T11:57:29.808Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="特征工程">
+<meta name="twitter:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
+
+
+
+
+
+  
+  
+  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/数据挖掘/17541/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>特征工程 | 菜鸟分析狮</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">菜鸟分析狮</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">没有难处理的数据，没有难写的报告</h1>
+      
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-homemenu"></i> <br>Home</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/数据挖掘/17541/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟分析狮">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">特征工程
+
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-04T00:00:00+08:00">2019-08-04</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-09 19:57:29" itemprop="dateModified" datetime="2019-08-09T19:57:29+08:00">2019-08-09</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/数据挖掘/" itemprop="url" rel="index"><span itemprop="name">数据挖掘</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/人工智能/数据挖掘/17541/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/数据挖掘/17541/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">1.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">3 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u"2019-08-01_金融数据描述_data1.csv"</span>,encoding = <span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure>
+<h2 id="特征衍生-升维"><a href="#特征衍生-升维" class="headerlink" title="特征衍生/升维"></a>特征衍生/升维</h2><p>特征衍生是指用原始数据进行特征学习得到新的特征。衍生特征一般有两种原因引起的：数据自身的变化，使数据中出现很多原来没有的特征；进行特征学习时，算法根据特征之间的某种关系，产生了衍生特征，有时衍生特征更能反应数据特征之间的关系 。衍生特征也要求机器学习和深度学习算法拥有更强的学习能力，即增量学习、在线学习、迁移学习。</p>
+<p>衍生特征相对于原始特征能够更好的反映特征与数据的关系，因此对于某些数据来说这是极为重要的一个步骤。观察本数据，发现可以从衍生出以下几个特征，而如 latest_one_month_suc、latest_one_month_fail、latest_six_month_loan 都是处理好的特征：</p>
+<ol>
+<li>交易失败率</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'failurerate_last_1_month'</span>] = df[<span class="string">'trans_fail_top_count_enum_last_1_month'</span>] / df[<span class="string">'trans_top_time_last_1_month'</span>]</span><br><span class="line">df[<span class="string">'failurerate_last_6_month'</span>] = df[<span class="string">'trans_fail_top_count_enum_last_6_month'</span>] / df[<span class="string">'trans_top_time_last_6_month'</span>]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>查询内容占比</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'query_finance_percent'</span>] = df[<span class="string">'query_finance_count'</span>] / df[<span class="string">'query_sum_count'</span>]</span><br><span class="line">df[<span class="string">'query_cash_percent'</span>] = df[<span class="string">'query_cash_count'</span>] / df[<span class="string">'query_sum_count'</span>]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>每单平均交易量</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'per_avg_amount'</span>] = df[<span class="string">'historical_trans_amount'</span>] / df[<span class="string">'number_of_trans_from_2011'</span>]</span><br></pre></td></tr></table></figure>
+<ol>
+<li>每天平均交易量</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'avg_amount_perday'</span>] = df[<span class="string">'historical_trans_amount'</span>] / df[<span class="string">'historical_trans_day'</span>]</span><br></pre></td></tr></table></figure>
+<h2 id="特征筛选-降维"><a href="#特征筛选-降维" class="headerlink" title="特征筛选/降维"></a>特征筛选/降维</h2><p>特征选择( Feature Selection )也称特征子集选择( Feature Subset Selection , FSS )，或属性选择( Attribute Selection )。是指从已有的M个特征(Feature)中选择N个特征使得系统的特定指标最优化，是从原始特征中选择出一些最有效特征以降低数据集维度的过程,是提高学习算法性能的一个重要手段,也是模式识别中关键的数据预处理步骤。对于一个学习算法来说,好的学习样本是训练模型的关键。</p>
+<h4 id="共线性分析"><a href="#共线性分析" class="headerlink" title="共线性分析"></a>共线性分析</h4><p>共线性问题指的是输入的自变量之间存在较高的线性相关度。共线性问题会导致回归模型的稳定性和准确性大大降低，另外，过多无关的维度计算也很浪费时间。</p>
+<p>变量出现共线性的原因：</p>
+<ul>
+<li>数据样本不够，导致共线性存在偶然性，这其实反映了缺少数据对于数据建模的影响，共线性仅仅是影响的一部分</li>
+<li>多个变量都给予时间有共同或相反的演变趋势，例如春节期间的网络销售量和销售额都相对与正常时间有下降趋势。</li>
+<li>多个变量存在一定的推移关系，但总体上变量间的趋势一致，只是发生的时间点不一致，例如广告费用和销售额之间，通常是品牌广告先进行大范围的曝光和信息推送，经过一定时间传播之后，才会在销售额上做出反映。</li>
+<li>多变量之间存在线性的关系。例如y代表访客数，用x代表展示广告费用，那么二者的关系很可能是y=2*x + b</li>
+</ul>
+<p>如何检验共线性：</p>
+<ul>
+<li>容忍度（Tolerance）：容忍度是每个自变量作为因变量对其他自变量进行回归建模时得到的残差比例，大小用1减得到的决定系数来表示。容忍度值越小说明这个自变量与其他自变量间越可能存在共线性问题。</li>
+<li>方差膨胀因子：VIF是容忍度的倒数，值越大则共线性问题越明显，通常以10作为判断边界。当VIF<10,不存在多重共线性；当10<=vif<100,存在较强的多重共线性；当vif>=100, 存在严重多重共线性。</10,不存在多重共线性；当10<=vif<100,存在较强的多重共线性；当vif></li>
+<li>特征值（Eigenvalue）：该方法实际上就是对自变量做主成分分析，如果多个维度的特征值等于0，则可能有比较严重的共线性。</li>
+<li>相关系数：如果相关系数R&gt;0.8时就可能存在较强相关性</li>
+</ul>
+<p>如何处理共线性：</p>
+<ul>
+<li>增大样本量：增大样本量可以消除犹豫数据量不足而出现的偶然的共线性现象，在可行的前提下这种方法是需要优先考虑的</li>
+<li>岭回归法（Ridge Regression）：实际上是一种改良最小二乘估计法。通过放弃最小二乘法的无偏性，以损失部分信息、降低精度为代价来获得更实际和可靠性更强的回归系数。因此岭回归在存在较强共线性的回归应用中较为常用。</li>
+<li>逐步回归法（Stepwise Regression）:每次引入一个自变量进行统计检验，然后逐步引入其他变量，同时对所有变量的回归系数进行检验，如果原来引入的变量由于后面变量的引入而变得不再显著，那么久将其剔除，逐步得到最有回归方程。</li>
+<li>主成分回归（Principal Components Regression）:通过主成分分析，将原始参与建模的变量转换为少数几个主成分，么个主成分是原变量的线性组合，然后基于主成分做回归分析，这样也可以在不丢失重要数据特征的前提下避开共线性问题。</li>
+<li>人工去除：结合人工经验，对自变量进行删减，但是对操作者的业务能力、经验有很高的要求。</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">corr_matrix = df.corr()</span><br><span class="line">corr_matrix = corr_matrix.unstack()</span><br><span class="line">corr_matrix[(abs(corr_matrix)&gt;<span class="number">0.8</span>) &amp; (abs(corr_matrix) != <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<pre><code>trans_activity_day                       historical_trans_day                       0.855832
+first_transaction_time                   first_transaction_day                     -0.985546
+historical_trans_amount                  per_avg_amount                             0.870366
+historical_trans_day                     trans_activity_day                         0.855832
+rank_trad_1_month                        top_trans_count_last_1_month               0.857462
+top_trans_count_last_1_month             rank_trad_1_month                          0.857462
+trans_top_time_last_1_month              consume_top_time_last_1_month              0.925764
+trans_top_time_last_6_month              consume_top_time_last_6_month              0.921039
+consume_top_time_last_1_month            trans_top_time_last_1_month                0.925764
+consume_top_time_last_6_month            trans_top_time_last_6_month                0.921039
+trans_fail_top_count_enum_last_6_month   trans_fail_top_count_enum_last_12_month    0.886050
+trans_fail_top_count_enum_last_12_month  trans_fail_top_count_enum_last_6_month     0.886050
+first_transaction_day                    first_transaction_time                    -0.985546
+apply_score                              loans_score                                0.973085
+query_org_count                          query_finance_count                        0.885501
+                                         query_cash_count                           0.846200
+                                         query_sum_count                            0.947786
+                                         latest_three_month_apply                   0.820085
+                                         latest_six_month_apply                     0.880014
+query_finance_count                      query_org_count                            0.885501
+                                         query_sum_count                            0.860472
+                                         latest_six_month_apply                     0.819415
+query_cash_count                         query_org_count                            0.846200
+query_sum_count                          query_org_count                            0.947786
+                                         query_finance_count                        0.860472
+                                         latest_three_month_apply                   0.875367
+                                         latest_six_month_apply                     0.941461
+latest_one_month_apply                   latest_three_month_apply                   0.869175
+                                         latest_six_month_apply                     0.804009
+latest_three_month_apply                 query_org_count                            0.820085
+                                                                                      ...   
+loans_cash_count                         loans_settle_count                         0.873677
+                                         loans_org_count_behavior                   0.943206
+                                         loans_product_count                        0.993300
+latest_six_month_loan                    loans_count                                0.890797
+                                         loans_settle_count                         0.845272
+                                         loans_org_count_behavior                   0.833786
+                                         history_suc_fee                            0.811367
+history_suc_fee                          loans_count                                0.914117
+                                         loans_settle_count                         0.932088
+                                         loans_org_count_behavior                   0.829458
+                                         latest_six_month_loan                      0.811367
+loans_credit_limit                       loans_avg_limit                            0.901755
+loans_org_count_current                  loans_count                                0.889557
+                                         loans_settle_count                         0.873677
+                                         loans_org_count_behavior                   0.943206
+                                         loans_product_count                        0.993300
+loans_product_count                      loans_count                                0.889684
+                                         loans_settle_count                         0.873214
+                                         loans_org_count_behavior                   0.937815
+                                         loans_cash_count                           0.993300
+                                         loans_org_count_current                    0.993300
+loans_avg_limit                          loans_credit_limit                         0.901755
+consfin_credit_limit                     consfin_avg_limit                          0.901470
+consfin_org_count_current                consfin_product_count                      0.988027
+consfin_product_count                    consfin_org_count_behavior                 0.988027
+                                         consfin_org_count_current                  0.988027
+consfin_avg_limit                        consfin_credit_limit                       0.901470
+per_avg_amount                           historical_trans_amount                    0.870366
+                                         avg_amount_perday                          0.850901
+avg_amount_perday                        per_avg_amount                             0.850901
+Length: 92, dtype: float64
+</code></pre><h4 id="去掉方差较小的特征"><a href="#去掉方差较小的特征" class="headerlink" title="去掉方差较小的特征"></a>去掉方差较小的特征</h4><p>方差阈值（VarianceThreshold）是特征选择的一个简单方法，去掉那些方差没有达到阈值的特征。默认情况下，删除零方差的特征，例如那些只有一个值的样本。假设我们有一个有布尔特征的数据集，然后我们想去掉那些超过80%的样本都是0（或者1）的特征。布尔特征是伯努利随机变量，方差为 p(1-p)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
+<pre><code>array([ True,  True,  True,  True])
+</code></pre><h4 id="单变量特征选择"><a href="#单变量特征选择" class="headerlink" title="单变量特征选择"></a>单变量特征选择</h4><p>单变量的特征选择是通过基于单变量的统计测试来选择最好的特征，它可以当做是评估器的预处理步骤。</p>
+<p>Scikit-learn 将特征选择的内容作为实现了 transform 方法的对象</p>
+<ol>
+<li>SelectKBest移除那些除了评分最高的 K 个特征之外的所有特征</li>
+<li>SelectPercentile移除除了用户指定的最高得分百分比之外的所有特征</li>
+</ol>
+<p>这些对象将得分函数作为输入，返回单变量的得分和 p 值:</p>
+<p>对于回归: f_regression , mutual_info_regression<br>对于分类: chi2 , f_classif , mutual_info_classif 可自行查看官网API文档。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectKBest, SelectPercentile</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> f_classif</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.columns = [<span class="string">'SepalLengthCm'</span>,<span class="string">'SepalWidthCm'</span>,<span class="string">'PetalLengthCm'</span>,<span class="string">'PetalWidthCm'</span>]</span><br><span class="line">X, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = SelectPercentile(f_classif, percentile= <span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>columns</th>
+      <th>filter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SepalLengthCm</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SepalWidthCm</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PetalLengthCm</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PetalWidthCm</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="基于-L1-的特征选取"><a href="#基于-L1-的特征选取" class="headerlink" title="基于 L1 的特征选取"></a>基于 L1 的特征选取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.columns = [<span class="string">'SepalLengthCm'</span>,<span class="string">'SepalWidthCm'</span>,<span class="string">'PetalLengthCm'</span>,<span class="string">'PetalWidthCm'</span>]</span><br><span class="line">X, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line">lsvc = LinearSVC(C=<span class="number">0.01</span>, penalty=<span class="string">"l1"</span>, dual=<span class="literal">False</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(lsvc, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>columns</th>
+      <th>filter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SepalLengthCm</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SepalWidthCm</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PetalLengthCm</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PetalWidthCm</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="基于决策树的特征选取"><a href="#基于决策树的特征选取" class="headerlink" title="基于决策树的特征选取"></a>基于决策树的特征选取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.columns = [<span class="string">'SepalLengthCm'</span>,<span class="string">'SepalWidthCm'</span>,<span class="string">'PetalLengthCm'</span>,<span class="string">'PetalWidthCm'</span>]</span><br><span class="line">X, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line">forest = DecisionTreeClassifier(criterion=<span class="string">'entropy'</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(forest, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>columns</th>
+      <th>filter</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>SepalLengthCm</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SepalWidthCm</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>PetalLengthCm</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PetalWidthCm</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出特征排序</span></span><br><span class="line">importance = forest.feature_importances_</span><br><span class="line">imp_result = np.argsort(importance)[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support(),<span class="string">'importance'</span>:imp_result&#125;).sort_values(<span class="string">"importance"</span>,ascending=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>columns</th>
+      <th>filter</th>
+      <th>importance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>2</th>
+      <td>PetalLengthCm</td>
+      <td>False</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>PetalWidthCm</td>
+      <td>True</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>SepalWidthCm</td>
+      <td>False</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>SepalLengthCm</td>
+      <td>False</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="WOE"><a href="#WOE" class="headerlink" title="WOE"></a>WOE</h4><p>全称是“Weight of Evidence”，即证据权重。WOE是对原始自变量的一种编码形式。<br>要对一个变量进行WOE编码，需要首先把这个变量进行分组处理（也叫离散化、分箱等等，说的都是一个意思）。分组后，对于第i组，WOE的计算公式如下：</p>
+<p>其中，pyi是这个组中响应客户（风险模型中，对应的是违约客户，总之，指的是模型中预测变量取值为“是”或者说1的个体）占所有样本中所有响应客户的比例，pni是这个组中未响应客户占样本中所有未响应客户的比例，#yi是这个组中响应客户的数量，#ni是这个组中未响应客户的数量，#yT是样本中所有响应客户的数量，#nT是样本中所有未响应客户的数量。</p>
+<p>从这个公式中我们可以体会到，WOE表示的实际上是“当前分组中响应客户占所有响应客户的比例”和“当前分组中没有响应的客户占所有没有响应的客户的比例”的差异。</p>
+<p>对这个公式做一个简单变换，可以得到：</p>
+<p>变换以后我们可以看出，WOE也可以这么理解，他表示的是当前这个组中响应的客户和未响应客户的比值，和所有样本中这个比值的差异。这个差异是用这两个比值的比值，再取对数来表示的。WOE越大，这种差异越大，这个分组里的样本响应的可能性就越大，WOE越小，差异越小，这个分组里的样本响应的可能性就越小。</p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">DataWhale数据挖掘实战营</a></li>
+<li><a href="https://blog.csdn.net/tonydz0523/article/details/84404261" target="_blank" rel="noopener">python数据预处理 ：数据共线性处理</a></li>
+<li><a href="https://www.cnblogs.com/stevenlk/p/6543628.html" target="_blank" rel="noopener">特征选择 (feature_selection)</a></li>
+</ol>
+
+      
+    </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/人工智能/数据挖掘/17314/" rel="next" title="数据理解与清洗">
+                <i class="fa fa-chevron-left"></i> 数据理解与清洗
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Dan">
+            
+              <p class="site-author-name" itemprop="name">Dan</p>
+              <div class="site-description motion-element" itemprop="description"></div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">16</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/daniel18qzx" title="GitHub &rarr; https://github.com/daniel18qzx" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                  
+                    
+                  
+                  <a href="https://www.linkedin.com/in/danielchiu15/" title="Linkedin &rarr; https://www.linkedin.com/in/danielchiu15/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征衍生-升维"><span class="nav-number">2.</span> <span class="nav-text">特征衍生/升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征筛选-降维"><span class="nav-number">3.</span> <span class="nav-text">特征筛选/降维</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#共线性分析"><span class="nav-number">3.0.1.</span> <span class="nav-text">共线性分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去掉方差较小的特征"><span class="nav-number">3.0.2.</span> <span class="nav-text">去掉方差较小的特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单变量特征选择"><span class="nav-number">3.0.3.</span> <span class="nav-text">单变量特征选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于-L1-的特征选取"><span class="nav-number">3.0.4.</span> <span class="nav-text">基于 L1 的特征选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于决策树的特征选取"><span class="nav-number">3.0.5.</span> <span class="nav-text">基于决策树的特征选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WOE"><span class="nav-number">3.0.6.</span> <span class="nav-text">WOE</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
+      
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Daniel Chiu. All Rights Reserved.</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-user"></i>
+    </span>
+    <span class="site-uv" title="Total Visitors">
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+    </span>
+  
+
+  
+    <span class="post-meta-divider">|</span>
+  
+
+  
+    <span class="post-meta-item-icon">
+      <i class="fa fa-eye"></i>
+    </span>
+    <span class="site-pv" title="Total Views">
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/lib/jquery/index.js?v=3.4.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/js/utils.js?v=7.1.2"></script>
+
+  <script src="/js/motion.js?v=7.1.2"></script>
+
+
+
+  
+  
+
+
+  <script src="/js/affix.js?v=7.1.2"></script>
+
+  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
+
+
+
+
+  
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
+
+  
+
+
+  <script src="/js/next-boot.js?v=7.1.2"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '人工智能/数据挖掘/17541/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
+
+
+  
+  <script>
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+  <script>
+    (function(){
+      var bp = document.createElement('script');
+      var curProtocol = window.location.protocol.split(':')[0];
+      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
