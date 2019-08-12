@@ -97,7 +97,7 @@
 <meta property="og:site_name" content="菜鸟分析狮">
 <meta property="og:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-09T11:57:29.808Z">
+<meta property="og:updated_time" content="2019-08-12T17:08:10.188Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="特征工程">
 <meta name="twitter:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-09 19:57:29" itemprop="dateModified" datetime="2019-08-09T19:57:29+08:00">2019-08-09</time>
+                <time title="Modified: 2019-08-13 01:08:10" itemprop="dateModified" datetime="2019-08-13T01:08:10+08:00">2019-08-13</time>
               
             
           </span>
@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.9k</span>
+                <span title="Symbols count in article">8.5k</span>
               
 
               
@@ -480,7 +480,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">3 mins.</span>
+                <span title="Reading time">14 mins.</span>
               
             </div>
           
@@ -501,12 +501,107 @@
 
       
         <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u"2019-08-01_金融数据描述_data1.csv"</span>,encoding = <span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4754 entries, 0 to 4753
+Data columns (total 90 columns):
+Unnamed: 0                                    4754 non-null int64
+custid                                        4754 non-null int64
+trade_no                                      4754 non-null object
+bank_card_no                                  4754 non-null object
+low_volume_percent                            4752 non-null float64
+middle_volume_percent                         4752 non-null float64
+take_amount_in_later_12_month_highest         4754 non-null int64
+trans_amount_increase_rate_lately             4751 non-null float64
+trans_activity_month                          4752 non-null float64
+trans_activity_day                            4752 non-null float64
+transd_mcc                                    4752 non-null float64
+trans_days_interval_filter                    4746 non-null float64
+trans_days_interval                           4752 non-null float64
+regional_mobility                             4752 non-null float64
+student_feature                               1756 non-null float64
+repayment_capability                          4754 non-null int64
+is_high_user                                  4754 non-null int64
+number_of_trans_from_2011                     4752 non-null float64
+first_transaction_time                        4752 non-null float64
+historical_trans_amount                       4754 non-null int64
+historical_trans_day                          4752 non-null float64
+rank_trad_1_month                             4752 non-null float64
+trans_amount_3_month                          4754 non-null int64
+avg_consume_less_12_valid_month               4752 non-null float64
+abs                                           4754 non-null int64
+top_trans_count_last_1_month                  4752 non-null float64
+avg_price_last_12_month                       4754 non-null int64
+avg_price_top_last_12_valid_month             4650 non-null float64
+reg_preference_for_trad                       4752 non-null object
+trans_top_time_last_1_month                   4746 non-null float64
+trans_top_time_last_6_month                   4746 non-null float64
+consume_top_time_last_1_month                 4746 non-null float64
+consume_top_time_last_6_month                 4746 non-null float64
+cross_consume_count_last_1_month              4328 non-null float64
+trans_fail_top_count_enum_last_1_month        4738 non-null float64
+trans_fail_top_count_enum_last_6_month        4738 non-null float64
+trans_fail_top_count_enum_last_12_month       4738 non-null float64
+consume_mini_time_last_1_month                4728 non-null float64
+max_cumulative_consume_later_1_month          4754 non-null int64
+max_consume_count_later_6_month               4746 non-null float64
+railway_consume_count_last_12_month           4742 non-null float64
+pawns_auctions_trusts_consume_last_1_month    4754 non-null int64
+pawns_auctions_trusts_consume_last_6_month    4754 non-null int64
+jewelry_consume_count_last_6_month            4742 non-null float64
+status                                        4754 non-null int64
+source                                        4754 non-null object
+first_transaction_day                         4752 non-null float64
+trans_day_last_12_month                       4752 non-null float64
+id_name                                       4478 non-null object
+apply_score                                   4450 non-null float64
+apply_credibility                             4450 non-null float64
+query_org_count                               4450 non-null float64
+query_finance_count                           4450 non-null float64
+query_cash_count                              4450 non-null float64
+query_sum_count                               4450 non-null float64
+latest_query_time                             4450 non-null object
+latest_one_month_apply                        4450 non-null float64
+latest_three_month_apply                      4450 non-null float64
+latest_six_month_apply                        4450 non-null float64
+loans_score                                   4457 non-null float64
+loans_credibility_behavior                    4457 non-null float64
+loans_count                                   4457 non-null float64
+loans_settle_count                            4457 non-null float64
+loans_overdue_count                           4457 non-null float64
+loans_org_count_behavior                      4457 non-null float64
+consfin_org_count_behavior                    4457 non-null float64
+loans_cash_count                              4457 non-null float64
+latest_one_month_loan                         4457 non-null float64
+latest_three_month_loan                       4457 non-null float64
+latest_six_month_loan                         4457 non-null float64
+history_suc_fee                               4457 non-null float64
+history_fail_fee                              4457 non-null float64
+latest_one_month_suc                          4457 non-null float64
+latest_one_month_fail                         4457 non-null float64
+loans_long_time                               4457 non-null float64
+loans_latest_time                             4457 non-null object
+loans_credit_limit                            4457 non-null float64
+loans_credibility_limit                       4457 non-null float64
+loans_org_count_current                       4457 non-null float64
+loans_product_count                           4457 non-null float64
+loans_max_limit                               4457 non-null float64
+loans_avg_limit                               4457 non-null float64
+consfin_credit_limit                          4457 non-null float64
+consfin_credibility                           4457 non-null float64
+consfin_org_count_current                     4457 non-null float64
+consfin_product_count                         4457 non-null float64
+consfin_max_limit                             4457 non-null float64
+consfin_avg_limit                             4457 non-null float64
+latest_query_day                              4450 non-null float64
+loans_latest_day                              4457 non-null float64
+dtypes: float64(70), int64(13), object(7)
+memory usage: 3.3+ MB
+</code></pre><h2 id="特征预处理"><a href="#特征预处理" class="headerlink" title="特征预处理"></a>特征预处理</h2><h4 id="删除无用"><a href="#删除无用" class="headerlink" title="删除无用"></a>删除无用</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete = [<span class="string">'Unnamed: 0'</span>, <span class="string">'custid'</span>, <span class="string">'trade_no'</span>, <span class="string">'bank_card_no'</span>,<span class="string">'id_name'</span>,<span class="string">'latest_query_time'</span>,<span class="string">'source'</span>,<span class="string">'loans_latest_time'</span>,<span class="string">'first_transaction_time'</span>, <span class="string">'student_feature'</span>]</span><br><span class="line">df = df.drop(delete,axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="处理分类型特征"><a href="#处理分类型特征" class="headerlink" title="处理分类型特征"></a>处理分类型特征</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line">df[<span class="string">'reg_preference_for_trad'</span>] = LabelEncoder().fit_transform(df[<span class="string">'reg_preference_for_trad'</span>].astype(str))</span><br></pre></td></tr></table></figure>
+<h4 id="使用众数填充"><a href="#使用众数填充" class="headerlink" title="使用众数填充"></a>使用众数填充</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(df.shape[<span class="number">1</span>]):</span><br><span class="line">    feature = df.iloc[:,i].values.reshape(<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line">    imp_mode = Imputer(strategy=<span class="string">'most_frequent'</span>)</span><br><span class="line">    df.iloc[:,i] = imp_mode.fit_transform(feature)</span><br></pre></td></tr></table></figure>
 <h2 id="特征衍生-升维"><a href="#特征衍生-升维" class="headerlink" title="特征衍生/升维"></a>特征衍生/升维</h2><p>特征衍生是指用原始数据进行特征学习得到新的特征。衍生特征一般有两种原因引起的：数据自身的变化，使数据中出现很多原来没有的特征；进行特征学习时，算法根据特征之间的某种关系，产生了衍生特征，有时衍生特征更能反应数据特征之间的关系 。衍生特征也要求机器学习和深度学习算法拥有更强的学习能力，即增量学习、在线学习、迁移学习。</p>
 <p>衍生特征相对于原始特征能够更好的反映特征与数据的关系，因此对于某些数据来说这是极为重要的一个步骤。观察本数据，发现可以从衍生出以下几个特征，而如 latest_one_month_suc、latest_one_month_fail、latest_six_month_loan 都是处理好的特征：</p>
-<ol>
-<li>交易失败率</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'failurerate_last_1_month'</span>] = df[<span class="string">'trans_fail_top_count_enum_last_1_month'</span>] / df[<span class="string">'trans_top_time_last_1_month'</span>]</span><br><span class="line">df[<span class="string">'failurerate_last_6_month'</span>] = df[<span class="string">'trans_fail_top_count_enum_last_6_month'</span>] / df[<span class="string">'trans_top_time_last_6_month'</span>]</span><br></pre></td></tr></table></figure>
 <ol>
 <li>查询内容占比</li>
 </ol>
@@ -544,71 +639,92 @@
 <li>人工去除：结合人工经验，对自变量进行删减，但是对操作者的业务能力、经验有很高的要求。</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">corr_matrix = df.corr()</span><br><span class="line">corr_matrix = corr_matrix.unstack()</span><br><span class="line">corr_matrix[(abs(corr_matrix)&gt;<span class="number">0.8</span>) &amp; (abs(corr_matrix) != <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
-<pre><code>trans_activity_day                       historical_trans_day                       0.855832
-first_transaction_time                   first_transaction_day                     -0.985546
-historical_trans_amount                  per_avg_amount                             0.870366
-historical_trans_day                     trans_activity_day                         0.855832
-rank_trad_1_month                        top_trans_count_last_1_month               0.857462
-top_trans_count_last_1_month             rank_trad_1_month                          0.857462
-trans_top_time_last_1_month              consume_top_time_last_1_month              0.925764
-trans_top_time_last_6_month              consume_top_time_last_6_month              0.921039
-consume_top_time_last_1_month            trans_top_time_last_1_month                0.925764
-consume_top_time_last_6_month            trans_top_time_last_6_month                0.921039
-trans_fail_top_count_enum_last_6_month   trans_fail_top_count_enum_last_12_month    0.886050
-trans_fail_top_count_enum_last_12_month  trans_fail_top_count_enum_last_6_month     0.886050
-first_transaction_day                    first_transaction_time                    -0.985546
-apply_score                              loans_score                                0.973085
-query_org_count                          query_finance_count                        0.885501
-                                         query_cash_count                           0.846200
-                                         query_sum_count                            0.947786
-                                         latest_three_month_apply                   0.820085
-                                         latest_six_month_apply                     0.880014
-query_finance_count                      query_org_count                            0.885501
-                                         query_sum_count                            0.860472
-                                         latest_six_month_apply                     0.819415
-query_cash_count                         query_org_count                            0.846200
-query_sum_count                          query_org_count                            0.947786
-                                         query_finance_count                        0.860472
-                                         latest_three_month_apply                   0.875367
-                                         latest_six_month_apply                     0.941461
-latest_one_month_apply                   latest_three_month_apply                   0.869175
-                                         latest_six_month_apply                     0.804009
-latest_three_month_apply                 query_org_count                            0.820085
+<pre><code>trans_activity_day                       historical_trans_day                       0.855777
+historical_trans_amount                  per_avg_amount                             0.870396
+historical_trans_day                     trans_activity_day                         0.855777
+rank_trad_1_month                        top_trans_count_last_1_month               0.855890
+top_trans_count_last_1_month             rank_trad_1_month                          0.855890
+trans_top_time_last_1_month              consume_top_time_last_1_month              0.925978
+trans_top_time_last_6_month              consume_top_time_last_6_month              0.921067
+consume_top_time_last_1_month            trans_top_time_last_1_month                0.925978
+consume_top_time_last_6_month            trans_top_time_last_6_month                0.921067
+trans_fail_top_count_enum_last_6_month   trans_fail_top_count_enum_last_12_month    0.886180
+trans_fail_top_count_enum_last_12_month  trans_fail_top_count_enum_last_6_month     0.886180
+apply_score                              loans_score                                0.967695
+query_org_count                          query_finance_count                        0.881597
+                                         query_cash_count                           0.850818
+                                         query_sum_count                            0.948918
+                                         latest_three_month_apply                   0.825973
+                                         latest_six_month_apply                     0.883612
+query_finance_count                      query_org_count                            0.881597
+                                         query_sum_count                            0.858778
+                                         latest_six_month_apply                     0.817063
+query_cash_count                         query_org_count                            0.850818
+                                         query_sum_count                            0.804468
+query_sum_count                          query_org_count                            0.948918
+                                         query_finance_count                        0.858778
+                                         query_cash_count                           0.804468
+                                         latest_three_month_apply                   0.878368
+                                         latest_six_month_apply                     0.942820
+latest_one_month_apply                   latest_three_month_apply                   0.873954
+                                         latest_six_month_apply                     0.810162
+latest_three_month_apply                 query_org_count                            0.825973
                                                                                       ...   
-loans_cash_count                         loans_settle_count                         0.873677
-                                         loans_org_count_behavior                   0.943206
-                                         loans_product_count                        0.993300
-latest_six_month_loan                    loans_count                                0.890797
-                                         loans_settle_count                         0.845272
-                                         loans_org_count_behavior                   0.833786
-                                         history_suc_fee                            0.811367
-history_suc_fee                          loans_count                                0.914117
-                                         loans_settle_count                         0.932088
-                                         loans_org_count_behavior                   0.829458
-                                         latest_six_month_loan                      0.811367
-loans_credit_limit                       loans_avg_limit                            0.901755
-loans_org_count_current                  loans_count                                0.889557
-                                         loans_settle_count                         0.873677
-                                         loans_org_count_behavior                   0.943206
-                                         loans_product_count                        0.993300
-loans_product_count                      loans_count                                0.889684
-                                         loans_settle_count                         0.873214
-                                         loans_org_count_behavior                   0.937815
-                                         loans_cash_count                           0.993300
-                                         loans_org_count_current                    0.993300
-loans_avg_limit                          loans_credit_limit                         0.901755
-consfin_credit_limit                     consfin_avg_limit                          0.901470
-consfin_org_count_current                consfin_product_count                      0.988027
-consfin_product_count                    consfin_org_count_behavior                 0.988027
-                                         consfin_org_count_current                  0.988027
-consfin_avg_limit                        consfin_credit_limit                       0.901470
-per_avg_amount                           historical_trans_amount                    0.870366
-                                         avg_amount_perday                          0.850901
-avg_amount_perday                        per_avg_amount                             0.850901
-Length: 92, dtype: float64
+latest_six_month_loan                    loans_settle_count                         0.847959
+                                         loans_org_count_behavior                   0.840518
+                                         loans_cash_count                           0.804668
+                                         history_suc_fee                            0.805410
+                                         loans_org_count_current                    0.804668
+                                         loans_product_count                        0.808454
+history_suc_fee                          loans_count                                0.911063
+                                         loans_settle_count                         0.930297
+                                         loans_org_count_behavior                   0.826103
+                                         latest_six_month_loan                      0.805410
+loans_org_count_current                  loans_count                                0.892128
+                                         loans_settle_count                         0.874915
+                                         loans_org_count_behavior                   0.944990
+                                         latest_six_month_loan                      0.804668
+                                         loans_product_count                        0.993636
+loans_product_count                      loans_count                                0.891898
+                                         loans_settle_count                         0.873971
+                                         loans_org_count_behavior                   0.939593
+                                         loans_cash_count                           0.993636
+                                         latest_six_month_loan                      0.808454
+                                         loans_org_count_current                    0.993636
+consfin_credit_limit                     consfin_avg_limit                          0.910600
+consfin_org_count_current                loans_org_count_behavior                   0.804413
+                                         consfin_product_count                      0.988156
+consfin_product_count                    consfin_org_count_behavior                 0.988156
+                                         consfin_org_count_current                  0.988156
+consfin_avg_limit                        consfin_credit_limit                       0.910600
+per_avg_amount                           historical_trans_amount                    0.870396
+                                         avg_amount_perday                          0.850940
+avg_amount_perday                        per_avg_amount                             0.850940
+Length: 100, dtype: float64
 </code></pre><h4 id="去掉方差较小的特征"><a href="#去掉方差较小的特征" class="headerlink" title="去掉方差较小的特征"></a>去掉方差较小的特征</h4><p>方差阈值（VarianceThreshold）是特征选择的一个简单方法，去掉那些方差没有达到阈值的特征。默认情况下，删除零方差的特征，例如那些只有一个值的样本。假设我们有一个有布尔特征的数据集，然后我们想去掉那些超过80%的样本都是0（或者1）的特征。布尔特征是伯努利随机变量，方差为 p(1-p)。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
-<pre><code>array([ True,  True,  True,  True])
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = df[:].drop(<span class="string">"status"</span>,axis=<span class="number">1</span>)</span><br><span class="line">y = df[<span class="string">"status"</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
+<pre><code>array([False, False,  True,  True, False, False,  True,  True,  True,
+        True,  True, False,  True,  True,  True, False,  True,  True,
+        True, False,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True, False, False,
+        True,  True], dtype=bool)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
+<pre><code>array([False, False,  True,  True, False, False,  True,  True,  True,
+        True,  True, False,  True,  True,  True, False,  True,  True,
+        True, False,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True, False, False,
+        True,  True], dtype=bool)
 </code></pre><h4 id="单变量特征选择"><a href="#单变量特征选择" class="headerlink" title="单变量特征选择"></a>单变量特征选择</h4><p>单变量的特征选择是通过基于单变量的统计测试来选择最好的特征，它可以当做是评估器的预处理步骤。</p>
 <p>Scikit-learn 将特征选择的内容作为实现了 transform 方法的对象</p>
 <ol>
@@ -617,19 +733,19 @@ Length: 92, dtype: float64
 </ol>
 <p>这些对象将得分函数作为输入，返回单变量的得分和 p 值:</p>
 <p>对于回归: f_regression , mutual_info_regression<br>对于分类: chi2 , f_classif , mutual_info_classif 可自行查看官网API文档。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectKBest, SelectPercentile</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> f_classif</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.columns = [<span class="string">'SepalLengthCm'</span>,<span class="string">'SepalWidthCm'</span>,<span class="string">'PetalLengthCm'</span>,<span class="string">'PetalWidthCm'</span>]</span><br><span class="line">X, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = SelectPercentile(f_classif, percentile= <span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectKBest, SelectPercentile</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> f_classif</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = SelectPercentile(f_classif, percentile= <span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -643,43 +759,329 @@ Length: 92, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>SepalLengthCm</td>
+      <td>low_volume_percent</td>
       <td>True</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>SepalWidthCm</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>PetalLengthCm</td>
+      <td>middle_volume_percent</td>
       <td>True</td>
     </tr>
     <tr>
+      <th>2</th>
+      <td>take_amount_in_later_12_month_highest</td>
+      <td>False</td>
+    </tr>
+    <tr>
       <th>3</th>
-      <td>PetalWidthCm</td>
+      <td>trans_amount_increase_rate_lately</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>trans_activity_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>trans_activity_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>transd_mcc</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>trans_days_interval_filter</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>trans_days_interval</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>regional_mobility</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>repayment_capability</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>is_high_user</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>number_of_trans_from_2011</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>historical_trans_amount</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>historical_trans_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>rank_trad_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>trans_amount_3_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>avg_consume_less_12_valid_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>abs</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>top_trans_count_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>avg_price_last_12_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>avg_price_top_last_12_valid_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>reg_preference_for_trad</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>trans_top_time_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>trans_top_time_last_6_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>consume_top_time_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>consume_top_time_last_6_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>cross_consume_count_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>trans_fail_top_count_enum_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>trans_fail_top_count_enum_last_6_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>loans_overdue_count</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>loans_org_count_behavior</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>consfin_org_count_behavior</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>loans_cash_count</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>latest_one_month_loan</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>latest_three_month_loan</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>latest_six_month_loan</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>history_suc_fee</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>history_fail_fee</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>latest_one_month_suc</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>latest_one_month_fail</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>loans_long_time</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>loans_credit_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>loans_credibility_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>loans_org_count_current</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>loans_product_count</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>loans_max_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>loans_avg_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>consfin_credit_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>consfin_credibility</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>consfin_org_count_current</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>consfin_product_count</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>consfin_max_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>consfin_avg_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>latest_query_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>loans_latest_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>query_finance_percent</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>query_cash_percent</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>per_avg_amount</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>avg_amount_perday</td>
       <td>True</td>
     </tr>
   </tbody>
 </table>
+<p>83 rows × 2 columns</p>
 </div>
 
 
 
-<h4 id="基于-L1-的特征选取"><a href="#基于-L1-的特征选取" class="headerlink" title="基于 L1 的特征选取"></a>基于 L1 的特征选取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.columns = [<span class="string">'SepalLengthCm'</span>,<span class="string">'SepalWidthCm'</span>,<span class="string">'PetalLengthCm'</span>,<span class="string">'PetalWidthCm'</span>]</span><br><span class="line">X, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line">lsvc = LinearSVC(C=<span class="number">0.01</span>, penalty=<span class="string">"l1"</span>, dual=<span class="literal">False</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(lsvc, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="基于-L1-的特征选取"><a href="#基于-L1-的特征选取" class="headerlink" title="基于 L1 的特征选取"></a>基于 L1 的特征选取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">lsvc = LinearSVC(C=<span class="number">0.01</span>, penalty=<span class="string">"l1"</span>, dual=<span class="literal">False</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(lsvc, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -693,43 +1095,329 @@ Length: 92, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>SepalLengthCm</td>
-      <td>True</td>
+      <td>low_volume_percent</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>SepalWidthCm</td>
-      <td>True</td>
+      <td>middle_volume_percent</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>PetalLengthCm</td>
-      <td>True</td>
+      <td>take_amount_in_later_12_month_highest</td>
+      <td>False</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>PetalWidthCm</td>
+      <td>trans_amount_increase_rate_lately</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>trans_activity_month</td>
       <td>False</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>trans_activity_day</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>transd_mcc</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>trans_days_interval_filter</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>trans_days_interval</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>regional_mobility</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>repayment_capability</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>is_high_user</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>number_of_trans_from_2011</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>historical_trans_amount</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>historical_trans_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>rank_trad_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>trans_amount_3_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>avg_consume_less_12_valid_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>abs</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>top_trans_count_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>avg_price_last_12_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>avg_price_top_last_12_valid_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>reg_preference_for_trad</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>trans_top_time_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>trans_top_time_last_6_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>consume_top_time_last_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>consume_top_time_last_6_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>cross_consume_count_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>trans_fail_top_count_enum_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>trans_fail_top_count_enum_last_6_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>loans_overdue_count</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>loans_org_count_behavior</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>consfin_org_count_behavior</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>loans_cash_count</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>latest_one_month_loan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>latest_three_month_loan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>latest_six_month_loan</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>history_suc_fee</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>history_fail_fee</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>latest_one_month_suc</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>latest_one_month_fail</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>loans_long_time</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>loans_credit_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>loans_credibility_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>loans_org_count_current</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>loans_product_count</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>loans_max_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>loans_avg_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>consfin_credit_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>consfin_credibility</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>consfin_org_count_current</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>consfin_product_count</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>consfin_max_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>consfin_avg_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>latest_query_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>loans_latest_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>query_finance_percent</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>query_cash_percent</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>per_avg_amount</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>avg_amount_perday</td>
+      <td>True</td>
     </tr>
   </tbody>
 </table>
+<p>83 rows × 2 columns</p>
 </div>
 
 
 
-<h4 id="基于决策树的特征选取"><a href="#基于决策树的特征选取" class="headerlink" title="基于决策树的特征选取"></a>基于决策树的特征选取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">iris.columns = [<span class="string">'SepalLengthCm'</span>,<span class="string">'SepalWidthCm'</span>,<span class="string">'PetalLengthCm'</span>,<span class="string">'PetalWidthCm'</span>]</span><br><span class="line">X, y = iris.data, iris.target</span><br><span class="line"></span><br><span class="line">forest = DecisionTreeClassifier(criterion=<span class="string">'entropy'</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(forest, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="基于决策树的特征选取"><a href="#基于决策树的特征选取" class="headerlink" title="基于决策树的特征选取"></a>基于决策树的特征选取</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">forest = DecisionTreeClassifier(criterion=<span class="string">'entropy'</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(forest, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -743,44 +1431,330 @@ Length: 92, dtype: float64
   <tbody>
     <tr>
       <th>0</th>
-      <td>SepalLengthCm</td>
+      <td>low_volume_percent</td>
       <td>False</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>SepalWidthCm</td>
-      <td>False</td>
+      <td>middle_volume_percent</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>PetalLengthCm</td>
-      <td>False</td>
+      <td>take_amount_in_later_12_month_highest</td>
+      <td>True</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>PetalWidthCm</td>
+      <td>trans_amount_increase_rate_lately</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>trans_activity_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>trans_activity_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>transd_mcc</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>trans_days_interval_filter</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>trans_days_interval</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>regional_mobility</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>repayment_capability</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>is_high_user</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>number_of_trans_from_2011</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>historical_trans_amount</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>historical_trans_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>rank_trad_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>trans_amount_3_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>avg_consume_less_12_valid_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>abs</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>top_trans_count_last_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>avg_price_last_12_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>avg_price_top_last_12_valid_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>reg_preference_for_trad</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>trans_top_time_last_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>trans_top_time_last_6_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>consume_top_time_last_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>consume_top_time_last_6_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>cross_consume_count_last_1_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>trans_fail_top_count_enum_last_1_month</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>trans_fail_top_count_enum_last_6_month</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>loans_overdue_count</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>54</th>
+      <td>loans_org_count_behavior</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>consfin_org_count_behavior</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>loans_cash_count</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>latest_one_month_loan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>latest_three_month_loan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>latest_six_month_loan</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>history_suc_fee</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>history_fail_fee</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>latest_one_month_suc</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>63</th>
+      <td>latest_one_month_fail</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>64</th>
+      <td>loans_long_time</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>loans_credit_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>loans_credibility_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>loans_org_count_current</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>68</th>
+      <td>loans_product_count</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>loans_max_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>loans_avg_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>consfin_credit_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>72</th>
+      <td>consfin_credibility</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>consfin_org_count_current</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>consfin_product_count</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>consfin_max_limit</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>consfin_avg_limit</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>latest_query_day</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>loans_latest_day</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>79</th>
+      <td>query_finance_percent</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>80</th>
+      <td>query_cash_percent</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>per_avg_amount</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>avg_amount_perday</td>
       <td>True</td>
     </tr>
   </tbody>
 </table>
+<p>83 rows × 2 columns</p>
 </div>
 
 
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出特征排序</span></span><br><span class="line">importance = forest.feature_importances_</span><br><span class="line">imp_result = np.argsort(importance)[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:iris.columns,<span class="string">'filter'</span>:sp.get_support(),<span class="string">'importance'</span>:imp_result&#125;).sort_values(<span class="string">"importance"</span>,ascending=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出特征排序</span></span><br><span class="line">importance = forest.feature_importances_</span><br><span class="line">imp_result = np.argsort(importance)[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support(),<span class="string">'importance'</span>:imp_result&#125;).sort_values(<span class="string">"importance"</span>,ascending=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
 <div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
     }
 
     .dataframe tbody tr th {
         vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
     }
 </style>
 <table border="1" class="dataframe">
@@ -794,31 +1768,374 @@ Length: 92, dtype: float64
   </thead>
   <tbody>
     <tr>
-      <th>2</th>
-      <td>PetalLengthCm</td>
-      <td>False</td>
+      <th>63</th>
+      <td>latest_one_month_fail</td>
+      <td>True</td>
       <td>0</td>
     </tr>
     <tr>
-      <th>3</th>
-      <td>PetalWidthCm</td>
-      <td>True</td>
+      <th>30</th>
+      <td>trans_fail_top_count_enum_last_12_month</td>
+      <td>False</td>
       <td>1</td>
     </tr>
     <tr>
-      <th>1</th>
-      <td>SepalWidthCm</td>
+      <th>25</th>
+      <td>consume_top_time_last_1_month</td>
       <td>False</td>
       <td>2</td>
     </tr>
     <tr>
-      <th>0</th>
-      <td>SepalLengthCm</td>
+      <th>29</th>
+      <td>trans_fail_top_count_enum_last_6_month</td>
       <td>False</td>
       <td>3</td>
     </tr>
+    <tr>
+      <th>8</th>
+      <td>trans_days_interval</td>
+      <td>True</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>top_trans_count_last_1_month</td>
+      <td>False</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>abs</td>
+      <td>True</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>loans_overdue_count</td>
+      <td>False</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>avg_price_top_last_12_valid_month</td>
+      <td>False</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>consfin_org_count_behavior</td>
+      <td>False</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>regional_mobility</td>
+      <td>False</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>77</th>
+      <td>latest_query_day</td>
+      <td>True</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>trans_top_time_last_6_month</td>
+      <td>False</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>74</th>
+      <td>consfin_product_count</td>
+      <td>False</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>trans_fail_top_count_enum_last_1_month</td>
+      <td>True</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>jewelry_consume_count_last_6_month</td>
+      <td>False</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>transd_mcc</td>
+      <td>True</td>
+      <td>16</td>
+    </tr>
+    <tr>
+      <th>69</th>
+      <td>loans_max_limit</td>
+      <td>False</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>trans_activity_month</td>
+      <td>True</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>67</th>
+      <td>loans_org_count_current</td>
+      <td>False</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>max_cumulative_consume_later_1_month</td>
+      <td>True</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>75</th>
+      <td>consfin_max_limit</td>
+      <td>True</td>
+      <td>21</td>
+    </tr>
+    <tr>
+      <th>65</th>
+      <td>loans_credit_limit</td>
+      <td>False</td>
+      <td>22</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>query_cash_count</td>
+      <td>False</td>
+      <td>23</td>
+    </tr>
+    <tr>
+      <th>57</th>
+      <td>latest_one_month_loan</td>
+      <td>False</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>trans_day_last_12_month</td>
+      <td>True</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>max_consume_count_later_6_month</td>
+      <td>False</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <th>82</th>
+      <td>avg_amount_perday</td>
+      <td>True</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>low_volume_percent</td>
+      <td>False</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>latest_six_month_loan</td>
+      <td>False</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>51</th>
+      <td>loans_count</td>
+      <td>False</td>
+      <td>53</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>latest_three_month_apply</td>
+      <td>False</td>
+      <td>54</td>
+    </tr>
+    <tr>
+      <th>58</th>
+      <td>latest_three_month_loan</td>
+      <td>False</td>
+      <td>55</td>
+    </tr>
+    <tr>
+      <th>73</th>
+      <td>consfin_org_count_current</td>
+      <td>False</td>
+      <td>56</td>
+    </tr>
+    <tr>
+      <th>81</th>
+      <td>per_avg_amount</td>
+      <td>True</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>loans_avg_limit</td>
+      <td>False</td>
+      <td>58</td>
+    </tr>
+    <tr>
+      <th>56</th>
+      <td>loans_cash_count</td>
+      <td>False</td>
+      <td>59</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>historical_trans_day</td>
+      <td>True</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>middle_volume_percent</td>
+      <td>True</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>pawns_auctions_trusts_consume_last_6_month</td>
+      <td>True</td>
+      <td>62</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>trans_amount_3_month</td>
+      <td>True</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>trans_amount_increase_rate_lately</td>
+      <td>True</td>
+      <td>64</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>query_org_count</td>
+      <td>False</td>
+      <td>65</td>
+    </tr>
+    <tr>
+      <th>50</th>
+      <td>loans_credibility_behavior</td>
+      <td>False</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>62</th>
+      <td>latest_one_month_suc</td>
+      <td>False</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>apply_credibility</td>
+      <td>False</td>
+      <td>68</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>query_finance_count</td>
+      <td>False</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>48</th>
+      <td>latest_six_month_apply</td>
+      <td>True</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>railway_consume_count_last_12_month</td>
+      <td>False</td>
+      <td>71</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>query_sum_count</td>
+      <td>False</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>consfin_avg_limit</td>
+      <td>False</td>
+      <td>73</td>
+    </tr>
+    <tr>
+      <th>60</th>
+      <td>history_suc_fee</td>
+      <td>True</td>
+      <td>74</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>reg_preference_for_trad</td>
+      <td>False</td>
+      <td>75</td>
+    </tr>
+    <tr>
+      <th>66</th>
+      <td>loans_credibility_limit</td>
+      <td>False</td>
+      <td>76</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>cross_consume_count_last_1_month</td>
+      <td>False</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>first_transaction_day</td>
+      <td>False</td>
+      <td>78</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>number_of_trans_from_2011</td>
+      <td>True</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>historical_trans_amount</td>
+      <td>False</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>repayment_capability</td>
+      <td>True</td>
+      <td>81</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>trans_activity_day</td>
+      <td>True</td>
+      <td>82</td>
+    </tr>
   </tbody>
 </table>
+<p>83 rows × 3 columns</p>
 </div>
 
 
@@ -828,6 +2145,91 @@ Length: 92, dtype: float64
 <p>从这个公式中我们可以体会到，WOE表示的实际上是“当前分组中响应客户占所有响应客户的比例”和“当前分组中没有响应的客户占所有没有响应的客户的比例”的差异。</p>
 <p>对这个公式做一个简单变换，可以得到：</p>
 <p>变换以后我们可以看出，WOE也可以这么理解，他表示的是当前这个组中响应的客户和未响应客户的比值，和所有样本中这个比值的差异。这个差异是用这两个比值的比值，再取对数来表示的。WOE越大，这种差异越大，这个分组里的样本响应的可能性就越大，WOE越小，差异越小，这个分组里的样本响应的可能性就越小。</p>
+<h4 id="IV"><a href="#IV" class="headerlink" title="IV"></a>IV</h4><p>IV的全称是Information Value，中文意思是信息价值，或者信息量。</p>
+<p>我们在用逻辑回归、决策树等模型方法构建分类模型时，经常需要对自变量进行筛选。比如我们有200个候选自变量，通常情况下，不会直接把200个变量直接放到模型中去进行拟合训练，而是会用一些方法，从这200个自变量中挑选一些出来，放进模型，形成入模变量列表。那么我们怎么去挑选入模变量呢？</p>
+<p>挑选入模变量过程是个比较复杂的过程，需要考虑的因素很多，比如：变量的预测能力，变量之间的相关性，变量的简单性（容易生成和使用），变量的强壮性（不容易被绕过），变量在业务上的可解释性（被挑战时可以解释的通）等等。但是，其中最主要和最直接的衡量标准是变量的预测能力。</p>
+<p>“变量的预测能力”这个说法很笼统，很主观，非量化，在筛选变量的时候我们总不能说：“我觉得这个变量预测能力很强，所以他要进入模型”吧？我们需要一些具体的量化指标来衡量每自变量的预测能力，并根据这些量化指标的大小，来确定哪些变量进入模型。IV就是这样一种指标，他可以用来衡量自变量的预测能力。类似的指标还有信息增益、基尼系数等等。</p>
+<p>从直观逻辑上大体可以这样理解“用IV去衡量变量预测能力”这件事情：我们假设在一个分类问题中，目标变量的类别有两类：Y1，Y2。对于一个待预测的个体A，要判断A属于Y1还是Y2，我们是需要一定的信息的，假设这个信息总量是I，而这些所需要的信息，就蕴含在所有的自变量C1，C2，C3，……，Cn中，那么，对于其中的一个变量Ci来说，其蕴含的信息越多，那么它对于判断A属于Y1还是Y2的贡献就越大，Ci的信息价值就越大，Ci的IV就越大，它就越应该进入到入模变量列表中。</p>
+<p>IVi无论等于负无穷还是正无穷，都是没有意义的。</p>
+<p>使用IV其实有一个缺点，就是不能自动处理变量的分组中出现响应比例为0或100%的情况。那么，遇到响应比例为0或者100%的情况，我们应该怎么做呢？建议如下：</p>
+<ol>
+<li>如果可能，直接把这个分组做成一个规则，作为模型的前置条件或补充条件</li>
+<li>重新对变量进行离散化或分组，使每个分组的响应比例都不为0且不为100%，尤其是当一个分组个体数很小时（比如小于100个），强烈建议这样做，因为本身把一个分组个体数弄得很小就不是太合理</li>
+<li>如果上面两种方法都无法使用，建议人工把该分组的响应数和非响应的数量进行一定的调整。如果响应数原本为0，可以人工调整响应数为1，如果非响应数原本为0，可以人工调整非响应数为1</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([[<span class="string">"&lt;0.03"</span>,<span class="string">"无预测能力"</span>],</span><br><span class="line">[<span class="string">"0.03-0.09"</span>,<span class="string">"低"</span>],</span><br><span class="line">[<span class="string">"0.1-0.29"</span>,<span class="string">"中"</span>],</span><br><span class="line">[<span class="string">"0.3-0.49"</span>,<span class="string">"高"</span>],</span><br><span class="line">[<span class="string">"&gt;=0.5"</span>,<span class="string">"极高且可疑"</span>],], columns = [<span class="string">"IV"</span>,<span class="string">"预测能力"</span>])</span><br></pre></td></tr></table></figure>
+<div>
+<style>
+    .dataframe thead tr:only-child th {
+        text-align: right;
+    }
+
+    .dataframe thead th {
+        text-align: left;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>IV</th>
+      <th>预测能力</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>&lt;0.03</td>
+      <td>无预测能力</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.03-0.09</td>
+      <td>低</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.1-0.29</td>
+      <td>中</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.3-0.49</td>
+      <td>高</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>&gt;=0.5</td>
+      <td>极高且可疑</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CalcIV</span><span class="params">(Xvar,Yvar)</span>:</span></span><br><span class="line">    N_0=np.sum(Yvar==<span class="number">0</span>)</span><br><span class="line">    N_1=np.sum(Yvar==<span class="number">1</span>)</span><br><span class="line">    N_0_group=np.zeros(np.unique(Xvar).shape)</span><br><span class="line">    </span><br><span class="line">    N_1_group=np.zeros(np.unique(Xvar).shape)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(np.unique(Xvar))):</span><br><span class="line">        N_0_group[i] = Yvar[(Xvar==np.unique(Xvar)[i])&amp;(Yvar==<span class="number">0</span>)].count()</span><br><span class="line">        N_1_group[i] = Yvar[(Xvar==np.unique(Xvar)[i])&amp;(Yvar==<span class="number">1</span>)].count()</span><br><span class="line">    iv = np.sum((N_0_group/N_0-N_1_group/N_1)*np.log((N_0_group/N_0)/(N_1_group/N_1)))</span><br><span class="line">    <span class="keyword">if</span> iv&gt;=<span class="number">1.0</span>:<span class="comment">## 处理极端值</span></span><br><span class="line">        iv=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> iv</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caliv_batch</span><span class="params">(df,Yvar)</span>:</span></span><br><span class="line">    ivlist=[]</span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> df.columns:</span><br><span class="line">        iv=CalcIV(df[col],Yvar)</span><br><span class="line">        ivlist.append(iv)</span><br><span class="line">    names=list(df.columns)</span><br><span class="line">    iv_df=pd.DataFrame(&#123;<span class="string">'Var'</span>:names,<span class="string">'Iv'</span>:ivlist&#125;,columns=[<span class="string">'Var'</span>,<span class="string">'Iv'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> iv_df,ivlist</span><br><span class="line"></span><br><span class="line">im_iv, ivl = caliv_batch(X,y)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">im_iv[<span class="string">'Iv'</span>].describe()</span><br></pre></td></tr></table></figure>
+<pre><code>count    83.000000
+mean      0.930759
+std       0.249840
+min       0.005614
+25%       1.000000
+50%       1.000000
+75%       1.000000
+max       1.000000
+Name: Iv, dtype: float64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">threshold = <span class="number">0.02</span></span><br><span class="line">threshold2 = <span class="number">0.6</span></span><br><span class="line">data_index=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(ivl)):</span><br><span class="line">    <span class="keyword">if</span> (im_iv[<span class="string">'Iv'</span>][i]&lt; threshold)|(im_iv[<span class="string">'Iv'</span>][i] &gt; threshold2):</span><br><span class="line">        data_index.append(im_iv[<span class="string">'Var'</span>][i])</span><br><span class="line">datafinal_IV = df.drop(data_index,axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datafinal_IV.columns</span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;rank_trad_1_month&#39;, &#39;top_trans_count_last_1_month&#39;, &#39;status&#39;,
+       &#39;consfin_product_count&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x_train_IV = datafinal_IV.iloc[:,:<span class="number">-1</span>]</span><br><span class="line">y_train_IV = datafinal_IV.iloc[:,<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -835,6 +2237,7 @@ Length: 92, dtype: float64
 <li><a href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">DataWhale数据挖掘实战营</a></li>
 <li><a href="https://blog.csdn.net/tonydz0523/article/details/84404261" target="_blank" rel="noopener">python数据预处理 ：数据共线性处理</a></li>
 <li><a href="https://www.cnblogs.com/stevenlk/p/6543628.html" target="_blank" rel="noopener">特征选择 (feature_selection)</a></li>
+<li><a href="https://blog.csdn.net/shenxiaoming77/article/details/78771698" target="_blank" rel="noopener">评分卡模型中的IV和WOE详解</a></li>
 </ol>
 
       
@@ -879,6 +2282,10 @@ Length: 92, dtype: float64
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/人工智能/监督学习/32512/" rel="prev" title="6种分类模型比较">
+                6种分类模型比较 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -954,7 +2361,7 @@ Length: 92, dtype: float64
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">17</span>
+                    <span class="site-state-item-count">18</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -1065,7 +2472,7 @@ Length: 92, dtype: float64
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征衍生-升维"><span class="nav-number">2.</span> <span class="nav-text">特征衍生/升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征筛选-降维"><span class="nav-number">3.</span> <span class="nav-text">特征筛选/降维</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#共线性分析"><span class="nav-number">3.0.1.</span> <span class="nav-text">共线性分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去掉方差较小的特征"><span class="nav-number">3.0.2.</span> <span class="nav-text">去掉方差较小的特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单变量特征选择"><span class="nav-number">3.0.3.</span> <span class="nav-text">单变量特征选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于-L1-的特征选取"><span class="nav-number">3.0.4.</span> <span class="nav-text">基于 L1 的特征选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于决策树的特征选取"><span class="nav-number">3.0.5.</span> <span class="nav-text">基于决策树的特征选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WOE"><span class="nav-number">3.0.6.</span> <span class="nav-text">WOE</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征预处理"><span class="nav-number">2.</span> <span class="nav-text">特征预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#删除无用"><span class="nav-number">2.0.1.</span> <span class="nav-text">删除无用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理分类型特征"><span class="nav-number">2.0.2.</span> <span class="nav-text">处理分类型特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用众数填充"><span class="nav-number">2.0.3.</span> <span class="nav-text">使用众数填充</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#特征衍生-升维"><span class="nav-number">3.</span> <span class="nav-text">特征衍生/升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征筛选-降维"><span class="nav-number">4.</span> <span class="nav-text">特征筛选/降维</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#共线性分析"><span class="nav-number">4.0.1.</span> <span class="nav-text">共线性分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#去掉方差较小的特征"><span class="nav-number">4.0.2.</span> <span class="nav-text">去掉方差较小的特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单变量特征选择"><span class="nav-number">4.0.3.</span> <span class="nav-text">单变量特征选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于-L1-的特征选取"><span class="nav-number">4.0.4.</span> <span class="nav-text">基于 L1 的特征选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于决策树的特征选取"><span class="nav-number">4.0.5.</span> <span class="nav-text">基于决策树的特征选取</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WOE"><span class="nav-number">4.0.6.</span> <span class="nav-text">WOE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IV"><span class="nav-number">4.0.7.</span> <span class="nav-text">IV</span></a></li></ol></li></div>
             
 
           </div>
