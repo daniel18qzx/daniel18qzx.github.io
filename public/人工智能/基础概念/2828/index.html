@@ -90,17 +90,19 @@
 
 
 
-  <meta name="description" content="特性 基于概率，优点是可以对预测标签给出理论上完美的可能性估计 要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘  原理朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：  for label i">
+  <meta name="description" content="数据集载入1234567891011121314151617181920212223242526272829303132333435# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningsfr">
 <meta property="og:type" content="article">
-<meta property="og:title" content="朴素贝叶斯">
-<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/监督学习/58685/index.html">
+<meta property="og:title" content="网格搜寻">
+<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/基础概念/2828/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="特性 基于概率，优点是可以对预测标签给出理论上完美的可能性估计 要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘  原理朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：  for label i">
+<meta property="og:description" content="数据集载入1234567891011121314151617181920212223242526272829303132333435# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningsfr">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-15T02:23:30.661Z">
+<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-10_网格搜寻_1.png">
+<meta property="og:updated_time" content="2019-08-15T05:50:06.086Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朴素贝叶斯">
-<meta name="twitter:description" content="特性 基于概率，优点是可以对预测标签给出理论上完美的可能性估计 要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘  原理朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：  for label i">
+<meta name="twitter:title" content="网格搜寻">
+<meta name="twitter:description" content="数据集载入1234567891011121314151617181920212223242526272829303132333435# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningsfr">
+<meta name="twitter:image" content="https://daniel18qzx.github.io/img/2019-08-10_网格搜寻_1.png">
 
 
 
@@ -108,7 +110,7 @@
 
   
   
-  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/监督学习/58685/">
+  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/基础概念/2828/">
 
 
 
@@ -118,7 +120,7 @@
   };
 </script>
 
-  <title>朴素贝叶斯 | 菜鸟分析狮</title>
+  <title>网格搜寻 | 菜鸟分析狮</title>
   
 
 
@@ -333,7 +335,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/监督学习/58685/">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/基础概念/2828/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Dan">
@@ -350,7 +352,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">朴素贝叶斯
+          <h2 class="post-title" itemprop="name headline">网格搜寻
 
               
             
@@ -376,7 +378,7 @@
                 
               
 
-              <time title="Created: 2019-07-23 00:00:00" itemprop="dateCreated datePublished" datetime="2019-07-23T00:00:00+08:00">2019-07-23</time>
+              <time title="Created: 2019-08-10 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-10T00:00:00+08:00">2019-08-10</time>
             
 
             
@@ -393,7 +395,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-15 10:23:30" itemprop="dateModified" datetime="2019-08-15T10:23:30+08:00">2019-08-15</time>
+                <time title="Modified: 2019-08-15 13:50:06" itemprop="dateModified" datetime="2019-08-15T13:50:06+08:00">2019-08-15</time>
               
             
           </span>
@@ -417,7 +419,7 @@
                   , 
                 
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/监督学习/" itemprop="url" rel="index"><span itemprop="name">监督学习</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/基础概念/" itemprop="url" rel="index"><span itemprop="name">基础概念</span></a></span>
 
                 
                 
@@ -436,8 +438,8 @@
                 </span>
             
                 <span class="post-meta-item-text">Comments: </span>
-                <a href="/人工智能/监督学习/58685/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/监督学习/58685/" itemprop="commentCount"></span>
+                <a href="/人工智能/基础概念/2828/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/基础概念/2828/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -466,7 +468,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.4k</span>
+                <span title="Symbols count in article">4.2k</span>
               
 
               
@@ -480,7 +482,7 @@
                 
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
-                <span title="Reading time">2 mins.</span>
+                <span title="Reading time">7 mins.</span>
               
             </div>
           
@@ -500,50 +502,37 @@
       
 
       
-        <h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li>基于概率，优点是可以对预测标签给出理论上完美的可能性估计</li>
-<li>要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘</li>
+        <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> minmax_scale</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u"2019-08-01_金融数据描述_data1.csv"</span>,encoding = <span class="string">'gbk'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除无用</span></span><br><span class="line">delete = [<span class="string">'Unnamed: 0'</span>, <span class="string">'custid'</span>, <span class="string">'trade_no'</span>, <span class="string">'bank_card_no'</span>,<span class="string">'id_name'</span>,<span class="string">'latest_query_time'</span>,<span class="string">'source'</span>,<span class="string">'loans_latest_time'</span>,<span class="string">'first_transaction_time'</span>, <span class="string">'student_feature'</span>]</span><br><span class="line">df = df.drop(delete,axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理分类型特征</span></span><br><span class="line">df[<span class="string">'reg_preference_for_trad'</span>] = LabelEncoder().fit_transform(df[<span class="string">'reg_preference_for_trad'</span>].astype(str))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用众数填充</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(df.shape[<span class="number">1</span>]):</span><br><span class="line">    feature = df.iloc[:,i].values.reshape(<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line">    imp_mode = Imputer(strategy=<span class="string">'most_frequent'</span>)</span><br><span class="line">    df.iloc[:,i] = imp_mode.fit_transform(feature)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据划分</span></span><br><span class="line">X = df[:].drop(<span class="string">"status"</span>,axis=<span class="number">1</span>)</span><br><span class="line">y = df[<span class="string">"status"</span>]</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>, shuffle = <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据归一化</span></span><br><span class="line">X_train = minmax_scale(X_train)</span><br><span class="line">X_test =  minmax_scale(X_test)</span><br></pre></td></tr></table></figure>
+<h2 id="Simple-Grid-Search（使用Holdout验证）"><a href="#Simple-Grid-Search（使用Holdout验证）" class="headerlink" title="Simple Grid Search（使用Holdout验证）"></a>Simple Grid Search（使用Holdout验证）</h2><p>交叉验证的目的是为了让模型评估更加准确可信。</p>
+<p>缺点：</p>
+<ul>
+<li>最终的表现好坏与初始数据的划分结果有很大的关系，为了处理这种情况，可以采用交叉验证的方式来减少偶然性</li>
 </ul>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：</p>
-<blockquote>
-<p>for label in 所有标签:</p>
-<p>   用贝叶斯公式计算在给定特征情况下出现该label的后验机率</p>
-<p>预测标签 &lt;= 获得最高后验机率的 label</p>
-</blockquote>
-<p>由于实际上计算了所有标签的后验机率，所以贝叶斯分类不仅可以提供该组特征最可能的标签，还能给出其他的标签排序。</p>
-<h2 id="高斯朴素贝叶斯"><a href="#高斯朴素贝叶斯" class="headerlink" title="高斯朴素贝叶斯"></a>高斯朴素贝叶斯</h2><ul>
-<li>假定所有特征都呈高斯分布</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line">gnb = GaussianNB()</span><br><span class="line">gnb.fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"数据集大小"</span>)</span><br><span class="line">print(iris.data.shape)</span><br><span class="line">print(iris.target.shape)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"察看模型的先验机率"</span>)</span><br><span class="line">print(gnb.class_prior_)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"察看训练集标签数量"</span>)</span><br><span class="line">print(gnb.class_count_)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"察看高斯模型期望值"</span>)</span><br><span class="line">print(gnb.theta_)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"察看高斯模型方差"</span>)</span><br><span class="line">print(gnb.sigma_)</span><br></pre></td></tr></table></figure>
-<pre><code>数据集大小
-(150, 4)
-(150,)
-
-察看模型的先验机率
-[0.33333333 0.33333333 0.33333333]
-
-察看训练集标签数量
-[50. 50. 50.]
-
-察看高斯模型期望值
-[[5.006 3.428 1.462 0.246]
- [5.936 2.77  4.26  1.326]
- [6.588 2.974 5.552 2.026]]
-
-察看高斯模型方差
-[[0.121764 0.140816 0.029556 0.010884]
- [0.261104 0.0965   0.2164   0.038324]
- [0.396256 0.101924 0.298496 0.073924]]
-</code></pre><h2 id="伯努利朴素贝叶斯"><a href="#伯努利朴素贝叶斯" class="headerlink" title="伯努利朴素贝叶斯"></a>伯努利朴素贝叶斯</h2><ul>
-<li>每次实验只可能出现两种结果的事件概率分布，也称二值分布</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> BernoulliNB</span><br><span class="line">clf = BernoulliNB(binarize = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以输入非二值特征，BernoulliNB内部会用阈值1将其转换为二值</span></span><br><span class="line">X = [[<span class="number">0.3</span>, <span class="number">0.2</span>], [<span class="number">1.3</span>, <span class="number">1.2</span>], [<span class="number">1.1</span>, <span class="number">1.2</span>]]</span><br><span class="line">Y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">clf.fit(X, Y)</span><br><span class="line"></span><br><span class="line">clf.predict([[<span class="number">0.99</span>, <span class="number">0.99</span>]])</span><br></pre></td></tr></table></figure>
-<pre><code>array([0])
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Size of training set:&#123;&#125; size of testing set:&#123;&#125;"</span>.format(X_train.shape[<span class="number">0</span>],X_test.shape[<span class="number">0</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment">#### grid search start</span></span><br><span class="line">best_score = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> gamma <span class="keyword">in</span> [<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>]:</span><br><span class="line">    <span class="keyword">for</span> C <span class="keyword">in</span> [<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>]:</span><br><span class="line">        svm = SVC(gamma=gamma,C=C) <span class="comment">#对于每种参数可能的组合，进行一次训练；</span></span><br><span class="line">        svm.fit(X_train,y_train)</span><br><span class="line">        score = svm.score(X_test,y_test)</span><br><span class="line">        <span class="keyword">if</span> score &gt; best_score: <span class="comment">#找到表现最好的参数</span></span><br><span class="line">            best_score = score</span><br><span class="line">            best_parameters = &#123;<span class="string">'gamma'</span>:gamma,<span class="string">'C'</span>:C&#125;</span><br><span class="line"><span class="comment">### grid search end</span></span><br><span class="line"></span><br><span class="line">print(<span class="string">"Best score:&#123;:.2f&#125;"</span>.format(best_score))</span><br><span class="line">print(<span class="string">"Best parameters:&#123;&#125;"</span>.format(best_parameters))</span><br></pre></td></tr></table></figure>
+<pre><code>Size of training set:3803 size of testing set:951
+Best score:0.78
+Best parameters:{&#39;gamma&#39;: 0.1, &#39;C&#39;: 10}
+</code></pre><p>原始数据集划分成训练集和测试集以后，其中测试集除了用作调整参数，也用来测量模型的好坏；这样做导致最终的评分结果比实际效果要好，错估模型的泛化能力。</p>
+<p>解决方法是可以对训练集再进行一次划分，分成训练集和验证集，这样划分的结果就是：原始数据划分为3份，分别为：训练集、验证集和测试集；其中训练集用来模型训练，验证集用来调整参数，而测试集用来衡量模型表现好坏。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">X_trainval,y_trainval = X_train,y_train</span><br><span class="line">X_train,X_val,y_train,y_val = train_test_split(X_trainval,y_trainval)</span><br><span class="line">print(<span class="string">"Size of training set:&#123;&#125; size of validation set:&#123;&#125; size of teseting set:&#123;&#125;"</span>.format(X_train.shape[<span class="number">0</span>],X_val.shape[<span class="number">0</span>],X_test.shape[<span class="number">0</span>]))</span><br><span class="line"></span><br><span class="line">best_score = <span class="number">0.0</span></span><br><span class="line"><span class="keyword">for</span> gamma <span class="keyword">in</span> [<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>]:</span><br><span class="line">    <span class="keyword">for</span> C <span class="keyword">in</span> [<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>]:</span><br><span class="line">        svm = SVC(gamma=gamma,C=C)</span><br><span class="line">        svm.fit(X_train,y_train)</span><br><span class="line">        score = svm.score(X_val,y_val)</span><br><span class="line">        <span class="keyword">if</span> score &gt; best_score:</span><br><span class="line">            best_score = score</span><br><span class="line">            best_parameters = &#123;<span class="string">'gamma'</span>:gamma,<span class="string">'C'</span>:C&#125;</span><br><span class="line">svm = SVC(**best_parameters)</span><br><span class="line">svm.fit(X_trainval,y_trainval)</span><br><span class="line">test_score = svm.score(X_test,y_test)</span><br><span class="line">print(<span class="string">"Best score on validation set:&#123;:.2f&#125;"</span>.format(best_score))</span><br><span class="line">print(<span class="string">"Best parameters:&#123;&#125;"</span>.format(best_parameters))</span><br><span class="line">print(<span class="string">"Best score on test set:&#123;:.2f&#125;"</span>.format(test_score))</span><br></pre></td></tr></table></figure>
+<pre><code>Size of training set:2852 size of validation set:951 size of teseting set:951
+Best score on validation set:0.79
+Best parameters:{&#39;gamma&#39;: 0.01, &#39;C&#39;: 100}
+Best score on test set:0.76
+</code></pre><h2 id="Grid-Search-with-Cross-Validation（使用K折交叉验证）"><a href="#Grid-Search-with-Cross-Validation（使用K折交叉验证）" class="headerlink" title="Grid Search with Cross Validation（使用K折交叉验证）"></a>Grid Search with Cross Validation（使用K折交叉验证）</h2><p>Grid Search 调参方法存在的共性弊端就是：耗时；参数越多，候选值越多，耗费时间越长。<br>所以，一般情况下，先定一个大范围，然后再细化。</p>
+<p><img src="/img/2019-08-10_网格搜寻_1.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line">param_grid = &#123;<span class="string">"gamma"</span>:[<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>],</span><br><span class="line">             <span class="string">"C"</span>:[<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>]&#125;</span><br><span class="line">print(<span class="string">"Parameters:&#123;&#125;"</span>.format(param_grid))</span><br><span class="line"></span><br><span class="line">grid_search = GridSearchCV(SVC(),param_grid,cv=<span class="number">5</span>)</span><br><span class="line">grid_search.fit(X_train,y_train)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"Test set score:&#123;:.2f&#125;"</span>.format(grid_search.score(X_test,y_test)))</span><br><span class="line">print(<span class="string">"Best parameters:&#123;&#125;"</span>.format(grid_search.best_params_))</span><br><span class="line">print(<span class="string">"Best score on train set:&#123;:.2f&#125;"</span>.format(grid_search.best_score_))</span><br></pre></td></tr></table></figure>
+<pre><code>Parameters:{&#39;gamma&#39;: [0.001, 0.01, 0.1, 1, 10, 100], &#39;C&#39;: [0.001, 0.01, 0.1, 1, 10, 100]}
+Test set score:0.77
+Best parameters:{&#39;C&#39;: 10, &#39;gamma&#39;: 0.1}
+Best score on train set:0.79
 </code></pre><blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
-<li><a href="http://www.broadview.com.cn/book/5337" target="_blank" rel="noopener">从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战</a></li>
+<li><a href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">DataWhale数据挖掘实战营</a></li>
+<li><a href="https://www.jianshu.com/p/55b9f2ea283b" target="_blank" rel="noopener">调参必备—Grid Search网格搜索</a></li>
+<li><a href="https://www.cnblogs.com/dblsha/p/10161798.html" target="_blank" rel="noopener">交叉验证和网格搜索</a></li>
 </ol>
 
       
@@ -579,8 +568,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/人工智能/监督学习/49110/" rel="next" title="支持向量机">
-                <i class="fa fa-chevron-left"></i> 支持向量机
+              <a href="/人工智能/监督学习/32513/" rel="next" title="6种分类模型比较">
+                <i class="fa fa-chevron-left"></i> 6种分类模型比较
               </a>
             
           </div>
@@ -588,10 +577,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/人工智能/监督学习/51507/" rel="prev" title="决策树">
-                决策树 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -778,7 +763,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#特性"><span class="nav-number">1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#原理"><span class="nav-number">2.</span> <span class="nav-text">原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯朴素贝叶斯"><span class="nav-number">3.</span> <span class="nav-text">高斯朴素贝叶斯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伯努利朴素贝叶斯"><span class="nav-number">4.</span> <span class="nav-text">伯努利朴素贝叶斯</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simple-Grid-Search（使用Holdout验证）"><span class="nav-number">2.</span> <span class="nav-text">Simple Grid Search（使用Holdout验证）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Grid-Search-with-Cross-Validation（使用K折交叉验证）"><span class="nav-number">3.</span> <span class="nav-text">Grid Search with Cross Validation（使用K折交叉验证）</span></a></li></ol></div>
             
 
           </div>
@@ -966,7 +951,7 @@
   
     <script>
   window.livereOptions = {
-    refer: '人工智能/监督学习/58685/'
+    refer: '人工智能/基础概念/2828/'
   };
   (function(d, s) {
     var j, e = d.getElementsByTagName(s)[0];
@@ -1316,46 +1301,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-  
-
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$', '$'], ['\\(', '\\)'] ],
-      processEscapes: true,
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    },
-    TeX: {
-      
-      equationNumbers: {
-        autoNumber: 'AMS'
-      }
-    }
-  });
-  MathJax.Hub.Register.StartupHook('TeX Jax Ready', function() {
-    MathJax.InputJax.TeX.prefilterHooks.Add(function(data) {
-      if (data.display) {
-        var next = data.script.nextSibling;
-        while (next && next.nodeName.toLowerCase() === '#text') { next = next.nextSibling }
-        if (next && next.nodeName.toLowerCase() === 'br') { next.parentNode.removeChild(next) }
-      }
-    });
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for (i = 0; i < all.length; i += 1) {
-      document.getElementById(all[i].inputID + '-Frame').parentNode.className += ' has-jax';
-    }
-  });
-</script>
-<script src="//cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
