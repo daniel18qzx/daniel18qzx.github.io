@@ -90,13 +90,17 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="菜鸟分析狮">
-<meta property="og:url" content="https://daniel18qzx.github.io/archives/2019/index.html">
+  <meta name="description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類在SKLearn中實現兩種集成學習算法  Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果 Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時">
+<meta property="og:type" content="article">
+<meta property="og:title" content="集成学习（以随机森林与adaboosting为例）">
+<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/监督学习/45240/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
+<meta property="og:description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類在SKLearn中實現兩種集成學習算法  Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果 Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時">
 <meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-08-24T06:18:28.058Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="菜鸟分析狮">
+<meta name="twitter:title" content="集成学习（以随机森林与adaboosting为例）">
+<meta name="twitter:description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類在SKLearn中實現兩種集成學習算法  Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果 Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時">
 
 
 
@@ -104,7 +108,7 @@
 
   
   
-  <link rel="canonical" href="https://daniel18qzx.github.io/archives/2019/">
+  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/监督学习/45240/">
 
 
 
@@ -114,7 +118,7 @@
   };
 </script>
 
-  <title>Archive | 菜鸟分析狮</title>
+  <title>集成学习（以随机森林与adaboosting为例） | 菜鸟分析狮</title>
   
 
 
@@ -162,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -238,7 +242,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -309,417 +313,290 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/监督学习/45240/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dan">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="菜鸟分析狮">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h2 class="post-title" itemprop="name headline">集成学习（以随机森林与adaboosting为例）
+
+              
+            
+          </h2>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-08-17 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-17T00:00:00+08:00">2019-08-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-08-24 14:18:28" itemprop="dateModified" datetime="2019-08-24T14:18:28+08:00">2019-08-24</time>
+              
+            
+          </span>
+
           
-        
-        Um..! 20 posts in total. Keep on posting.
-      </span>
-      
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a></span>
 
-      
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/监督学习/" itemprop="url" rel="index"><span itemprop="name">监督学习</span></a></span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h2 class="archive-year" id="archive-year-2019">2019</h2>
-          </div>
-        
-        
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/监督学习/45240/" itemprop="url">
+          
             
-              <span itemprop="name">集成学习（以随机森林与adaboosting为例）</span>
             
-          </a>
-        
-      </h3>
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">Comments: </span>
+                <a href="/人工智能/监督学习/45240/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/监督学习/45240/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-17T00:00:00+08:00" content="2019-08-17">
-          08-17
-        </time>
-      </div>
+          
+          
 
-    </header>
-  </article>
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             Views:  
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
 
+          
+            <div class="post-symbolscount">
+              
 
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Symbols count in article: </span>
+                
+                <span title="Symbols count in article">1.7k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time &asymp;</span>
+                
+                <span title="Reading time">3 mins.</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/项目/12953/" itemprop="url">
-            
-              <span itemprop="name">泰坦尼克之灾（六大模型baseline）</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-15T00:00:00+08:00" content="2019-08-15">
-          08-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/基础概念/2828/" itemprop="url">
-            
-              <span itemprop="name">网格搜寻</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-10T00:00:00+08:00" content="2019-08-10">
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+      
+        <p>集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果</p>
+<h2 id="集成学习分類"><a href="#集成学习分類" class="headerlink" title="集成学习分類"></a>集成学习分類</h2><p>在SKLearn中實現兩種集成學習算法</p>
+<ul>
+<li>Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果</li>
+<li>Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時所採用的訓練數據，最後預測時仍使用所有子模型的預測得到最終結果</li>
+</ul>
+<h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><p>随机森林在训练过程中对训练集进行随机抽样，分别进行训练后形成若干个小的决策树。分类问题的预测通过这些决策树的投票完成，回归问题的预测通过对基决策树结果求平均完成。基决策树一般采用”较大偏差”、”较小方差”的弱模型，和普通决策树有以下差别：</p>
+<ul>
+<li>样本裁减：通过随机采样，每个弱模型只训练部分样本数据</li>
+<li>特征裁减：每个基模型的决策树只选用数据特征中的一部分进行训练和预测，随机抽样保证所有特征都能被部分弱模型学习到</li>
+<li>小树：由于特征和样本数量有限，每个弱模型决策树都长不高，所以不用担心会过拟合进行剪枝</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line"><span class="comment"># Bootstrap: 有放回采样、Out-Bag Estimation: 使用为参与到本身训练的数据集进行评估预测</span></span><br><span class="line">clf = RandomForestClassifier(n_estimators = <span class="number">20</span>, bootstrap = <span class="literal">True</span>, oob_score = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">clf.fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line">clf.oob_score_</span><br></pre></td></tr></table></figure>
+<pre><code>0.94666666666666666
+</code></pre><h2 id="AdaBoost"><a href="#AdaBoost" class="headerlink" title="AdaBoost"></a>AdaBoost</h2><p>通过调整训练集中每个样本的权重使得每次迭代在不同的训练集上运行。在第一次迭代时训练集中美个样本会被赋予相同权值，当训练和评估完成后，AdaBoost会更新训练集中的样本，使得在本轮评估中被预测正确的样本权值减少，被预测错误的增加，然后开始第二轮的迭代，如此往复。每个迭代的基模型会逐渐更关注被预测错误的样本，如此提高整体拟合效果。因为每次迭代都用全部样本，故没有oob</p>
+<p>AdaBoostClassifier和AdaBoostRegressor都有，即我们的弱分类学习器或者弱回归学习器。理论上可以选择任何一个分类或者回归学习器，不过需要支持样本权重。我们常用的一般是CART决策树或者神经网络MLP。默认是决策树，即AdaBoostClassifier默认使用CART分类树DecisionTreeClassifier，而AdaBoostRegressor默认使用CART回归树DecisionTreeRegressor。另外有一个要注意的点是，如果我们选择的AdaBoostClassifier算法是SAMME.R，则我们的弱分类学习器还需要支持概率预测，也就是在scikit-learn中弱分类学习器对应的预测方法除了predict还需要有predict_proba</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> AdaBoostClassifier</span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.utils <span class="keyword">import</span> shuffle</span><br><span class="line">X, y = shuffle(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line">clf = AdaBoostClassifier(GaussianNB())</span><br><span class="line"></span><br><span class="line">clf.fit(X[:<span class="number">-20</span>],y[:<span class="number">-20</span>])</span><br><span class="line">clf.score(X[<span class="number">-20</span>:],y[<span class="number">-20</span>:])</span><br></pre></td></tr></table></figure>
+<pre><code>1.0
+</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a href="http://www.broadview.com.cn/book/5337" target="_blank" rel="noopener">从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战</a></li>
+<li><a href="https://www.cnblogs.com/pinard/p/6136914.html" target="_blank" rel="noopener">scikit-learn Adaboost类库使用小结</a></li>
+</ol>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/监督学习/32513/" itemprop="url">
-            
-              <span itemprop="name">6种分类模型比较</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-07T00:00:00+08:00" content="2019-08-07">
-          08-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/数据挖掘/17314/" itemprop="url">
-            
-              <span itemprop="name">数据理解与清洗</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-01T00:00:00+08:00" content="2019-08-01">
-          08-01
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/监督学习/51507/" itemprop="url">
-            
-              <span itemprop="name">决策树</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-29T00:00:00+08:00" content="2019-07-29">
-          07-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/监督学习/58685/" itemprop="url">
-            
-              <span itemprop="name">朴素贝叶斯</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-23T00:00:00+08:00" content="2019-07-23">
-          07-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/监督学习/49110/" itemprop="url">
-            
-              <span itemprop="name">支持向量机</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-21T00:00:00+08:00" content="2019-07-21">
-          07-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/基础概念/45545/" itemprop="url">
-            
-              <span itemprop="name">梯度下降</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-20T00:00:00+08:00" content="2019-07-20">
-          07-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-          <a class="post-title-link" href="/人工智能/监督学习/52662/" itemprop="url">
-            
-              <span itemprop="name">线性回归</span>
-            
-          </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-14T00:00:00+08:00" content="2019-07-14">
-          07-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+
+    
+      
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/人工智能/项目/12953/" rel="next" title="泰坦尼克之灾（六大模型baseline）">
+                <i class="fa fa-chevron-left"></i> 泰坦尼克之灾（六大模型baseline）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -739,8 +616,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -859,6 +745,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#集成学习分類"><span class="nav-number">1.</span> <span class="nav-text">集成学习分類</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机森林"><span class="nav-number">2.</span> <span class="nav-text">随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaBoost"><span class="nav-number">3.</span> <span class="nav-text">AdaBoost</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1018,6 +921,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -1033,6 +940,23 @@
 
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '人工智能/监督学习/45240/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
