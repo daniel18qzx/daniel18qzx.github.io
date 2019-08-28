@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[堆糖图片多线程抓取]]></title>
+    <url>%2F%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91%2F%E9%A1%B9%E7%9B%AE%2F46912%2F</url>
+    <content type="text"><![CDATA[123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263import requestsimport urllib.parseimport threading#多线程锁thread_lock = threading.BoundedSemaphore(value = 10)def get_page(url): #GET之后用utf-8解析 page = requests.get(url).content.decode("utf-8") return pagedef findall_in_page(page, start_part, end_part): all_strings = [] end = 0 while page.find(start_part,end) != -1: start = page.find(start_part, end)+len(start_part) end = page.find(end_part, start) string = page[start: end] all_strings.append(string) return all_stringsdef pic_urls_find_part(pages): pic_pics = [] for page in pages: urls = findall_in_page(page, '"path":"', '"') pic_pics.extend(urls) return pic_pics def pages_usr(label): pages = [] url = 'https://www.duitang.com/napi/blog/list/by_search/?kw=&#123;&#125;&amp;start=&#123;&#125;&amp;limit=1000' #将中文转成ASCII码 label = urllib.parse.quote(label) #观察response可发现max=3600 for index in range(0,3600,100): u = url.format(label,index) page = get_page(u) pages.append(page) return pages def download_pic(url, name): req = requests.get(url) path = 'test/杨幂'+str(name)+".jpg" with open(path, 'wb+') as file: file.write(req.content) #将锁打开避免堵塞 thread_lock.release() def main(label): pages = pages_usr(label) pic_urls = pic_urls_find_part(pages) numbers = 0 for url in pic_urls: numbers += 1 print("Now Downloading: &#123;&#125;".format(numbers)) #锁上，并开始执行 thread_lock.acquire() t = threading.Thread(target=download_pic, args=(url, numbers)) t.start() main('杨幂') Now Downloading: 1 Now Downloading: 2 Now Downloading: 3 Now Downloading: 4 Now Downloading: 5 Now Downloading: 6 Now Downloading: 7 Now Downloading: 8 Now Downloading: 9 Now Downloading: 10 参考： 从零起步 系统入门Python爬虫工程师]]></content>
+      <categories>
+        <category>爬虫开发</category>
+        <category>项目</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[数据仓库设计]]></title>
-    <url>%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BB%BA%E8%AE%BE%2F%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%2F22640%2F</url>
+    <url>%2F%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BB%BA%E8%AE%BE%2F%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%2F22639%2F</url>
     <content type="text"><![CDATA[基本介绍数据仓库是一个面向主题的、集成的、相对稳定的且反映历史变化的数据集合，用于支持管理人员的决策 面向主题的：为特定的数据分析领域与目标提供数据支持，比如交易库、用户库等 集成的：面向分析的数据仓库需要集成多种不同数据源以及文件以进行比较鉴别 相对稳定的：数据仓库中的数据是经过抽取而形成的分析型数据，主要供企业决策分析之用，执行的主要是‘查询’操作，一般不执行‘更新’操作。一个稳定的数据环境有利于数据分析的纵向和横向对比 反映历史变化的：数据仓库中的数据以一定时间段为单位进行统一更新，不断增加新的数据内容、不断删去旧的数据内容、更新与时间有关的综合数据 数据库系统设计 数据仓库系统设计 面向的数据类型 面向应用 面向分析 应用需求 比较明确 不太明确 系统设计目标 事务处理的并发性、安全性、高效性 历史数据的存储，数据质量的提升和数据模型的构建 数据来源 业务输入 业务系统 系统设计的方法 需求驱动 数据驱动 体系结构 模型星形模型 星型模型组成： 一个包含大批数据和不冗余数据的事实表（中心表） 一组小的附属表，称为维表。每维一个 事实表中每条元组都含有指向各个维表的外键和一些相应的测量数据，事实表的记录数量很多，维表中记录的是有关这一维的属性 雪花模型 雪花模型是对星型模型维表的进一步层次化 原来的各维表可能被扩展为小的事实表，形成一些局部的“层次”区域 比较雪花模式的维表是规范化的，以减少冗余。这种表易于维护，并节省存储空间。但与巨大的事实表相比，这种空间的节省可以忽略 由于执行查询需要更多的连接操作，雪花结构可能降低浏览的性能。在数据仓库设计中，星型模式更加常用 五层模型架构 数据来源及建模方式 服务领域 设计原则 DM层 数据来自DWS和MID层，应用支撑 前端报表展现，数据分析，产品数据支撑 面向应用开发报表、支撑产品需求 DWS层 数据来自MID和DWD层，轻度汇总，面向应用结合数据设计 各类服务模块，原子指标，通用应用模型开发 基于数据面向应用和通用服务，该层模型随需求变更会不断演化 MID层 数据来自DWD层，是MID事实明细层，采用维度建模，星型架构 为数据仓库提供各主题业务明细数据 分业务线按主题建模，数据只来自于DWD DWD层 数据来自ODS层,数据模型是ODS一致 数据质量提升，数据清洗、码值标准化，数据加密，数据校验 加密脱敏及治理后的规整数据，对外开放查询 ODS层 数据准备区，数据来源是各业务系统的源数据，物理模型和业务系统模型一致。 为其它逻辑层提供数据，数据溯源，数据存储 原始数据，不对外开放查询使用 细化DW建模 对DW中各个主题业务建模进行了细分，每个层次具有不同的功能。 保留了最细粒度数据 满足了不同维度，不同事实的信息 满足数据重新生成 不同层次的数据支持数据重新生成 无需备份恢复 解决了由不同故障带来的数据质量问题 消除了重新初始化数据的烦恼 快速适应需求变更 适应维度变化 明细基础数据层稳定，适应前端应用层业务需求变更 所有前端应用层模型之间不存在依赖，需求变更对DW整个模型影响范围小 能适应短周期内上线下线需求 元数据管理最基本的元数据相当于数据库系统中的数据字典。元数据定义了数据仓库有什么，指明了数据仓库中数据的内容和位置，刻画了数据的抽取和转换规则，存储了与数据仓库主题有关的各种商业信息，而且整个数据仓库的运行都是基于元数据的 数据源的元数据 数据模型的元数据 数据仓库映射的元数据 数据仓库使用的元数据 构建方法自上而下（Bill Inmon） 从整个企业的业务环境入手，分析其中的概念，应该有什么样的数据，达成概念完整性，并不从它需要支持那些应用入手 一个企业建立唯一的数据中心，就像一个数据的仓库，其中数据是经过整合、经过清洗、去掉脏数据的、标准的，能够提供统一的视图 自下而上（Ralph Kimbal） 按照实际的应用需求，加载需要的数据，不需要的数据不必要加载到数据仓库当中 这种方式建设周期较短，客户能够很快看到结果，适合做项目类数据仓库 混合法 结合自上而下、自下而上两种构造数据仓库的方法，结合企业自身特点，分析业务环境构造数据仓库底层数据基础，再按照实际的应用需求构造数据仓库上层数据 应避免的设计 任务间依赖较乱 链路太长 数据质量低 数据安全级别低 元数据信息缺失 码值无标准 架构原则 底层业务的数据驱动为导向同时结合业务需求驱动 便于数据分析 屏蔽底层复杂业务 简单、完整、集成的将数据暴露给分析层 底层业务变动与上层需求变动对模型冲击最小化 业务系统变化影响削弱在基础数据层（资金订单改造） 结合自上而下的建设方法削弱需求变动对模型的影响 数据水平层次清晰化 高内聚松耦合 主题之内或各个完整意义的系统内数据的高内聚 主题之间或各个完整意义的系统间数据的松耦合 构建仓库基础数据层 使得底层业务数据整合工作与上层应用开发工作相隔离，为仓库大规模开发奠定基础 仓库层次更加清晰，对外暴露数据更加统一 参考： 数据仓库建模之雪花模型和星形模型 支付宝数据建模介绍]]></content>
       <categories>
         <category>大数据建设</category>
-        <category>基础概念</category>
+        <category>数据仓库</category>
       </categories>
   </entry>
   <entry>
