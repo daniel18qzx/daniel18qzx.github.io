@@ -90,17 +90,17 @@
 
 
 
-  <meta name="description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類在SKLearn中實現兩種集成學習算法  Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果 Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時">
+  <meta name="description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類 Booststrap：有放回的抽样方法，是非参数统计中一种重要的估计统计量方差进而进行区间估计的统计方法。 步骤 采用重抽样技术从原始样本中抽取一定数量（自己给定）的样本，此过程允许重复抽样 根据抽出的样本计算统计量T 重复上述N次（一般大于1000），得">
 <meta property="og:type" content="article">
 <meta property="og:title" content="集成学习（以随机森林与adaboosting为例）">
 <meta property="og:url" content="https://daniel18qzx.github.io/人工智能/监督学习/45240/index.html">
 <meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類在SKLearn中實現兩種集成學習算法  Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果 Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時">
+<meta property="og:description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類 Booststrap：有放回的抽样方法，是非参数统计中一种重要的估计统计量方差进而进行区间估计的统计方法。 步骤 采用重抽样技术从原始样本中抽取一定数量（自己给定）的样本，此过程允许重复抽样 根据抽出的样本计算统计量T 重复上述N次（一般大于1000），得">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-26T01:44:13.798Z">
+<meta property="og:updated_time" content="2019-09-09T15:58:08.719Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="集成学习（以随机森林与adaboosting为例）">
-<meta name="twitter:description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類在SKLearn中實現兩種集成學習算法  Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果 Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時">
+<meta name="twitter:description" content="集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果 集成学习分類 Booststrap：有放回的抽样方法，是非参数统计中一种重要的估计统计量方差进而进行区间估计的统计方法。 步骤 采用重抽样技术从原始样本中抽取一定数量（自己给定）的样本，此过程允许重复抽样 根据抽出的样本计算统计量T 重复上述N次（一般大于1000），得">
 
 
 
@@ -393,7 +393,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2019-08-26 09:44:13" itemprop="dateModified" datetime="2019-08-26T09:44:13+08:00">2019-08-26</time>
+                <time title="Modified: 2019-09-09 23:58:08" itemprop="dateModified" datetime="2019-09-09T23:58:08+08:00">2019-09-09</time>
               
             
           </span>
@@ -466,7 +466,7 @@
                 
                   <span class="post-meta-item-text">Symbols count in article: </span>
                 
-                <span title="Symbols count in article">1.7k</span>
+                <span title="Symbols count in article">1.9k</span>
               
 
               
@@ -501,9 +501,22 @@
 
       
         <p>集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果</p>
-<h2 id="集成学习分類"><a href="#集成学习分類" class="headerlink" title="集成学习分類"></a>集成学习分類</h2><p>在SKLearn中實現兩種集成學習算法</p>
+<h2 id="集成学习分類"><a href="#集成学习分類" class="headerlink" title="集成学习分類"></a>集成学习分類</h2><ul>
+<li>Booststrap：有放回的抽样方法，是非参数统计中一种重要的估计统计量方差进而进行区间估计的统计方法。<ul>
+<li>步骤<ul>
+<li>采用重抽样技术从原始样本中抽取一定数量（自己给定）的样本，此过程允许重复抽样</li>
+<li>根据抽出的样本计算统计量T</li>
+<li>重复上述N次（一般大于1000），得到统计量T</li>
+<li>计算上述N个统计量T的样本方差，得到统计量的方差</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <ul>
-<li>Bagging：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果</li>
+<li>Bagging(Bootstrap Aggregating)：若干個基模型在若干個訓練子集上進行互相獨立的分別訓練，在預測時一次性綜合這些基模型的結果</li>
+</ul>
+<ul>
 <li>Boosting：按迭代順序逐個訓練基模型，在每次訓練後都進行模型測試，然後根據測試結果調整下一輪基模型訓練時所採用的訓練數據，最後預測時仍使用所有子模型的預測得到最終結果</li>
 </ul>
 <h2 id="随机森林"><a href="#随机森林" class="headerlink" title="随机森林"></a>随机森林</h2><p>随机森林在训练过程中对训练集进行随机抽样，分别进行训练后形成若干个小的决策树。分类问题的预测通过这些决策树的投票完成，回归问题的预测通过对基决策树结果求平均完成。基决策树一般采用”较大偏差”、”较小方差”的弱模型，和普通决策树有以下差别：</p>
@@ -524,6 +537,7 @@
 <ol>
 <li><a href="http://www.broadview.com.cn/book/5337" target="_blank" rel="noopener">从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战</a></li>
 <li><a href="https://www.cnblogs.com/pinard/p/6136914.html" target="_blank" rel="noopener">scikit-learn Adaboost类库使用小结</a></li>
+<li><a href="https://blog.csdn.net/wangqi880/article/details/49765673" target="_blank" rel="noopener">快速理解bootstrap,bagging,boosting-三个概念</a></li>
 </ol>
 
       
@@ -647,7 +661,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">24</span>
+                    <span class="site-state-item-count">27</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
