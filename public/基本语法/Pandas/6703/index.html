@@ -1,507 +1,176 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
-
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: true,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="基本设置1pd.set_option(&quot;max_columns&quot;, 50) 数据缺失检查123apts=pd.Series([&quot;Hangzhou&quot;, &quot;Beijing&quot;, &quot;Shenzhen&quot;])print(apts.notnull())print(apts.isnull()) 0    True 1    True 2    True dtype: bool 0    False 1    Fa">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Pandas基本语法">
-<meta property="og:url" content="https://daniel18qzx.github.io/基本语法/Pandas/6703/index.html">
-<meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="基本设置1pd.set_option(&quot;max_columns&quot;, 50) 数据缺失检查123apts=pd.Series([&quot;Hangzhou&quot;, &quot;Beijing&quot;, &quot;Shenzhen&quot;])print(apts.notnull())print(apts.isnull()) 0    True 1    True 2    True dtype: bool 0    False 1    Fa">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-23T16:08:40.273Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Pandas基本语法">
-<meta name="twitter:description" content="基本设置1pd.set_option(&quot;max_columns&quot;, 50) 数据缺失检查123apts=pd.Series([&quot;Hangzhou&quot;, &quot;Beijing&quot;, &quot;Shenzhen&quot;])print(apts.notnull())print(apts.isnull()) 0    True 1    True 2    True dtype: bool 0    False 1    Fa">
-
-
-
-
-
-  
-  
-  <link rel="canonical" href="https://daniel18qzx.github.io/基本语法/Pandas/6703/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>Pandas基本语法 | 菜鸟分析狮</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-
-  
-  
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
     
-  
+    <title>
+        
+            Pandas基本语法 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
     
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">菜鸟分析狮</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
     
-      
-        <h1 class="site-subtitle" itemprop="description">没有难处理的数据，没有难写的报告</h1>
-      
-    
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
 </div>
 
 
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-      
-    
+<main class="page-container">
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-homemenu"></i> <br>Home</a>
+    <div class="page-main-content">
 
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
 
-    
-    
-    
-      
-    
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
 
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/基本语法/Pandas/6703/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟分析狮">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">Pandas基本语法
-
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-06-28 00:00:00" itemprop="dateCreated datePublished" datetime="2019-06-28T00:00:00+08:00">2019-06-28</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-08-24 00:08:40" itemprop="dateModified" datetime="2019-08-24T00:08:40+08:00">2019-08-24</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基本语法/" itemprop="url" rel="index"><span itemprop="name">基本语法</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/基本语法/Pandas/" itemprop="url" rel="index"><span itemprop="name">Pandas</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/基本语法/Pandas/6703/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/基本语法/Pandas/6703/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             Views:  
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">15k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">25 mins.</span>
-              
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
             </div>
-          
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
 
         </div>
-      </header>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">Pandas基本语法</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep Team</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-06-28 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">基本语法</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Pandas/">Pandas</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
     
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    
+</div>
 
-      
-      
+                    </div>
+                </div>
+            </div>
+        
 
-      
-        <h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.set_option(<span class="string">"max_columns"</span>, <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
-<h2 id="数据缺失检查"><a href="#数据缺失检查" class="headerlink" title="数据缺失检查"></a>数据缺失检查</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apts=pd.Series([<span class="string">"Hangzhou"</span>, <span class="string">"Beijing"</span>, <span class="string">"Shenzhen"</span>])</span><br><span class="line">print(apts.notnull())</span><br><span class="line">print(apts.isnull())</span><br></pre></td></tr></table></figure>
+        <div class="article-content markdown-body">
+            <h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pd.set_option(<span class="string">&quot;max_columns&quot;</span>, <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据缺失检查"><a href="#数据缺失检查" class="headerlink" title="数据缺失检查"></a>数据缺失检查</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apts=pd.Series([<span class="string">&quot;Hangzhou&quot;</span>, <span class="string">&quot;Beijing&quot;</span>, <span class="string">&quot;Shenzhen&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(apts.notnull())</span><br><span class="line"><span class="built_in">print</span>(apts.isnull())</span><br></pre></td></tr></table></figure>
+
 <pre><code>0    True
 1    True
 2    True
@@ -510,7 +179,9 @@ dtype: bool
 1    False
 2    False
 dtype: bool
-</code></pre><h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*- </span></span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===用数组生成Series==="</span>)</span><br><span class="line">obj = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>])</span><br><span class="line">print(obj)</span><br><span class="line">print(obj.values)</span><br><span class="line">print(obj.index)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===指定Series的index==="</span>)</span><br><span class="line">obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, <span class="number">-5</span>, <span class="number">3</span>], index = [<span class="string">'d'</span>, <span class="string">'b'</span>, <span class="string">'a'</span>, <span class="string">'c'</span>])</span><br><span class="line">print(obj2)</span><br><span class="line">print(obj2.index)</span><br><span class="line">print(obj2[<span class="string">'a'</span>])</span><br><span class="line">obj2[<span class="string">'d'</span>] = <span class="number">6</span></span><br><span class="line">print(obj2[[<span class="string">'c'</span>, <span class="string">'a'</span>, <span class="string">'d'</span>]])</span><br><span class="line">print(obj2[obj2 &gt; <span class="number">0</span>])  <span class="comment"># 找出大于0的元素</span></span><br><span class="line">print(<span class="string">'b'</span> <span class="keyword">in</span> obj2) <span class="comment"># 判断索引是否存在</span></span><br><span class="line">print(<span class="string">'e'</span> <span class="keyword">in</span> obj2)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===使用字典生成Series==="</span>)</span><br><span class="line">sdata = &#123;<span class="string">'Ohio'</span>:<span class="number">45000</span>, <span class="string">'Texas'</span>:<span class="number">71000</span>, <span class="string">'Oregon'</span>:<span class="number">16000</span>, <span class="string">'Utah'</span>:<span class="number">5000</span>&#125;</span><br><span class="line">obj3 = Series(sdata)</span><br><span class="line">print(obj3)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===使用字典生成Series，并额外指定index，不匹配部分为NaN==="</span>)</span><br><span class="line">states = [<span class="string">'California'</span>, <span class="string">'Ohio'</span>, <span class="string">'Oregon'</span>, <span class="string">'Texas'</span>]</span><br><span class="line">obj4 = Series(sdata, index = states)</span><br><span class="line">print(obj4)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===Series相加，相同索引部分相加==="</span>)</span><br><span class="line">print(obj3 + obj4)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===指定Series及其索引的名字==="</span>)</span><br><span class="line">obj4.name = <span class="string">'population'</span></span><br><span class="line">obj4.index.name = <span class="string">'state'</span></span><br><span class="line">print( obj4)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===替换index==="</span>)</span><br><span class="line">obj.index = [<span class="string">'Bob'</span>, <span class="string">'Steve'</span>, <span class="string">'Jeff'</span>, <span class="string">'Ryan'</span>]</span><br><span class="line">print(obj)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*- </span></span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===用数组生成Series===&quot;</span>)</span><br><span class="line">obj = Series([<span class="number">4</span>, <span class="number">7</span>, -<span class="number">5</span>, <span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(obj)</span><br><span class="line"><span class="built_in">print</span>(obj.values)</span><br><span class="line"><span class="built_in">print</span>(obj.index)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===指定Series的index===&quot;</span>)</span><br><span class="line">obj2 = Series([<span class="number">4</span>, <span class="number">7</span>, -<span class="number">5</span>, <span class="number">3</span>], index = [<span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;c&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(obj2)</span><br><span class="line"><span class="built_in">print</span>(obj2.index)</span><br><span class="line"><span class="built_in">print</span>(obj2[<span class="string">&#x27;a&#x27;</span>])</span><br><span class="line">obj2[<span class="string">&#x27;d&#x27;</span>] = <span class="number">6</span></span><br><span class="line"><span class="built_in">print</span>(obj2[[<span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;d&#x27;</span>]])</span><br><span class="line"><span class="built_in">print</span>(obj2[obj2 &gt; <span class="number">0</span>])  <span class="comment"># 找出大于0的元素</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;b&#x27;</span> <span class="keyword">in</span> obj2) <span class="comment"># 判断索引是否存在</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;e&#x27;</span> <span class="keyword">in</span> obj2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用字典生成Series===&quot;</span>)</span><br><span class="line">sdata = &#123;<span class="string">&#x27;Ohio&#x27;</span>:<span class="number">45000</span>, <span class="string">&#x27;Texas&#x27;</span>:<span class="number">71000</span>, <span class="string">&#x27;Oregon&#x27;</span>:<span class="number">16000</span>, <span class="string">&#x27;Utah&#x27;</span>:<span class="number">5000</span>&#125;</span><br><span class="line">obj3 = Series(sdata)</span><br><span class="line"><span class="built_in">print</span>(obj3)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用字典生成Series，并额外指定index，不匹配部分为NaN===&quot;</span>)</span><br><span class="line">states = [<span class="string">&#x27;California&#x27;</span>, <span class="string">&#x27;Ohio&#x27;</span>, <span class="string">&#x27;Oregon&#x27;</span>, <span class="string">&#x27;Texas&#x27;</span>]</span><br><span class="line">obj4 = Series(sdata, index = states)</span><br><span class="line"><span class="built_in">print</span>(obj4)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===Series相加，相同索引部分相加===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(obj3 + obj4)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===指定Series及其索引的名字===&quot;</span>)</span><br><span class="line">obj4.name = <span class="string">&#x27;population&#x27;</span></span><br><span class="line">obj4.index.name = <span class="string">&#x27;state&#x27;</span></span><br><span class="line"><span class="built_in">print</span>( obj4)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===替换index===&quot;</span>)</span><br><span class="line">obj.index = [<span class="string">&#x27;Bob&#x27;</span>, <span class="string">&#x27;Steve&#x27;</span>, <span class="string">&#x27;Jeff&#x27;</span>, <span class="string">&#x27;Ryan&#x27;</span>]</span><br><span class="line"><span class="built_in">print</span>(obj)</span><br></pre></td></tr></table></figure>
+
 <pre><code>===用数组生成Series===
 0    4
 1    7
@@ -575,7 +246,9 @@ Steve    7
 Jeff    -5
 Ryan     3
 dtype: int64
-</code></pre><h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*- </span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NA</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame, Index</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===填充0==="</span>)</span><br><span class="line">df = DataFrame(np.random.randn(<span class="number">7</span>, <span class="number">3</span>))</span><br><span class="line">df.iloc[:<span class="number">4</span>, <span class="number">1</span>] = NA</span><br><span class="line">df.iloc[:<span class="number">2</span>, <span class="number">2</span>] = NA</span><br><span class="line">print(df.fillna(<span class="number">0</span>))</span><br><span class="line">df.fillna(<span class="number">0</span>, inplace = <span class="literal">True</span>)</span><br><span class="line">print(df)</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===不同行列填充不同的值==="</span>)</span><br><span class="line">print(df.fillna(&#123;<span class="number">1</span>:<span class="number">0.5</span>, <span class="number">3</span>:<span class="number">-1</span>&#125;))  <span class="comment"># 第3列不存在</span></span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===不同的填充方式==="</span>)</span><br><span class="line">df = DataFrame(np.random.randn(<span class="number">6</span>, <span class="number">3</span>))</span><br><span class="line">df.iloc[<span class="number">2</span>:, <span class="number">1</span>] = NA</span><br><span class="line">df.iloc[<span class="number">4</span>:, <span class="number">2</span>] = NA</span><br><span class="line">print(df)</span><br><span class="line">print(df.fillna(method = <span class="string">'ffill'</span>))</span><br><span class="line">print(df.fillna(method = <span class="string">'ffill'</span>, limit = <span class="number">2</span>))</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===用统计数据填充==="</span>)</span><br><span class="line">data = Series([<span class="number">1.</span>, NA, <span class="number">3.5</span>, NA, <span class="number">7</span>])</span><br><span class="line">print(data.fillna(data.mean()))</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="填充"><a href="#填充" class="headerlink" title="填充"></a>填充</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># -*- coding: utf-8 -*- </span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> numpy <span class="keyword">import</span> nan <span class="keyword">as</span> NA</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame, Index</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===填充0===&quot;</span>)</span><br><span class="line">df = DataFrame(np.random.randn(<span class="number">7</span>, <span class="number">3</span>))</span><br><span class="line">df.iloc[:<span class="number">4</span>, <span class="number">1</span>] = NA</span><br><span class="line">df.iloc[:<span class="number">2</span>, <span class="number">2</span>] = NA</span><br><span class="line"><span class="built_in">print</span>(df.fillna(<span class="number">0</span>))</span><br><span class="line">df.fillna(<span class="number">0</span>, inplace = <span class="literal">True</span>)</span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===不同行列填充不同的值===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df.fillna(&#123;<span class="number">1</span>:<span class="number">0.5</span>, <span class="number">3</span>:-<span class="number">1</span>&#125;))  <span class="comment"># 第3列不存在</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===不同的填充方式===&quot;</span>)</span><br><span class="line">df = DataFrame(np.random.randn(<span class="number">6</span>, <span class="number">3</span>))</span><br><span class="line">df.iloc[<span class="number">2</span>:, <span class="number">1</span>] = NA</span><br><span class="line">df.iloc[<span class="number">4</span>:, <span class="number">2</span>] = NA</span><br><span class="line"><span class="built_in">print</span>(df)</span><br><span class="line"><span class="built_in">print</span>(df.fillna(method = <span class="string">&#x27;ffill&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(df.fillna(method = <span class="string">&#x27;ffill&#x27;</span>, limit = <span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===用统计数据填充===&quot;</span>)</span><br><span class="line">data = Series([<span class="number">1.</span>, NA, <span class="number">3.5</span>, NA, <span class="number">7</span>])</span><br><span class="line"><span class="built_in">print</span>(data.fillna(data.mean()))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <pre><code>===填充0===
           0         1         2
 0  0.619043  0.000000  0.000000
@@ -634,7 +307,9 @@ dtype: int64
 3    3.833333
 4    7.000000
 dtype: float64
-</code></pre><h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*- </span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===指定索引，在列中指定不存在的列，默认数据用NaN==="</span>)</span><br><span class="line">frame2 = DataFrame(data,</span><br><span class="line">                    columns = [<span class="string">'year'</span>, <span class="string">'state'</span>, <span class="string">'pop'</span>, <span class="string">'debt'</span>],</span><br><span class="line">                    index = [<span class="string">'one'</span>, <span class="string">'two'</span>, <span class="string">'three'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>])</span><br><span class="line">print(frame2)</span><br><span class="line">print(frame2[<span class="string">'state'</span>])</span><br><span class="line">print(frame2.year)</span><br><span class="line">print(frame2.loc[<span class="string">'three'</span>])</span><br><span class="line">frame2[<span class="string">'debt'</span>] = <span class="number">16.5</span> <span class="comment"># 修改一整列</span></span><br><span class="line">print(frame2)</span><br><span class="line">frame2.debt = np.arange(<span class="number">5</span>)  <span class="comment"># 用numpy数组修改元素</span></span><br><span class="line">print(frame2)</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===用Series指定要修改的索引及其对应的值，没有指定的默认数据用NaN==="</span>)</span><br><span class="line">val = Series([<span class="number">-1.2</span>, <span class="number">-1.5</span>, <span class="number">-1.7</span>], index = [<span class="string">'two'</span>, <span class="string">'four'</span>, <span class="string">'five'</span>])</span><br><span class="line">frame2[<span class="string">'debt'</span>] = val</span><br><span class="line">print(frame2)</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===赋值给新列==="</span>)</span><br><span class="line">frame2[<span class="string">'eastern'</span>] = (frame2.state == <span class="string">'Ohio'</span>)  <span class="comment"># 如果state等于Ohio为True</span></span><br><span class="line">print(frame2)</span><br><span class="line">print(frame2.columns)</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===DataFrame转置==="</span>)</span><br><span class="line">pop = &#123;<span class="string">'Nevada'</span>:&#123;<span class="number">2001</span>:<span class="number">2.4</span>, <span class="number">2002</span>:<span class="number">2.9</span>&#125;,</span><br><span class="line">        <span class="string">'Ohio'</span>:&#123;<span class="number">2000</span>:<span class="number">1.5</span>, <span class="number">2001</span>:<span class="number">1.7</span>, <span class="number">2002</span>:<span class="number">3.6</span>&#125;&#125;</span><br><span class="line">frame3 = DataFrame(pop)</span><br><span class="line">print(frame3)</span><br><span class="line">print(frame3.T)</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===指定索引顺序，以及使用切片初始化数据==="</span>)</span><br><span class="line">print(DataFrame(pop))</span><br><span class="line">pdata = &#123;<span class="string">'Ohio'</span>:frame3[<span class="string">'Ohio'</span>][:<span class="number">-1</span>], <span class="string">'Nevada'</span>:frame3[<span class="string">'Nevada'</span>][:<span class="number">2</span>]&#125;</span><br><span class="line">print(DataFrame(pdata))</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===指定索引和列的名称==="</span>)</span><br><span class="line">frame3.index.name = <span class="string">'year'</span></span><br><span class="line">frame3.columns.name = <span class="string">'state'</span></span><br><span class="line">print(frame3)</span><br><span class="line">print(frame3.values)</span><br><span class="line">print(frame2.values)</span><br><span class="line">print(<span class="string">''</span>)</span><br><span class="line"></span><br><span class="line">print(<span class="string">"===stack==="</span>)</span><br><span class="line">print(frame3.stack())</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*- </span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series, DataFrame</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===指定索引，在列中指定不存在的列，默认数据用NaN===&quot;</span>)</span><br><span class="line">frame2 = DataFrame(data,</span><br><span class="line">                    columns = [<span class="string">&#x27;year&#x27;</span>, <span class="string">&#x27;state&#x27;</span>, <span class="string">&#x27;pop&#x27;</span>, <span class="string">&#x27;debt&#x27;</span>],</span><br><span class="line">                    index = [<span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;three&#x27;</span>, <span class="string">&#x27;four&#x27;</span>, <span class="string">&#x27;five&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(frame2)</span><br><span class="line"><span class="built_in">print</span>(frame2[<span class="string">&#x27;state&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(frame2.year)</span><br><span class="line"><span class="built_in">print</span>(frame2.loc[<span class="string">&#x27;three&#x27;</span>])</span><br><span class="line">frame2[<span class="string">&#x27;debt&#x27;</span>] = <span class="number">16.5</span> <span class="comment"># 修改一整列</span></span><br><span class="line"><span class="built_in">print</span>(frame2)</span><br><span class="line">frame2.debt = np.arange(<span class="number">5</span>)  <span class="comment"># 用numpy数组修改元素</span></span><br><span class="line"><span class="built_in">print</span>(frame2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===用Series指定要修改的索引及其对应的值，没有指定的默认数据用NaN===&quot;</span>)</span><br><span class="line">val = Series([-<span class="number">1.2</span>, -<span class="number">1.5</span>, -<span class="number">1.7</span>], index = [<span class="string">&#x27;two&#x27;</span>, <span class="string">&#x27;four&#x27;</span>, <span class="string">&#x27;five&#x27;</span>])</span><br><span class="line">frame2[<span class="string">&#x27;debt&#x27;</span>] = val</span><br><span class="line"><span class="built_in">print</span>(frame2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===赋值给新列===&quot;</span>)</span><br><span class="line">frame2[<span class="string">&#x27;eastern&#x27;</span>] = (frame2.state == <span class="string">&#x27;Ohio&#x27;</span>)  <span class="comment"># 如果state等于Ohio为True</span></span><br><span class="line"><span class="built_in">print</span>(frame2)</span><br><span class="line"><span class="built_in">print</span>(frame2.columns)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===DataFrame转置===&quot;</span>)</span><br><span class="line">pop = &#123;<span class="string">&#x27;Nevada&#x27;</span>:&#123;<span class="number">2001</span>:<span class="number">2.4</span>, <span class="number">2002</span>:<span class="number">2.9</span>&#125;,</span><br><span class="line">        <span class="string">&#x27;Ohio&#x27;</span>:&#123;<span class="number">2000</span>:<span class="number">1.5</span>, <span class="number">2001</span>:<span class="number">1.7</span>, <span class="number">2002</span>:<span class="number">3.6</span>&#125;&#125;</span><br><span class="line">frame3 = DataFrame(pop)</span><br><span class="line"><span class="built_in">print</span>(frame3)</span><br><span class="line"><span class="built_in">print</span>(frame3.T)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===指定索引顺序，以及使用切片初始化数据===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(DataFrame(pop))</span><br><span class="line">pdata = &#123;<span class="string">&#x27;Ohio&#x27;</span>:frame3[<span class="string">&#x27;Ohio&#x27;</span>][:-<span class="number">1</span>], <span class="string">&#x27;Nevada&#x27;</span>:frame3[<span class="string">&#x27;Nevada&#x27;</span>][:<span class="number">2</span>]&#125;</span><br><span class="line"><span class="built_in">print</span>(DataFrame(pdata))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===指定索引和列的名称===&quot;</span>)</span><br><span class="line">frame3.index.name = <span class="string">&#x27;year&#x27;</span></span><br><span class="line">frame3.columns.name = <span class="string">&#x27;state&#x27;</span></span><br><span class="line"><span class="built_in">print</span>(frame3)</span><br><span class="line"><span class="built_in">print</span>(frame3.values)</span><br><span class="line"><span class="built_in">print</span>(frame2.values)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===stack===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(frame3.stack())</span><br></pre></td></tr></table></figure>
+
 <pre><code>===指定索引，在列中指定不存在的列，默认数据用NaN===
        year   state  pop debt
 one    2000    Ohio  1.5  NaN
@@ -730,7 +405,9 @@ year  state
 2002  Nevada    2.9
       Ohio      3.6
 dtype: float64
-</code></pre><h2 id="Append-Join和Concatenate"><a href="#Append-Join和Concatenate" class="headerlink" title="Append, Join和Concatenate"></a>Append, Join和Concatenate</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">df1 = pd.DataFrame(&#123;<span class="string">'apts'</span>: [<span class="number">55000</span>, <span class="number">60000</span>],</span><br><span class="line">                   <span class="string">'cars'</span>: [<span class="number">200000</span>, <span class="number">300000</span>],&#125;,</span><br><span class="line">                  index = [<span class="string">'Shanghai'</span>, <span class="string">'Beijing'</span>])</span><br><span class="line">df2 = pd.DataFrame(&#123;<span class="string">'apts'</span>: [<span class="number">25000</span>, <span class="number">20000</span>],</span><br><span class="line">                   <span class="string">'cars'</span>: [<span class="number">150000</span>, <span class="number">120000</span>],&#125;,</span><br><span class="line">                  index = [<span class="string">'Hangzhou'</span>, <span class="string">'Najing'</span>])</span><br><span class="line">df3 = pd.DataFrame(&#123;<span class="string">'apts'</span>: [<span class="number">30000</span>, <span class="number">10000</span>],</span><br><span class="line">                   <span class="string">'cars'</span>: [<span class="number">180000</span>, <span class="number">100000</span>],&#125;,</span><br><span class="line">                  index = [<span class="string">'Guangzhou'</span>, <span class="string">'Chongqing'</span>])</span><br><span class="line">df4 = pd.DataFrame(&#123;<span class="string">'salaries'</span>: [<span class="number">10000</span>, <span class="number">30000</span>, <span class="number">30000</span>, <span class="number">20000</span>, <span class="number">15000</span>],</span><br><span class="line">                  <span class="string">'cities'</span>: [<span class="string">'Suzhou'</span>, <span class="string">'Beijing'</span>, <span class="string">'Shanghai'</span>, <span class="string">'Guangzhou'</span>, <span class="string">'Tianjin'</span>]&#125;)</span><br><span class="line">print(df1)</span><br><span class="line">print(df2)</span><br><span class="line">print(df3)</span><br><span class="line">print(df4)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="Append-Join和Concatenate"><a href="#Append-Join和Concatenate" class="headerlink" title="Append, Join和Concatenate"></a>Append, Join和Concatenate</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">df1 = pd.DataFrame(&#123;<span class="string">&#x27;apts&#x27;</span>: [<span class="number">55000</span>, <span class="number">60000</span>],</span><br><span class="line">                   <span class="string">&#x27;cars&#x27;</span>: [<span class="number">200000</span>, <span class="number">300000</span>],&#125;,</span><br><span class="line">                  index = [<span class="string">&#x27;Shanghai&#x27;</span>, <span class="string">&#x27;Beijing&#x27;</span>])</span><br><span class="line">df2 = pd.DataFrame(&#123;<span class="string">&#x27;apts&#x27;</span>: [<span class="number">25000</span>, <span class="number">20000</span>],</span><br><span class="line">                   <span class="string">&#x27;cars&#x27;</span>: [<span class="number">150000</span>, <span class="number">120000</span>],&#125;,</span><br><span class="line">                  index = [<span class="string">&#x27;Hangzhou&#x27;</span>, <span class="string">&#x27;Najing&#x27;</span>])</span><br><span class="line">df3 = pd.DataFrame(&#123;<span class="string">&#x27;apts&#x27;</span>: [<span class="number">30000</span>, <span class="number">10000</span>],</span><br><span class="line">                   <span class="string">&#x27;cars&#x27;</span>: [<span class="number">180000</span>, <span class="number">100000</span>],&#125;,</span><br><span class="line">                  index = [<span class="string">&#x27;Guangzhou&#x27;</span>, <span class="string">&#x27;Chongqing&#x27;</span>])</span><br><span class="line">df4 = pd.DataFrame(&#123;<span class="string">&#x27;salaries&#x27;</span>: [<span class="number">10000</span>, <span class="number">30000</span>, <span class="number">30000</span>, <span class="number">20000</span>, <span class="number">15000</span>],</span><br><span class="line">                  <span class="string">&#x27;cities&#x27;</span>: [<span class="string">&#x27;Suzhou&#x27;</span>, <span class="string">&#x27;Beijing&#x27;</span>, <span class="string">&#x27;Shanghai&#x27;</span>, <span class="string">&#x27;Guangzhou&#x27;</span>, <span class="string">&#x27;Tianjin&#x27;</span>]&#125;)</span><br><span class="line"><span class="built_in">print</span>(df1)</span><br><span class="line"><span class="built_in">print</span>(df2)</span><br><span class="line"><span class="built_in">print</span>(df3)</span><br><span class="line"><span class="built_in">print</span>(df4)</span><br></pre></td></tr></table></figure>
+
 <pre><code>           apts    cars
 Shanghai  55000  200000
 Beijing   60000  300000
@@ -746,7 +423,9 @@ Chongqing  10000  100000
 2     30000   Shanghai
 3     20000  Guangzhou
 4     15000    Tianjin
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"===concat==="</span>)</span><br><span class="line">frames = [df1, df2, df3]</span><br><span class="line">result = pd.concat(frames)</span><br><span class="line">print(result)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">result2 = pd.concat(frames, keys=[<span class="string">'x'</span>, <span class="string">'y'</span>, <span class="string">'z'</span>])</span><br><span class="line">print(result2)</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(pd.concat([df1, df2], axis=<span class="number">1</span>, sort=<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===concat===&quot;</span>)</span><br><span class="line">frames = [df1, df2, df3]</span><br><span class="line">result = pd.concat(frames)</span><br><span class="line"><span class="built_in">print</span>(result)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">result2 = pd.concat(frames, keys=[<span class="string">&#x27;x&#x27;</span>, <span class="string">&#x27;y&#x27;</span>, <span class="string">&#x27;z&#x27;</span>])</span><br><span class="line"><span class="built_in">print</span>(result2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(pd.concat([df1, df2], axis=<span class="number">1</span>, sort=<span class="literal">False</span>))</span><br></pre></td></tr></table></figure>
+
 <pre><code>===concat===
             apts    cars
 Shanghai   55000  200000
@@ -769,7 +448,9 @@ Shanghai  55000.0  200000.0      NaN       NaN
 Beijing   60000.0  300000.0      NaN       NaN
 Hangzhou      NaN       NaN  25000.0  150000.0
 Najing        NaN       NaN  20000.0  120000.0
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"===append==="</span>)</span><br><span class="line">print(df1.append(df2))</span><br><span class="line">print(df1.append(df3))</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===append===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.append(df2))</span><br><span class="line"><span class="built_in">print</span>(df1.append(df3))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <pre><code>===append===
            apts    cars
 Shanghai  55000  200000
@@ -781,7 +462,9 @@ Shanghai   55000  200000
 Beijing    60000  300000
 Guangzhou  30000  180000
 Chongqing  10000  100000
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print(<span class="string">"===join==="</span>)</span><br><span class="line">print(df1.join(df4))</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(df1.join(df4, how=<span class="string">'right'</span>))</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(df1.join(df4, how=<span class="string">'left'</span>))</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(df1.join(df4, how=<span class="string">'inner'</span>))</span><br><span class="line">print(<span class="string">""</span>)</span><br><span class="line">print(df1.join(df4, how=<span class="string">'outer'</span>))</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===join===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.join(df4))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.join(df4, how=<span class="string">&#x27;right&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.join(df4, how=<span class="string">&#x27;left&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.join(df4, how=<span class="string">&#x27;inner&#x27;</span>))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.join(df4, how=<span class="string">&#x27;outer&#x27;</span>))</span><br></pre></td></tr></table></figure>
+
 <pre><code>===join===
            apts    cars  salaries cities
 Shanghai  55000  200000       NaN    NaN
@@ -810,21 +493,25 @@ Beijing   60000.0  300000.0       NaN        NaN
 2             NaN       NaN   30000.0   Shanghai
 3             NaN       NaN   20000.0  Guangzhou
 4             NaN       NaN   15000.0    Tianjin
-</code></pre><h2 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">salaries = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">'Name'</span>: [<span class="string">'July'</span>, <span class="string">'Chu'</span>, <span class="string">'Chu'</span>, <span class="string">'Lin'</span>, <span class="string">'July'</span>, <span class="string">'July'</span>, <span class="string">'Chu'</span>, <span class="string">'July'</span>],</span><br><span class="line">    <span class="string">'Year'</span>: [<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>],</span><br><span class="line">    <span class="string">'Salary'</span>: [<span class="number">10000</span>,<span class="number">2000</span>,<span class="number">4000</span>,<span class="number">5000</span>,<span class="number">18000</span>,<span class="number">25000</span>,<span class="number">3000</span>,<span class="number">4000</span>],</span><br><span class="line">    <span class="string">'Bonus'</span>: [<span class="number">3000</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1200</span>,<span class="number">4000</span>,<span class="number">2300</span>,<span class="number">500</span>,<span class="number">1000</span>]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">group_by_name = salaries.groupby(<span class="string">'Name'</span>)</span><br><span class="line">display(group_by_name.sum())</span><br><span class="line"></span><br><span class="line">group_by_name_year = salaries.groupby([<span class="string">'Name'</span>, <span class="string">'Year'</span>])</span><br><span class="line">display(group_by_name_year.sum())</span><br><span class="line">display(group_by_name_year.size())</span><br><span class="line">display(group_by_name_year.describe())</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="groupby"><a href="#groupby" class="headerlink" title="groupby"></a>groupby</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">salaries = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">&#x27;Name&#x27;</span>: [<span class="string">&#x27;July&#x27;</span>, <span class="string">&#x27;Chu&#x27;</span>, <span class="string">&#x27;Chu&#x27;</span>, <span class="string">&#x27;Lin&#x27;</span>, <span class="string">&#x27;July&#x27;</span>, <span class="string">&#x27;July&#x27;</span>, <span class="string">&#x27;Chu&#x27;</span>, <span class="string">&#x27;July&#x27;</span>],</span><br><span class="line">    <span class="string">&#x27;Year&#x27;</span>: [<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2016</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>,<span class="number">2017</span>],</span><br><span class="line">    <span class="string">&#x27;Salary&#x27;</span>: [<span class="number">10000</span>,<span class="number">2000</span>,<span class="number">4000</span>,<span class="number">5000</span>,<span class="number">18000</span>,<span class="number">25000</span>,<span class="number">3000</span>,<span class="number">4000</span>],</span><br><span class="line">    <span class="string">&#x27;Bonus&#x27;</span>: [<span class="number">3000</span>,<span class="number">1000</span>,<span class="number">1000</span>,<span class="number">1200</span>,<span class="number">4000</span>,<span class="number">2300</span>,<span class="number">500</span>,<span class="number">1000</span>]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">group_by_name = salaries.groupby(<span class="string">&#x27;Name&#x27;</span>)</span><br><span class="line">display(group_by_name.<span class="built_in">sum</span>())</span><br><span class="line"></span><br><span class="line">group_by_name_year = salaries.groupby([<span class="string">&#x27;Name&#x27;</span>, <span class="string">&#x27;Year&#x27;</span>])</span><br><span class="line">display(group_by_name_year.<span class="built_in">sum</span>())</span><br><span class="line">display(group_by_name_year.size())</span><br><span class="line">display(group_by_name_year.describe())</span><br></pre></td></tr></table></figure>
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -871,14 +558,15 @@ Beijing   60000.0  300000.0       NaN        NaN
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -936,24 +624,26 @@ July  2016    1
       2017    3
 Lin   2016    1
 dtype: int64
-</code></pre><div>
+</code></pre>
+<div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead tr th {
-        text-align: left;
-    }
+.dataframe thead tr th &#123;
+    text-align: left;
+&#125;
 
-    .dataframe thead tr:last-of-type th {
-        text-align: right;
-    }
-</style>
+.dataframe thead tr:last-of-type th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr>
@@ -1111,825 +801,175 @@ dtype: int64
 <p>参考：</p>
 </blockquote>
 <ol>
-<li><a href="https://www.julyedu.com/course/getDetail/66/" target="_blank" rel="noopener">廖雪峰Python数据分析</a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/基本语法/Numpy/54426/" rel="next" title="Numpy基本语法">
-                <i class="fa fa-chevron-left"></i> Numpy基本语法
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/基本语法/数据处理/25692/" rel="prev" title="数据抽取">
-                数据抽取 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
         </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
-    </div>
-
-  
-
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Dan">
-            
-              <p class="site-author-name" itemprop="name">Dan</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
+        
+            <div class="article-nav">
                 
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/25692/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数据抽取</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/daniel18qzx" title="GitHub &rarr; https://github.com/daniel18qzx" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.linkedin.com/in/danielchiu15/" title="Linkedin &rarr; https://www.linkedin.com/in/danielchiu15/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
-                </span>
-              
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Numpy/54426/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Numpy基本语法</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
             </div>
-          
+        
 
-          
+        
+    </div>
+</div>
 
-          
-          
 
-          
-            
-          
-          
+                
+            </div>
 
         </div>
-      </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
             
+              <span>2020</span>&nbsp;-&nbsp;
             
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本设置"><span class="nav-number">1.</span> <span class="nav-text">基本设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据缺失检查"><span class="nav-number">2.</span> <span class="nav-text">数据缺失检查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Series"><span class="nav-number">3.</span> <span class="nav-text">Series</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#填充"><span class="nav-number">4.</span> <span class="nav-text">填充</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DataFrame"><span class="nav-number">5.</span> <span class="nav-text">DataFrame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Append-Join和Concatenate"><span class="nav-number">6.</span> <span class="nav-text">Append, Join和Concatenate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#groupby"><span class="nav-number">7.</span> <span class="nav-text">groupby</span></a></li></ol></div>
-            
-
-          </div>
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
         </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
         </div>
-      
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
 
     </div>
-  </aside>
-  
 
+    
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Daniel Chiu. All Rights Reserved.</span>
-
-  
-
-  
+    <div class="image-viewer-container">
+    <img src="">
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+    
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+</main>
 
 
 
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/utils.js"></script>
 
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="Total Visitors">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
+<script src="/js/main.js"></script>
 
-  
-    <span class="post-meta-divider">|</span>
-  
+<script src="/js/header-shrink.js"></script>
 
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="Total Views">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
 </div>
 
 
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.2"></script>
-
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.2"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.2"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    <script>
-  window.livereOptions = {
-    refer: '基本语法/Pandas/6703/'
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-</script>
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

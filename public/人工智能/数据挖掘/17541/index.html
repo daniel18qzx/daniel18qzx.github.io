@@ -1,507 +1,177 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
-
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: true,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
-<meta property="og:type" content="article">
-<meta property="og:title" content="特征工程">
-<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/数据挖掘/17541/index.html">
-<meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-08-28T23:15:50.357Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="特征工程">
-<meta name="twitter:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
-
-
-
-
-
-  
-  
-  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/数据挖掘/17541/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>特征工程 | 菜鸟分析狮</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-
-  
-  
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
     
-  
+    <title>
+        
+            特征工程 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
     
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">菜鸟分析狮</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
     
-      
-        <h1 class="site-subtitle" itemprop="description">没有难处理的数据，没有难写的报告</h1>
-      
-    
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
 </div>
 
 
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-      
-    
+<main class="page-container">
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-homemenu"></i> <br>Home</a>
+    <div class="page-main-content">
 
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
 
-    
-    
-    
-      
-    
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
 
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/数据挖掘/17541/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟分析狮">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">特征工程
-
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-08-04 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-04T00:00:00+08:00">2019-08-04</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-08-29 07:15:50" itemprop="dateModified" datetime="2019-08-29T07:15:50+08:00">2019-08-29</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/数据挖掘/" itemprop="url" rel="index"><span itemprop="name">数据挖掘</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/人工智能/数据挖掘/17541/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/数据挖掘/17541/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             Views:  
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">8.5k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">14 mins.</span>
-              
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
             </div>
-          
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
 
         </div>
-      </header>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">特征工程</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep Team</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-08-04 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
     
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    
+</div>
 
-      
-      
+                    </div>
+                </div>
+            </div>
+        
 
-      
-        <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u"2019-08-01_金融数据描述_data1.csv"</span>,encoding = <span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure>
+        <div class="article-content markdown-body">
+            <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 4754 entries, 0 to 4753
 Data columns (total 90 columns):
@@ -597,23 +267,30 @@ latest_query_day                              4450 non-null float64
 loans_latest_day                              4457 non-null float64
 dtypes: float64(70), int64(13), object(7)
 memory usage: 3.3+ MB
-</code></pre><h2 id="特征预处理"><a href="#特征预处理" class="headerlink" title="特征预处理"></a>特征预处理</h2><h3 id="删除无用"><a href="#删除无用" class="headerlink" title="删除无用"></a>删除无用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete = [<span class="string">'Unnamed: 0'</span>, <span class="string">'custid'</span>, <span class="string">'trade_no'</span>, <span class="string">'bank_card_no'</span>,<span class="string">'id_name'</span>,<span class="string">'latest_query_time'</span>,<span class="string">'source'</span>,<span class="string">'loans_latest_time'</span>,<span class="string">'first_transaction_time'</span>, <span class="string">'student_feature'</span>]</span><br><span class="line">df = df.drop(delete,axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="处理分类型特征"><a href="#处理分类型特征" class="headerlink" title="处理分类型特征"></a>处理分类型特征</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line">df[<span class="string">'reg_preference_for_trad'</span>] = LabelEncoder().fit_transform(df[<span class="string">'reg_preference_for_trad'</span>].astype(str))</span><br></pre></td></tr></table></figure>
-<h3 id="使用众数填充"><a href="#使用众数填充" class="headerlink" title="使用众数填充"></a>使用众数填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(df.shape[<span class="number">1</span>]):</span><br><span class="line">    feature = df.iloc[:,i].values.reshape(<span class="number">-1</span>,<span class="number">1</span>)</span><br><span class="line">    imp_mode = Imputer(strategy=<span class="string">'most_frequent'</span>)</span><br><span class="line">    df.iloc[:,i] = imp_mode.fit_transform(feature)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h2 id="特征预处理"><a href="#特征预处理" class="headerlink" title="特征预处理"></a>特征预处理</h2><h3 id="删除无用"><a href="#删除无用" class="headerlink" title="删除无用"></a>删除无用</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete = [<span class="string">&#x27;Unnamed: 0&#x27;</span>, <span class="string">&#x27;custid&#x27;</span>, <span class="string">&#x27;trade_no&#x27;</span>, <span class="string">&#x27;bank_card_no&#x27;</span>,<span class="string">&#x27;id_name&#x27;</span>,<span class="string">&#x27;latest_query_time&#x27;</span>,<span class="string">&#x27;source&#x27;</span>,<span class="string">&#x27;loans_latest_time&#x27;</span>,<span class="string">&#x27;first_transaction_time&#x27;</span>, <span class="string">&#x27;student_feature&#x27;</span>]</span><br><span class="line">df = df.drop(delete,axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="处理分类型特征"><a href="#处理分类型特征" class="headerlink" title="处理分类型特征"></a>处理分类型特征</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>] = LabelEncoder().fit_transform(df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].astype(<span class="built_in">str</span>))</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用众数填充"><a href="#使用众数填充" class="headerlink" title="使用众数填充"></a>使用众数填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(df.shape[<span class="number">1</span>]):</span><br><span class="line">    feature = df.iloc[:,i].values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    imp_mode = Imputer(strategy=<span class="string">&#x27;most_frequent&#x27;</span>)</span><br><span class="line">    df.iloc[:,i] = imp_mode.fit_transform(feature)</span><br></pre></td></tr></table></figure>
+
 <h2 id="特征衍生-升维"><a href="#特征衍生-升维" class="headerlink" title="特征衍生/升维"></a>特征衍生/升维</h2><p>特征衍生是指用原始数据进行特征学习得到新的特征。衍生特征一般有两种原因引起的：数据自身的变化，使数据中出现很多原来没有的特征；进行特征学习时，算法根据特征之间的某种关系，产生了衍生特征，有时衍生特征更能反应数据特征之间的关系 。衍生特征也要求机器学习和深度学习算法拥有更强的学习能力，即增量学习、在线学习、迁移学习。</p>
 <p>衍生特征相对于原始特征能够更好的反映特征与数据的关系，因此对于某些数据来说这是极为重要的一个步骤。观察本数据，发现可以从衍生出以下几个特征，而如 latest_one_month_suc、latest_one_month_fail、latest_six_month_loan 都是处理好的特征：</p>
 <ol>
 <li>查询内容占比</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'query_finance_percent'</span>] = df[<span class="string">'query_finance_count'</span>] / df[<span class="string">'query_sum_count'</span>]</span><br><span class="line">df[<span class="string">'query_cash_percent'</span>] = df[<span class="string">'query_cash_count'</span>] / df[<span class="string">'query_sum_count'</span>]</span><br></pre></td></tr></table></figure>
-<ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;query_finance_percent&#x27;</span>] = df[<span class="string">&#x27;query_finance_count&#x27;</span>] / df[<span class="string">&#x27;query_sum_count&#x27;</span>]</span><br><span class="line">df[<span class="string">&#x27;query_cash_percent&#x27;</span>] = df[<span class="string">&#x27;query_cash_count&#x27;</span>] / df[<span class="string">&#x27;query_sum_count&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
 <li>每单平均交易量</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'per_avg_amount'</span>] = df[<span class="string">'historical_trans_amount'</span>] / df[<span class="string">'number_of_trans_from_2011'</span>]</span><br></pre></td></tr></table></figure>
-<ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;per_avg_amount&#x27;</span>] = df[<span class="string">&#x27;historical_trans_amount&#x27;</span>] / df[<span class="string">&#x27;number_of_trans_from_2011&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
 <li>每天平均交易量</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'avg_amount_perday'</span>] = df[<span class="string">'historical_trans_amount'</span>] / df[<span class="string">'historical_trans_day'</span>]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;avg_amount_perday&#x27;</span>] = df[<span class="string">&#x27;historical_trans_amount&#x27;</span>] / df[<span class="string">&#x27;historical_trans_day&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
 <h2 id="特征筛选-降维"><a href="#特征筛选-降维" class="headerlink" title="特征筛选/降维"></a>特征筛选/降维</h2><p>特征选择( Feature Selection )也称特征子集选择( Feature Subset Selection , FSS )，或属性选择( Attribute Selection )。是指从已有的M个特征(Feature)中选择N个特征使得系统的特定指标最优化，是从原始特征中选择出一些最有效特征以降低数据集维度的过程,是提高学习算法性能的一个重要手段,也是模式识别中关键的数据预处理步骤。对于一个学习算法来说,好的学习样本是训练模型的关键。</p>
 <h3 id="共线性分析"><a href="#共线性分析" class="headerlink" title="共线性分析"></a>共线性分析</h3><p>共线性问题指的是输入的自变量之间存在较高的线性相关度。共线性问题会导致回归模型的稳定性和准确性大大降低，另外，过多无关的维度计算也很浪费时间。</p>
 <p>变量出现共线性的原因：</p>
@@ -626,7 +303,7 @@ memory usage: 3.3+ MB
 <p>如何检验共线性：</p>
 <ul>
 <li>容忍度（Tolerance）：容忍度是每个自变量作为因变量对其他自变量进行回归建模时得到的残差比例，大小用1减得到的决定系数来表示。容忍度值越小说明这个自变量与其他自变量间越可能存在共线性问题。</li>
-<li>方差膨胀因子：VIF是容忍度的倒数，值越大则共线性问题越明显，通常以10作为判断边界。当VIF<10,不存在多重共线性；当10<=vif<100,存在较强的多重共线性；当vif>=100, 存在严重多重共线性。</10,不存在多重共线性；当10<=vif<100,存在较强的多重共线性；当vif></li>
+<li>方差膨胀因子：VIF是容忍度的倒数，值越大则共线性问题越明显，通常以10作为判断边界。当VIF&lt;10,不存在多重共线性；当10&lt;=VIF&lt;100,存在较强的多重共线性；当VIF&gt;=100, 存在严重多重共线性。</li>
 <li>特征值（Eigenvalue）：该方法实际上就是对自变量做主成分分析，如果多个维度的特征值等于0，则可能有比较严重的共线性。</li>
 <li>相关系数：如果相关系数R&gt;0.8时就可能存在较强相关性</li>
 </ul>
@@ -638,7 +315,11 @@ memory usage: 3.3+ MB
 <li>主成分回归（Principal Components Regression）:通过主成分分析，将原始参与建模的变量转换为少数几个主成分，么个主成分是原变量的线性组合，然后基于主成分做回归分析，这样也可以在不丢失重要数据特征的前提下避开共线性问题。</li>
 <li>人工去除：结合人工经验，对自变量进行删减，但是对操作者的业务能力、经验有很高的要求。</li>
 </ul>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">corr_matrix = df.corr()</span><br><span class="line">corr_matrix = corr_matrix.unstack()</span><br><span class="line">corr_matrix[(abs(corr_matrix)&gt;<span class="number">0.8</span>) &amp; (abs(corr_matrix) != <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">corr_matrix = df.corr()</span><br><span class="line">corr_matrix = corr_matrix.unstack()</span><br><span class="line">corr_matrix[(<span class="built_in">abs</span>(corr_matrix)&gt;<span class="number">0.8</span>) &amp; (<span class="built_in">abs</span>(corr_matrix) != <span class="number">1</span>)]</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>trans_activity_day                       historical_trans_day                       0.855777
 historical_trans_amount                  per_avg_amount                             0.870396
 historical_trans_day                     trans_activity_day                         0.855777
@@ -701,9 +382,16 @@ per_avg_amount                           historical_trans_amount                
                                          avg_amount_perday                          0.850940
 avg_amount_perday                        per_avg_amount                             0.850940
 Length: 100, dtype: float64
-</code></pre><h3 id="去掉方差较小的特征"><a href="#去掉方差较小的特征" class="headerlink" title="去掉方差较小的特征"></a>去掉方差较小的特征</h3><p>方差阈值（VarianceThreshold）是特征选择的一个简单方法，去掉那些方差没有达到阈值的特征。默认情况下，删除零方差的特征，例如那些只有一个值的样本。假设我们有一个有布尔特征的数据集，然后我们想去掉那些超过80%的样本都是0（或者1）的特征。布尔特征是伯努利随机变量，方差为 p(1-p)。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = df[:].drop(<span class="string">"status"</span>,axis=<span class="number">1</span>)</span><br><span class="line">y = df[<span class="string">"status"</span>]</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h3 id="去掉方差较小的特征"><a href="#去掉方差较小的特征" class="headerlink" title="去掉方差较小的特征"></a>去掉方差较小的特征</h3><p>方差阈值（VarianceThreshold）是特征选择的一个简单方法，去掉那些方差没有达到阈值的特征。默认情况下，删除零方差的特征，例如那些只有一个值的样本。假设我们有一个有布尔特征的数据集，然后我们想去掉那些超过80%的样本都是0（或者1）的特征。布尔特征是伯努利随机变量，方差为 p(1-p)。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">X = df[:].drop(<span class="string">&quot;status&quot;</span>,axis=<span class="number">1</span>)</span><br><span class="line">y = df[<span class="string">&quot;status&quot;</span>]</span><br></pre></td></tr></table></figure>
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>array([False, False,  True,  True, False, False,  True,  True,  True,
         True,  True, False,  True,  True,  True, False,  True,  True,
         True, False,  True, False,  True,  True,  True,  True,  True,
@@ -714,7 +402,12 @@ Length: 100, dtype: float64
         True,  True,  True,  True,  True,  True,  True,  True,  True,
         True,  True,  True,  True,  True,  True,  True, False, False,
         True,  True], dtype=bool)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> VarianceThreshold</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = VarianceThreshold(threshold=<span class="number">0.8</span> * <span class="number">0.2</span>).fit(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>array([False, False,  True,  True, False, False,  True,  True,  True,
         True,  True, False,  True,  True,  True, False,  True,  True,
         True, False,  True, False,  True,  True,  True,  True,  True,
@@ -725,7 +418,8 @@ Length: 100, dtype: float64
         True,  True,  True,  True,  True,  True,  True,  True,  True,
         True,  True,  True,  True,  True,  True,  True, False, False,
         True,  True], dtype=bool)
-</code></pre><h3 id="单变量特征选择"><a href="#单变量特征选择" class="headerlink" title="单变量特征选择"></a>单变量特征选择</h3><p>单变量的特征选择是通过基于单变量的统计测试来选择最好的特征，它可以当做是评估器的预处理步骤。</p>
+</code></pre>
+<h3 id="单变量特征选择"><a href="#单变量特征选择" class="headerlink" title="单变量特征选择"></a>单变量特征选择</h3><p>单变量的特征选择是通过基于单变量的统计测试来选择最好的特征，它可以当做是评估器的预处理步骤。</p>
 <p>Scikit-learn 将特征选择的内容作为实现了 transform 方法的对象</p>
 <ol>
 <li>SelectKBest移除那些除了评分最高的 K 个特征之外的所有特征</li>
@@ -733,21 +427,26 @@ Length: 100, dtype: float64
 </ol>
 <p>这些对象将得分函数作为输入，返回单变量的得分和 p 值:</p>
 <p>对于回归: f_regression , mutual_info_regression<br>对于分类: chi2 , f_classif , mutual_info_classif 可自行查看官网API文档。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectKBest, SelectPercentile, f_classif</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = SelectPercentile(f_classif, percentile= <span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectKBest, SelectPercentile, f_classif</span><br><span class="line"></span><br><span class="line"><span class="comment">#得到返回至少含有90%特征信息的特征</span></span><br><span class="line">sp = SelectPercentile(f_classif, percentile= <span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#可以看到哪些特征被保留</span></span><br><span class="line">X_result = sp.fit_transform(X, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">&#x27;columns&#x27;</span>:X.columns,<span class="string">&#x27;filter&#x27;</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style>
     .dataframe thead tr:only-child th {
         text-align: right;
     }
 
-    .dataframe thead th {
-        text-align: left;
-    }
+<pre><code>.dataframe thead th &#123;
+    text-align: left;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
+.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1069,21 +768,26 @@ Length: 100, dtype: float64
 
 
 
-<h3 id="基于-L1-的特征选取"><a href="#基于-L1-的特征选取" class="headerlink" title="基于 L1 的特征选取"></a>基于 L1 的特征选取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">lsvc = LinearSVC(C=<span class="number">0.01</span>, penalty=<span class="string">"l1"</span>, dual=<span class="literal">False</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(lsvc, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="基于-L1-的特征选取"><a href="#基于-L1-的特征选取" class="headerlink" title="基于 L1 的特征选取"></a>基于 L1 的特征选取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> LinearSVC</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">lsvc = LinearSVC(C=<span class="number">0.01</span>, penalty=<span class="string">&quot;l1&quot;</span>, dual=<span class="literal">False</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(lsvc, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">&#x27;columns&#x27;</span>:X.columns,<span class="string">&#x27;filter&#x27;</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style>
     .dataframe thead tr:only-child th {
         text-align: right;
     }
 
-    .dataframe thead th {
-        text-align: left;
-    }
+<pre><code>.dataframe thead th &#123;
+    text-align: left;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
+.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1405,21 +1109,26 @@ Length: 100, dtype: float64
 
 
 
-<h3 id="基于决策树的特征选取"><a href="#基于决策树的特征选取" class="headerlink" title="基于决策树的特征选取"></a>基于决策树的特征选取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">forest = DecisionTreeClassifier(criterion=<span class="string">'entropy'</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(forest, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="基于决策树的特征选取"><a href="#基于决策树的特征选取" class="headerlink" title="基于决策树的特征选取"></a>基于决策树的特征选取</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.feature_selection <span class="keyword">import</span> SelectFromModel</span><br><span class="line"></span><br><span class="line">forest = DecisionTreeClassifier(criterion=<span class="string">&#x27;entropy&#x27;</span>).fit(X, y)</span><br><span class="line">sp = SelectFromModel(forest, prefit=<span class="literal">True</span>)</span><br><span class="line">X_new = sp.transform(X)</span><br><span class="line"></span><br><span class="line"><span class="comment">#输出结果</span></span><br><span class="line">sp.get_support()</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">&#x27;columns&#x27;</span>:X.columns,<span class="string">&#x27;filter&#x27;</span>:sp.get_support()&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style>
     .dataframe thead tr:only-child th {
         text-align: right;
     }
 
-    .dataframe thead th {
-        text-align: left;
-    }
+<pre><code>.dataframe thead th &#123;
+    text-align: left;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
+.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -1742,21 +1451,26 @@ Length: 100, dtype: float64
 
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出特征排序</span></span><br><span class="line">importance = forest.feature_importances_</span><br><span class="line">imp_result = np.argsort(importance)[::<span class="number">-1</span>]</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">'columns'</span>:X.columns,<span class="string">'filter'</span>:sp.get_support(),<span class="string">'importance'</span>:imp_result&#125;).sort_values(<span class="string">"importance"</span>,ascending=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#输出特征排序</span></span><br><span class="line">importance = forest.feature_importances_</span><br><span class="line">imp_result = np.argsort(importance)[::-<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">pd.DataFrame(&#123;<span class="string">&#x27;columns&#x27;</span>:X.columns,<span class="string">&#x27;filter&#x27;</span>:sp.get_support(),<span class="string">&#x27;importance&#x27;</span>:imp_result&#125;).sort_values(<span class="string">&quot;importance&quot;</span>,ascending=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style>
     .dataframe thead tr:only-child th {
         text-align: right;
     }
 
-    .dataframe thead th {
-        text-align: left;
-    }
+<pre><code>.dataframe thead th &#123;
+    text-align: left;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
+.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2157,21 +1871,26 @@ Length: 100, dtype: float64
 <li>重新对变量进行离散化或分组，使每个分组的响应比例都不为0且不为100%，尤其是当一个分组个体数很小时（比如小于100个），强烈建议这样做，因为本身把一个分组个体数弄得很小就不是太合理</li>
 <li>如果上面两种方法都无法使用，建议人工把该分组的响应数和非响应的数量进行一定的调整。如果响应数原本为0，可以人工调整响应数为1，如果非响应数原本为0，可以人工调整非响应数为1</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([[<span class="string">"&lt;0.03"</span>,<span class="string">"无预测能力"</span>],</span><br><span class="line">[<span class="string">"0.03-0.09"</span>,<span class="string">"低"</span>],</span><br><span class="line">[<span class="string">"0.1-0.29"</span>,<span class="string">"中"</span>],</span><br><span class="line">[<span class="string">"0.3-0.49"</span>,<span class="string">"高"</span>],</span><br><span class="line">[<span class="string">"&gt;=0.5"</span>,<span class="string">"极高且可疑"</span>],], columns = [<span class="string">"IV"</span>,<span class="string">"预测能力"</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pd.DataFrame([[<span class="string">&quot;&lt;0.03&quot;</span>,<span class="string">&quot;无预测能力&quot;</span>],</span><br><span class="line">[<span class="string">&quot;0.03-0.09&quot;</span>,<span class="string">&quot;低&quot;</span>],</span><br><span class="line">[<span class="string">&quot;0.1-0.29&quot;</span>,<span class="string">&quot;中&quot;</span>],</span><br><span class="line">[<span class="string">&quot;0.3-0.49&quot;</span>,<span class="string">&quot;高&quot;</span>],</span><br><span class="line">[<span class="string">&quot;&gt;=0.5&quot;</span>,<span class="string">&quot;极高且可疑&quot;</span>],], columns = [<span class="string">&quot;IV&quot;</span>,<span class="string">&quot;预测能力&quot;</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style>
     .dataframe thead tr:only-child th {
         text-align: right;
     }
 
-    .dataframe thead th {
-        text-align: left;
-    }
+<pre><code>.dataframe thead th &#123;
+    text-align: left;
+&#125;
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-</style>
+.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2213,8 +1932,14 @@ Length: 100, dtype: float64
 
 
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CalcIV</span><span class="params">(Xvar,Yvar)</span>:</span></span><br><span class="line">    N_0=np.sum(Yvar==<span class="number">0</span>)</span><br><span class="line">    N_1=np.sum(Yvar==<span class="number">1</span>)</span><br><span class="line">    N_0_group=np.zeros(np.unique(Xvar).shape)</span><br><span class="line">    </span><br><span class="line">    N_1_group=np.zeros(np.unique(Xvar).shape)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(np.unique(Xvar))):</span><br><span class="line">        N_0_group[i] = Yvar[(Xvar==np.unique(Xvar)[i])&amp;(Yvar==<span class="number">0</span>)].count()</span><br><span class="line">        N_1_group[i] = Yvar[(Xvar==np.unique(Xvar)[i])&amp;(Yvar==<span class="number">1</span>)].count()</span><br><span class="line">    iv = np.sum((N_0_group/N_0-N_1_group/N_1)*np.log((N_0_group/N_0)/(N_1_group/N_1)))</span><br><span class="line">    <span class="keyword">if</span> iv&gt;=<span class="number">1.0</span>:<span class="comment">## 处理极端值</span></span><br><span class="line">        iv=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> iv</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caliv_batch</span><span class="params">(df,Yvar)</span>:</span></span><br><span class="line">    ivlist=[]</span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> df.columns:</span><br><span class="line">        iv=CalcIV(df[col],Yvar)</span><br><span class="line">        ivlist.append(iv)</span><br><span class="line">    names=list(df.columns)</span><br><span class="line">    iv_df=pd.DataFrame(&#123;<span class="string">'Var'</span>:names,<span class="string">'Iv'</span>:ivlist&#125;,columns=[<span class="string">'Var'</span>,<span class="string">'Iv'</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> iv_df,ivlist</span><br><span class="line"></span><br><span class="line">im_iv, ivl = caliv_batch(X,y)</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">im_iv[<span class="string">'Iv'</span>].describe()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">CalcIV</span>(<span class="params">Xvar,Yvar</span>):</span></span><br><span class="line">    N_0=np.<span class="built_in">sum</span>(Yvar==<span class="number">0</span>)</span><br><span class="line">    N_1=np.<span class="built_in">sum</span>(Yvar==<span class="number">1</span>)</span><br><span class="line">    N_0_group=np.zeros(np.unique(Xvar).shape)</span><br><span class="line">    </span><br><span class="line">    N_1_group=np.zeros(np.unique(Xvar).shape)</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(np.unique(Xvar))):</span><br><span class="line">        N_0_group[i] = Yvar[(Xvar==np.unique(Xvar)[i])&amp;(Yvar==<span class="number">0</span>)].count()</span><br><span class="line">        N_1_group[i] = Yvar[(Xvar==np.unique(Xvar)[i])&amp;(Yvar==<span class="number">1</span>)].count()</span><br><span class="line">    iv = np.<span class="built_in">sum</span>((N_0_group/N_0-N_1_group/N_1)*np.log((N_0_group/N_0)/(N_1_group/N_1)))</span><br><span class="line">    <span class="keyword">if</span> iv&gt;=<span class="number">1.0</span>:<span class="comment">## 处理极端值</span></span><br><span class="line">        iv=<span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> iv</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">caliv_batch</span>(<span class="params">df,Yvar</span>):</span></span><br><span class="line">    ivlist=[]</span><br><span class="line">    <span class="keyword">for</span> col <span class="keyword">in</span> df.columns:</span><br><span class="line">        iv=CalcIV(df[col],Yvar)</span><br><span class="line">        ivlist.append(iv)</span><br><span class="line">    names=<span class="built_in">list</span>(df.columns)</span><br><span class="line">    iv_df=pd.DataFrame(&#123;<span class="string">&#x27;Var&#x27;</span>:names,<span class="string">&#x27;Iv&#x27;</span>:ivlist&#125;,columns=[<span class="string">&#x27;Var&#x27;</span>,<span class="string">&#x27;Iv&#x27;</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> iv_df,ivlist</span><br><span class="line"></span><br><span class="line">im_iv, ivl = caliv_batch(X,y)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">im_iv[<span class="string">&#x27;Iv&#x27;</span>].describe()</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>count    83.000000
 mean      0.930759
 std       0.249840
@@ -2224,838 +1949,197 @@ min       0.005614
 75%       1.000000
 max       1.000000
 Name: Iv, dtype: float64
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">threshold = <span class="number">0.02</span></span><br><span class="line">threshold2 = <span class="number">0.6</span></span><br><span class="line">data_index=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(ivl)):</span><br><span class="line">    <span class="keyword">if</span> (im_iv[<span class="string">'Iv'</span>][i]&lt; threshold)|(im_iv[<span class="string">'Iv'</span>][i] &gt; threshold2):</span><br><span class="line">        data_index.append(im_iv[<span class="string">'Var'</span>][i])</span><br><span class="line">datafinal_IV = df.drop(data_index,axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">threshold = <span class="number">0.02</span></span><br><span class="line">threshold2 = <span class="number">0.6</span></span><br><span class="line">data_index=[]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(ivl)):</span><br><span class="line">    <span class="keyword">if</span> (im_iv[<span class="string">&#x27;Iv&#x27;</span>][i]&lt; threshold)|(im_iv[<span class="string">&#x27;Iv&#x27;</span>][i] &gt; threshold2):</span><br><span class="line">        data_index.append(im_iv[<span class="string">&#x27;Var&#x27;</span>][i])</span><br><span class="line">datafinal_IV = df.drop(data_index,axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">datafinal_IV.columns</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>Index([&#39;rank_trad_1_month&#39;, &#39;top_trans_count_last_1_month&#39;, &#39;status&#39;,
        &#39;consfin_product_count&#39;],
       dtype=&#39;object&#39;)
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x_train_IV = datafinal_IV.iloc[:,:<span class="number">-1</span>]</span><br><span class="line">y_train_IV = datafinal_IV.iloc[:,<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x_train_IV = datafinal_IV.iloc[:,:-<span class="number">1</span>]</span><br><span class="line">y_train_IV = datafinal_IV.iloc[:,-<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
 <blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
-<li><a href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">DataWhale数据挖掘实战营</a></li>
-<li><a href="https://blog.csdn.net/tonydz0523/article/details/84404261" target="_blank" rel="noopener">python数据预处理 ：数据共线性处理</a></li>
-<li><a href="https://www.cnblogs.com/stevenlk/p/6543628.html" target="_blank" rel="noopener">特征选择 (feature_selection)</a></li>
-<li><a href="https://blog.csdn.net/shenxiaoming77/article/details/78771698" target="_blank" rel="noopener">评分卡模型中的IV和WOE详解</a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" >DataWhale数据挖掘实战营<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/tonydz0523/article/details/84404261" >python数据预处理 ：数据共线性处理<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/stevenlk/p/6543628.html" >特征选择 (feature_selection)<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/shenxiaoming77/article/details/78771698" >评分卡模型中的IV和WOE详解<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/人工智能/数据挖掘/17314/" rel="next" title="数据理解与清洗">
-                <i class="fa fa-chevron-left"></i> 数据理解与清洗
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/人工智能/监督学习/32513/" rel="prev" title="6种分类模型比较">
-                6种分类模型比较 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
         </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
-    </div>
-
-  
-
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Dan">
-            
-              <p class="site-author-name" itemprop="name">Dan</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
+        
+            <div class="article-nav">
                 
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/32513/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">6种分类模型比较</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/daniel18qzx" title="GitHub &rarr; https://github.com/daniel18qzx" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.linkedin.com/in/danielchiu15/" title="Linkedin &rarr; https://www.linkedin.com/in/danielchiu15/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
-                </span>
-              
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/17314/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">数据理解与清洗</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
             </div>
-          
+        
 
-          
+        
+    </div>
+</div>
 
-          
-          
 
-          
-            
-          
-          
+                
+            </div>
 
         </div>
-      </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
             
+              <span>2020</span>&nbsp;-&nbsp;
             
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征预处理"><span class="nav-number">2.</span> <span class="nav-text">特征预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除无用"><span class="nav-number">2.1.</span> <span class="nav-text">删除无用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理分类型特征"><span class="nav-number">2.2.</span> <span class="nav-text">处理分类型特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用众数填充"><span class="nav-number">2.3.</span> <span class="nav-text">使用众数填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征衍生-升维"><span class="nav-number">3.</span> <span class="nav-text">特征衍生/升维</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征筛选-降维"><span class="nav-number">4.</span> <span class="nav-text">特征筛选/降维</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共线性分析"><span class="nav-number">4.1.</span> <span class="nav-text">共线性分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#去掉方差较小的特征"><span class="nav-number">4.2.</span> <span class="nav-text">去掉方差较小的特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单变量特征选择"><span class="nav-number">4.3.</span> <span class="nav-text">单变量特征选择</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于-L1-的特征选取"><span class="nav-number">4.4.</span> <span class="nav-text">基于 L1 的特征选取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基于决策树的特征选取"><span class="nav-number">4.5.</span> <span class="nav-text">基于决策树的特征选取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WOE"><span class="nav-number">4.6.</span> <span class="nav-text">WOE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IV"><span class="nav-number">4.7.</span> <span class="nav-text">IV</span></a></li></ol></li></ol></div>
-            
-
-          </div>
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
         </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
         </div>
-      
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
 
     </div>
-  </aside>
-  
 
+    
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Daniel Chiu. All Rights Reserved.</span>
-
-  
-
-  
+    <div class="image-viewer-container">
+    <img src="">
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+    
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+</main>
 
 
 
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/utils.js"></script>
 
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="Total Visitors">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
+<script src="/js/main.js"></script>
 
-  
-    <span class="post-meta-divider">|</span>
-  
+<script src="/js/header-shrink.js"></script>
 
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="Total Views">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
 </div>
 
 
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.2"></script>
-
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.2"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.2"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    <script>
-  window.livereOptions = {
-    refer: '人工智能/数据挖掘/17541/'
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-</script>
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

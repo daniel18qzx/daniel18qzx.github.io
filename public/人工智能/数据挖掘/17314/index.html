@@ -1,532 +1,195 @@
 <!DOCTYPE html>
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next gemini use-motion" lang="zh-cn">
-<head><meta name="generator" content="Hexo 3.9.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css?v=4.7.0">
-
-<link rel="stylesheet" href="/css/main.css?v=7.1.2">
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=7.1.2">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=7.1.2">
-
-
-
-
-
-
-
-
-<script id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Gemini',
-    version: '7.1.2',
-    sidebar: {"position":"left","display":"post","offset":12,"onmobile":false,"dimmer":false},
-    back2top: true,
-    back2top_sidebar: true,
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
-  
-
-
-
-
-  <meta name="description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据理解与清洗">
-<meta property="og:url" content="https://daniel18qzx.github.io/人工智能/数据挖掘/17314/index.html">
-<meta property="og:site_name" content="菜鸟分析狮">
-<meta property="og:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
-<meta property="og:locale" content="zh-cn">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_1.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_2.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_3.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_4.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_5.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_6.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_7.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_8.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_9.png">
-<meta property="og:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_10.png">
-<meta property="og:updated_time" content="2019-08-23T16:08:40.278Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据理解与清洗">
-<meta name="twitter:description" content="数据集载入123456789# -*- coding: utf-8 -*-import pandas as pdimport numpy as npfrom matplotlib import pyplot as pltimport seaborn as snsimport warningswarnings.filterwarnings(&apos;ignore&apos;)df = pd.read_csv(u&quot;20">
-<meta name="twitter:image" content="https://daniel18qzx.github.io/img/2019-08-01_金融数据描述_1.png">
-
-
-
-
-
-  
-  
-  <link rel="canonical" href="https://daniel18qzx.github.io/人工智能/数据挖掘/17314/">
-
-
-
-<script id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>数据理解与清洗 | 菜鸟分析狮</title>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  <noscript>
-  <style>
-  .use-motion .motion-element,
-  .use-motion .brand,
-  .use-motion .menu-item,
-  .sidebar-inner,
-  .use-motion .post-block,
-  .use-motion .pagination,
-  .use-motion .comments,
-  .use-motion .post-header,
-  .use-motion .post-body,
-  .use-motion .collection-title { opacity: initial; }
-
-  .use-motion .logo,
-  .use-motion .site-title,
-  .use-motion .site-subtitle {
-    opacity: initial;
-    top: initial;
-  }
-
-  .use-motion .logo-line-before i { left: initial; }
-  .use-motion .logo-line-after i { right: initial; }
-  </style>
-</noscript>
-
-</head>
-
-<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
-
-  
-  
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
     
-  
+    <title>
+        
+            数据理解与清洗 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
     
 
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">菜鸟分析狮</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
     
-      
-        <h1 class="site-subtitle" itemprop="description">没有难处理的数据，没有难写的报告</h1>
-      
-    
-    
-  </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="Toggle navigation bar">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
 </div>
 
 
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-
-    
-    
-    
-      
-    
+<main class="page-container">
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-homemenu"></i> <br>Home</a>
+    <div class="page-main-content">
 
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-categories">
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
 
-    
-    
-    
-      
-    
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
 
-    
-
-    <a href="/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
-
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-
-    
-    
-    
-      
-    
-
-    
-
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
-
-  </li>
-
-      
-      
-        <li class="menu-item menu-item-search">
-          
-            <a href="javascript:;" class="popup-trigger">
-          
-            
-              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>Search</a>
-        </li>
-      
-    </ul>
-  
-
-  
-
-  
-    <div class="site-search">
-      
-  <div class="popup search-popup local-search-popup">
-  <div class="local-search-header clearfix">
-    <span class="search-icon">
-      <i class="fa fa-search"></i>
-    </span>
-    <span class="popup-btn-close">
-      <i class="fa fa-times-circle"></i>
-    </span>
-    <div class="local-search-input-wrapper">
-      <input autocomplete="off" placeholder="Searching..." spellcheck="false" type="text" id="local-search-input">
-    </div>
-  </div>
-  <div id="local-search-result"></div>
-</div>
-
-
-
-    </div>
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-            
-
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://daniel18qzx.github.io/人工智能/数据挖掘/17314/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Dan">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="菜鸟分析狮">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">数据理解与清洗
-
-              
-            
-          </h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-
-              
-                
-              
-
-              <time title="Created: 2019-08-01 00:00:00" itemprop="dateCreated datePublished" datetime="2019-08-01T00:00:00+08:00">2019-08-01</time>
-            
-
-            
-              
-
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2019-08-24 00:08:40" itemprop="dateModified" datetime="2019-08-24T00:08:40+08:00">2019-08-24</time>
-              
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/" itemprop="url" rel="index"><span itemprop="name">人工智能</span></a></span>
-
-                
-                
-                  , 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/人工智能/数据挖掘/" itemprop="url" rel="index"><span itemprop="name">数据挖掘</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-              
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-            
-                <span class="post-meta-item-text">Comments: </span>
-                <a href="/人工智能/数据挖掘/17314/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/人工智能/数据挖掘/17314/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             Views:  
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Symbols count in article: </span>
-                
-                <span title="Symbols count in article">48k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Reading time &asymp;</span>
-                
-                <span title="Reading time">1:20</span>
-              
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
             </div>
-          
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-          
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
 
         </div>
-      </header>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">数据理解与清洗</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep Team</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-08-01 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/">数据挖掘</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
     
 
     
     
     
-    <div class="post-body" itemprop="articleBody">
+    
+</div>
 
-      
-      
+                    </div>
+                </div>
+            </div>
+        
 
-      
-        <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">'ignore'</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u"2019-08-01_金融数据描述_data1.csv"</span>,encoding = <span class="string">'gbk'</span>)</span><br></pre></td></tr></table></figure>
+        <div class="article-content markdown-body">
+            <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -684,6 +347,7 @@
 
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+
 <pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
 RangeIndex: 4754 entries, 0 to 4753
 Data columns (total 90 columns):
@@ -779,13 +443,20 @@ latest_query_day                              4450 non-null float64
 loans_latest_day                              4457 non-null float64
 dtypes: float64(70), int64(13), object(7)
 memory usage: 3.3+ MB
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedic = &#123;&#125; <span class="comment"># 类型字典</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> df.columns:</span><br><span class="line">    typedic[str(df[name].dtype)] = typedic.get(str(df[name].dtype),[])+[name]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> typedic.items():</span><br><span class="line">    print(<span class="string">"&#123;&#125;格式共有&#123;&#125;个: &#123;&#125;"</span>.format(key,len(value),value))</span><br><span class="line">    print(<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedic = &#123;&#125; <span class="comment"># 类型字典</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> df.columns:</span><br><span class="line">    typedic[<span class="built_in">str</span>(df[name].dtype)] = typedic.get(<span class="built_in">str</span>(df[name].dtype),[])+[name]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> typedic.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&#123;&#125;格式共有&#123;&#125;个: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(key,<span class="built_in">len</span>(value),value))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
 <pre><code>int64格式共有13个: [&#39;Unnamed: 0&#39;, &#39;custid&#39;, &#39;take_amount_in_later_12_month_highest&#39;, &#39;repayment_capability&#39;, &#39;is_high_user&#39;, &#39;historical_trans_amount&#39;, &#39;trans_amount_3_month&#39;, &#39;abs&#39;, &#39;avg_price_last_12_month&#39;, &#39;max_cumulative_consume_later_1_month&#39;, &#39;pawns_auctions_trusts_consume_last_1_month&#39;, &#39;pawns_auctions_trusts_consume_last_6_month&#39;, &#39;status&#39;]
 
 object格式共有7个: [&#39;trade_no&#39;, &#39;bank_card_no&#39;, &#39;reg_preference_for_trad&#39;, &#39;source&#39;, &#39;id_name&#39;, &#39;latest_query_time&#39;, &#39;loans_latest_time&#39;]
 
 float64格式共有70个: [&#39;low_volume_percent&#39;, &#39;middle_volume_percent&#39;, &#39;trans_amount_increase_rate_lately&#39;, &#39;trans_activity_month&#39;, &#39;trans_activity_day&#39;, &#39;transd_mcc&#39;, &#39;trans_days_interval_filter&#39;, &#39;trans_days_interval&#39;, &#39;regional_mobility&#39;, &#39;student_feature&#39;, &#39;number_of_trans_from_2011&#39;, &#39;first_transaction_time&#39;, &#39;historical_trans_day&#39;, &#39;rank_trad_1_month&#39;, &#39;avg_consume_less_12_valid_month&#39;, &#39;top_trans_count_last_1_month&#39;, &#39;avg_price_top_last_12_valid_month&#39;, &#39;trans_top_time_last_1_month&#39;, &#39;trans_top_time_last_6_month&#39;, &#39;consume_top_time_last_1_month&#39;, &#39;consume_top_time_last_6_month&#39;, &#39;cross_consume_count_last_1_month&#39;, &#39;trans_fail_top_count_enum_last_1_month&#39;, &#39;trans_fail_top_count_enum_last_6_month&#39;, &#39;trans_fail_top_count_enum_last_12_month&#39;, &#39;consume_mini_time_last_1_month&#39;, &#39;max_consume_count_later_6_month&#39;, &#39;railway_consume_count_last_12_month&#39;, &#39;jewelry_consume_count_last_6_month&#39;, &#39;first_transaction_day&#39;, &#39;trans_day_last_12_month&#39;, &#39;apply_score&#39;, &#39;apply_credibility&#39;, &#39;query_org_count&#39;, &#39;query_finance_count&#39;, &#39;query_cash_count&#39;, &#39;query_sum_count&#39;, &#39;latest_one_month_apply&#39;, &#39;latest_three_month_apply&#39;, &#39;latest_six_month_apply&#39;, &#39;loans_score&#39;, &#39;loans_credibility_behavior&#39;, &#39;loans_count&#39;, &#39;loans_settle_count&#39;, &#39;loans_overdue_count&#39;, &#39;loans_org_count_behavior&#39;, &#39;consfin_org_count_behavior&#39;, &#39;loans_cash_count&#39;, &#39;latest_one_month_loan&#39;, &#39;latest_three_month_loan&#39;, &#39;latest_six_month_loan&#39;, &#39;history_suc_fee&#39;, &#39;history_fail_fee&#39;, &#39;latest_one_month_suc&#39;, &#39;latest_one_month_fail&#39;, &#39;loans_long_time&#39;, &#39;loans_credit_limit&#39;, &#39;loans_credibility_limit&#39;, &#39;loans_org_count_current&#39;, &#39;loans_product_count&#39;, &#39;loans_max_limit&#39;, &#39;loans_avg_limit&#39;, &#39;consfin_credit_limit&#39;, &#39;consfin_credibility&#39;, &#39;consfin_org_count_current&#39;, &#39;consfin_product_count&#39;, &#39;consfin_max_limit&#39;, &#39;consfin_avg_limit&#39;, &#39;latest_query_day&#39;, &#39;loans_latest_day&#39;]
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columns</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columns</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>Index([&#39;Unnamed: 0&#39;, &#39;custid&#39;, &#39;trade_no&#39;, &#39;bank_card_no&#39;,
        &#39;low_volume_percent&#39;, &#39;middle_volume_percent&#39;,
        &#39;take_amount_in_later_12_month_highest&#39;,
@@ -829,27 +500,39 @@ float64格式共有70个: [&#39;low_volume_percent&#39;, &#39;middle_volume_perc
        &#39;consfin_max_limit&#39;, &#39;consfin_avg_limit&#39;, &#39;latest_query_day&#39;,
        &#39;loans_latest_day&#39;],
       dtype=&#39;object&#39;)
-</code></pre><h2 id="可视化各特征"><a href="#可视化各特征" class="headerlink" title="可视化各特征"></a>可视化各特征</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">name_list_1 = [</span><br><span class="line">       <span class="string">'low_volume_percent'</span>, <span class="string">'middle_volume_percent'</span>,</span><br><span class="line">       <span class="string">'take_amount_in_later_12_month_highest'</span>,</span><br><span class="line">       <span class="string">'trans_amount_increase_rate_lately'</span>, <span class="string">'trans_activity_month'</span>,</span><br><span class="line">       <span class="string">'trans_activity_day'</span>, <span class="string">'transd_mcc'</span>, <span class="string">'trans_days_interval_filter'</span>,</span><br><span class="line">       <span class="string">'trans_days_interval'</span>, <span class="string">'regional_mobility'</span>, <span class="string">'student_feature'</span>,</span><br><span class="line">       <span class="string">'repayment_capability'</span>, <span class="string">'is_high_user'</span>, <span class="string">'number_of_trans_from_2011'</span>,</span><br><span class="line">       <span class="string">'first_transaction_time'</span></span><br><span class="line">       ]</span><br><span class="line">name_list_2 = [</span><br><span class="line">       <span class="string">'historical_trans_amount'</span>,</span><br><span class="line">       <span class="string">'historical_trans_day'</span>, <span class="string">'rank_trad_1_month'</span>, <span class="string">'trans_amount_3_month'</span>,</span><br><span class="line">       <span class="string">'avg_consume_less_12_valid_month'</span>, <span class="string">'abs'</span>,</span><br><span class="line">       <span class="string">'top_trans_count_last_1_month'</span>, <span class="string">'avg_price_last_12_month'</span>,</span><br><span class="line">       <span class="string">'avg_price_top_last_12_valid_month'</span>, <span class="string">'reg_preference_for_trad'</span>,</span><br><span class="line">       <span class="string">'trans_top_time_last_1_month'</span>, <span class="string">'trans_top_time_last_6_month'</span>,</span><br><span class="line">       <span class="string">'consume_top_time_last_1_month'</span>, <span class="string">'consume_top_time_last_6_month'</span>,</span><br><span class="line">       <span class="string">'cross_consume_count_last_1_month'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_3 = [</span><br><span class="line">       <span class="string">'trans_fail_top_count_enum_last_1_month'</span>,</span><br><span class="line">       <span class="string">'trans_fail_top_count_enum_last_6_month'</span>,</span><br><span class="line">       <span class="string">'trans_fail_top_count_enum_last_12_month'</span>,</span><br><span class="line">       <span class="string">'consume_mini_time_last_1_month'</span>,</span><br><span class="line">       <span class="string">'max_cumulative_consume_later_1_month'</span>,</span><br><span class="line">       <span class="string">'max_consume_count_later_6_month'</span>,</span><br><span class="line">       <span class="string">'railway_consume_count_last_12_month'</span>,</span><br><span class="line">       <span class="string">'pawns_auctions_trusts_consume_last_1_month'</span>,</span><br><span class="line">       <span class="string">'pawns_auctions_trusts_consume_last_6_month'</span>,</span><br><span class="line">       <span class="string">'jewelry_consume_count_last_6_month'</span>, </span><br><span class="line">       <span class="string">'first_transaction_day'</span>, <span class="string">'trans_day_last_12_month'</span>, <span class="string">'apply_score'</span>,</span><br><span class="line">       <span class="string">'apply_credibility'</span>, <span class="string">'query_org_count'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_4 = [</span><br><span class="line">      <span class="string">'query_finance_count'</span>, <span class="string">'query_cash_count'</span>, <span class="string">'query_sum_count'</span>,</span><br><span class="line">       <span class="string">'latest_query_time'</span>, <span class="string">'latest_one_month_apply'</span>,</span><br><span class="line">       <span class="string">'latest_three_month_apply'</span>, <span class="string">'latest_six_month_apply'</span>, <span class="string">'loans_score'</span>,</span><br><span class="line">       <span class="string">'loans_credibility_behavior'</span>, <span class="string">'loans_count'</span>, <span class="string">'loans_settle_count'</span>,</span><br><span class="line">       <span class="string">'loans_overdue_count'</span>, <span class="string">'loans_org_count_behavior'</span>,</span><br><span class="line">       <span class="string">'consfin_org_count_behavior'</span>, <span class="string">'loans_cash_count'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_5 = [</span><br><span class="line">      <span class="string">'latest_one_month_loan'</span>, <span class="string">'latest_three_month_loan'</span>,</span><br><span class="line">       <span class="string">'latest_six_month_loan'</span>, <span class="string">'history_suc_fee'</span>, <span class="string">'history_fail_fee'</span>,</span><br><span class="line">       <span class="string">'latest_one_month_suc'</span>, <span class="string">'latest_one_month_fail'</span>, <span class="string">'loans_long_time'</span>,</span><br><span class="line">       <span class="string">'loans_latest_time'</span>, <span class="string">'loans_credit_limit'</span>, <span class="string">'loans_credibility_limit'</span>,</span><br><span class="line">       <span class="string">'loans_org_count_current'</span>, <span class="string">'loans_product_count'</span>, <span class="string">'loans_max_limit'</span>,</span><br><span class="line">       <span class="string">'loans_avg_limit'</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_6 = [</span><br><span class="line">      <span class="string">'consfin_credit_limit'</span>, <span class="string">'consfin_credibility'</span>,</span><br><span class="line">       <span class="string">'consfin_org_count_current'</span>, <span class="string">'consfin_product_count'</span>,</span><br><span class="line">       <span class="string">'consfin_max_limit'</span>, <span class="string">'consfin_avg_limit'</span>, <span class="string">'latest_query_day'</span>,</span><br><span class="line">       <span class="string">'loans_latest_day'</span></span><br><span class="line">       ]</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_1):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_1.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_1.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_2):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_2.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_2.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_3):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_3.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_3.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_4):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_4.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_4.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_5):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_5.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_5.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">3</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> enumerate(name_list_6):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">'status'</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_6.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_6.png" alt></p>
+</code></pre>
+<h2 id="可视化各特征"><a href="#可视化各特征" class="headerlink" title="可视化各特征"></a>可视化各特征</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">name_list_1 = [</span><br><span class="line">       <span class="string">&#x27;low_volume_percent&#x27;</span>, <span class="string">&#x27;middle_volume_percent&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;take_amount_in_later_12_month_highest&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_amount_increase_rate_lately&#x27;</span>, <span class="string">&#x27;trans_activity_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_activity_day&#x27;</span>, <span class="string">&#x27;transd_mcc&#x27;</span>, <span class="string">&#x27;trans_days_interval_filter&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_days_interval&#x27;</span>, <span class="string">&#x27;regional_mobility&#x27;</span>, <span class="string">&#x27;student_feature&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;repayment_capability&#x27;</span>, <span class="string">&#x27;is_high_user&#x27;</span>, <span class="string">&#x27;number_of_trans_from_2011&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;first_transaction_time&#x27;</span></span><br><span class="line">       ]</span><br><span class="line">name_list_2 = [</span><br><span class="line">       <span class="string">&#x27;historical_trans_amount&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;historical_trans_day&#x27;</span>, <span class="string">&#x27;rank_trad_1_month&#x27;</span>, <span class="string">&#x27;trans_amount_3_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;avg_consume_less_12_valid_month&#x27;</span>, <span class="string">&#x27;abs&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;top_trans_count_last_1_month&#x27;</span>, <span class="string">&#x27;avg_price_last_12_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;avg_price_top_last_12_valid_month&#x27;</span>, <span class="string">&#x27;reg_preference_for_trad&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_top_time_last_1_month&#x27;</span>, <span class="string">&#x27;trans_top_time_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consume_top_time_last_1_month&#x27;</span>, <span class="string">&#x27;consume_top_time_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;cross_consume_count_last_1_month&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_3 = [</span><br><span class="line">       <span class="string">&#x27;trans_fail_top_count_enum_last_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_fail_top_count_enum_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_fail_top_count_enum_last_12_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consume_mini_time_last_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;max_cumulative_consume_later_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;max_consume_count_later_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;railway_consume_count_last_12_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;pawns_auctions_trusts_consume_last_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;pawns_auctions_trusts_consume_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;jewelry_consume_count_last_6_month&#x27;</span>, </span><br><span class="line">       <span class="string">&#x27;first_transaction_day&#x27;</span>, <span class="string">&#x27;trans_day_last_12_month&#x27;</span>, <span class="string">&#x27;apply_score&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;apply_credibility&#x27;</span>, <span class="string">&#x27;query_org_count&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_4 = [</span><br><span class="line">      <span class="string">&#x27;query_finance_count&#x27;</span>, <span class="string">&#x27;query_cash_count&#x27;</span>, <span class="string">&#x27;query_sum_count&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_query_time&#x27;</span>, <span class="string">&#x27;latest_one_month_apply&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_three_month_apply&#x27;</span>, <span class="string">&#x27;latest_six_month_apply&#x27;</span>, <span class="string">&#x27;loans_score&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_credibility_behavior&#x27;</span>, <span class="string">&#x27;loans_count&#x27;</span>, <span class="string">&#x27;loans_settle_count&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_overdue_count&#x27;</span>, <span class="string">&#x27;loans_org_count_behavior&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consfin_org_count_behavior&#x27;</span>, <span class="string">&#x27;loans_cash_count&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_5 = [</span><br><span class="line">      <span class="string">&#x27;latest_one_month_loan&#x27;</span>, <span class="string">&#x27;latest_three_month_loan&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_six_month_loan&#x27;</span>, <span class="string">&#x27;history_suc_fee&#x27;</span>, <span class="string">&#x27;history_fail_fee&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_one_month_suc&#x27;</span>, <span class="string">&#x27;latest_one_month_fail&#x27;</span>, <span class="string">&#x27;loans_long_time&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_latest_time&#x27;</span>, <span class="string">&#x27;loans_credit_limit&#x27;</span>, <span class="string">&#x27;loans_credibility_limit&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_org_count_current&#x27;</span>, <span class="string">&#x27;loans_product_count&#x27;</span>, <span class="string">&#x27;loans_max_limit&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_avg_limit&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_6 = [</span><br><span class="line">      <span class="string">&#x27;consfin_credit_limit&#x27;</span>, <span class="string">&#x27;consfin_credibility&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consfin_org_count_current&#x27;</span>, <span class="string">&#x27;consfin_product_count&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consfin_max_limit&#x27;</span>, <span class="string">&#x27;consfin_avg_limit&#x27;</span>, <span class="string">&#x27;latest_query_day&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_latest_day&#x27;</span></span><br><span class="line">       ]</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_1):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_1.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_2):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_2.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_3):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_3.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_4):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_4.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_5):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_5.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">3</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_6):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_6.png"></p>
 <p>从以上分布图可以看出，连续型数据的特征基本上符合正态分布，指数分布或者泊松分布等，但在[‘rank_trad_1_month’,’trans_top_time_last_1_month’,’trans_top_time_last_6_month’,’consume_top_time_last_1_month’,’consume_top_time_last_6_month’,’loans_credit_limit’,’loans_credibility_limit’,’loans_max_limit’,’consfin_credibility’]这几个特征上出现数据于最左最右位置会出现骤升。从业务层面考虑，暂时未得出满意结论，待确认特征取数逻辑后再分析。<br>  还有，’avg_price_last_12_month’,’consfin_credit_limit’这两个特征虽然是连续型特征，但由图上看，出现标签分段，考虑继续探索，查看是否存在分段。</p>
 <p>  另外几个离散型特征，如’reg_preference_for_trad’,’regional_mobility’等，在标签status上区别明显，感觉是对模型有用的特征。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">'consfin_credit_limit'</span>,x = <span class="string">'status'</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_7.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_7.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">'avg_price_last_12_month'</span>,x = <span class="string">'status'</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_8.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_8.png" alt></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">'rank_trad_1_month'</span>,x = <span class="string">'status'</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_9.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_9.png" alt></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;consfin_credit_limit&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_7.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_7.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;avg_price_last_12_month&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_8.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_8.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;rank_trad_1_month&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_9.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_9.png"></p>
 <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="为什么需要处理缺失值？"><a href="#为什么需要处理缺失值？" class="headerlink" title="为什么需要处理缺失值？"></a>为什么需要处理缺失值？</h3><p>不同缺失值的处理方式在一定程度上影响了特征提取、建模和模型训练缺失值太多，可以尝试着直接删除，如果不删除，处理不好，可能会引来噪声缺失值较少，少于某一缺失率时，直接删除又会带来信息的损失，此时可以采取适当的填充方式。</p>
 <h3 id="缺失率大于多少时应当抛弃该特征？"><a href="#缺失率大于多少时应当抛弃该特征？" class="headerlink" title="缺失率大于多少时应当抛弃该特征？"></a>缺失率大于多少时应当抛弃该特征？</h3><p>一般为70%,但是还要分析该特征与训练目标的重要程度</p>
 <h3 id="缺失值填充有哪些方法？"><a href="#缺失值填充有哪些方法？" class="headerlink" title="缺失值填充有哪些方法？"></a>缺失值填充有哪些方法？</h3><h4 id="插值填充"><a href="#插值填充" class="headerlink" title="插值填充"></a>插值填充</h4><ul>
@@ -897,11 +580,21 @@ float64格式共有70个: [&#39;low_volume_percent&#39;, &#39;middle_volume_perc
 </ul>
 <h3 id="无用特征删除"><a href="#无用特征删除" class="headerlink" title="无用特征删除"></a>无用特征删除</h3><p>将所有object格式的改为数值格式，其中有部分无用特征则可直接删除</p>
 <p>由上可看出需处理包含：[‘trade_no’, ‘bank_card_no’, ‘reg_preference_for_trad’, ‘source’, ‘id_name’, ‘latest_query_time’, ‘loans_latest_time’]</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'source'</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;source&#x27;</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>xs    4754
 Name: source, dtype: int64
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">to_drop = [<span class="string">'trade_no'</span>, <span class="string">'bank_card_no'</span>, <span class="string">'student_feature'</span>,<span class="string">'cross_consume_count_last_1_month'</span>, <span class="string">'id_name'</span>, <span class="string">'source'</span>]</span><br><span class="line">df = df.drop(to_drop, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="缺失填充"><a href="#缺失填充" class="headerlink" title="缺失填充"></a>缺失填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'reg_preference_for_trad'</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">to_drop = [<span class="string">&#x27;trade_no&#x27;</span>, <span class="string">&#x27;bank_card_no&#x27;</span>, <span class="string">&#x27;student_feature&#x27;</span>,<span class="string">&#x27;cross_consume_count_last_1_month&#x27;</span>, <span class="string">&#x27;id_name&#x27;</span>, <span class="string">&#x27;source&#x27;</span>]</span><br><span class="line">df = df.drop(to_drop, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="缺失填充"><a href="#缺失填充" class="headerlink" title="缺失填充"></a>缺失填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>一线城市    3403
 三线城市    1064
 境外       150
@@ -909,14 +602,24 @@ Name: source, dtype: int64
 其他城市       4
 NaN        2
 Name: reg_preference_for_trad, dtype: int64
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">'reg_preference_for_trad'</span>].fillna(<span class="string">'其他城市'</span>,inplace = <span class="literal">True</span>)</span><br><span class="line">df[<span class="string">'reg_preference_for_trad'</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].fillna(<span class="string">&#x27;其他城市&#x27;</span>,inplace = <span class="literal">True</span>)</span><br><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>一线城市    3403
 三线城市    1064
 境外       150
 二线城市     131
 其他城市       6
 Name: reg_preference_for_trad, dtype: int64
-</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().sum().sort_values(ascending = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().<span class="built_in">sum</span>().sort_values(ascending = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
 <pre><code>latest_three_month_apply                      304
 query_finance_count                           304
 latest_six_month_apply                        304
@@ -979,23 +682,30 @@ is_high_user                                    0
 trans_amount_3_month                            0
 Unnamed: 0                                      0
 Length: 84, dtype: int64
-</code></pre><h2 id="特征间探索"><a href="#特征间探索" class="headerlink" title="特征间探索"></a>特征间探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">corr = df[:].corr()</span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sb.heatmap(corr)</span><br><span class="line">plt.savefig(<span class="string">"../img/2019-08-01_金融数据描述_10.png"</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img src="/img/2019-08-01_金融数据描述_10.png" alt></p>
+</code></pre>
+<h2 id="特征间探索"><a href="#特征间探索" class="headerlink" title="特征间探索"></a>特征间探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">corr = df[:].corr()</span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sb.heatmap(corr)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_10.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_10.png"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">corr</span><br></pre></td></tr></table></figure>
+
+
+
+
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
 
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -2499,828 +2209,178 @@ Length: 84, dtype: int64
 <p>参考：</p>
 </blockquote>
 <ol>
-<li><a href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" target="_blank" rel="noopener">DataWhale数据挖掘实战营</a></li>
-<li><a href="https://www.jianshu.com/p/29ece4592178" target="_blank" rel="noopener">利用Python进行数据分析·第2版</a></li>
-<li><a href="https://www.jianshu.com/p/0c967a1526ef" target="_blank" rel="noopener">Stata：离群值！离群值？离群值！</a></li>
-<li><a href="https://www.jiqizhixin.com/articles/021704" target="_blank" rel="noopener">机器学习中如何处理不平衡数据？</a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" >DataWhale数据挖掘实战营<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/29ece4592178" >利用Python进行数据分析·第2版<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0c967a1526ef" >Stata：离群值！离群值？离群值！<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/021704" >机器学习中如何处理不平衡数据？<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 
-      
-    </div>
-
-    
-      
-
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/人工智能/监督学习/51507/" rel="next" title="决策树">
-                <i class="fa fa-chevron-left"></i> 决策树
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/人工智能/数据挖掘/17541/" rel="prev" title="特征工程">
-                特征工程 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
         </div>
-      
 
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-  </div>
-
-
-          </div>
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="lv-container" data-id="city" data-uid="MTAyMC80NDg0NS8yMTM2Ng=="></div>
-    </div>
-
-  
-
-
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
 
-  <aside id="sidebar" class="sidebar">
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Dan">
-            
-              <p class="site-author-name" itemprop="name">Dan</p>
-              <div class="site-description motion-element" itemprop="description"></div>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
+        
+            <div class="article-nav">
                 
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">30</span>
-                    <span class="site-state-item-name">posts</span>
-                  </a>
-                </div>
-              
-
-              
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/17541/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">特征工程</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
                 
                 
-                <div class="site-state-item site-state-categories">
-                  
-                    
-                      <a href="/categories/">
-                    
-                  
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">22</span>
-                    <span class="site-state-item-name">categories</span>
-                  </a>
-                </div>
-              
-
-              
-            </nav>
-          
-
-          
-
-          
-
-          
-            <div class="links-of-author motion-element">
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://github.com/daniel18qzx" title="GitHub &rarr; https://github.com/daniel18qzx" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i></a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  
-                  
-                  
-                    
-                  
-                  <a href="https://www.linkedin.com/in/danielchiu15/" title="Linkedin &rarr; https://www.linkedin.com/in/danielchiu15/" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
-                </span>
-              
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/51507/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">决策树</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
             </div>
-          
+        
 
-          
+        
+    </div>
+</div>
 
-          
-          
 
-          
-            
-          
-          
+                
+            </div>
 
         </div>
-      </div>
 
-      
-      <!--noindex-->
-        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
             
+              <span>2020</span>&nbsp;-&nbsp;
             
-            
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据集载入"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可视化各特征"><span class="nav-number">2.</span> <span class="nav-text">可视化各特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据预处理"><span class="nav-number">3.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么需要处理缺失值？"><span class="nav-number">3.1.</span> <span class="nav-text">为什么需要处理缺失值？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺失率大于多少时应当抛弃该特征？"><span class="nav-number">3.2.</span> <span class="nav-text">缺失率大于多少时应当抛弃该特征？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺失值填充有哪些方法？"><span class="nav-number">3.3.</span> <span class="nav-text">缺失值填充有哪些方法？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#插值填充"><span class="nav-number">3.3.1.</span> <span class="nav-text">插值填充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插补法"><span class="nav-number">3.3.2.</span> <span class="nav-text">插补法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#丢弃"><span class="nav-number">3.3.3.</span> <span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#模型法"><span class="nav-number">3.3.4.</span> <span class="nav-text">模型法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#专家补全"><span class="nav-number">3.3.5.</span> <span class="nav-text">专家补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#不处理"><span class="nav-number">3.3.6.</span> <span class="nav-text">不处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#时间序列"><span class="nav-number">3.4.</span> <span class="nav-text">时间序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#异常值和离群值"><span class="nav-number">3.5.</span> <span class="nav-text">异常值和离群值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#判断"><span class="nav-number">3.5.1.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#处理"><span class="nav-number">3.5.2.</span> <span class="nav-text">处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#无用特征删除"><span class="nav-number">3.6.</span> <span class="nav-text">无用特征删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#缺失填充"><span class="nav-number">3.7.</span> <span class="nav-text">缺失填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#特征间探索"><span class="nav-number">4.</span> <span class="nav-text">特征间探索</span></a></li></ol></div>
-            
-
-          </div>
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
         </div>
-      <!--/noindex-->
-      
-
-      
-        <div class="back-to-top">
-          <i class="fa fa-arrow-up"></i>
-          
-            <span id="scrollpercent"><span>0</span>%</span>
-          
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
         </div>
-      
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
 
     </div>
-  </aside>
-  
 
+    
 
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Daniel Chiu. All Rights Reserved.</span>
-
-  
-
-  
+    <div class="image-viewer-container">
+    <img src="">
 </div>
 
 
-  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.9.0</div>
+    
 
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.1.2</div>
+</main>
 
 
 
 
-        
-<div class="busuanzi-count">
-  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="/js/utils.js"></script>
 
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-user"></i>
-    </span>
-    <span class="site-uv" title="Total Visitors">
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
+<script src="/js/main.js"></script>
 
-  
-    <span class="post-meta-divider">|</span>
-  
+<script src="/js/header-shrink.js"></script>
 
-  
-    <span class="post-meta-item-icon">
-      <i class="fa fa-eye"></i>
-    </span>
-    <span class="site-pv" title="Total Views">
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
 </div>
 
 
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-
-    
-
-    
-
-    
-  </div>
-
-  
-
-<script>
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  <script src="/lib/jquery/index.js?v=3.4.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-
-  
-  <script src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-
-
-  
-
-
-  <script src="/js/utils.js?v=7.1.2"></script>
-
-  <script src="/js/motion.js?v=7.1.2"></script>
-
-
-
-  
-  
-
-
-  <script src="/js/affix.js?v=7.1.2"></script>
-
-  <script src="/js/schemes/pisces.js?v=7.1.2"></script>
-
-
-
-
-  
-  <script src="/js/scrollspy.js?v=7.1.2"></script>
-<script src="/js/post-details.js?v=7.1.2"></script>
-
-
-
-  
-
-
-  <script src="/js/next-boot.js?v=7.1.2"></script>
-
-
-  
-
-  
-
-  
-
-  
-
-
-  
-    <script>
-  window.livereOptions = {
-    refer: '人工智能/数据挖掘/17314/'
-  };
-  (function(d, s) {
-    var j, e = d.getElementsByTagName(s)[0];
-    if (typeof LivereTower === 'function') { return; }
-    j = d.createElement(s);
-    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
-    j.async = true;
-    e.parentNode.insertBefore(j, e);
-  })(document, 'script');
-</script>
-
-  
-
-
-  
-  <script>
-    // Popup Window;
-    var isfetched = false;
-    var isXml = true;
-    // Search DB path;
-    var search_path = "search.xml";
-    if (search_path.length === 0) {
-      search_path = "search.xml";
-    } else if (/json$/i.test(search_path)) {
-      isXml = false;
-    }
-    var path = "/" + search_path;
-    // monitor main search box;
-
-    var onPopupClose = function (e) {
-      $('.popup').hide();
-      $('#local-search-input').val('');
-      $('.search-result-list').remove();
-      $('#no-result').remove();
-      $(".local-search-pop-overlay").remove();
-      $('body').css('overflow', '');
-    }
-
-    function proceedsearch() {
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
-        .css('overflow', 'hidden');
-      $('.search-popup-overlay').click(onPopupClose);
-      $('.popup').toggle();
-      var $localSearchInput = $('#local-search-input');
-      $localSearchInput.attr("autocapitalize", "none");
-      $localSearchInput.attr("autocorrect", "off");
-      $localSearchInput.focus();
-    }
-
-    // search function;
-    var searchFunc = function(path, search_id, content_id) {
-      'use strict';
-
-      // start loading animation
-      $("body")
-        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
-          '<div id="search-loading-icon">' +
-          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
-          '</div>' +
-          '</div>')
-        .css('overflow', 'hidden');
-      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
-
-      
-
-      $.ajax({
-        url: path,
-        dataType: isXml ? "xml" : "json",
-        async: true,
-        success: function(res) {
-          // get the contents from search data
-          isfetched = true;
-          $('.popup').detach().appendTo('.header-inner');
-          var datas = isXml ? $("entry", res).map(function() {
-            return {
-              title: $("title", this).text(),
-              content: $("content",this).text(),
-              url: $("url" , this).text()
-            };
-          }).get() : res;
-          var input = document.getElementById(search_id);
-          var resultContent = document.getElementById(content_id);
-          var inputEventFunction = function() {
-            var searchText = input.value.trim().toLowerCase();
-            var keywords = searchText.split(/[\s\-]+/);
-            if (keywords.length > 1) {
-              keywords.push(searchText);
-            }
-            var resultItems = [];
-            if (searchText.length > 0) {
-              // perform local searching
-              datas.forEach(function(data) {
-                var isMatch = false;
-                var hitCount = 0;
-                var searchTextCount = 0;
-                var title = data.title.trim();
-                var titleInLowerCase = title.toLowerCase();
-                var content = data.content.trim().replace(/<[^>]+>/g,"");
-                
-                var contentInLowerCase = content.toLowerCase();
-                var articleUrl = decodeURIComponent(data.url).replace(/\/{2,}/g, '/');
-                var indexOfTitle = [];
-                var indexOfContent = [];
-                // only match articles with not empty titles
-                if(title != '') {
-                  keywords.forEach(function(keyword) {
-                    function getIndexByWord(word, text, caseSensitive) {
-                      var wordLen = word.length;
-                      if (wordLen === 0) {
-                        return [];
-                      }
-                      var startPosition = 0, position = [], index = [];
-                      if (!caseSensitive) {
-                        text = text.toLowerCase();
-                        word = word.toLowerCase();
-                      }
-                      while ((position = text.indexOf(word, startPosition)) > -1) {
-                        index.push({position: position, word: word});
-                        startPosition = position + wordLen;
-                      }
-                      return index;
-                    }
-
-                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
-                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
-                  });
-                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
-                    isMatch = true;
-                    hitCount = indexOfTitle.length + indexOfContent.length;
-                  }
-                }
-
-                // show search results
-
-                if (isMatch) {
-                  // sort index by position of keyword
-
-                  [indexOfTitle, indexOfContent].forEach(function (index) {
-                    index.sort(function (itemLeft, itemRight) {
-                      if (itemRight.position !== itemLeft.position) {
-                        return itemRight.position - itemLeft.position;
-                      } else {
-                        return itemLeft.word.length - itemRight.word.length;
-                      }
-                    });
-                  });
-
-                  // merge hits into slices
-
-                  function mergeIntoSlice(text, start, end, index) {
-                    var item = index[index.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    var hits = [];
-                    var searchTextCountInSlice = 0;
-                    while (position + word.length <= end && index.length != 0) {
-                      if (word === searchText) {
-                        searchTextCountInSlice++;
-                      }
-                      hits.push({position: position, length: word.length});
-                      var wordEnd = position + word.length;
-
-                      // move to next position of hit
-
-                      index.pop();
-                      while (index.length != 0) {
-                        item = index[index.length - 1];
-                        position = item.position;
-                        word = item.word;
-                        if (wordEnd > position) {
-                          index.pop();
-                        } else {
-                          break;
-                        }
-                      }
-                    }
-                    searchTextCount += searchTextCountInSlice;
-                    return {
-                      hits: hits,
-                      start: start,
-                      end: end,
-                      searchTextCount: searchTextCountInSlice
-                    };
-                  }
-
-                  var slicesOfTitle = [];
-                  if (indexOfTitle.length != 0) {
-                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
-                  }
-
-                  var slicesOfContent = [];
-                  while (indexOfContent.length != 0) {
-                    var item = indexOfContent[indexOfContent.length - 1];
-                    var position = item.position;
-                    var word = item.word;
-                    // cut out 100 characters
-                    var start = position - 20;
-                    var end = position + 80;
-                    if(start < 0){
-                      start = 0;
-                    }
-                    if (end < position + word.length) {
-                      end = position + word.length;
-                    }
-                    if(end > content.length){
-                      end = content.length;
-                    }
-                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
-                  }
-
-                  // sort slices in content by search text's count and hits' count
-
-                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
-                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
-                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
-                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
-                      return sliceRight.hits.length - sliceLeft.hits.length;
-                    } else {
-                      return sliceLeft.start - sliceRight.start;
-                    }
-                  });
-
-                  // select top N slices in content
-
-                  var upperBound = parseInt('1');
-                  if (upperBound >= 0) {
-                    slicesOfContent = slicesOfContent.slice(0, upperBound);
-                  }
-
-                  // highlight title and content
-
-                  function highlightKeyword(text, slice) {
-                    var result = '';
-                    var prevEnd = slice.start;
-                    slice.hits.forEach(function (hit) {
-                      result += text.substring(prevEnd, hit.position);
-                      var end = hit.position + hit.length;
-                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
-                      prevEnd = end;
-                    });
-                    result += text.substring(prevEnd, slice.end);
-                    return result;
-                  }
-
-                  var resultItem = '';
-
-                  if (slicesOfTitle.length != 0) {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
-                  } else {
-                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
-                  }
-
-                  slicesOfContent.forEach(function (slice) {
-                    resultItem += "<a href='" + articleUrl + "'>" +
-                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
-                      "...</p>" + "</a>";
-                  });
-
-                  resultItem += "</li>";
-                  resultItems.push({
-                    item: resultItem,
-                    searchTextCount: searchTextCount,
-                    hitCount: hitCount,
-                    id: resultItems.length
-                  });
-                }
-              })
-            };
-            if (keywords.length === 1 && keywords[0] === "") {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x"></i></div>'
-            } else if (resultItems.length === 0) {
-              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x"></i></div>'
-            } else {
-              resultItems.sort(function (resultLeft, resultRight) {
-                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
-                  return resultRight.searchTextCount - resultLeft.searchTextCount;
-                } else if (resultLeft.hitCount !== resultRight.hitCount) {
-                  return resultRight.hitCount - resultLeft.hitCount;
-                } else {
-                  return resultRight.id - resultLeft.id;
-                }
-              });
-              var searchResultList = '<ul class=\"search-result-list\">';
-              resultItems.forEach(function (result) {
-                searchResultList += result.item;
-              })
-              searchResultList += "</ul>";
-              resultContent.innerHTML = searchResultList;
-            }
-          }
-
-          if ('auto' === 'auto') {
-            input.addEventListener('input', inputEventFunction);
-          } else {
-            $('.search-icon').click(inputEventFunction);
-            input.addEventListener('keypress', function (event) {
-              if (event.keyCode === 13) {
-                inputEventFunction();
-              }
-            });
-          }
-
-          // remove loading animation
-          $(".local-search-pop-overlay").remove();
-          $('body').css('overflow', '');
-
-          proceedsearch();
-        }
-      });
-    }
-
-    // handle and trigger popup window;
-    $('.popup-trigger').click(function(e) {
-      e.stopPropagation();
-      if (isfetched === false) {
-        searchFunc(path, 'local-search-input', 'local-search-result');
-      } else {
-        proceedsearch();
-      };
-    });
-
-    $('.popup-btn-close').click(onPopupClose);
-    $('.popup').click(function(e){
-      e.stopPropagation();
-    });
-    $(document).on('keyup', function (event) {
-      var shouldDismissSearchPopup = event.which === 27 &&
-        $('.search-popup').is(':visible');
-      if (shouldDismissSearchPopup) {
-        onPopupClose();
-      }
-    });
-  </script>
-
-
-
-
-
-  
-
-  
-
-  
-  
-
-  
-  
-
-  
-
-
-  
-
-  
-
-  
-  <script>
-    (function(){
-      var bp = document.createElement('script');
-      var curProtocol = window.location.protocol.split(':')[0];
-      bp.src = (curProtocol === 'https') ? 'https://zz.bdstatic.com/linksubmit/push.js' : 'http://push.zhanzhang.baidu.com/push.js';
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(bp, s);
-    })();
-  </script>
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

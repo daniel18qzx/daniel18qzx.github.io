@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 菜鸟分析狮
-subtitle: 没有难处理的数据，没有难写的报告
+title: 温札居
+subtitle: 越简单越好，但不要过份简单
 description:
 keywords: 
-author: Dan
+author: 丹丹
 language: zh-cn
 timezone:
 
@@ -25,7 +25,7 @@ tag_dir: tags
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
-i18n_dir: :lang
+# i18n_dir: :lang
 skip_render:
 
 # Writing
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: next
+theme: keep
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -82,17 +82,17 @@ deploy:
   repo: https://github.com/daniel18qzx/daniel18qzx.github.io.git
   branch: master
 
-# symbols_count_time
-symbols_count_time:
-  symbols: true
-  time: true
-  total_symbols: false
-  total_time: false
-  exclude_codeblock: false
+# # symbols_count_time
+# symbols_count_time:
+#   symbols: true
+#   time: true
+#   total_symbols: false
+#   total_time: false
+#   exclude_codeblock: false
 
-# search
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
+# # search
+# search:
+#   path: search.xml
+#   field: post
+#   format: html
+#   limit: 10000
