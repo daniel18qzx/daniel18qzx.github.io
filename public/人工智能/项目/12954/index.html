@@ -5,25 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="Keep Team">
+    <meta name="author" content="丹丹">
     
     <title>
         
             泰坦尼克之灾（六大模型baseline） |
         
-        Keep Theme
+        温书笔记
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/images/logo.svg">
-    
-<link rel="stylesheet" href="/css/font-awesome.min.css">
-
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/css/font-awesome.min.css">
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn"};
-    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"越简单越好，但不要过份简单"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"trigger":"auto","unescape":false,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -32,7 +30,14 @@
 <body>
 <div class="progress-bar-container">
     
+        <span class="scroll-progress-bar"></span>
+    
 
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
     
 </div>
 
@@ -49,7 +54,7 @@
     <div class="header-content">
         <div class="left">
             <a class="logo-title" href="/">
-                Keep Theme
+                温书笔记
             </a>
         </div>
 
@@ -73,10 +78,24 @@
                             </a>
                         </li>
                     
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
                     
                 </ul>
             </div>
             <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
                 
                 <div class="icon-item menu-bar">
                     <div class="menu-bar-middle"></div>
@@ -96,6 +115,11 @@
                 <li class="drawer-menu-item flex-center">
                     <a class=""
                        href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
                 </li>
             
         </ul>
@@ -123,13 +147,11 @@
         
             <div class="article-header">
                 <div class="avatar">
-                    <img src="/images/avatar.svg">
+                    <img src="/images/avatar.jpg">
                 </div>
                 <div class="info">
                     <div class="author">
-                        <span class="name">Keep Team</span>
-                        
-                            <span class="author-label">Lv3</span>
+                        <span class="name">丹丹</span>
                         
                     </div>
                     <div class="meta-info">
@@ -157,7 +179,19 @@
 
     
     
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>5.4k Words</span>
+        </span>
     
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>32 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
     
 </div>
 
@@ -330,7 +364,12 @@ Name: Survived, dtype: int64
 <h2 id="数据探索"><a href="#数据探索" class="headerlink" title="数据探索"></a>数据探索</h2><h3 id="察看空值分布"><a href="#察看空值分布" class="headerlink" title="察看空值分布"></a>察看空值分布</h3><p>可以看到总共有三个特征有空值，分别是 Cabin 、 Age 与 Embarked</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">9</span>, <span class="number">5</span>))</span><br><span class="line">sns.heatmap(df.isnull(), cbar=<span class="literal">False</span>, cmap=<span class="string">&quot;YlGnBu_r&quot;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_1.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_1.png"
+                     
+                ></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">total = df.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = <span class="built_in">round</span>(df.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>) / <span class="built_in">len</span>(df) * <span class="number">100</span>,</span><br><span class="line">                <span class="number">2</span>)</span><br><span class="line">temp = pd.concat([total, percent], axis=<span class="number">1</span>, keys=[<span class="string">&#x27;Total&#x27;</span>, <span class="string">&#x27;Percent&#x27;</span>])</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
 
 
@@ -429,42 +468,97 @@ Name: Survived, dtype: int64
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ax = sns.barplot(data=df.isnull())</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_2.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_2.png"
+                     
+                ></p>
 <h3 id="Column-Survival"><a href="#Column-Survival" class="headerlink" title="Column : Survival"></a>Column : Survival</h3><p>存活的有 61.6%，占多数，样本比例为 1.6</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">13</span>, <span class="number">5</span>))</span><br><span class="line">df[<span class="string">&#x27;Survived&#x27;</span>].value_counts().plot.pie(</span><br><span class="line">    explode=[<span class="number">0</span>, <span class="number">0.05</span>], autopct=<span class="string">&#x27;%1.1f%%&#x27;</span>, ax=ax[<span class="number">0</span>], shadow=<span class="literal">True</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_3.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_3.png"
+                     
+                ></p>
 <h3 id="Feature-Sex"><a href="#Feature-Sex" class="headerlink" title="Feature: Sex"></a>Feature: Sex</h3><p>女性存活率大于7成，男性约两成</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">5</span>))</span><br><span class="line">df[[<span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>]].groupby([<span class="string">&#x27;Sex&#x27;</span>]).mean().plot.bar(ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Fraction of Survival with respect to Sex&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Sex&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Sex&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_4.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_4.png"
+                     
+                ></p>
 <h3 id="Feature-Pclass"><a href="#Feature-Pclass" class="headerlink" title="Feature: Pclass"></a>Feature: Pclass</h3><p>大多数乘客在第三舱等，存活率依序从1舱等递减至3舱等</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">18</span>, <span class="number">5</span>))</span><br><span class="line">df[<span class="string">&#x27;Pclass&#x27;</span>].value_counts().plot.bar(</span><br><span class="line">    color=[<span class="string">&#x27;#BC8F8F&#x27;</span>, <span class="string">&#x27;#F4A460&#x27;</span>, <span class="string">&#x27;#DAA520&#x27;</span>], ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Number Of Passengers with respect to Pclass&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Count&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Pclass&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Pclass&#x27;</span>)</span><br><span class="line">sns.barplot(x=<span class="string">&quot;Pclass&quot;</span>, y=<span class="string">&quot;Survived&quot;</span>, data=df, ax=ax[<span class="number">2</span>])</span><br><span class="line">ax[<span class="number">2</span>].set_title(<span class="string">&#x27;Survival by Pclass&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_5.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_5.png"
+                     
+                ></p>
 <h3 id="Feature-Age"><a href="#Feature-Age" class="headerlink" title="Feature: Age"></a>Feature: Age</h3><p>年龄分布上以年轻人、小孩居多，最高有80岁老人</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">1</span>, figsize=(<span class="number">25</span>, <span class="number">6</span>))</span><br><span class="line">sns.barplot(df[<span class="string">&#x27;Age&#x27;</span>], df[<span class="string">&#x27;Survived&#x27;</span>], ci=<span class="literal">None</span>, ax=ax)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Pclass&#x27;</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_6.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_6.png"
+                     
+                ></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Age Box Plot&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Age Years&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sns.boxplot(y=<span class="string">&#x27;Age&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">sns.boxplot(x=<span class="string">&#x27;Survived&#x27;</span>, y=<span class="string">&#x27;Age&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Age Box Plot&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;Age Years&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_7.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_7.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_7.png"
+                     
+                ></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">8</span>))</span><br><span class="line">sns.violinplot(</span><br><span class="line">    <span class="string">&quot;Pclass&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=df, split=<span class="literal">True</span>, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Pclass and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line">sns.violinplot(</span><br><span class="line">    <span class="string">&quot;Sex&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=df, split=<span class="literal">True</span>, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Sex and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_8.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_8.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_8.png"
+                     
+                ></p>
 <h3 id="Feature-Embarked"><a href="#Feature-Embarked" class="headerlink" title="Feature: Embarked"></a>Feature: Embarked</h3><p>大多数乘客是从S登船口，存活率以c最高</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;No. Of Passengers Boarded&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;Embarked&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">2</span>])</span><br><span class="line">ax[<span class="number">2</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_9.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_9.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_9.png"
+                     
+                ></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Sex&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Male-Female Split for Embarked&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Pclass&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Pclass&#x27;</span>)</span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>, hspace=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_10.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_10.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_10.png"
+                     
+                ></p>
 <h3 id="Features-SibSip-amp-Parch"><a href="#Features-SibSip-amp-Parch" class="headerlink" title="Features: SibSip &amp; Parch"></a>Features: SibSip &amp; Parch</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;SibSp&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;SibSp vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;SibSp&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;SibSp vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sns.countplot(<span class="string">&#x27;Parch&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Parch vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;Parch&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Parch vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>, hspace=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_11.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_11.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_11.png"
+                     
+                ></p>
 <h3 id="Feature-Fare"><a href="#Feature-Fare" class="headerlink" title="Feature: Fare"></a>Feature: Fare</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">1</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">sns.distplot(df.Fare, ax=ax)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Distribution of Fares&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_12.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_12.png"></p>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_12.png"
+                     
+                ></p>
 <h2 id="特征预处理"><a href="#特征预处理" class="headerlink" title="特征预处理"></a>特征预处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_tuned = df.copy(deep=<span class="literal">True</span>)</span><br><span class="line">df_tuned.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -2077,10 +2171,16 @@ memory usage: 61.9 KB
         <div class="copyright-info info-item">
             &copy;
             
-              <span>2020</span>&nbsp;-&nbsp;
+              <span>2018</span>&nbsp;-&nbsp;
             
-            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
+            2021&nbsp;<a href="/">丹丹</a>
         </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
         
         <div class="theme-info info-item">
             Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
@@ -2097,6 +2197,10 @@ memory usage: 61.9 KB
             <div class="post-tools-container">
     <ul class="tools-list">
         <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
         
 
         <!-- go comment -->
@@ -2130,10 +2234,6 @@ memory usage: 61.9 KB
         
 
         
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="fas fa-arrow-up"></i>
-            </li>
-        
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
             <i class="fas fa-arrow-down"></i>
@@ -2145,11 +2245,24 @@ memory usage: 61.9 KB
             <i class="fas fa-cog fa-spin"></i>
         </li>
         
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
     </ul>
 </div>
 
     </div>
 
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%BD%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%8E%A2%E7%B4%A2"><span class="nav-number">2.</span> <span class="nav-text">数据探索</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%9F%E7%9C%8B%E7%A9%BA%E5%80%BC%E5%88%86%E5%B8%83"><span class="nav-number">2.1.</span> <span class="nav-text">察看空值分布</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Column-Survival"><span class="nav-number">2.2.</span> <span class="nav-text">Column : Survival</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Sex"><span class="nav-number">2.3.</span> <span class="nav-text">Feature: Sex</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Pclass"><span class="nav-number">2.4.</span> <span class="nav-text">Feature: Pclass</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Age"><span class="nav-number">2.5.</span> <span class="nav-text">Feature: Age</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Embarked"><span class="nav-number">2.6.</span> <span class="nav-text">Feature: Embarked</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Features-SibSip-amp-Parch"><span class="nav-number">2.7.</span> <span class="nav-text">Features: SibSip &amp; Parch</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Feature-Fare"><span class="nav-number">2.8.</span> <span class="nav-text">Feature: Fare</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">特征预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%97%A0%E7%94%A8%E7%89%B9%E5%BE%81"><span class="nav-number">3.1.</span> <span class="nav-text">删除无用特征</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#PassengerId"><span class="nav-number">3.1.1.</span> <span class="nav-text">PassengerId</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A1%AB%E5%85%85%E7%A9%BA%E5%80%BC"><span class="nav-number">3.2.</span> <span class="nav-text">填充空值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Age"><span class="nav-number">3.2.1.</span> <span class="nav-text">Age</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Cabin"><span class="nav-number">3.2.2.</span> <span class="nav-text">Cabin</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Embarked"><span class="nav-number">3.2.3.</span> <span class="nav-text">Embarked</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E5%88%86%E7%AE%B1"><span class="nav-number">3.3.</span> <span class="nav-text">特征分箱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Name%EF%BC%9A%E5%8F%96%E5%87%BA%E7%A7%B0%E5%8F%B7"><span class="nav-number">3.3.1.</span> <span class="nav-text">Name：取出称号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fare"><span class="nav-number">3.3.2.</span> <span class="nav-text">Fare</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Family-size"><span class="nav-number">3.3.3.</span> <span class="nav-text">Family_size</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Ticket"><span class="nav-number">3.3.4.</span> <span class="nav-text">Ticket</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%84%E7%90%86%E5%88%86%E7%B1%BB%E7%89%B9%E5%BE%81"><span class="nav-number">3.4.</span> <span class="nav-text">处理分类特征</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Embarked-Sex-Pclass-Title-Fare-Category-Family-Size"><span class="nav-number">3.4.1.</span> <span class="nav-text">Embarked, Sex, Pclass, Title, Fare_Category, Family_Size,</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%A0%87%E5%87%86%E5%8C%96"><span class="nav-number">3.5.</span> <span class="nav-text">数据标准化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%92%E5%88%86"><span class="nav-number">3.6.</span> <span class="nav-text">数据划分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%BB%BA%E6%A8%A1"><span class="nav-number">4.</span> <span class="nav-text">数据建模</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E5%A4%A7%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.1.</span> <span class="nav-text">六大模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E6%B5%8B"><span class="nav-number">4.2.</span> <span class="nav-text">数据预测</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
     
 
     <div class="image-viewer-container">
@@ -2158,34 +2271,112 @@ memory usage: 61.9 KB
 
 
     
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
 
 </main>
 
 
 
 
-<script src="/js/utils.js"></script>
-
-<script src="/js/main.js"></script>
-
-<script src="/js/header-shrink.js"></script>
-
-<script src="/js/back2top.js"></script>
-
-<script src="/js/dark-light-toggle.js"></script>
 
 
 
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/local-search.js"></script>
 
 
 
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/code-copy.js"></script>
 
 
-<div class="post-scripts">
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/toc.js"></script>
     
 </div>
 
 
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
 
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </body>
 </html>
