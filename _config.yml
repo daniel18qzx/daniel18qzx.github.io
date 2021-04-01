@@ -26,7 +26,9 @@ archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
 # i18n_dir: :lang
-skip_render:
+# skip_render:
+# hexo-admin authentification
+
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -75,6 +77,12 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+
+# admin
+admin:
+  username: daniel18qzx
+  password_hash: $2a$10$MqcYK97oTYmgH3ZVksFj6OnVaFH5ioMBij6OWxOX72E/SPRGqab5a
+  secret: acc
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
