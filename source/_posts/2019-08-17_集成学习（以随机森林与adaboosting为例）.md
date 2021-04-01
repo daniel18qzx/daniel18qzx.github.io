@@ -1,8 +1,7 @@
 ---
 title: 集成学习（以随机森林与adaboosting为例）
 categories:
-  - 人工智能
-  - 监督学习
+  - 统计与机器学习
 mathjax: false
 abbrlink: 45240
 date: 2019-08-17 00:00:00

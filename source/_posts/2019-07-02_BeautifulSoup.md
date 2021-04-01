@@ -1,8 +1,8 @@
 ---
-title: 基本爬虫
+title: BeautifulSoup
 categories:
-  - 爬虫开发
-  - BeautifulSoup
+  - Python
+  - 基本语法
 abbrlink: 51103
 date: 2019-07-02 00:00:00
 ---

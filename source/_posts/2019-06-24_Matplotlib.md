@@ -1,8 +1,8 @@
 ---
-title: Matplotlib基本语法
+title: Matplotlib
 categories:
+  - Python
   - 基本语法
-  - Matplotlib
 abbrlink: 16372
 date: 2019-06-24 00:00:00
 ---
