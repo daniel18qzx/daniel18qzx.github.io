@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Python基本语法</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Python/24578/</url>
+    <title>基本语法</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/24578/</url>
     <content><![CDATA[<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===一维数组===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>([i * <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br><span class="line"><span class="built_in">print</span>([i * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br><span class="line"><span class="built_in">print</span>([i * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> (i % <span class="number">3</span>) == <span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>([(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>) <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===二维数组===&quot;</span>)</span><br><span class="line">a = [[<span class="number">3</span>] * (i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line"><span class="built_in">print</span>(a[<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===乘法的问题===&quot;</span>)</span><br><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]] * <span class="number">3</span></span><br><span class="line">a[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===解决方法===&quot;</span>)</span><br><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line">a[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <pre><code>===一维数组===
@@ -201,61 +201,31 @@ hey: 100
 </ol>
 ]]></content>
       <categories>
-        <category>基本语法</category>
         <category>Python</category>
+        <category>基本语法</category>
       </categories>
   </entry>
   <entry>
-    <title>Matplotlib基本语法</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Matplotlib/16372/</url>
+    <title>Matplotlib</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/16372/</url>
     <content><![CDATA[<h2 id="基本配置与标记"><a href="#基本配置与标记" class="headerlink" title="基本配置与标记"></a>基本配置与标记</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据部分</span></span><br><span class="line">x = np.arange(<span class="number">0.</span>, <span class="number">10</span>, <span class="number">0.2</span>)</span><br><span class="line">y1 = np.cos(x)</span><br><span class="line">y2 = np.sin(x)</span><br><span class="line">y3 = np.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 3 条函数曲线</span></span><br><span class="line">plt.plot(x, y1, color=<span class="string">&#x27;blue&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">r&#x27;$y = cos&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y2, color=<span class="string">&#x27;green&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">r&#x27;$y = sin&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y3, color=<span class="string">&#x27;m&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;x&#x27;</span>, label=<span class="string">r&#x27;$y = \sqrt&#123;x&#125;$&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 坐标轴上移</span></span><br><span class="line">ax = plt.subplot(<span class="number">111</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)     <span class="comment"># 去掉右边的边框线</span></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)       <span class="comment"># 去掉上边的边框线</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动下边边框线，相当于移动 X 轴</span></span><br><span class="line">ax.xaxis.set_ticks_position(<span class="string">&#x27;bottom&#x27;</span>)    </span><br><span class="line">ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动左边边框线，相当于移动 y 轴</span></span><br><span class="line">ax.yaxis.set_ticks_position(<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的取值范围</span></span><br><span class="line">plt.xlim(x.<span class="built_in">min</span>()*<span class="number">1.1</span>, x.<span class="built_in">max</span>()*<span class="number">1.1</span>)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的刻度值</span></span><br><span class="line">plt.xticks([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>], [<span class="string">r&#x27;2&#x27;</span>, <span class="string">r&#x27;4&#x27;</span>, <span class="string">r&#x27;6&#x27;</span>, <span class="string">r&#x27;8&#x27;</span>, <span class="string">r&#x27;10&#x27;</span>])</span><br><span class="line">plt.yticks([-<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>], </span><br><span class="line">    [<span class="string">r&#x27;-1.0&#x27;</span>, <span class="string">r&#x27;0.0&#x27;</span>, <span class="string">r&#x27;1.0&#x27;</span>, <span class="string">r&#x27;2.0&#x27;</span>, <span class="string">r&#x27;3.0&#x27;</span>, <span class="string">r&#x27;4.0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文字</span></span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.68</span>, <span class="string">r&#x27;$x \in [0.0, \ 10.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.38</span>, <span class="string">r&#x27;$y \in [-1.0, \ 4.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊点添加注解</span></span><br><span class="line">plt.scatter([<span class="number">8</span>,],[np.sqrt(<span class="number">8</span>),], <span class="number">50</span>, color =<span class="string">&#x27;m&#x27;</span>)  <span class="comment"># 使用散点图放大当前点</span></span><br><span class="line">plt.annotate(<span class="string">r&#x27;$2\sqrt&#123;2&#125;$&#x27;</span>, xy=(<span class="number">8</span>, np.sqrt(<span class="number">8</span>)), xytext=(<span class="number">8.5</span>, <span class="number">2.2</span>), fontsize=<span class="number">16</span>, color=<span class="string">&#x27;#090909&#x27;</span>, arrowprops=<span class="built_in">dict</span>(arrowstyle=<span class="string">&#x27;-&gt;&#x27;</span>, connectionstyle=<span class="string">&#x27;arc3, rad=0.1&#x27;</span>, color=<span class="string">&#x27;#090909&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题、x轴、y轴</span></span><br><span class="line">plt.title(<span class="string">r&#x27;$the \ function \ figure \ of \ cos(), \ sin() \ and \ sqrt()$&#x27;</span>, fontsize=<span class="number">19</span>)</span><br><span class="line">plt.xlabel(<span class="string">r&#x27;$the \ input \ value \ of \ x$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">88.8</span>)</span><br><span class="line">plt.ylabel(<span class="string">r&#x27;$y = f(x)$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">12.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例及位置</span></span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)    </span><br><span class="line"><span class="comment"># plt.legend([&#x27;cos(x)&#x27;, &#x27;sin(x)&#x27;, &#x27;sqrt(x)&#x27;], loc=&#x27;up right&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示网格线</span></span><br><span class="line">plt.grid(<span class="literal">True</span>)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_1.png"></p>
 <h2 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.arange(-<span class="number">5</span>,<span class="number">5</span>,<span class="number">0.1</span>)</span><br><span class="line">y = x ** <span class="number">2</span></span><br><span class="line">plt.plot(x,y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_2.png"
-                     
-                ></p>
+<p><img src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_2.png"></p>
 <h2 id="散布图"><a href="#散布图" class="headerlink" title="散布图"></a>散布图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">1024</span></span><br><span class="line">X = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">Y = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line">plt.scatter(X,Y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_3.png"
-                     
-                ></p>
+<p><img src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_3.png"></p>
 <h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.random.normal(size=<span class="number">1000</span>)</span><br><span class="line">plt.hist(x, bins=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_4.png"
-                     
-                ></p>
+<p><img src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_4.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">12</span></span><br><span class="line">X = np.arange(n)</span><br><span class="line">Y1 = (<span class="number">1</span>- X / <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line">Y2 = (<span class="number">1</span>- X/ <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line"></span><br><span class="line">plt.axes([<span class="number">0.025</span>, <span class="number">0.025</span>, <span class="number">0.95</span>, <span class="number">0.95</span>])</span><br><span class="line">plt.bar(X, +Y1, facecolor = <span class="string">&#x27;#9999ff&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line">plt.bar(X, -Y2, facecolor = <span class="string">&#x27;#ff9999&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y1):</span><br><span class="line">    plt.text(x, y + <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y2):</span><br><span class="line">    plt.text(x, -y - <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va= <span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">.5</span>, n), </span><br><span class="line">plt.ylim(-<span class="number">1.25</span>, +<span class="number">1.25</span>), </span><br><span class="line">plt.xticks([])</span><br><span class="line">plt.yticks([])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_5.png"
-                     
-                ></p>
+<p><img src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_5.png"></p>
 <h2 id="3D图"><a href="#3D图" class="headerlink" title="3D图"></a>3D图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">X = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">Y = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">X, Y = np.meshgrid(X, Y)</span><br><span class="line">R = np.sqrt(X ** <span class="number">2</span> + Y ** <span class="number">2</span>)</span><br><span class="line">Z = np.sin(R)</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X, Y, Z, rstride = <span class="number">1</span>, cstride=<span class="number">1</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.contourf(X, Y, Z, zdir = <span class="string">&#x27;z&#x27;</span>, offset = -<span class="number">2</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.set_zlim(-<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_6.png"
-                     
-                ></p>
+<p><img src="/img/2019-06-24_Matplotlib%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95_6.png"></p>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -264,13 +234,13 @@ hey: 100
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>Matplotlib</category>
       </categories>
   </entry>
   <entry>
-    <title>Numpy基本语法</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Numpy/54426/</url>
+    <title>Numpy</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/54426/</url>
     <content><![CDATA[<h2 id="生成数组"><a href="#生成数组" class="headerlink" title="生成数组"></a>生成数组</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用普通一维数组生成NumPy一维数组===&quot;</span>)</span><br><span class="line">data = [<span class="number">6</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">arr = np.array(data)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"><span class="built_in">print</span>(arr.dtype) <span class="comment"># 类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用普通二维数组生成NumPy二维数组===&quot;</span>)</span><br><span class="line">data = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br><span class="line">arr = np.array(data)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"><span class="built_in">print</span>(arr.shape) <span class="comment"># 维度</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用内置函数创建数组===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.zeros(<span class="number">10</span>)) <span class="comment"># 生成包含10个0的一维数组</span></span><br><span class="line"><span class="built_in">print</span>(np.zeros((<span class="number">3</span>, <span class="number">6</span>))) <span class="comment"># 生成3*6的二维数组</span></span><br><span class="line"><span class="built_in">print</span>(np.empty((<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>))) <span class="comment"># 生成2*3*2的三维数组，所有元素未初始化。</span></span><br><span class="line"><span class="built_in">print</span>(np.empty_like((<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>))) <span class="comment"># 生成2*3*2的三维数组，所有元素未初始化。</span></span><br><span class="line"><span class="built_in">print</span>(np.ones((<span class="number">1</span>,<span class="number">2</span>)))</span><br><span class="line"><span class="built_in">print</span>(np.full((<span class="number">2</span>,<span class="number">2</span>), <span class="number">8</span>))</span><br><span class="line"><span class="built_in">print</span>(np.eye(<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(np.random.random((<span class="number">3</span>,<span class="number">2</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用arrange生成连续元素===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.arange(<span class="number">15</span>))  <span class="comment"># [0, 1, 2, ..., 14]</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===broadcasting===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.arange(<span class="number">3</span>).reshape((<span class="number">3</span>,<span class="number">1</span>))+np.arange(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
 
 <pre><code>===使用普通一维数组生成NumPy一维数组===
@@ -391,13 +361,13 @@ float64
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>Numpy</category>
       </categories>
   </entry>
   <entry>
     <title>两股票历史价格比较</title>
-    <url>/%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/%E9%A1%B9%E7%9B%AE/29975/</url>
+    <url>/%E9%A1%B9%E7%9B%AE/%E9%87%91%E8%9E%8D%E5%88%86%E6%9E%90/29975/</url>
     <content><![CDATA[<h2 id="项目任务"><a href="#项目任务" class="headerlink" title="项目任务"></a>项目任务</h2><ol>
 <li>获取财务数据</li>
 <li>填充缺失值</li>
@@ -472,12 +442,7 @@ float64
 
 <h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df.pf_one.plot(figsize = (<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line">df.gd_one.plot(figsize = (<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-01_两股票历史价格比较_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-01_%E4%B8%A4%E8%82%A1%E7%A5%A8%E5%8E%86%E5%8F%B2%E4%BB%B7%E6%A0%BC%E6%AF%94%E8%BE%83_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-01_%E4%B8%A4%E8%82%A1%E7%A5%A8%E5%8E%86%E5%8F%B2%E4%BB%B7%E6%A0%BC%E6%AF%94%E8%BE%83_1.png"></p>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -487,13 +452,13 @@ float64
 </ol>
 ]]></content>
       <categories>
-        <category>金融分析</category>
         <category>项目</category>
+        <category>金融分析</category>
       </categories>
   </entry>
   <entry>
     <title>链家网房源</title>
-    <url>/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/38058/</url>
+    <url>/%E9%A1%B9%E7%9B%AE/%E7%88%AC%E8%99%AB/38058/</url>
     <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br></pre></td></tr></table></figure>
 
 <h2 id="request"><a href="#request" class="headerlink" title="request"></a>request</h2><h3 id="设置列表页URL的固定部分"><a href="#设置列表页URL的固定部分" class="headerlink" title="设置列表页URL的固定部分"></a>设置列表页URL的固定部分</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">url = <span class="string">&#x27;http://bj.lianjia.com/ershoufang/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置页面页的可变部分</span></span><br><span class="line">page = (<span class="string">&#x27;pg&#x27;</span>)</span><br></pre></td></tr></table></figure>
@@ -866,13 +831,13 @@ float64
 </ol>
 ]]></content>
       <categories>
-        <category>爬虫开发</category>
         <category>项目</category>
+        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
     <title>正則表達式</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/58780/</url>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/58780/</url>
     <content><![CDATA[<h2 id="re用法"><a href="#re用法" class="headerlink" title="re用法"></a>re用法</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">re_all</span>(<span class="params">regex</span>):</span></span><br><span class="line">    log = <span class="string">&#x27;Thu Mar 14 19:27:38 1991::jvfcho@iwrptlqmyok.edu::668950058-6-11\n&#x27;</span></span><br><span class="line">    <span class="built_in">print</span>(log)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===返回匹配的字符串（re.search().group()）===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(re.search(regex,log).group())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===列表返回匹配的所有子串(re.findall())===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(re.findall(regex,log))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===返回匹配开始的位置（re.search().start()）===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(re.search(regex,log).start())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===返回匹配结束的位置（re.search().end()）===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(re.search(regex,log).end())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;===返回匹配位置（re.search().span()）===&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(re.search(regex,log).span())</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 <h2 id="匹配"><a href="#匹配" class="headerlink" title="匹配"></a>匹配</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">regex = <span class="string">&#x27;(Mon|Tue|Wed|Thu|Fri|Sat|Sun)&#x27;</span>  <span class="comment"># |是or</span></span><br><span class="line">re_all(regex)</span><br></pre></td></tr></table></figure>
@@ -944,13 +909,13 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>数据处理</category>
       </categories>
   </entry>
   <entry>
-    <title>Scipy基本语法</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Scipy/61322/</url>
+    <title>Scipy</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/61322/</url>
     <content><![CDATA[<h2 id="数据物理常数"><a href="#数据物理常数" class="headerlink" title="数据物理常数"></a>数据物理常数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> constants</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 圆周率</span></span><br><span class="line"><span class="built_in">print</span>(C.pi)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引力常数</span></span><br><span class="line"><span class="built_in">print</span>(C.g)</span><br></pre></td></tr></table></figure>
 
 <pre><code>3.141592653589793
@@ -988,45 +953,30 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>Scipy</category>
       </categories>
   </entry>
   <entry>
     <title>线性回归</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/52662/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/52662/</url>
     <content><![CDATA[<h2 id="创建数据"><a href="#创建数据" class="headerlink" title="创建数据"></a>创建数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_data</span>(<span class="params">nDim</span>):</span></span><br><span class="line">    x0 = np.linspace(<span class="number">1</span>, np.pi, <span class="number">50</span>)</span><br><span class="line">    x = np.vstack([[x0,], [i**x0 <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, nDim+<span class="number">1</span>)]])</span><br><span class="line">    y = np.sin(x0) + np.random.normal(<span class="number">0</span>,<span class="number">0.15</span>,<span class="built_in">len</span>(x0))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> x.transpose(), y</span><br></pre></td></tr></table></figure>
 
 <h2 id="最小二乘法-Ordinary-Least-Squares-OLS"><a href="#最小二乘法-Ordinary-Least-Squares-OLS" class="headerlink" title="最小二乘法 Ordinary Least Squares (OLS)"></a>最小二乘法 Ordinary Least Squares (OLS)</h2><p>目标函数：<br>$$argmin(\sum_{}^{} {(\hat{y}-y)^2})$$</p>
 <p>不足：OLS为了更好的拟合数据，会使用较大的w值，进而导致过度拟合。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.LinearRegression()</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">&#x27;*&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>, label = <span class="string">&#x27;samples&#x27;</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(y))], linestyle = <span class="string">&#x27;--&#x27;</span>, label = <span class="string">&#x27;model&#x27;</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Dimensions: %s&#x27;</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-14_线性回归_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_1.png"></p>
 <h2 id="岭回归-Ridge-Regression-Tikhonov-Regularization"><a href="#岭回归-Ridge-Regression-Tikhonov-Regularization" class="headerlink" title="岭回归 Ridge Regression (Tikhonov Regularization)"></a>岭回归 Ridge Regression (Tikhonov Regularization)</h2><p>目标函数：<br>$$argmin(\sum_{}^{} {(\hat{y}-y)^2}+\alpha \sum_{}^{} {w^2})$$</p>
 <p>优化：为惩罚OLS每个w逐渐增加导致过度拟合的问题，新增的项为L2惩罚项(L2 Penalty)。<br>特点：w有可能特别小的绝对值，但很难达成0，造成贡献很小的系数还是要放，影响性能。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.Ridge(alpha = <span class="number">100</span>)</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">&#x27;*&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>, label = <span class="string">&#x27;samples&#x27;</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(y))], linestyle = <span class="string">&#x27;--&#x27;</span>, label = <span class="string">&#x27;model&#x27;</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Dimensions: %s&#x27;</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-14_线性回归_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_2.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_2.png"></p>
 <h2 id="Lasso-回归"><a href="#Lasso-回归" class="headerlink" title="Lasso 回归"></a>Lasso 回归</h2><p>目标函数：<br>$$argmin(\sum_{}^{} {(\hat{y}-y)^2}+\alpha \sum_{}^{} {|w|})$$</p>
 <p>优化：为惩罚OLS每个w逐渐增加导致过度拟合的问题，新增的项为L1惩罚项(L1 Penalty)。<br>特点：比L2惩罚项严厉很多，可以产生稀疏回归参数，即多数回归参数为零。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.Lasso(alpha = <span class="number">100</span>)</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">&#x27;*&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>, label = <span class="string">&#x27;samples&#x27;</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(y))], linestyle = <span class="string">&#x27;--&#x27;</span>, label = <span class="string">&#x27;model&#x27;</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Dimensions: %s&#x27;</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-14_线性回归_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_3.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-14_%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92_3.png"></p>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -1035,13 +985,12 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>梯度下降</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/45545/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/45545/</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
 <li>任取一点作为起始点</li>
 <li>查看在当前节点向哪个方向移动能得到最小的z值，并向该方向移动</li>
@@ -1071,13 +1020,12 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>基础概念</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>支持向量机</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/49110/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/49110/</url>
     <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li>能适应”样本数少，特征维度高”的数据集</li>
 </ul>
@@ -1121,13 +1069,12 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>朴素贝叶斯</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/58685/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/58685/</url>
     <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
 <li>基于概率，优点是可以对预测标签给出理论上完美的可能性估计</li>
 <li>要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘</li>
@@ -1182,13 +1129,12 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>决策树</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/51507/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/51507/</url>
     <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ul>
 <li><p>分而治之(divide-andconquer)：</p>
 <ul>
@@ -1303,47 +1249,22 @@ jvfcho@iwrptlqmyok.edu
 <h4 id="max-depth"><a href="#max-depth" class="headerlink" title="max_depth"></a>max_depth</h4><p>要调整的第一个参数是max_depth（树的深度）。 树越深，它就分裂的越多，更能捕获有关数据的信息。 我们拟合一个深度范围从1到32的决策树，并绘制训练和测试auc分数</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.legend_handler <span class="keyword">import</span> HandlerLine2D</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">max_depths = np.linspace(<span class="number">1</span>, <span class="number">32</span>, <span class="number">32</span>, endpoint=<span class="literal">True</span>)</span><br><span class="line">train_results = []</span><br><span class="line">test_results = []</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> max_depth <span class="keyword">in</span> max_depths:</span><br><span class="line">    dt = DecisionTreeClassifier(max_depth=max_depth)</span><br><span class="line">    dt.fit(x_train, y_train)</span><br><span class="line">    train_pred = dt.predict(x_train)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_train, train_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line"></span><br><span class="line">    train_results.append(roc_auc)</span><br><span class="line">    y_pred = dt.predict(x_test)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_test, y_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line"></span><br><span class="line">    test_results.append(roc_auc)</span><br><span class="line"></span><br><span class="line">line1, = plt.plot(max_depths, train_results, <span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;Train AUC&#x27;</span>)</span><br><span class="line">line2, = plt.plot(max_depths, test_results, <span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;Test AUC&#x27;</span>)</span><br><span class="line">plt.legend(handler_map=&#123;line1: HandlerLine2D(numpoints=<span class="number">2</span>)&#125;)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;AUC score&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Tree depth&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-29_决策树_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_1.png"></p>
 <h4 id="min-samples-split"><a href="#min-samples-split" class="headerlink" title="min_samples_split"></a>min_samples_split</h4><p>min_samples_split表示拆分内部节点所需的最小样本数。 这可以在考虑每个节点处的至少一个样本，并考虑每个节点处的所有样本之间变化。 当我们增加此参数时，给与树更多的约束，因为它必须在每个节点处考虑更多样本。 在这里，我们将从10％到100％的样本中改变参数</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">min_samples_splits = np.linspace(<span class="number">0.1</span>, <span class="number">1.0</span>, <span class="number">10</span>, endpoint=<span class="literal">True</span>)</span><br><span class="line">train_results = []</span><br><span class="line">test_results = []</span><br><span class="line"><span class="keyword">for</span> min_samples_split <span class="keyword">in</span> min_samples_splits:</span><br><span class="line">    dt = DecisionTreeClassifier(min_samples_split=min_samples_split)</span><br><span class="line">    dt.fit(x_train, y_train)</span><br><span class="line">    train_pred = dt.predict(x_train)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_train, train_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">    train_results.append(roc_auc)</span><br><span class="line">    y_pred = dt.predict(x_test)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_test, y_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">    test_results.append(roc_auc)</span><br><span class="line"><span class="keyword">from</span> matplotlib.legend_handler <span class="keyword">import</span> HandlerLine2D</span><br><span class="line">line1, = plt.plot(min_samples_splits, train_results, <span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;Train AUC&#x27;</span>)</span><br><span class="line">line2, = plt.plot(min_samples_splits, test_results, <span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;Test AUC&#x27;</span>)</span><br><span class="line">plt.legend(handler_map=&#123;line1: HandlerLine2D(numpoints=<span class="number">2</span>)&#125;)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;AUC score&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;min samples split&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-29_决策树_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_2.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_2.png"></p>
 <h4 id="min-samples-leaf"><a href="#min-samples-leaf" class="headerlink" title="min_samples_leaf"></a>min_samples_leaf</h4><p>min_samples_leaf是叶节点所需的最小样本数。 此参数类似于min_samples_splits，但是，这描述了叶子（树的基础）处的样本的最小样本数</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">min_samples_leafs = np.linspace(<span class="number">0.1</span>, <span class="number">0.5</span>, <span class="number">5</span>, endpoint=<span class="literal">True</span>)</span><br><span class="line">train_results = []</span><br><span class="line">test_results = []</span><br><span class="line"><span class="keyword">for</span> min_samples_leaf <span class="keyword">in</span> min_samples_leafs:</span><br><span class="line">    dt = DecisionTreeClassifier(min_samples_leaf=min_samples_leaf)</span><br><span class="line">    dt.fit(x_train, y_train)</span><br><span class="line">    train_pred = dt.predict(x_train)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_train, train_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">    train_results.append(roc_auc)</span><br><span class="line">    y_pred = dt.predict(x_test)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_test, y_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">    test_results.append(roc_auc)</span><br><span class="line"><span class="keyword">from</span> matplotlib.legend_handler <span class="keyword">import</span> HandlerLine2D</span><br><span class="line">line1, = plt.plot(min_samples_leafs, train_results, <span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;Train AUC&#x27;</span>)</span><br><span class="line">line2, = plt.plot(min_samples_leafs, test_results, <span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;Test AUC&#x27;</span>)</span><br><span class="line">plt.legend(handler_map=&#123;line1: HandlerLine2D(numpoints=<span class="number">2</span>)&#125;)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;AUC score&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;min samples leaf&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-29_决策树_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_3.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_3.png"></p>
 <h4 id="max-features"><a href="#max-features" class="headerlink" title="max_features"></a>max_features</h4><p>max_features表示查找最佳拆分时要考虑的要最大特征数量</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">max_features = <span class="built_in">list</span>(<span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(iris_target_name)))</span><br><span class="line">train_results = []</span><br><span class="line">test_results = []</span><br><span class="line"><span class="keyword">for</span> max_feature <span class="keyword">in</span> max_features:</span><br><span class="line">    dt = DecisionTreeClassifier(max_features=max_feature)</span><br><span class="line">    dt.fit(x_train, y_train)</span><br><span class="line">    train_pred = dt.predict(x_train)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_train, train_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">    train_results.append(roc_auc)</span><br><span class="line">    y_pred = dt.predict(x_test)</span><br><span class="line">    false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">        y_test, y_pred, pos_label=<span class="number">2</span>)</span><br><span class="line">    roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">    test_results.append(roc_auc)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> matplotlib.legend_handler <span class="keyword">import</span> HandlerLine2D</span><br><span class="line"></span><br><span class="line">line1, = plt.plot(max_features, train_results, <span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;Train AUC&#x27;</span>)</span><br><span class="line">line2, = plt.plot(max_features, test_results, <span class="string">&#x27;r&#x27;</span>, label=<span class="string">&#x27;Test AUC&#x27;</span>)</span><br><span class="line">plt.legend(handler_map=&#123;line1: HandlerLine2D(numpoints=<span class="number">2</span>)&#125;)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;AUC score&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;max features&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-29_决策树_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_4.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_4.png"></p>
 <h2 id="树的可视化"><a href="#树的可视化" class="headerlink" title="树的可视化"></a>树的可视化</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> IPython.display <span class="keyword">import</span> display, Image</span><br><span class="line"><span class="keyword">import</span> graphviz</span><br><span class="line"><span class="keyword">import</span> pydotplus <span class="keyword">as</span> pdp</span><br><span class="line"></span><br><span class="line">dot_data = tree.export_graphviz(clf, out_file = <span class="literal">None</span>,</span><br><span class="line">                               feature_names = [<span class="string">&quot;标签A&quot;</span>,<span class="string">&quot;标签B&quot;</span>,<span class="string">&quot;标签C&quot;</span>],</span><br><span class="line">                               class_names = [<span class="string">&quot;分类A&quot;</span>,<span class="string">&quot;分类B&quot;</span>],</span><br><span class="line">                               filled = <span class="literal">True</span>,</span><br><span class="line">                               rotate = <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 要先用brew install graphviz</span></span><br><span class="line">graph = pdp.graph_from_dot_data(dot_data)</span><br><span class="line">img = Image(graph.create_png())</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_5.png"
-                     
-                ></p>
+<p><img src="/img/2019-07-29_%E5%86%B3%E7%AD%96%E6%A0%91_5.png"></p>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -1353,13 +1274,12 @@ jvfcho@iwrptlqmyok.edu
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>网格搜寻</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5/2828/</url>
+    <url>/Python/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2828/</url>
     <content><![CDATA[<h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> minmax_scale</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> LabelEncoder</span><br><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> Imputer</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 删除无用</span></span><br><span class="line">delete = [<span class="string">&#x27;Unnamed: 0&#x27;</span>, <span class="string">&#x27;custid&#x27;</span>, <span class="string">&#x27;trade_no&#x27;</span>, <span class="string">&#x27;bank_card_no&#x27;</span>,<span class="string">&#x27;id_name&#x27;</span>,<span class="string">&#x27;latest_query_time&#x27;</span>,<span class="string">&#x27;source&#x27;</span>,<span class="string">&#x27;loans_latest_time&#x27;</span>,<span class="string">&#x27;first_transaction_time&#x27;</span>, <span class="string">&#x27;student_feature&#x27;</span>]</span><br><span class="line">df = df.drop(delete,axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 处理分类型特征</span></span><br><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>] = LabelEncoder().fit_transform(df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].astype(<span class="built_in">str</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用众数填充</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(df.shape[<span class="number">1</span>]):</span><br><span class="line">    feature = df.iloc[:,i].values.reshape(-<span class="number">1</span>,<span class="number">1</span>)</span><br><span class="line">    imp_mode = Imputer(strategy=<span class="string">&#x27;most_frequent&#x27;</span>)</span><br><span class="line">    df.iloc[:,i] = imp_mode.fit_transform(feature)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据划分</span></span><br><span class="line">X = df[:].drop(<span class="string">&quot;status&quot;</span>,axis=<span class="number">1</span>)</span><br><span class="line">y = df[<span class="string">&quot;status&quot;</span>]</span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=<span class="number">0.2</span>, shuffle = <span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据归一化</span></span><br><span class="line">X_train = minmax_scale(X_train)</span><br><span class="line">X_test =  minmax_scale(X_test)</span><br></pre></td></tr></table></figure>
 
 <h2 id="Simple-Grid-Search（使用Holdout验证）"><a href="#Simple-Grid-Search（使用Holdout验证）" class="headerlink" title="Simple Grid Search（使用Holdout验证）"></a>Simple Grid Search（使用Holdout验证）</h2><p>交叉验证的目的是为了让模型评估更加准确可信。</p>
@@ -1383,12 +1303,7 @@ Best parameters:&#123;&#39;gamma&#39;: 0.01, &#39;C&#39;: 100&#125;
 Best score on test set:0.76
 </code></pre>
 <h2 id="Grid-Search-with-Cross-Validation（使用K折交叉验证）"><a href="#Grid-Search-with-Cross-Validation（使用K折交叉验证）" class="headerlink" title="Grid Search with Cross Validation（使用K折交叉验证）"></a>Grid Search with Cross Validation（使用K折交叉验证）</h2><p>Grid Search 调参方法存在的共性弊端就是：耗时；参数越多，候选值越多，耗费时间越长。<br>所以，一般情况下，先定一个大范围，然后再细化。</p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-10_%E7%BD%91%E6%A0%BC%E6%90%9C%E5%AF%BB_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-10_%E7%BD%91%E6%A0%BC%E6%90%9C%E5%AF%BB_1.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> GridSearchCV</span><br><span class="line"></span><br><span class="line">param_grid = &#123;<span class="string">&quot;gamma&quot;</span>:[<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>],</span><br><span class="line">             <span class="string">&quot;C&quot;</span>:[<span class="number">0.001</span>,<span class="number">0.01</span>,<span class="number">0.1</span>,<span class="number">1</span>,<span class="number">10</span>,<span class="number">100</span>]&#125;</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Parameters:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(param_grid))</span><br><span class="line"></span><br><span class="line">grid_search = GridSearchCV(SVC(),param_grid,cv=<span class="number">5</span>)</span><br><span class="line">grid_search.fit(X_train,y_train)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Test set score:&#123;:.2f&#125;&quot;</span>.<span class="built_in">format</span>(grid_search.score(X_test,y_test)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Best parameters:&#123;&#125;&quot;</span>.<span class="built_in">format</span>(grid_search.best_params_))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Best score on train set:&#123;:.2f&#125;&quot;</span>.<span class="built_in">format</span>(grid_search.best_score_))</span><br></pre></td></tr></table></figure>
 
 <pre><code>Parameters:&#123;&#39;gamma&#39;: [0.001, 0.01, 0.1, 1, 10, 100], &#39;C&#39;: [0.001, 0.01, 0.1, 1, 10, 100]&#125;
@@ -1406,13 +1321,13 @@ Best score on train set:0.79
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>基础概念</category>
+        <category>Python</category>
+        <category>机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>集成学习（以随机森林与adaboosting为例）</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/45240/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/45240/</url>
     <content><![CDATA[<p>集成学习著重于在训练集上做文章，将训练集划分为各种子集或权重变换后用较弱的基函數擬合，然後綜合若干個基模型的預測作為最終整體效果</p>
 <h2 id="集成学习分類"><a href="#集成学习分類" class="headerlink" title="集成学习分類"></a>集成学习分類</h2><ul>
 <li>Booststrap：有放回的抽样方法，是非参数统计中一种重要的估计统计量方差进而进行区间估计的统计方法。<ul>
@@ -1464,13 +1379,12 @@ Best score on train set:0.79
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>数据仓库设计</title>
-    <url>/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%BB%BA%E8%AE%BE/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/22639/</url>
+    <url>/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/22639/</url>
     <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>数据仓库是一个<strong>面向主题的</strong>、<strong>集成的</strong>、<strong>相对稳定的</strong>且<strong>反映历史变化的</strong>数据集合，用于支持管理人员的决策</p>
 <ul>
 <li><strong>面向主题的</strong>：为特定的数据分析领域与目标提供数据支持，比如交易库、用户库等</li>
@@ -1512,12 +1426,7 @@ Best score on train set:0.79
 <td>数据驱动</td>
 </tr>
 </tbody></table>
-<h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-22_%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E8%AE%BE%E8%AE%A1_1.png"
-                     
-                ></p>
+<h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><p><img src="/img/2019-08-22_%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E8%AE%BE%E8%AE%A1_1.png"></p>
 <h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="星形模型"><a href="#星形模型" class="headerlink" title="星形模型"></a>星形模型</h3><ul>
 <li>星型模型组成：<ul>
 <li>一个包含大批数据和不冗余数据的事实表（中心表）</li>
@@ -1526,22 +1435,12 @@ Best score on train set:0.79
 </li>
 <li>事实表中每条元组都含有指向各个维表的外键和一些相应的测量数据，事实表的记录数量很多，维表中记录的是有关这一维的属性</li>
 </ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image005.png"
-                     
-                ></p>
+<p><img src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image005.png"></p>
 <h3 id="雪花模型"><a href="#雪花模型" class="headerlink" title="雪花模型"></a>雪花模型</h3><ul>
 <li>雪花模型是对星型模型维表的进一步层次化</li>
 <li>原来的各维表可能被扩展为小的事实表，形成一些局部的“层次”区域</li>
 </ul>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image013.png"
-                     
-                ></p>
+<p><img src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image013.png"></p>
 <h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>雪花模式的维表是规范化的，以减少冗余。这种表易于维护，并节省存储空间。但与巨大的事实表相比，这种空间的节省可以忽略</p>
 <p>由于执行查询需要更多的连接操作，雪花结构可能降低浏览的性能。<br>在数据仓库设计中，星型模式更加常用</p>
 <h2 id="五层模型架构"><a href="#五层模型架构" class="headerlink" title="五层模型架构"></a>五层模型架构</h2><table>
@@ -1665,13 +1564,12 @@ Best score on train set:0.79
 </ol>
 ]]></content>
       <categories>
-        <category>大数据建设</category>
         <category>数据仓库</category>
       </categories>
   </entry>
   <entry>
     <title>堆糖图片多线程抓取</title>
-    <url>/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/%E9%A1%B9%E7%9B%AE/46912/</url>
+    <url>/%E9%A1%B9%E7%9B%AE/%E7%88%AC%E8%99%AB/46912/</url>
     <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="comment">#多线程锁</span></span><br><span class="line">thread_lock = threading.BoundedSemaphore(value = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page</span>(<span class="params">url</span>):</span></span><br><span class="line">    <span class="comment">#GET之后用utf-8解析</span></span><br><span class="line">    page = requests.get(url).content.decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> page</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findall_in_page</span>(<span class="params">page, start_part, end_part</span>):</span></span><br><span class="line">    all_strings = []</span><br><span class="line">    end = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> page.find(start_part,end) != -<span class="number">1</span>:</span><br><span class="line">        start = page.find(start_part, end)+<span class="built_in">len</span>(start_part)</span><br><span class="line">        end = page.find(end_part, start)</span><br><span class="line">        string = page[start: end]</span><br><span class="line">        all_strings.append(string)</span><br><span class="line">    <span class="keyword">return</span> all_strings</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pic_urls_find_part</span>(<span class="params">pages</span>):</span></span><br><span class="line">    pic_pics = []</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> pages:</span><br><span class="line">        urls = findall_in_page(page, <span class="string">&#x27;&quot;path&quot;:&quot;&#x27;</span>, <span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">        pic_pics.extend(urls)</span><br><span class="line">    <span class="keyword">return</span> pic_pics</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pages_usr</span>(<span class="params">label</span>):</span></span><br><span class="line">    pages = []</span><br><span class="line">    url = <span class="string">&#x27;https://www.duitang.com/napi/blog/list/by_search/?kw=&#123;&#125;&amp;start=&#123;&#125;&amp;limit=1000&#x27;</span></span><br><span class="line">    <span class="comment">#将中文转成ASCII码</span></span><br><span class="line">    label = urllib.parse.quote(label)</span><br><span class="line">    <span class="comment">#观察response可发现max=3600</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">3600</span>,<span class="number">100</span>):</span><br><span class="line">        u = url.<span class="built_in">format</span>(label,index)</span><br><span class="line">        page = get_page(u)</span><br><span class="line">        pages.append(page)</span><br><span class="line">        <span class="keyword">return</span> pages</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_pic</span>(<span class="params">url, name</span>):</span></span><br><span class="line">    req = requests.get(url)</span><br><span class="line">    path = <span class="string">&#x27;test/杨幂&#x27;</span>+<span class="built_in">str</span>(name)+<span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&#x27;wb+&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(req.content)</span><br><span class="line">    <span class="comment">#将锁打开避免堵塞</span></span><br><span class="line">    thread_lock.release()</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">label</span>):</span></span><br><span class="line">    pages = pages_usr(label)</span><br><span class="line">    pic_urls = pic_urls_find_part(pages)</span><br><span class="line">    numbers = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> pic_urls:</span><br><span class="line">        numbers += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Now Downloading: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(numbers))</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#锁上，并开始执行</span></span><br><span class="line">        thread_lock.acquire()</span><br><span class="line">        t = threading.Thread(target=download_pic, args=(url, numbers))</span><br><span class="line">        t.start()</span><br><span class="line">        </span><br><span class="line">main(<span class="string">&#x27;杨幂&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 <pre><code>Now Downloading: 1
@@ -1693,13 +1591,13 @@ Now Downloading: 10
 </ol>
 ]]></content>
       <categories>
-        <category>爬虫开发</category>
         <category>项目</category>
+        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
     <title>Pandas移动窗口</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Pandas/24354/</url>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/24354/</url>
     <content><![CDATA[<h2 id="简单范例"><a href="#简单范例" class="headerlink" title="简单范例"></a>简单范例</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">index = pd.date_range(<span class="string">&#x27;20190116&#x27;</span>, <span class="string">&#x27;20190130&#x27;</span>)</span><br><span class="line">data = [<span class="number">4</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">13</span>, <span class="number">6</span>]</span><br><span class="line">ser_data = pd.Series(data, index=index)</span><br><span class="line">ser_data</span><br></pre></td></tr></table></figure>
 
 
@@ -1768,12 +1666,7 @@ Freq: D, dtype: float64
 </code></pre>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">index = pd.date_range(<span class="string">&#x27;20190116&#x27;</span>, <span class="string">&#x27;20190216&#x27;</span>)</span><br><span class="line">data = np.random.randint(<span class="number">20</span>, size=<span class="built_in">len</span>(index))</span><br><span class="line">ser_data = pd.Series(data, index=index)</span><br><span class="line"></span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">ser_data.plot(style=<span class="string">&#x27;r--&#x27;</span>, label=<span class="string">&#x27;原数据&#x27;</span>)</span><br><span class="line">ser_data.rolling(<span class="number">3</span>).mean().plot(style=<span class="string">&#x27;b&#x27;</span>, label=<span class="string">&#x27;滑动平滑后&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-09-01_Pandas移动窗口.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-09-01_Pandas%E7%A7%BB%E5%8A%A8%E7%AA%97%E5%8F%A3.png"
-                     
-                ></p>
+<p><img src="/img/2019-09-01_Pandas%E7%A7%BB%E5%8A%A8%E7%AA%97%E5%8F%A3.png"></p>
 <blockquote>
 <p>参考：</p>
 </blockquote>
@@ -1784,13 +1677,13 @@ Freq: D, dtype: float64
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>Pandas</category>
       </categories>
   </entry>
   <entry>
     <title>随机森林</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/47295/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/47295/</url>
     <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ol>
 <li>从原始训练数据集中，应⽤bootstrap⽅法有放回地随机抽取k个新的⾃助样本集，并由此构建k棵分类回归树，每次未被抽到的样本组成了Ｋ个袋外数据（out-of-bag,BBB）</li>
 <li>设有n个特征，则在每⼀棵树的每个节点处随机抽取m个特征，通过计算每个特征蕴含的信息量，特征中选择⼀个最具有分类能⼒的特征进⾏节点分裂</li>
@@ -1836,13 +1729,12 @@ Freq: D, dtype: float64
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>AdaBoost</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/23192/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/23192/</url>
     <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ol>
 <li>初始化训练数据的权值分布。每⼀个训练样本最开始时都被赋予相同的权值：1/N</li>
 <li>进⾏多轮迭代，⽤m = 1,2, …, M表⽰迭代的第多少轮<ul>
@@ -1881,13 +1773,12 @@ Freq: D, dtype: float64
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>统计与机器学习</category>
       </categories>
   </entry>
   <entry>
     <title>LeetCode 262_行程和用户</title>
-    <url>/LeetCode/Database/15284/</url>
+    <url>/%E9%A1%B9%E7%9B%AE/LeetCode/15284/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Trips 表中存所有出租车的行程信息。每段行程有唯一键 Id，Client_Id 和 Driver_Id 是 Users 表中 Users_Id 的外键。Status 是枚举类型，枚举成员为 (‘completed’, ‘cancelled_by_driver’, ‘cancelled_by_client’)。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br><span class="line">| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|</span><br><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br><span class="line">| 1  |     1     |    10     |    1    |     completed      |2013-10-01|</span><br><span class="line">| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|</span><br><span class="line">| 3  |     3     |    12     |    6    |     completed      |2013-10-01|</span><br><span class="line">| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|</span><br><span class="line">| 5  |     1     |    10     |    1    |     completed      |2013-10-02|</span><br><span class="line">| 6  |     2     |    11     |    6    |     completed      |2013-10-02|</span><br><span class="line">| 7  |     3     |    12     |    6    |     completed      |2013-10-02|</span><br><span class="line">| 8  |     2     |    12     |    12   |     completed      |2013-10-03|</span><br><span class="line">| 9  |     3     |    10     |    12   |     completed      |2013-10-03| </span><br><span class="line">| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|</span><br><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br></pre></td></tr></table></figure>
 
@@ -1916,13 +1807,13 @@ Freq: D, dtype: float64
 </ol>
 ]]></content>
       <categories>
+        <category>项目</category>
         <category>LeetCode</category>
-        <category>Database</category>
       </categories>
   </entry>
   <entry>
     <title>LeetCode 185_部门工资前三高的所有员工</title>
-    <url>/LeetCode/Database/61684/</url>
+    <url>/%E9%A1%B9%E7%9B%AE/LeetCode/61684/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Employee 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| Id | Name  | Salary | DepartmentId |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| 1  | Joe   | 85000  | 1            |</span><br><span class="line">| 2  | Henry | 80000  | 2            |</span><br><span class="line">| 3  | Sam   | 60000  | 2            |</span><br><span class="line">| 4  | Max   | 90000  | 1            |</span><br><span class="line">| 5  | Janet | 69000  | 1            |</span><br><span class="line">| 6  | Randy | 85000  | 1            |</span><br><span class="line">| 7  | Will  | 70000  | 1            |</span><br><span class="line">+----+-------+--------+--------------+</span><br></pre></td></tr></table></figure>
 
@@ -1953,13 +1844,13 @@ Freq: D, dtype: float64
 </ol>
 ]]></content>
       <categories>
+        <category>项目</category>
         <category>LeetCode</category>
-        <category>Database</category>
       </categories>
   </entry>
   <entry>
     <title>LeetCode 601_体育馆的人流量</title>
-    <url>/LeetCode/Database/7348/</url>
+    <url>/%E9%A1%B9%E7%9B%AE/LeetCode/7348/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>X 市建了一个新的体育馆，每日人流量信息被记录在这三列信息中：序号 (id)、日期 (visit_date)、 人流量 (people)。</p>
 <p>请编写一个查询语句，找出人流量的高峰期。高峰期时，至少连续三行记录中的人流量不少于100。</p>
 <p>例如，表 stadium：</p>
@@ -1986,13 +1877,13 @@ Freq: D, dtype: float64
 </ol>
 ]]></content>
       <categories>
+        <category>项目</category>
         <category>LeetCode</category>
-        <category>Database</category>
       </categories>
   </entry>
   <entry>
-    <title>Pandas基本语法</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Pandas/6703/</url>
+    <title>Pandas</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/6703/</url>
     <content><![CDATA[<h2 id="基本设置"><a href="#基本设置" class="headerlink" title="基本设置"></a>基本设置</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">pd.set_option(<span class="string">&quot;max_columns&quot;</span>, <span class="number">50</span>)</span><br></pre></td></tr></table></figure>
 
 <h2 id="数据缺失检查"><a href="#数据缺失检查" class="headerlink" title="数据缺失检查"></a>数据缺失检查</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">apts=pd.Series([<span class="string">&quot;Hangzhou&quot;</span>, <span class="string">&quot;Beijing&quot;</span>, <span class="string">&quot;Shenzhen&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(apts.notnull())</span><br><span class="line"><span class="built_in">print</span>(apts.isnull())</span><br></pre></td></tr></table></figure>
@@ -2631,13 +2522,13 @@ dtype: int64
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>Pandas</category>
       </categories>
   </entry>
   <entry>
     <title>数据抽取</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/25692/</url>
+    <url>/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/25692/</url>
     <content><![CDATA[<h2 id="csv-I-O"><a href="#csv-I-O" class="headerlink" title="csv I/O"></a>csv I/O</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data1.csv&#x27;</span>))</span><br><span class="line">display(pd.read_table(<span class="string">&#x27;2019-06-30_数据抽取_data1.csv&#x27;</span>, sep=<span class="string">&#x27;,&#x27;</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data2.csv&#x27;</span>, header=<span class="literal">None</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data2.csv&#x27;</span>, names=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;message&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># data.to_csv(&#x27;output.csv&#x27;)</span></span><br></pre></td></tr></table></figure>
 
 
@@ -3244,13 +3135,13 @@ dtype: int64
 </ol>
 ]]></content>
       <categories>
-        <category>基本语法</category>
-        <category>数据处理</category>
+        <category>Python</category>
+        <category>数据挖掘</category>
       </categories>
   </entry>
   <entry>
     <title>6种分类模型比较</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0/32513/</url>
+    <url>/Python/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/32513/</url>
     <content><![CDATA[<h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -3532,42 +3423,12 @@ GBDT 测试集： accuracy:0.754,precision:0.573, recall:0.474, f1:0.519, auc:0.
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw_roc_curve</span>(<span class="params">train_pre_proba,test_pre_proba,train_auc,test_auc,model_name,num</span>):</span></span><br><span class="line">    fpr,tpr,roc_auc = train_pre_proba</span><br><span class="line">    test_fpr,test_tpr,test_roc_auc = test_pre_proba</span><br><span class="line">    </span><br><span class="line">    plt.figure()</span><br><span class="line">    lw = <span class="number">2</span></span><br><span class="line">    plt.plot(fpr, tpr, color=<span class="string">&#x27;darkorange&#x27;</span>,</span><br><span class="line">             lw=lw, label=<span class="string">&#x27;ROC curve (area = %0.2f)&#x27;</span> % train_auc)</span><br><span class="line">    plt.plot(test_fpr, test_tpr, color=<span class="string">&#x27;red&#x27;</span>,</span><br><span class="line">         lw=lw, label=<span class="string">&#x27;ROC curve (area = %0.2f)&#x27;</span> %test_auc)</span><br><span class="line">    plt.plot([<span class="number">0</span>, <span class="number">1</span>], [<span class="number">0</span>, <span class="number">1</span>], color=<span class="string">&#x27;navy&#x27;</span>, lw=lw, linestyle=<span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">    <span class="comment">#plt.xlim([0.0, 1.0])</span></span><br><span class="line">    <span class="comment">#plt.ylim([0.0, 1.05])</span></span><br><span class="line">    plt.xlabel(<span class="string">&#x27;False Positive Rate&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;True Positive Rate&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Roc example &#x27;</span>+ model_name)</span><br><span class="line">    plt.legend(loc=<span class="string">&quot;lower right&quot;</span>)</span><br><span class="line">    plt.savefig(<span class="string">&quot;../img/2019-08-07_5种分类模型比较_&#123;&#125;.png&quot;</span>.<span class="built_in">format</span>(num))</span><br><span class="line">    plt.close()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">for</span> num,name,model <span class="keyword">in</span> <span class="built_in">zip</span>(<span class="built_in">range</span>(<span class="number">1</span>,<span class="number">7</span>),names,models):</span><br><span class="line">    </span><br><span class="line">    y_train_pred = model.predict_proba(X_train)[:,<span class="number">1</span>]</span><br><span class="line">    y_test_pred = model.predict_proba(X_test)[:,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    train_roc = roc_curve(y_train,y_train_pred)</span><br><span class="line">    test_roc = roc_curve(y_test,y_test_pred)</span><br><span class="line"></span><br><span class="line">    train_auc = roc_auc_score(y_train,y_train_pred)</span><br><span class="line">    test_auc = roc_auc_score(y_test,y_test_pred)</span><br><span class="line"></span><br><span class="line">    draw_roc_curve(train_roc,test_roc,train_auc,test_auc,name,num)</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_1.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_3.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_4.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_5.png"
-                     
-                ></p>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_6.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_1.png"></p>
+<p><img src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_2.png"></p>
+<p><img src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_3.png"></p>
+<p><img src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_4.png"></p>
+<p><img src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_5.png"></p>
+<p><img src="/img/2019-08-07_5%E7%A7%8D%E5%88%86%E7%B1%BB%E6%A8%A1%E5%9E%8B%E6%AF%94%E8%BE%83_6.png"></p>
 <h3 id="使用k-folds交叉建模"><a href="#使用k-folds交叉建模" class="headerlink" title="使用k-folds交叉建模"></a>使用k-folds交叉建模</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> KFold</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">run_cv</span>(<span class="params">X,y,clf_class,**kwargs</span>):</span></span><br><span class="line">    kf = KFold(n_splits = <span class="number">5</span>, shuffle = <span class="literal">False</span>, random_state = <span class="number">0</span>)</span><br><span class="line">    y_pred = y.copy()</span><br><span class="line">    clf = clf_class(**kwargs)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> train_index , test_index <span class="keyword">in</span> kf.split(X):</span><br><span class="line">        X_train, X_test = X[train_index], X[test_index]</span><br><span class="line">        y_train, y_test = y[train_index], y[test_index]</span><br><span class="line">        </span><br><span class="line">        clf.fit(X_train,y_train)</span><br><span class="line">        y_pred[test_index] = clf.predict(X_test)</span><br><span class="line">    <span class="keyword">return</span> y_pred</span><br></pre></td></tr></table></figure>
 
 
@@ -3591,13 +3452,13 @@ K-nearest-neighbors: 0.7520378648435446
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
-        <category>监督学习</category>
+        <category>Python</category>
+        <category>机器学习</category>
       </categories>
   </entry>
   <entry>
-    <title>Sklearn基本语法</title>
-    <url>/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/Sklearn/53999/</url>
+    <title>Sklearn</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/53999/</url>
     <content><![CDATA[<h2 id="简单范例"><a href="#简单范例" class="headerlink" title="简单范例"></a>简单范例</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)  </span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> neighbors, datasets, preprocessing</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> accuracy_score</span><br><span class="line"></span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line">X, y = iris.data[:, :<span class="number">2</span>], iris.target</span><br><span class="line"></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=<span class="number">33</span>)</span><br><span class="line"></span><br><span class="line">scaler = preprocessing.StandardScaler().fit(X_train)</span><br><span class="line">X_train = scaler.transform(X_train)</span><br><span class="line">X_test = scaler.transform(X_test)</span><br><span class="line"></span><br><span class="line">knn = neighbors.KNeighborsClassifier(n_neighbors=<span class="number">5</span>)</span><br><span class="line">knn.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">y_pred = knn.predict(X_test)</span><br><span class="line"></span><br><span class="line">accuracy_score(y_test, y_pred)</span><br></pre></td></tr></table></figure>
 
 
@@ -4396,13 +4257,13 @@ K-nearest-neighbors: 0.7520378648435446
 </ol>
 ]]></content>
       <categories>
+        <category>Python</category>
         <category>基本语法</category>
-        <category>Sklearn</category>
       </categories>
   </entry>
   <entry>
     <title>特征工程</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/17541/</url>
+    <url>/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/17541/</url>
     <content><![CDATA[<h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -6211,13 +6072,13 @@ Name: Iv, dtype: float64
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
+        <category>Python</category>
         <category>数据挖掘</category>
       </categories>
   </entry>
   <entry>
-    <title>泰坦尼克之灾（六大模型baseline）</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E9%A1%B9%E7%9B%AE/12954/</url>
+    <title>泰坦尼克之灾</title>
+    <url>/%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/12954/</url>
     <content><![CDATA[<h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&quot;2019-08-15_泰坦尼克之灾_train.csv&quot;</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 
 
@@ -6381,12 +6242,7 @@ Name: Survived, dtype: int64
 <h2 id="数据探索"><a href="#数据探索" class="headerlink" title="数据探索"></a>数据探索</h2><h3 id="察看空值分布"><a href="#察看空值分布" class="headerlink" title="察看空值分布"></a>察看空值分布</h3><p>可以看到总共有三个特征有空值，分别是 Cabin 、 Age 与 Embarked</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">9</span>, <span class="number">5</span>))</span><br><span class="line">sns.heatmap(df.isnull(), cbar=<span class="literal">False</span>, cmap=<span class="string">&quot;YlGnBu_r&quot;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_1.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">total = df.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = <span class="built_in">round</span>(df.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>) / <span class="built_in">len</span>(df) * <span class="number">100</span>,</span><br><span class="line">                <span class="number">2</span>)</span><br><span class="line">temp = pd.concat([total, percent], axis=<span class="number">1</span>, keys=[<span class="string">&#x27;Total&#x27;</span>, <span class="string">&#x27;Percent&#x27;</span>])</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
 
 
@@ -6485,97 +6341,42 @@ Name: Survived, dtype: int64
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">ax = sns.barplot(data=df.isnull())</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_2.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_2.png"></p>
 <h3 id="Column-Survival"><a href="#Column-Survival" class="headerlink" title="Column : Survival"></a>Column : Survival</h3><p>存活的有 61.6%，占多数，样本比例为 1.6</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">13</span>, <span class="number">5</span>))</span><br><span class="line">df[<span class="string">&#x27;Survived&#x27;</span>].value_counts().plot.pie(</span><br><span class="line">    explode=[<span class="number">0</span>, <span class="number">0.05</span>], autopct=<span class="string">&#x27;%1.1f%%&#x27;</span>, ax=ax[<span class="number">0</span>], shadow=<span class="literal">True</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_3.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_3.png"></p>
 <h3 id="Feature-Sex"><a href="#Feature-Sex" class="headerlink" title="Feature: Sex"></a>Feature: Sex</h3><p>女性存活率大于7成，男性约两成</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">5</span>))</span><br><span class="line">df[[<span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>]].groupby([<span class="string">&#x27;Sex&#x27;</span>]).mean().plot.bar(ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Fraction of Survival with respect to Sex&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Sex&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Sex&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_4.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_4.png"></p>
 <h3 id="Feature-Pclass"><a href="#Feature-Pclass" class="headerlink" title="Feature: Pclass"></a>Feature: Pclass</h3><p>大多数乘客在第三舱等，存活率依序从1舱等递减至3舱等</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">18</span>, <span class="number">5</span>))</span><br><span class="line">df[<span class="string">&#x27;Pclass&#x27;</span>].value_counts().plot.bar(</span><br><span class="line">    color=[<span class="string">&#x27;#BC8F8F&#x27;</span>, <span class="string">&#x27;#F4A460&#x27;</span>, <span class="string">&#x27;#DAA520&#x27;</span>], ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Number Of Passengers with respect to Pclass&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Count&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Pclass&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Pclass&#x27;</span>)</span><br><span class="line">sns.barplot(x=<span class="string">&quot;Pclass&quot;</span>, y=<span class="string">&quot;Survived&quot;</span>, data=df, ax=ax[<span class="number">2</span>])</span><br><span class="line">ax[<span class="number">2</span>].set_title(<span class="string">&#x27;Survival by Pclass&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_5.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_5.png"></p>
 <h3 id="Feature-Age"><a href="#Feature-Age" class="headerlink" title="Feature: Age"></a>Feature: Age</h3><p>年龄分布上以年轻人、小孩居多，最高有80岁老人</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">1</span>, figsize=(<span class="number">25</span>, <span class="number">6</span>))</span><br><span class="line">sns.barplot(df[<span class="string">&#x27;Age&#x27;</span>], df[<span class="string">&#x27;Survived&#x27;</span>], ci=<span class="literal">None</span>, ax=ax)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Pclass&#x27;</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_6.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_6.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Age Box Plot&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Age Years&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sns.boxplot(y=<span class="string">&#x27;Age&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">sns.boxplot(x=<span class="string">&#x27;Survived&#x27;</span>, y=<span class="string">&#x27;Age&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Age Box Plot&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;Age Years&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_7.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_7.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_7.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">8</span>))</span><br><span class="line">sns.violinplot(</span><br><span class="line">    <span class="string">&quot;Pclass&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=df, split=<span class="literal">True</span>, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Pclass and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line">sns.violinplot(</span><br><span class="line">    <span class="string">&quot;Sex&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=df, split=<span class="literal">True</span>, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Sex and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_8.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_8.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_8.png"></p>
 <h3 id="Feature-Embarked"><a href="#Feature-Embarked" class="headerlink" title="Feature: Embarked"></a>Feature: Embarked</h3><p>大多数乘客是从S登船口，存活率以c最高</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;No. Of Passengers Boarded&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;Embarked&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">2</span>])</span><br><span class="line">ax[<span class="number">2</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_9.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_9.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_9.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Sex&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Male-Female Split for Embarked&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Pclass&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Pclass&#x27;</span>)</span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>, hspace=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_10.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_10.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_10.png"></p>
 <h3 id="Features-SibSip-amp-Parch"><a href="#Features-SibSip-amp-Parch" class="headerlink" title="Features: SibSip &amp; Parch"></a>Features: SibSip &amp; Parch</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;SibSp&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;SibSp vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;SibSp&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;SibSp vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sns.countplot(<span class="string">&#x27;Parch&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Parch vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;Parch&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Parch vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>, hspace=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_11.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_11.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_11.png"></p>
 <h3 id="Feature-Fare"><a href="#Feature-Fare" class="headerlink" title="Feature: Fare"></a>Feature: Fare</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">1</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">sns.distplot(df.Fare, ax=ax)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Distribution of Fares&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_12.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_12.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_12.png"></p>
 <h2 id="特征预处理"><a href="#特征预处理" class="headerlink" title="特征预处理"></a>特征预处理</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">df_tuned = df.copy(deep=<span class="literal">True</span>)</span><br><span class="line">df_tuned.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -8132,13 +7933,13 @@ memory usage: 61.9 KB
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
         <category>项目</category>
+        <category>数据科学</category>
       </categories>
   </entry>
   <entry>
     <title>数据理解与清洗</title>
-    <url>/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/17314/</url>
+    <url>/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/17314/</url>
     <content><![CDATA[<h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -8478,78 +8279,33 @@ float64格式共有70个: [&#39;low_volume_percent&#39;, &#39;middle_volume_perc
 
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_1):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_1.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_1.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_2):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_2.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_2.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_3):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_3.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_3.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_4):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_4.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_4.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_5):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_5.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_5.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">3</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_6):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_6.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_6.png"></p>
 <p>从以上分布图可以看出，连续型数据的特征基本上符合正态分布，指数分布或者泊松分布等，但在[‘rank_trad_1_month’,’trans_top_time_last_1_month’,’trans_top_time_last_6_month’,’consume_top_time_last_1_month’,’consume_top_time_last_6_month’,’loans_credit_limit’,’loans_credibility_limit’,’loans_max_limit’,’consfin_credibility’]这几个特征上出现数据于最左最右位置会出现骤升。从业务层面考虑，暂时未得出满意结论，待确认特征取数逻辑后再分析。<br>  还有，’avg_price_last_12_month’,’consfin_credit_limit’这两个特征虽然是连续型特征，但由图上看，出现标签分段，考虑继续探索，查看是否存在分段。</p>
 <p>  另外几个离散型特征，如’reg_preference_for_trad’,’regional_mobility’等，在标签status上区别明显，感觉是对模型有用的特征。</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;consfin_credit_limit&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_7.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_7.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_7.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;avg_price_last_12_month&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_8.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_8.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_8.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;rank_trad_1_month&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_9.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_9.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_9.png"></p>
 <h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="为什么需要处理缺失值？"><a href="#为什么需要处理缺失值？" class="headerlink" title="为什么需要处理缺失值？"></a>为什么需要处理缺失值？</h3><p>不同缺失值的处理方式在一定程度上影响了特征提取、建模和模型训练缺失值太多，可以尝试着直接删除，如果不删除，处理不好，可能会引来噪声缺失值较少，少于某一缺失率时，直接删除又会带来信息的损失，此时可以采取适当的填充方式。</p>
 <h3 id="缺失率大于多少时应当抛弃该特征？"><a href="#缺失率大于多少时应当抛弃该特征？" class="headerlink" title="缺失率大于多少时应当抛弃该特征？"></a>缺失率大于多少时应当抛弃该特征？</h3><p>一般为70%,但是还要分析该特征与训练目标的重要程度</p>
 <h3 id="缺失值填充有哪些方法？"><a href="#缺失值填充有哪些方法？" class="headerlink" title="缺失值填充有哪些方法？"></a>缺失值填充有哪些方法？</h3><h4 id="插值填充"><a href="#插值填充" class="headerlink" title="插值填充"></a>插值填充</h4><ul>
@@ -8702,12 +8458,7 @@ Length: 84, dtype: int64
 </code></pre>
 <h2 id="特征间探索"><a href="#特征间探索" class="headerlink" title="特征间探索"></a>特征间探索</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">corr = df[:].corr()</span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sb.heatmap(corr)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_10.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
 
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_10.png"
-                     
-                ></p>
+<p><img src="/img/2019-08-01_%E9%87%91%E8%9E%8D%E6%95%B0%E6%8D%AE%E6%8F%8F%E8%BF%B0_10.png"></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">corr</span><br></pre></td></tr></table></figure>
 
 
@@ -10238,13 +9989,13 @@ Length: 84, dtype: int64
 </ol>
 ]]></content>
       <categories>
-        <category>人工智能</category>
+        <category>Python</category>
         <category>数据挖掘</category>
       </categories>
   </entry>
   <entry>
-    <title>基本爬虫</title>
-    <url>/%E7%88%AC%E8%99%AB%E5%BC%80%E5%8F%91/BeautifulSoup/51103/</url>
+    <title>BeautifulSoup</title>
+    <url>/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/51103/</url>
     <content><![CDATA[<h2 id="请求"><a href="#请求" class="headerlink" title="请求"></a>请求</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line">result = requests.get(<span class="string">&quot;https://news.163.com/&quot;</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -12031,12 +11782,7 @@ var HouseNavBendiTxt = &#123;
                     <%&#125;else if(newrow.style == &quot;docAD&quot;)&#123;%>
                         <div class="at_item info_ad_item news_article clearfix" adType="infoAd" ne-click="adClickTracker(<%=newrow.infoAdIdx%>,'infoAd')">
                             <a href="<%=newrow.relatedActionLinks[0].url%>" class="na_pic">
-                                <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.resources[0].urls[0]%>"
-                      width="140" height="88"
-                >
+                                <img src="<%=newrow.resources[0].urls[0]%>" width="140" height="88">
                             </a>
                             <div class="na_detail clearfix">
                                 <div class="news_title">
@@ -12057,28 +11803,13 @@ var HouseNavBendiTxt = &#123;
                             <div class="np_pic">
                                 <a href="<%=newrow.relatedActionLinks[0].url%>">
                                     <span class="p_img3">
-                                        <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.resources[0].urls[0]%>"
-                      width="190" height="120"
-                >
+                                        <img src="<%=newrow.resources[0].urls[0]%>" width="190" height="120">
                                     </span>
                                     <span class="p_img3">
-                                        <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.resources[0].urls[1]%>"
-                      width="190" height="120"
-                >
+                                        <img src="<%=newrow.resources[0].urls[1]%>" width="190" height="120">
                                     </span>
                                     <span class="p_img3">
-                                        <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.resources[0].urls[2]%>"
-                      width="190" height="120" class="pic_last"
-                >
+                                        <img src="<%=newrow.resources[0].urls[2]%>" width="190" height="120" class="pic_last">
                                     </span>
                                 </a>
                             </div>
@@ -12092,12 +11823,7 @@ var HouseNavBendiTxt = &#123;
                             <div class="news_title">
                                 <h3><strong><a href="<%=newrow.relatedActionLinks[0].url%>"><%=newrow.title%></a></strong></h3>
                             </div>
-                            <a href="<%=newrow.relatedActionLinks[0].url%>" class="ns_pic"><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.resources[0].urls[0]%>"
-                      width="600" height="200"
-                ></a>
+                            <a href="<%=newrow.relatedActionLinks[0].url%>" class="ns_pic"><img src="<%=newrow.resources[0].urls[0]%>" width="600" height="200"></a>
                             <div class="ad_detail clearfix">
                                 <span class="tg_tag"><%=newrow.source%></span>
                                 <span class="keywords" ne-html="<%=newrow.content%>"></span>
@@ -12112,53 +11838,23 @@ var HouseNavBendiTxt = &#123;
                             &lt;a href=&quot;&lt;%=newrow.docurl%&gt;&quot;&gt;
                                 &lt;span class=&quot;p_img3&quot;&gt;
                                 &lt;%if(newrow.imgurl.indexOf(&#39;gif&#39;) != -1)&#123;%>
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.imgurl%>"
-                      width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                    <img src="<%=newrow.imgurl%>" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%&#125; else &#123;%> 
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.imgurl%>?imageView&thumbnail=190y120&quality=85"
-                      width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                    <img src="<%=newrow.imgurl%>?imageView&thumbnail=190y120&quality=85" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%&#125;%&gt; 
                                 &lt;/span&gt;
                                 &lt;span class=&quot;p_img3&quot;&gt;
                                 &lt;%if(newrow.add1.indexOf(&#39;gif&#39;) != -1)&#123;%>
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.add1%>"
-                      width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                    <img src="<%=newrow.add1%>" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%&#125; else &#123;%> 
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.add1%>?imageView&thumbnail=190y120&quality=85"
-                      width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                    <img src="<%=newrow.add1%>?imageView&thumbnail=190y120&quality=85" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%&#125;%&gt; 
                                 &lt;/span&gt;
                                 &lt;span class=&quot;p_img3&quot;&gt;
                                 &lt;%if(newrow.add2.indexOf(&#39;gif&#39;) != -1)&#123;%>
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.add2%>"
-                      width="190" height="120" class="pic_last" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                    <img src="<%=newrow.add2%>" width="190" height="120" class="pic_last" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%&#125; else &#123;%> 
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.add2%>?imageView&thumbnail=190y120&quality=85"
-                      width="190" height="120" class="pic_last" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                    <img src="<%=newrow.add2%>?imageView&thumbnail=190y120&quality=85" width="190" height="120" class="pic_last" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                     <%&#125;%&gt; 
                                 &lt;/span&gt;
                             &lt;/a&gt;
@@ -12257,19 +11953,9 @@ var HouseNavBendiTxt = &#123;
                         &lt;/div&gt;
                         &lt;a href=&quot;&lt;%=newrow.docurl%&gt;&quot; class=&quot;ns_pic&quot;&gt;
                             &lt;%if(newrow.add1.indexOf(&#39;gif&#39;) != -1)&#123;%>
-                                <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.add1%>"
-                      alt="<%=newrow.title%
-                >" width="600" height="300" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/special_error0106.jpg';">
+                                <img src="<%=newrow.add1%>" alt="<%=newrow.title%>" width="600" height="300" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/special_error0106.jpg';">
                                 <%&#125; else &#123;%> 
-                                <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.add1%>?imageView&thumbnail=600y300&quality=85"
-                      alt="<%=newrow.title%
-                >" width="600" height="300" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/special_error0106.jpg';">
+                                <img src="<%=newrow.add1%>?imageView&thumbnail=600y300&quality=85" alt="<%=newrow.title%>" width="600" height="300" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/special_error0106.jpg';">
                                 <%&#125;%&gt; 
                         &lt;/a&gt;
                     &lt;/div&gt;
@@ -12278,19 +11964,9 @@ var HouseNavBendiTxt = &#123;
                         &lt;%if(newrow.imgurl != &quot;&quot;)&#123;%>
                                 <a href="<%=newrow.docurl%>" class="na_pic">
                                     <%if(newrow.imgurl.indexOf('gif') != -1)&#123;%>
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.imgurl%>"
-                      alt="<%=newrow.title%
-                >" width="140" height="88" onerror="imgError(this)">
+                                    <img src="<%=newrow.imgurl%>" alt="<%=newrow.title%>" width="140" height="88" onerror="imgError(this)">
                                     <%&#125; else &#123;%> 
-                                    <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=newrow.imgurl%>?imageView&thumbnail=140y88&quality=85"
-                      alt="<%=newrow.title%
-                >" width="140" height="88" onerror="imgError(this)">
+                                    <img src="<%=newrow.imgurl%>?imageView&thumbnail=140y88&quality=85" alt="<%=newrow.title%>" width="140" height="88" onerror="imgError(this)">
                                     <%&#125;%&gt; 
                             &lt;/a&gt;
                         &lt;%&#125;%&gt; 
@@ -12383,12 +12059,7 @@ var HouseNavBendiTxt = &#123;
                             &lt;a href=&quot;&lt;%=newrow.docurl%&gt;&quot;&gt;
                                 &lt;%bowlder.each(newrow.pics3,function(n)&#123;%>
                                         <span class="p_img3">
-                                        <img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="<%=n.pic%>"
-                      width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';"
-                >
+                                        <img src="<%=n.pic%>" width="190" height="120" onerror="javascript:this.src='https://static.ws.126.net/f2e/news/index2016_rmd/images/pic3_error0106.jpg';">
                                         </span>
                                     <%&#125;)%&gt; 
                             &lt;/a&gt;
@@ -13755,8 +13426,8 @@ var HouseNavBendiTxt = &#123;
 </ol>
 ]]></content>
       <categories>
-        <category>爬虫开发</category>
-        <category>BeautifulSoup</category>
+        <category>Python</category>
+        <category>基本语法</category>
       </categories>
   </entry>
 </search>

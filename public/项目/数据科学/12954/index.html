@@ -1,0 +1,2206 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="Keep Team">
+    
+    <title>
+        
+            泰坦尼克之灾 |
+        
+        Keep Theme
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":false,"number":false,"expand_all":false,"init_open":false},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.svg","favicon":"/images/logo.svg","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":false,"scale":false},"first_screen":{"enable":false,"background_img":"/images/bg.svg","description":"Keep writing and Keep loving."},"scroll":{"progress_bar":{"enable":false},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":false},"code_copy":{"enable":false,"style":"default"},"pjax":{"enable":false},"lazyload":{"enable":false},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                Keep Theme
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">泰坦尼克之灾</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.svg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">Keep Team</span>
+                        
+                            <span class="author-label">Lv3</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-08-15 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E9%A1%B9%E7%9B%AE/">项目</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E9%A1%B9%E7%9B%AE/%E6%95%B0%E6%8D%AE%E7%A7%91%E5%AD%A6/">数据科学</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&quot;2019-08-15_泰坦尼克之灾_train.csv&quot;</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Braund, Mr. Owen Harris</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Cumings, Mrs. John Bradley (Florence Briggs Th...</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>C85</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Heikkinen, Miss. Laina</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Futrelle, Mrs. Jacques Heath (Lily May Peel)</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>C123</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Allen, Mr. William Henry</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 12 columns):
+PassengerId    891 non-null int64
+Survived       891 non-null int64
+Pclass         891 non-null int64
+Name           891 non-null object
+Sex            891 non-null object
+Age            714 non-null float64
+SibSp          891 non-null int64
+Parch          891 non-null int64
+Ticket         891 non-null object
+Fare           891 non-null float64
+Cabin          204 non-null object
+Embarked       889 non-null object
+dtypes: float64(2), int64(5), object(5)
+memory usage: 83.6+ KB
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">typedic = &#123;&#125;  <span class="comment"># 类型字典</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> df.columns:</span><br><span class="line">    typedic[<span class="built_in">str</span>(</span><br><span class="line">        df[name].dtype)] = typedic.get(<span class="built_in">str</span>(df[name].dtype), []) + [name]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key, value <span class="keyword">in</span> typedic.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&#123;&#125;格式共有&#123;&#125;个: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(key, <span class="built_in">len</span>(value), value))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>int64格式共有5个: [&#39;PassengerId&#39;, &#39;Survived&#39;, &#39;Pclass&#39;, &#39;SibSp&#39;, &#39;Parch&#39;]
+
+object格式共有5个: [&#39;Name&#39;, &#39;Sex&#39;, &#39;Ticket&#39;, &#39;Cabin&#39;, &#39;Embarked&#39;]
+
+float64格式共有2个: [&#39;Age&#39;, &#39;Fare&#39;]
+</code></pre>
+<p>至此可以看到数据不全的有：[‘Age’,’Cabin’]</p>
+<p>需要调整类型或删除无用资讯的包含：[‘Name’, ‘Sex’, ‘Ticket’, ‘Cabin’, ‘Embarked’]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.Survived.value_counts()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>0    549
+1    342
+Name: Survived, dtype: int64
+</code></pre>
+<h2 id="数据探索"><a href="#数据探索" class="headerlink" title="数据探索"></a>数据探索</h2><h3 id="察看空值分布"><a href="#察看空值分布" class="headerlink" title="察看空值分布"></a>察看空值分布</h3><p>可以看到总共有三个特征有空值，分别是 Cabin 、 Age 与 Embarked</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fig, ax = plt.subplots(figsize=(<span class="number">9</span>, <span class="number">5</span>))</span><br><span class="line">sns.heatmap(df.isnull(), cbar=<span class="literal">False</span>, cmap=<span class="string">&quot;YlGnBu_r&quot;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_1.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">total = df.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>)</span><br><span class="line">percent = <span class="built_in">round</span>(df.isnull().<span class="built_in">sum</span>().sort_values(ascending=<span class="literal">False</span>) / <span class="built_in">len</span>(df) * <span class="number">100</span>,</span><br><span class="line">                <span class="number">2</span>)</span><br><span class="line">temp = pd.concat([total, percent], axis=<span class="number">1</span>, keys=[<span class="string">&#x27;Total&#x27;</span>, <span class="string">&#x27;Percent&#x27;</span>])</span><br><span class="line">temp</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Total</th>
+      <th>Percent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Cabin</th>
+      <td>687</td>
+      <td>77.10</td>
+    </tr>
+    <tr>
+      <th>Age</th>
+      <td>177</td>
+      <td>19.87</td>
+    </tr>
+    <tr>
+      <th>Embarked</th>
+      <td>2</td>
+      <td>0.22</td>
+    </tr>
+    <tr>
+      <th>Fare</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>Ticket</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>Parch</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>SibSp</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>Sex</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>Name</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>Pclass</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>Survived</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+    <tr>
+      <th>PassengerId</th>
+      <td>0</td>
+      <td>0.00</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ax = sns.barplot(data=df.isnull())</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_2.png"></p>
+<h3 id="Column-Survival"><a href="#Column-Survival" class="headerlink" title="Column : Survival"></a>Column : Survival</h3><p>存活的有 61.6%，占多数，样本比例为 1.6</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">13</span>, <span class="number">5</span>))</span><br><span class="line">df[<span class="string">&#x27;Survived&#x27;</span>].value_counts().plot.pie(</span><br><span class="line">    explode=[<span class="number">0</span>, <span class="number">0.05</span>], autopct=<span class="string">&#x27;%1.1f%%&#x27;</span>, ax=ax[<span class="number">0</span>], shadow=<span class="literal">True</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_3.png"></p>
+<h3 id="Feature-Sex"><a href="#Feature-Sex" class="headerlink" title="Feature: Sex"></a>Feature: Sex</h3><p>女性存活率大于7成，男性约两成</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">5</span>))</span><br><span class="line">df[[<span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>]].groupby([<span class="string">&#x27;Sex&#x27;</span>]).mean().plot.bar(ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Fraction of Survival with respect to Sex&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Sex&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Sex&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_4.png"></p>
+<h3 id="Feature-Pclass"><a href="#Feature-Pclass" class="headerlink" title="Feature: Pclass"></a>Feature: Pclass</h3><p>大多数乘客在第三舱等，存活率依序从1舱等递减至3舱等</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">18</span>, <span class="number">5</span>))</span><br><span class="line">df[<span class="string">&#x27;Pclass&#x27;</span>].value_counts().plot.bar(</span><br><span class="line">    color=[<span class="string">&#x27;#BC8F8F&#x27;</span>, <span class="string">&#x27;#F4A460&#x27;</span>, <span class="string">&#x27;#DAA520&#x27;</span>], ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Number Of Passengers with respect to Pclass&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Count&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Pclass&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Pclass&#x27;</span>)</span><br><span class="line">sns.barplot(x=<span class="string">&quot;Pclass&quot;</span>, y=<span class="string">&quot;Survived&quot;</span>, data=df, ax=ax[<span class="number">2</span>])</span><br><span class="line">ax[<span class="number">2</span>].set_title(<span class="string">&#x27;Survival by Pclass&#x27;</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_5.png"></p>
+<h3 id="Feature-Age"><a href="#Feature-Age" class="headerlink" title="Feature: Age"></a>Feature: Age</h3><p>年龄分布上以年轻人、小孩居多，最高有80岁老人</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">1</span>, figsize=(<span class="number">25</span>, <span class="number">6</span>))</span><br><span class="line">sns.barplot(df[<span class="string">&#x27;Age&#x27;</span>], df[<span class="string">&#x27;Survived&#x27;</span>], ci=<span class="literal">None</span>, ax=ax)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Survived vs Dead counts with respect to Pclass&#x27;</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_6.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">6</span>))</span><br><span class="line"></span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Age Box Plot&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_ylabel(<span class="string">&#x27;Age Years&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sns.boxplot(y=<span class="string">&#x27;Age&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">sns.boxplot(x=<span class="string">&#x27;Survived&#x27;</span>, y=<span class="string">&#x27;Age&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Age Box Plot&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_ylabel(<span class="string">&#x27;Age Years&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_7.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_7.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">18</span>, <span class="number">8</span>))</span><br><span class="line">sns.violinplot(</span><br><span class="line">    <span class="string">&quot;Pclass&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=df, split=<span class="literal">True</span>, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Pclass and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">0</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line">sns.violinplot(</span><br><span class="line">    <span class="string">&quot;Sex&quot;</span>, <span class="string">&quot;Age&quot;</span>, hue=<span class="string">&quot;Survived&quot;</span>, data=df, split=<span class="literal">True</span>, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Sex and Age vs Survived&#x27;</span>)</span><br><span class="line">ax[<span class="number">1</span>].set_yticks(<span class="built_in">range</span>(<span class="number">0</span>, <span class="number">110</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_8.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_8.png"></p>
+<h3 id="Feature-Embarked"><a href="#Feature-Embarked" class="headerlink" title="Feature: Embarked"></a>Feature: Embarked</h3><p>大多数乘客是从S登船口，存活率以c最高</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">3</span>, figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;No. Of Passengers Boarded&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;Embarked&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">2</span>])</span><br><span class="line">ax[<span class="number">2</span>].set_title(<span class="string">&#x27;Embarked vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_9.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_9.png"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">2</span>, figsize=(<span class="number">12</span>, <span class="number">5</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Sex&#x27;</span>, data=df, ax=ax[<span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>].set_title(<span class="string">&#x27;Male-Female Split for Embarked&#x27;</span>)</span><br><span class="line">sns.countplot(<span class="string">&#x27;Embarked&#x27;</span>, hue=<span class="string">&#x27;Pclass&#x27;</span>, data=df, ax=ax[<span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>].set_title(<span class="string">&#x27;Embarked vs Pclass&#x27;</span>)</span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>, hspace=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_10.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_10.png"></p>
+<h3 id="Features-SibSip-amp-Parch"><a href="#Features-SibSip-amp-Parch" class="headerlink" title="Features: SibSip &amp; Parch"></a>Features: SibSip &amp; Parch</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">2</span>, <span class="number">2</span>, figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sns.countplot(<span class="string">&#x27;SibSp&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;SibSp vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;SibSp&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">ax[<span class="number">0</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;SibSp vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sns.countplot(<span class="string">&#x27;Parch&#x27;</span>, hue=<span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">0</span>].set_title(<span class="string">&#x27;Parch vs Survived&#x27;</span>)</span><br><span class="line">sns.barplot(<span class="string">&#x27;Parch&#x27;</span>, <span class="string">&#x27;Survived&#x27;</span>, data=df, ax=ax[<span class="number">1</span>, <span class="number">1</span>])</span><br><span class="line">ax[<span class="number">1</span>, <span class="number">1</span>].set_title(<span class="string">&#x27;Parch vs Survived&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplots_adjust(wspace=<span class="number">0.2</span>, hspace=<span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_11.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_11.png"></p>
+<h3 id="Feature-Fare"><a href="#Feature-Fare" class="headerlink" title="Feature: Fare"></a>Feature: Fare</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">1</span>, <span class="number">1</span>, figsize=(<span class="number">20</span>, <span class="number">5</span>))</span><br><span class="line">sns.distplot(df.Fare, ax=ax)</span><br><span class="line">ax.set_title(<span class="string">&#x27;Distribution of Fares&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-15_泰坦尼克之灾_12.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+
+<p><img src="/img/2019-08-15_%E6%B3%B0%E5%9D%A6%E5%B0%BC%E5%85%8B%E4%B9%8B%E7%81%BE_12.png"></p>
+<h2 id="特征预处理"><a href="#特征预处理" class="headerlink" title="特征预处理"></a>特征预处理</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_tuned = df.copy(deep=<span class="literal">True</span>)</span><br><span class="line">df_tuned.sample(<span class="number">5</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PassengerId</th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Name</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>390</th>
+      <td>391</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Carter, Mr. William Ernest</td>
+      <td>male</td>
+      <td>36.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>113760</td>
+      <td>120.0000</td>
+      <td>B96 B98</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>281</th>
+      <td>282</td>
+      <td>0</td>
+      <td>3</td>
+      <td>Olsson, Mr. Nils Johan Goransson</td>
+      <td>male</td>
+      <td>28.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>347464</td>
+      <td>7.8542</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+    <tr>
+      <th>691</th>
+      <td>692</td>
+      <td>1</td>
+      <td>3</td>
+      <td>Karun, Miss. Manca</td>
+      <td>female</td>
+      <td>4.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>349256</td>
+      <td>13.4167</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>866</th>
+      <td>867</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Duran y More, Miss. Asuncion</td>
+      <td>female</td>
+      <td>27.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>SC/PARIS 2149</td>
+      <td>13.8583</td>
+      <td>NaN</td>
+      <td>C</td>
+    </tr>
+    <tr>
+      <th>726</th>
+      <td>727</td>
+      <td>1</td>
+      <td>2</td>
+      <td>Renouf, Mrs. Peter Henry (Lillian Jefferys)</td>
+      <td>female</td>
+      <td>30.0</td>
+      <td>3</td>
+      <td>0</td>
+      <td>31027</td>
+      <td>21.0000</td>
+      <td>NaN</td>
+      <td>S</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="删除无用特征"><a href="#删除无用特征" class="headerlink" title="删除无用特征"></a>删除无用特征</h3><h4 id="PassengerId"><a href="#PassengerId" class="headerlink" title="PassengerId"></a>PassengerId</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_tuned = df_tuned.drop([<span class="string">&#x27;PassengerId&#x27;</span>], axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="填充空值"><a href="#填充空值" class="headerlink" title="填充空值"></a>填充空值</h3><h4 id="Age"><a href="#Age" class="headerlink" title="Age"></a>Age</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原缺失值：&#123;a&#125;&quot;</span>.<span class="built_in">format</span>(a=df_tuned[<span class="string">&#x27;Age&#x27;</span>].isnull().<span class="built_in">sum</span>()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 采用众数填充</span></span><br><span class="line">df_tuned[<span class="string">&#x27;Age&#x27;</span>].fillna(df_tuned[<span class="string">&#x27;Age&#x27;</span>].mode()[<span class="number">0</span>], inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;后缺失值：&#123;a&#125;&quot;</span>.<span class="built_in">format</span>(a=df_tuned[<span class="string">&#x27;Age&#x27;</span>].isnull().<span class="built_in">sum</span>()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>原缺失值：177
+后缺失值：0
+</code></pre>
+<h4 id="Cabin"><a href="#Cabin" class="headerlink" title="Cabin"></a>Cabin</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原缺失值：&#123;a&#125;&quot;</span>.<span class="built_in">format</span>(a=df_tuned[<span class="string">&#x27;Cabin&#x27;</span>].isnull().<span class="built_in">sum</span>()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 采用是否有值填充</span></span><br><span class="line">df_tuned[<span class="string">&#x27;Cabin&#x27;</span>][df_tuned[<span class="string">&#x27;Cabin&#x27;</span>].isnull()] = <span class="number">0</span></span><br><span class="line">df_tuned[<span class="string">&#x27;Cabin&#x27;</span>][df_tuned[<span class="string">&#x27;Cabin&#x27;</span>].notnull()] = <span class="number">1</span></span><br><span class="line">df_tuned[<span class="string">&#x27;Cabin&#x27;</span>] = df_tuned[<span class="string">&#x27;Cabin&#x27;</span>].astype(<span class="built_in">int</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;后缺失值：&#123;a&#125;&quot;</span>.<span class="built_in">format</span>(a=df_tuned[<span class="string">&#x27;Cabin&#x27;</span>].isnull().<span class="built_in">sum</span>()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>原缺失值：687
+后缺失值：0
+</code></pre>
+<h4 id="Embarked"><a href="#Embarked" class="headerlink" title="Embarked"></a>Embarked</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;原缺失值：&#123;a&#125;&quot;</span>.<span class="built_in">format</span>(a=df_tuned[<span class="string">&#x27;Embarked&#x27;</span>].isnull().<span class="built_in">sum</span>()))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 采用众数填充</span></span><br><span class="line">df_tuned[<span class="string">&#x27;Embarked&#x27;</span>].fillna(df_tuned[<span class="string">&#x27;Embarked&#x27;</span>].mode()[<span class="number">0</span>], inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;后缺失值：&#123;a&#125;&quot;</span>.<span class="built_in">format</span>(a=df_tuned[<span class="string">&#x27;Embarked&#x27;</span>].isnull().<span class="built_in">sum</span>()))</span><br></pre></td></tr></table></figure>
+
+<pre><code>原缺失值：2
+后缺失值：0
+</code></pre>
+<h3 id="特征分箱"><a href="#特征分箱" class="headerlink" title="特征分箱"></a>特征分箱</h3><h4 id="Name：取出称号"><a href="#Name：取出称号" class="headerlink" title="Name：取出称号"></a>Name：取出称号</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_tuned[<span class="string">&#x27;Title&#x27;</span>] = df_tuned[<span class="string">&#x27;Name&#x27;</span>].<span class="built_in">str</span>.extract(<span class="string">&#x27;,\s(.*?)\.&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title_Dict = &#123;&#125;</span><br><span class="line">title_Dict.update(<span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;Capt&#x27;</span>, <span class="string">&#x27;Col&#x27;</span>, <span class="string">&#x27;Major&#x27;</span>, <span class="string">&#x27;Dr&#x27;</span>, <span class="string">&#x27;Rev&#x27;</span>], <span class="string">&#x27;Officer&#x27;</span>))</span><br><span class="line">title_Dict.update(<span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;Jonkheer&#x27;</span>, <span class="string">&#x27;Don&#x27;</span>, <span class="string">&#x27;Sir&#x27;</span>, <span class="string">&#x27;the Countess&#x27;</span>, <span class="string">&#x27;Dona&#x27;</span>, <span class="string">&#x27;Lady&#x27;</span>], <span class="string">&#x27;Royalty&#x27;</span>))</span><br><span class="line">title_Dict.update(<span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;Mme&#x27;</span>, <span class="string">&#x27;Ms&#x27;</span>, <span class="string">&#x27;Mrs&#x27;</span>], <span class="string">&#x27;Mrs&#x27;</span>))</span><br><span class="line">title_Dict.update(<span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;Mlle&#x27;</span>, <span class="string">&#x27;Miss&#x27;</span>], <span class="string">&#x27;Miss&#x27;</span>))</span><br><span class="line">title_Dict.update(<span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;Mr&#x27;</span>], <span class="string">&#x27;Mr&#x27;</span>))</span><br><span class="line">title_Dict.update(<span class="built_in">dict</span>.fromkeys([<span class="string">&#x27;Master&#x27;</span>], <span class="string">&#x27;Master&#x27;</span>))</span><br><span class="line"></span><br><span class="line">title_Dict</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>&#123;&#39;Capt&#39;: &#39;Officer&#39;,
+ &#39;Col&#39;: &#39;Officer&#39;,
+ &#39;Major&#39;: &#39;Officer&#39;,
+ &#39;Dr&#39;: &#39;Officer&#39;,
+ &#39;Rev&#39;: &#39;Officer&#39;,
+ &#39;Jonkheer&#39;: &#39;Royalty&#39;,
+ &#39;Don&#39;: &#39;Royalty&#39;,
+ &#39;Sir&#39;: &#39;Royalty&#39;,
+ &#39;the Countess&#39;: &#39;Royalty&#39;,
+ &#39;Dona&#39;: &#39;Royalty&#39;,
+ &#39;Lady&#39;: &#39;Royalty&#39;,
+ &#39;Mme&#39;: &#39;Mrs&#39;,
+ &#39;Ms&#39;: &#39;Mrs&#39;,
+ &#39;Mrs&#39;: &#39;Mrs&#39;,
+ &#39;Mlle&#39;: &#39;Miss&#39;,
+ &#39;Miss&#39;: &#39;Miss&#39;,
+ &#39;Mr&#39;: &#39;Mr&#39;,
+ &#39;Master&#39;: &#39;Master&#39;&#125;
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_tuned[<span class="string">&#x27;Title&#x27;</span>] = df_tuned[<span class="string">&#x27;Title&#x27;</span>].<span class="built_in">map</span>(title_Dict)</span><br><span class="line">df_tuned = df_tuned.drop([<span class="string">&#x27;Name&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line">df_tuned.head()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>A/5 21171</td>
+      <td>7.2500</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>PC 17599</td>
+      <td>71.2833</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mrs</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>STON/O2. 3101282</td>
+      <td>7.9250</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803</td>
+      <td>53.1000</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450</td>
+      <td>8.0500</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h4 id="Fare"><a href="#Fare" class="headerlink" title="Fare"></a>Fare</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fare_category</span>(<span class="params">fare</span>):</span></span><br><span class="line">    <span class="keyword">if</span> fare &lt;= <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> fare &lt;= <span class="number">10</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> fare &lt;= <span class="number">30</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">elif</span> fare &lt;= <span class="number">45</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">4</span></span><br><span class="line"></span><br><span class="line">df_tuned[<span class="string">&#x27;Fare&#x27;</span>] = df_tuned[<span class="string">&#x27;Fare&#x27;</span>].<span class="built_in">map</span>(fare_category)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Family-size"><a href="#Family-size" class="headerlink" title="Family_size"></a>Family_size</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">df_tuned[<span class="string">&#x27;Family_Size&#x27;</span>] = df_tuned[<span class="string">&#x27;Parch&#x27;</span>] + df_tuned[<span class="string">&#x27;SibSp&#x27;</span>] + <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">family_size_category</span>(<span class="params">ppl</span>):</span></span><br><span class="line">    <span class="keyword">if</span> ppl &lt;= <span class="number">2</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">elif</span> ppl &lt;= <span class="number">4</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> ppl &lt;= <span class="number">6</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">3</span></span><br><span class="line"></span><br><span class="line">df_tuned[<span class="string">&#x27;Family_Size&#x27;</span>] = df_tuned[<span class="string">&#x27;Family_Size&#x27;</span>].<span class="built_in">map</span>(family_size_category)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Ticket"><a href="#Ticket" class="headerlink" title="Ticket"></a>Ticket</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">df_tuned[<span class="string">&#x27;Ticket&#x27;</span>] = df_tuned[<span class="string">&#x27;Ticket&#x27;</span>].<span class="built_in">str</span>.extract(<span class="string">&#x27;(^\d+|\s\d+)&#x27;</span>)</span><br><span class="line">df_tuned[<span class="string">&#x27;Ticket&#x27;</span>].fillna(<span class="number">0</span>,inplace=<span class="literal">True</span>)</span><br><span class="line">df_tuned[<span class="string">&#x27;Ticket&#x27;</span>] = df_tuned[<span class="string">&#x27;Ticket&#x27;</span>].astype(<span class="built_in">float</span>)</span><br></pre></td></tr></table></figure>
+
+<h3 id="处理分类特征"><a href="#处理分类特征" class="headerlink" title="处理分类特征"></a>处理分类特征</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_tuned</span><br></pre></td></tr></table></figure>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Survived</th>
+      <th>Pclass</th>
+      <th>Sex</th>
+      <th>Age</th>
+      <th>SibSp</th>
+      <th>Parch</th>
+      <th>Ticket</th>
+      <th>Fare</th>
+      <th>Cabin</th>
+      <th>Embarked</th>
+      <th>Title</th>
+      <th>Family_Size</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>22.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>21171.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>17599.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>3101282.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>35.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>113803.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>373450.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>330877.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Q</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>0</td>
+      <td>1</td>
+      <td>male</td>
+      <td>54.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17463.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>2.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>349909.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Master</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>2</td>
+      <td>347742.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>14.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>237736.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>9549.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>58.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>113783.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>20.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2151.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>39.0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>347082.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>14.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>350406.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>55.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>248706.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>2.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>382652.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Q</td>
+      <td>Master</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>1</td>
+      <td>2</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>244373.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>31.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>345763.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2649.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>35.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>239865.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>1</td>
+      <td>2</td>
+      <td>male</td>
+      <td>34.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>248698.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>15.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>330923.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Q</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>28.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>113788.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>8.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>349909.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>38.0</td>
+      <td>1</td>
+      <td>5</td>
+      <td>347077.0</td>
+      <td>3</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2631.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0</td>
+      <td>1</td>
+      <td>male</td>
+      <td>19.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>19950.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>330959.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Q</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>349216.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>861</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>21.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>28134.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>862</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>48.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17466.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>863</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>8</td>
+      <td>2</td>
+      <td>2343.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>864</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>233866.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>865</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>42.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>236852.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>866</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>27.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>2149.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>867</th>
+      <td>0</td>
+      <td>1</td>
+      <td>male</td>
+      <td>31.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>17590.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>868</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>345777.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>869</th>
+      <td>1</td>
+      <td>3</td>
+      <td>male</td>
+      <td>4.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>347742.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Master</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>870</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>349248.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>871</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>47.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>11751.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>872</th>
+      <td>0</td>
+      <td>1</td>
+      <td>male</td>
+      <td>33.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>695.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>873</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>47.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>345765.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>874</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>28.0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3381.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>875</th>
+      <td>1</td>
+      <td>3</td>
+      <td>female</td>
+      <td>15.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2667.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>876</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>20.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7534.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>877</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>349212.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>878</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>24.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>349217.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>879</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>56.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>11767.0</td>
+      <td>4</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>880</th>
+      <td>1</td>
+      <td>2</td>
+      <td>female</td>
+      <td>25.0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>230433.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mrs</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>881</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>33.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>349257.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>882</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>22.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>7552.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>883</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>28.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>34068.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>884</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>25.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>392076.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>885</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>39.0</td>
+      <td>0</td>
+      <td>5</td>
+      <td>382652.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Q</td>
+      <td>Mrs</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>886</th>
+      <td>0</td>
+      <td>2</td>
+      <td>male</td>
+      <td>27.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>211536.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Officer</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>887</th>
+      <td>1</td>
+      <td>1</td>
+      <td>female</td>
+      <td>19.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>112053.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>888</th>
+      <td>0</td>
+      <td>3</td>
+      <td>female</td>
+      <td>24.0</td>
+      <td>1</td>
+      <td>2</td>
+      <td>6607.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>S</td>
+      <td>Miss</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>889</th>
+      <td>1</td>
+      <td>1</td>
+      <td>male</td>
+      <td>26.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>111369.0</td>
+      <td>2</td>
+      <td>1</td>
+      <td>C</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>890</th>
+      <td>0</td>
+      <td>3</td>
+      <td>male</td>
+      <td>32.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>370376.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Q</td>
+      <td>Mr</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>891 rows × 12 columns</p>
+</div>
+
+
+
+<h4 id="Embarked-Sex-Pclass-Title-Fare-Category-Family-Size"><a href="#Embarked-Sex-Pclass-Title-Fare-Category-Family-Size" class="headerlink" title="Embarked, Sex, Pclass, Title, Fare_Category, Family_Size,"></a>Embarked, Sex, Pclass, Title, Fare_Category, Family_Size,</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">dummies_Pclass = pd.get_dummies(df_tuned[<span class="string">&#x27;Pclass&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line">dummies_Sex = pd.get_dummies(df_tuned[<span class="string">&#x27;Sex&#x27;</span>], prefix=<span class="string">&#x27;Sex&#x27;</span>)</span><br><span class="line">dummies_Fare = pd.get_dummies(df_tuned[<span class="string">&#x27;Fare&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line">dummies_Embarked = pd.get_dummies(df_tuned[<span class="string">&#x27;Embarked&#x27;</span>], prefix=<span class="string">&#x27;Embarked&#x27;</span>)</span><br><span class="line">dummies_Title = pd.get_dummies(df_tuned[<span class="string">&#x27;Title&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line">dummies_Family_Size = pd.get_dummies(df_tuned[<span class="string">&#x27;Family_Size&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df_tuned = pd.concat(</span><br><span class="line">    [df_tuned, dummies_Embarked, dummies_Sex, dummies_Pclass, dummies_Title, dummies_Fare, dummies_Family_Size],</span><br><span class="line">    axis=<span class="number">1</span>)</span><br><span class="line">df_tuned.drop([<span class="string">&#x27;Pclass&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Fare&#x27;</span>, <span class="string">&#x27;Embarked&#x27;</span>, <span class="string">&#x27;Title&#x27;</span>, <span class="string">&#x27;Family_Size&#x27;</span>],</span><br><span class="line">              axis=<span class="number">1</span>,</span><br><span class="line">              inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 最后检查</span></span><br><span class="line">df_tuned.info()</span><br></pre></td></tr></table></figure>
+
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 891 entries, 0 to 890
+Data columns (total 29 columns):
+Survived          891 non-null int64
+Age               891 non-null float64
+SibSp             891 non-null int64
+Parch             891 non-null int64
+Ticket            891 non-null float64
+Cabin             891 non-null int64
+Embarked_C        891 non-null uint8
+Embarked_Q        891 non-null uint8
+Embarked_S        891 non-null uint8
+Sex_female        891 non-null uint8
+Sex_male          891 non-null uint8
+Pclass_1          891 non-null uint8
+Pclass_2          891 non-null uint8
+Pclass_3          891 non-null uint8
+Pclass_Master     891 non-null uint8
+Pclass_Miss       891 non-null uint8
+Pclass_Mr         891 non-null uint8
+Pclass_Mrs        891 non-null uint8
+Pclass_Officer    891 non-null uint8
+Pclass_Royalty    891 non-null uint8
+Pclass_0          891 non-null uint8
+Pclass_1          891 non-null uint8
+Pclass_2          891 non-null uint8
+Pclass_3          891 non-null uint8
+Pclass_4          891 non-null uint8
+Pclass_0          891 non-null uint8
+Pclass_1          891 non-null uint8
+Pclass_2          891 non-null uint8
+Pclass_3          891 non-null uint8
+dtypes: float64(2), int64(4), uint8(23)
+memory usage: 61.9 KB
+</code></pre>
+<h3 id="数据标准化"><a href="#数据标准化" class="headerlink" title="数据标准化"></a>数据标准化</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.preprocessing <span class="keyword">import</span> StandardScaler</span><br><span class="line">ss = StandardScaler()</span><br><span class="line">data = ss.fit_transform(df_tuned[<span class="string">&#x27;Ticket&#x27;</span>].values.reshape(-<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line">df_tuned[<span class="string">&#x27;Ticket&#x27;</span>] = pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据划分"><a href="#数据划分" class="headerlink" title="数据划分"></a>数据划分</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">X = df_tuned[:].drop(<span class="string">&quot;Survived&quot;</span>, axis=<span class="number">1</span>)</span><br><span class="line">y = df_tuned[<span class="string">&quot;Survived&quot;</span>]</span><br><span class="line"></span><br><span class="line">X_train, X_test, y_train, y_test = train_test_split(</span><br><span class="line">    X, y, test_size=<span class="number">0.2</span>, shuffle=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<h2 id="数据建模"><a href="#数据建模" class="headerlink" title="数据建模"></a>数据建模</h2><h3 id="六大模型"><a href="#六大模型" class="headerlink" title="六大模型"></a>六大模型</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> ensemble</span><br><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> sklearn.linear_model <span class="keyword">import</span> LogisticRegression</span><br><span class="line"><span class="keyword">from</span> sklearn.svm <span class="keyword">import</span> SVC</span><br><span class="line"><span class="keyword">from</span> sklearn.tree <span class="keyword">import</span> DecisionTreeClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier, GradientBoostingClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.neighbors <span class="keyword">import</span> KNeighborsClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> cross_val_score</span><br><span class="line"></span><br><span class="line">names = [<span class="string">&quot;LR&quot;</span>, <span class="string">&quot;SVC&quot;</span>, <span class="string">&#x27;DT&#x27;</span>, <span class="string">&quot;RF&quot;</span>, <span class="string">&quot;KNN&quot;</span>, <span class="string">&quot;GBDT&quot;</span>, <span class="string">&quot;Voting&quot;</span>]</span><br><span class="line">models = [LR, svc, DT, RF, KNN, GBDT, voting]</span><br><span class="line">evaluates = [<span class="string">&#x27;accuracy&#x27;</span>, <span class="string">&#x27;precision&#x27;</span>, <span class="string">&#x27;recall&#x27;</span>, <span class="string">&#x27;f1&#x27;</span>, <span class="string">&#x27;roc_auc&#x27;</span>]</span><br><span class="line"></span><br><span class="line">LR = LogisticRegression(C=<span class="number">1.0</span>, penalty=<span class="string">&#x27;l1&#x27;</span>, tol=<span class="number">1e-6</span>)</span><br><span class="line">LR = LR.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">svc = SVC(kernel=<span class="string">&#x27;linear&#x27;</span>, probability=<span class="literal">True</span>)</span><br><span class="line">svc = svc.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">DT = DecisionTreeClassifier(</span><br><span class="line">    max_features=<span class="string">&#x27;sqrt&#x27;</span>, max_depth=<span class="number">35</span>, criterion=<span class="string">&#x27;entropy&#x27;</span>, random_state=<span class="number">42</span>)</span><br><span class="line">DT = DT.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">RF = RandomForestClassifier(</span><br><span class="line">    n_estimators=<span class="number">750</span>,</span><br><span class="line">    criterion=<span class="string">&#x27;gini&#x27;</span>,</span><br><span class="line">    max_features=<span class="string">&#x27;sqrt&#x27;</span>,</span><br><span class="line">    max_depth=<span class="number">3</span>,</span><br><span class="line">    min_samples_split=<span class="number">4</span>,</span><br><span class="line">    min_samples_leaf=<span class="number">2</span>,</span><br><span class="line">    n_jobs=<span class="number">50</span>,</span><br><span class="line">    random_state=<span class="number">42</span>,</span><br><span class="line">    verbose=<span class="number">1</span>)</span><br><span class="line">RF = RF.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">KNN = KNeighborsClassifier()</span><br><span class="line">KNN = KNN.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">GBDT = GradientBoostingClassifier(</span><br><span class="line">    n_estimators=<span class="number">900</span>,</span><br><span class="line">    learning_rate=<span class="number">0.0008</span>,</span><br><span class="line">    loss=<span class="string">&#x27;exponential&#x27;</span>,</span><br><span class="line">    min_samples_split=<span class="number">3</span>,</span><br><span class="line">    min_samples_leaf=<span class="number">2</span>,</span><br><span class="line">    max_features=<span class="string">&#x27;sqrt&#x27;</span>,</span><br><span class="line">    max_depth=<span class="number">3</span>,</span><br><span class="line">    random_state=<span class="number">42</span>,</span><br><span class="line">    verbose=<span class="number">1</span>)</span><br><span class="line">GBDT = GBDT.fit(X_train, y_train)</span><br><span class="line"></span><br><span class="line">voting = ensemble.VotingClassifier(</span><br><span class="line">    estimators=[(<span class="string">&#x27;LR&#x27;</span>, LR), (<span class="string">&#x27;SVC&#x27;</span>, svc), (<span class="string">&#x27;DT&#x27;</span>, DT), (<span class="string">&#x27;RF&#x27;</span>, RF), (<span class="string">&#x27;KNN&#x27;</span>, KNN),</span><br><span class="line">                (<span class="string">&#x27;GBDT&#x27;</span>, GBDT)],</span><br><span class="line">    voting=<span class="string">&#x27;soft&#x27;</span>,</span><br><span class="line">    weights=[i.score(X_test, y_test) <span class="keyword">for</span> i <span class="keyword">in</span> models[<span class="number">0</span>:<span class="number">6</span>]],</span><br><span class="line">    n_jobs=<span class="number">50</span>)</span><br><span class="line">voting = voting.fit(X_train, y_train)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.3s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.5s finished
+
+
+      Iter       Train Loss   Remaining Time 
+         1           0.9754            1.41s
+         2           0.9751            1.32s
+         3           0.9748            1.24s
+         4           0.9745            1.20s
+         5           0.9742            1.18s
+         6           0.9739            1.13s
+         7           0.9738            1.08s
+         8           0.9735            1.05s
+         9           0.9733            1.02s
+        10           0.9730            1.00s
+        20           0.9703            0.77s
+        30           0.9680            0.68s
+        40           0.9655            0.63s
+        50           0.9628            0.62s
+        60           0.9602            0.59s
+        70           0.9576            0.57s
+        80           0.9549            0.55s
+        90           0.9522            0.53s
+       100           0.9498            0.52s
+       200           0.9259            0.43s
+       300           0.9040            0.37s
+       400           0.8842            0.31s
+       500           0.8660            0.26s
+       600           0.8493            0.20s
+       700           0.8340            0.13s
+       800           0.8204            0.06s
+       900           0.8078            0.00s
+
+
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+</code></pre>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">df_list = []</span><br><span class="line"><span class="keyword">for</span> name,model <span class="keyword">in</span> <span class="built_in">zip</span>(names,models):</span><br><span class="line">    y_train_pred = model.predict(X_train)</span><br><span class="line">    y_test_pred = model.predict(X_test)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#accuracy</span></span><br><span class="line">    train_accuracy = model.score(X_train,y_train)</span><br><span class="line">    test_accuracy = model.score(X_test,y_test)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">#precision   </span></span><br><span class="line">    train_precision = precision_score(y_train,y_train_pred)</span><br><span class="line">    test_precision = precision_score(y_test,y_test_pred)   </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#recall</span></span><br><span class="line">    train_recall = recall_score(y_train,y_train_pred)</span><br><span class="line">    test_recall = recall_score(y_test,y_test_pred)   </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#f1</span></span><br><span class="line">    train_f1 = f1_score(y_train,y_train_pred)</span><br><span class="line">    test_f1 = f1_score(y_test,y_test_pred)   </span><br><span class="line">    </span><br><span class="line">    <span class="comment">#auc</span></span><br><span class="line">    y_train_pred = model.predict_proba(X_train)[:,<span class="number">1</span>]</span><br><span class="line">    y_test_pred = model.predict_proba(X_test)[:,<span class="number">1</span>]</span><br><span class="line">    </span><br><span class="line">    train_auc = roc_auc_score(y_train,y_train_pred)</span><br><span class="line">    test_auc = roc_auc_score(y_test,y_test_pred)</span><br><span class="line">    </span><br><span class="line">    df = pd.DataFrame(np.array([train_accuracy,train_precision,train_recall,train_f1,train_auc,test_accuracy,test_precision,test_recall,test_f1,test_auc]).reshape(<span class="number">2</span>,-<span class="number">1</span>),</span><br><span class="line">                  index = [<span class="string">&#x27;train&#x27;</span>,<span class="string">&#x27;test&#x27;</span>],</span><br><span class="line">                  columns = [<span class="string">&#x27;Accuracy&#x27;</span>,<span class="string">&#x27;Precision&#x27;</span>,<span class="string">&#x27;Recall&#x27;</span>,<span class="string">&#x27;F1-Score&#x27;</span>,<span class="string">&#x27;AUC-Score&#x27;</span>])</span><br><span class="line">    df_list.append(df)</span><br><span class="line"></span><br><span class="line">pd.concat(df_list,axis=<span class="number">0</span>,keys=names)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.2s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.2s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.2s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.2s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.2s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.0s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.1s finished
+</code></pre>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th></th>
+      <th>Accuracy</th>
+      <th>Precision</th>
+      <th>Recall</th>
+      <th>F1-Score</th>
+      <th>AUC-Score</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th rowspan="2" valign="top">LR</th>
+      <th>train</th>
+      <td>0.817416</td>
+      <td>0.791339</td>
+      <td>0.723022</td>
+      <td>0.755639</td>
+      <td>0.873811</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.860335</td>
+      <td>0.819672</td>
+      <td>0.781250</td>
+      <td>0.800000</td>
+      <td>0.912772</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">SVC</th>
+      <th>train</th>
+      <td>0.820225</td>
+      <td>0.804878</td>
+      <td>0.712230</td>
+      <td>0.755725</td>
+      <td>0.860508</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.854749</td>
+      <td>0.816667</td>
+      <td>0.765625</td>
+      <td>0.790323</td>
+      <td>0.899321</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">DT</th>
+      <th>train</th>
+      <td>0.998596</td>
+      <td>1.000000</td>
+      <td>0.996403</td>
+      <td>0.998198</td>
+      <td>0.999992</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.754190</td>
+      <td>0.642857</td>
+      <td>0.703125</td>
+      <td>0.671642</td>
+      <td>0.748981</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">RF</th>
+      <th>train</th>
+      <td>0.817416</td>
+      <td>0.803279</td>
+      <td>0.705036</td>
+      <td>0.750958</td>
+      <td>0.872949</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.843575</td>
+      <td>0.810345</td>
+      <td>0.734375</td>
+      <td>0.770492</td>
+      <td>0.895856</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">KNN</th>
+      <th>train</th>
+      <td>0.841292</td>
+      <td>0.839506</td>
+      <td>0.733813</td>
+      <td>0.783109</td>
+      <td>0.918315</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.821229</td>
+      <td>0.758065</td>
+      <td>0.734375</td>
+      <td>0.746032</td>
+      <td>0.852921</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">GBDT</th>
+      <th>train</th>
+      <td>0.818820</td>
+      <td>0.898396</td>
+      <td>0.604317</td>
+      <td>0.722581</td>
+      <td>0.881597</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.843575</td>
+      <td>0.909091</td>
+      <td>0.625000</td>
+      <td>0.740741</td>
+      <td>0.904823</td>
+    </tr>
+    <tr>
+      <th rowspan="2" valign="top">Voting</th>
+      <th>train</th>
+      <td>0.856742</td>
+      <td>0.872881</td>
+      <td>0.741007</td>
+      <td>0.801556</td>
+      <td>0.971074</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>0.860335</td>
+      <td>0.830508</td>
+      <td>0.765625</td>
+      <td>0.796748</td>
+      <td>0.898505</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<h3 id="数据预测"><a href="#数据预测" class="headerlink" title="数据预测"></a>数据预测</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">df_test = pd.read_csv(<span class="string">&quot;2019-08-15_泰坦尼克之灾_test.csv&quot;</span>)</span><br><span class="line">df_tuned_test = df_test.copy(deep=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df_tuned_test = df_tuned_test.drop([<span class="string">&#x27;PassengerId&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Age&#x27;</span>].fillna(df_tuned_test[<span class="string">&#x27;Age&#x27;</span>].mode()[<span class="number">0</span>], inplace=<span class="literal">True</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Cabin&#x27;</span>][df_tuned_test[<span class="string">&#x27;Cabin&#x27;</span>].isnull()] = <span class="number">0</span></span><br><span class="line">df_tuned_test[<span class="string">&#x27;Cabin&#x27;</span>][df_tuned_test[<span class="string">&#x27;Cabin&#x27;</span>].notnull()] = <span class="number">1</span></span><br><span class="line">df_tuned_test[<span class="string">&#x27;Cabin&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Cabin&#x27;</span>].astype(<span class="built_in">int</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Embarked&#x27;</span>].fillna(</span><br><span class="line">    df_tuned_test[<span class="string">&#x27;Embarked&#x27;</span>].mode()[<span class="number">0</span>], inplace=<span class="literal">True</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Title&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Name&#x27;</span>].<span class="built_in">str</span>.extract(<span class="string">&#x27;,\s(.*?)\.&#x27;</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Title&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Title&#x27;</span>].<span class="built_in">map</span>(title_Dict)</span><br><span class="line">df_tuned_test = df_tuned_test.drop([<span class="string">&#x27;Name&#x27;</span>], axis=<span class="number">1</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Fare&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Fare&#x27;</span>].<span class="built_in">map</span>(fare_category)</span><br><span class="line">df_tuned_test[</span><br><span class="line">    <span class="string">&#x27;Family_Size&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Parch&#x27;</span>] + df_tuned_test[<span class="string">&#x27;SibSp&#x27;</span>] + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">df_tuned_test[<span class="string">&#x27;Family_Size&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Family_Size&#x27;</span>].<span class="built_in">map</span>(</span><br><span class="line">    family_size_category)</span><br><span class="line"></span><br><span class="line">df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>].<span class="built_in">str</span>.extract(<span class="string">&#x27;(^\d+|\s\d+)&#x27;</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>].fillna(<span class="number">0</span>, inplace=<span class="literal">True</span>)</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>] = df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>].astype(<span class="built_in">float</span>)</span><br><span class="line"></span><br><span class="line">dummies_Pclass = pd.get_dummies(df_tuned_test[<span class="string">&#x27;Pclass&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line">dummies_Sex = pd.get_dummies(df_tuned_test[<span class="string">&#x27;Sex&#x27;</span>], prefix=<span class="string">&#x27;Sex&#x27;</span>)</span><br><span class="line">dummies_Fare = pd.get_dummies(df_tuned_test[<span class="string">&#x27;Fare&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line">dummies_Embarked = pd.get_dummies(df_tuned_test[<span class="string">&#x27;Embarked&#x27;</span>], prefix=<span class="string">&#x27;Embarked&#x27;</span>)</span><br><span class="line">dummies_Title = pd.get_dummies(df_tuned_test[<span class="string">&#x27;Title&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line">dummies_Family_Size = pd.get_dummies(</span><br><span class="line">    df_tuned_test[<span class="string">&#x27;Family_Size&#x27;</span>], prefix=<span class="string">&#x27;Pclass&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df_tuned_test = pd.concat([</span><br><span class="line">    df_tuned_test, dummies_Embarked, dummies_Sex, dummies_Pclass,</span><br><span class="line">    dummies_Title, dummies_Fare, dummies_Family_Size</span><br><span class="line">],</span><br><span class="line">                          axis=<span class="number">1</span>)</span><br><span class="line">df_tuned_test.drop(</span><br><span class="line">    [<span class="string">&#x27;Pclass&#x27;</span>, <span class="string">&#x27;Sex&#x27;</span>, <span class="string">&#x27;Fare&#x27;</span>, <span class="string">&#x27;Embarked&#x27;</span>, <span class="string">&#x27;Title&#x27;</span>, <span class="string">&#x27;Family_Size&#x27;</span>],</span><br><span class="line">    axis=<span class="number">1</span>,</span><br><span class="line">    inplace=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">data = ss.fit_transform(df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>].values.reshape(-<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line">df_tuned_test[<span class="string">&#x27;Ticket&#x27;</span>] = pd.DataFrame(data)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">predictions = voting.predict(df_tuned_test)</span><br><span class="line">result = pd.DataFrame(&#123;</span><br><span class="line">    <span class="string">&#x27;PassengerId&#x27;</span>: df_test[<span class="string">&#x27;PassengerId&#x27;</span>].as_matrix(),</span><br><span class="line">    <span class="string">&#x27;Survived&#x27;</span>: predictions.astype(np.int32)</span><br><span class="line">&#125;)</span><br><span class="line">result.to_csv(<span class="string">&quot;2019-08-15_泰坦尼克之灾_predictions.csv&quot;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
+<pre><code>[Parallel(n_jobs=50)]: Using backend ThreadingBackend with 50 concurrent workers.
+[Parallel(n_jobs=50)]: Done 100 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 350 tasks      | elapsed:    0.1s
+[Parallel(n_jobs=50)]: Done 750 out of 750 | elapsed:    0.2s finished
+</code></pre>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/m0_37725003/article/details/81095555" >集成学习voting Classifier在sklearn中的实现<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/30538352" >Kaggle泰坦尼克号生存模型——250个特征量的融合模型，排名8%<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://kaggle.com/vikumsw/basic-feature-visualizations" >Basic Feature Visualizations<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/45240/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">集成学习（以随机森林与adaboosting为例）</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Python/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/2828/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">网格搜寻</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2020</span>&nbsp;-&nbsp;
+            
+            2021&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">Keep Team</a>
+        </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="fas fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/header-shrink.js"></script>
+
+<script src="/js/back2top.js"></script>
+
+<script src="/js/dark-light-toggle.js"></script>
+
+
+
+
+
+
+
+
+<div class="post-scripts">
+    
+</div>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
