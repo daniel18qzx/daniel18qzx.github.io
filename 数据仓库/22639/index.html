@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="丹丹">
+    
+    <title>
+        
+            数据仓库设计 |
+        
+        温书笔记
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"越简单越好，但不要过度简单"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                温书笔记
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">数据仓库设计</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">丹丹</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-08-22 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/">数据仓库</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.8k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>6 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>数据仓库是一个<strong>面向主题的</strong>、<strong>集成的</strong>、<strong>相对稳定的</strong>且<strong>反映历史变化的</strong>数据集合，用于支持管理人员的决策</p>
+<ul>
+<li><strong>面向主题的</strong>：为特定的数据分析领域与目标提供数据支持，比如交易库、用户库等</li>
+<li><strong>集成的</strong>：面向分析的数据仓库需要集成多种不同数据源以及文件以进行比较鉴别</li>
+<li><strong>相对稳定的</strong>：数据仓库中的数据是经过抽取而形成的分析型数据，主要供企业决策分析之用，执行的主要是‘查询’操作，一般不执行‘更新’操作。一个稳定的数据环境有利于数据分析的纵向和横向对比</li>
+<li><strong>反映历史变化的</strong>：数据仓库中的数据以一定时间段为单位进行统一更新，不断增加新的数据内容、不断删去旧的数据内容、更新与时间有关的综合数据</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>数据库系统设计</th>
+<th>数据仓库系统设计</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>面向的数据类型</td>
+<td>面向应用</td>
+<td>面向分析</td>
+</tr>
+<tr>
+<td>应用需求</td>
+<td>比较明确</td>
+<td>不太明确</td>
+</tr>
+<tr>
+<td>系统设计目标</td>
+<td>事务处理的并发性、安全性、高效性</td>
+<td>历史数据的存储，数据质量的提升和数据模型的构建</td>
+</tr>
+<tr>
+<td>数据来源</td>
+<td>业务输入</td>
+<td>业务系统</td>
+</tr>
+<tr>
+<td>系统设计的方法</td>
+<td>需求驱动</td>
+<td>数据驱动</td>
+</tr>
+</tbody></table>
+<h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-22_%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E8%AE%BE%E8%AE%A1_1.png"
+                     
+                ></p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="星形模型"><a href="#星形模型" class="headerlink" title="星形模型"></a>星形模型</h3><ul>
+<li>星型模型组成：<ul>
+<li>一个包含大批数据和不冗余数据的事实表（中心表）</li>
+<li>一组小的附属表，称为维表。每维一个</li>
+</ul>
+</li>
+<li>事实表中每条元组都含有指向各个维表的外键和一些相应的测量数据，事实表的记录数量很多，维表中记录的是有关这一维的属性</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image005.png"
+                     
+                ></p>
+<h3 id="雪花模型"><a href="#雪花模型" class="headerlink" title="雪花模型"></a>雪花模型</h3><ul>
+<li>雪花模型是对星型模型维表的进一步层次化</li>
+<li>原来的各维表可能被扩展为小的事实表，形成一些局部的“层次”区域</li>
+</ul>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image013.png"
+                     
+                ></p>
+<h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>雪花模式的维表是规范化的，以减少冗余。这种表易于维护，并节省存储空间。但与巨大的事实表相比，这种空间的节省可以忽略</p>
+<p>由于执行查询需要更多的连接操作，雪花结构可能降低浏览的性能。<br>在数据仓库设计中，星型模式更加常用</p>
+<h2 id="五层模型架构"><a href="#五层模型架构" class="headerlink" title="五层模型架构"></a>五层模型架构</h2><table>
+<thead>
+<tr>
+<th></th>
+<th>数据来源及建模方式</th>
+<th>服务领域</th>
+<th>设计原则</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>DM层</td>
+<td>数据来自DWS和MID层，应用支撑</td>
+<td>前端报表展现，数据分析，产品数据支撑</td>
+<td>面向应用开发报表、支撑产品需求</td>
+</tr>
+<tr>
+<td>DWS层</td>
+<td>数据来自MID和DWD层，轻度汇总，面向应用结合数据设计</td>
+<td>各类服务模块，原子指标，通用应用模型开发</td>
+<td>基于数据面向应用和通用服务，该层模型随需求变更会不断演化</td>
+</tr>
+<tr>
+<td>MID层</td>
+<td>数据来自DWD层，是MID事实明细层，采用维度建模，星型架构</td>
+<td>为数据仓库提供各主题业务明细数据</td>
+<td>分业务线按主题建模，数据只来自于DWD</td>
+</tr>
+<tr>
+<td>DWD层</td>
+<td>数据来自ODS层,数据模型是ODS一致</td>
+<td>数据质量提升，数据清洗、码值标准化，数据加密，数据校验</td>
+<td>加密脱敏及治理后的规整数据，对外开放查询</td>
+</tr>
+<tr>
+<td>ODS层</td>
+<td>数据准备区，数据来源是各业务系统的源数据，物理模型和业务系统模型一致。</td>
+<td>为其它逻辑层提供数据，数据溯源，数据存储</td>
+<td>原始数据，不对外开放查询使用</td>
+</tr>
+</tbody></table>
+<ul>
+<li>细化DW建模<ul>
+<li>对DW中各个主题业务建模进行了细分，每个层次具有不同的功能。</li>
+<li>保留了最细粒度数据</li>
+<li>满足了不同维度，不同事实的信息</li>
+</ul>
+</li>
+<li>满足数据重新生成<ul>
+<li>不同层次的数据支持数据重新生成</li>
+<li>无需备份恢复</li>
+<li>解决了由不同故障带来的数据质量问题</li>
+<li>消除了重新初始化数据的烦恼</li>
+</ul>
+</li>
+<li>快速适应需求变更<ul>
+<li>适应维度变化</li>
+<li>明细基础数据层稳定，适应前端应用层业务需求变更</li>
+<li>所有前端应用层模型之间不存在依赖，需求变更对DW整个模型影响范围小 </li>
+<li>能适应短周期内上线下线需求</li>
+</ul>
+</li>
+</ul>
+<h2 id="元数据管理"><a href="#元数据管理" class="headerlink" title="元数据管理"></a>元数据管理</h2><p>最基本的元数据相当于数据库系统中的数据字典。元数据定义了数据仓库有什么，指明了数据仓库中数据的内容和位置，刻画了数据的抽取和转换规则，存储了与数据仓库主题有关的各种商业信息，而且整个数据仓库的运行都是基于元数据的</p>
+<ul>
+<li>数据源的元数据</li>
+<li>数据模型的元数据</li>
+<li>数据仓库映射的元数据</li>
+<li>数据仓库使用的元数据</li>
+</ul>
+<h2 id="构建方法"><a href="#构建方法" class="headerlink" title="构建方法"></a>构建方法</h2><h3 id="自上而下（Bill-Inmon）"><a href="#自上而下（Bill-Inmon）" class="headerlink" title="自上而下（Bill Inmon）"></a>自上而下（Bill Inmon）</h3><ul>
+<li>从整个企业的业务环境入手，分析其中的概念，应该有什么样的数据，达成概念完整性，并不从它需要支持那些应用入手</li>
+<li>一个企业建立唯一的数据中心，就像一个数据的仓库，其中数据是经过整合、经过清洗、去掉脏数据的、标准的，能够提供统一的视图</li>
+</ul>
+<h3 id="自下而上（Ralph-Kimbal）"><a href="#自下而上（Ralph-Kimbal）" class="headerlink" title="自下而上（Ralph Kimbal）"></a>自下而上（Ralph Kimbal）</h3><ul>
+<li>按照实际的应用需求，加载需要的数据，不需要的数据不必要加载到数据仓库当中</li>
+<li>这种方式建设周期较短，客户能够很快看到结果，适合做项目类数据仓库</li>
+</ul>
+<h3 id="混合法"><a href="#混合法" class="headerlink" title="混合法"></a>混合法</h3><ul>
+<li>结合自上而下、自下而上两种构造数据仓库的方法，结合企业自身特点，分析业务环境构造数据仓库底层数据基础，再按照实际的应用需求构造数据仓库上层数据</li>
+</ul>
+<h3 id="应避免的设计"><a href="#应避免的设计" class="headerlink" title="应避免的设计"></a>应避免的设计</h3><ul>
+<li>任务间依赖较乱</li>
+<li>链路太长</li>
+<li>数据质量低</li>
+<li>数据安全级别低</li>
+<li>元数据信息缺失</li>
+<li>码值无标准</li>
+</ul>
+<h2 id="架构原则"><a href="#架构原则" class="headerlink" title="架构原则"></a>架构原则</h2><ul>
+<li>底层业务的数据驱动为导向同时结合业务需求驱动</li>
+<li>便于数据分析<ul>
+<li>屏蔽底层复杂业务</li>
+<li>简单、完整、集成的将数据暴露给分析层</li>
+</ul>
+</li>
+<li>底层业务变动与上层需求变动对模型冲击最小化<ul>
+<li>业务系统变化影响削弱在基础数据层（资金订单改造）</li>
+<li>结合自上而下的建设方法削弱需求变动对模型的影响</li>
+<li>数据水平层次清晰化</li>
+</ul>
+</li>
+<li>高内聚松耦合<ul>
+<li>主题之内或各个完整意义的系统内数据的高内聚</li>
+<li>主题之间或各个完整意义的系统间数据的松耦合</li>
+</ul>
+</li>
+<li>构建仓库基础数据层<ul>
+<li>使得底层业务数据整合工作与上层应用开发工作相隔离，为仓库大规模开发奠定基础</li>
+<li>仓库层次更加清晰，对外暴露数据更加统一</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.cnblogs.com/xiaojianblogs/p/7655458.html" >数据仓库建模之雪花模型和星形模型<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://max.book118.com/html/2017/0618/116376625.shtm" >支付宝数据建模介绍<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/%E9%A1%B9%E7%9B%AE/%E7%88%AC%E8%99%AB/46912/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">堆糖图片多线程抓取</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/45240/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">集成学习（以随机森林与adaboosting为例）</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>&nbsp;-&nbsp;
+            
+            2021&nbspheart;<a href="/">丹丹</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.</span> <span class="nav-text">基本介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">2.</span> <span class="nav-text">体系结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%98%9F%E5%BD%A2%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.1.</span> <span class="nav-text">星形模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%AA%E8%8A%B1%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.2.</span> <span class="nav-text">雪花模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AF%94%E8%BE%83"><span class="nav-number">3.3.</span> <span class="nav-text">比较</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E5%B1%82%E6%A8%A1%E5%9E%8B%E6%9E%B6%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">五层模型架构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%83%E6%95%B0%E6%8D%AE%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">元数据管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E6%96%B9%E6%B3%95"><span class="nav-number">6.</span> <span class="nav-text">构建方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E4%B8%8A%E8%80%8C%E4%B8%8B%EF%BC%88Bill-Inmon%EF%BC%89"><span class="nav-number">6.1.</span> <span class="nav-text">自上而下（Bill Inmon）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E4%B8%8B%E8%80%8C%E4%B8%8A%EF%BC%88Ralph-Kimbal%EF%BC%89"><span class="nav-number">6.2.</span> <span class="nav-text">自下而上（Ralph Kimbal）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%B7%E5%90%88%E6%B3%95"><span class="nav-number">6.3.</span> <span class="nav-text">混合法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BA%94%E9%81%BF%E5%85%8D%E7%9A%84%E8%AE%BE%E8%AE%A1"><span class="nav-number">6.4.</span> <span class="nav-text">应避免的设计</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E5%8E%9F%E5%88%99"><span class="nav-number">7.</span> <span class="nav-text">架构原则</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
