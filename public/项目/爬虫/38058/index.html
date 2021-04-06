@@ -11,7 +11,7 @@
         
             链家网房源 |
         
-        温书笔记
+        温书
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -21,7 +21,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"越简单越好，但不要过度简单"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"简单、专注、坚持"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -54,7 +54,7 @@
     <div class="header-content">
         <div class="left">
             <a class="logo-title" href="/">
-                温书笔记
+                温书
             </a>
         </div>
 
@@ -202,41 +202,28 @@
 
         <div class="article-content markdown-body">
             <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br></pre></td></tr></table></figure>
-
 <h2 id="request"><a href="#request" class="headerlink" title="request"></a>request</h2><h3 id="设置列表页URL的固定部分"><a href="#设置列表页URL的固定部分" class="headerlink" title="设置列表页URL的固定部分"></a>设置列表页URL的固定部分</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">url = <span class="string">&#x27;http://bj.lianjia.com/ershoufang/&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#设置页面页的可变部分</span></span><br><span class="line">page = (<span class="string">&#x27;pg&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="设置请求头部信息"><a href="#设置请求头部信息" class="headerlink" title="设置请求头部信息"></a>设置请求头部信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">headers = &#123;<span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Accept&#x27;</span>:<span class="string">&#x27;text/html;q=0.9,*/*;q=0.8&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Accept-Charset&#x27;</span>:<span class="string">&#x27;ISO-8859-1,utf-8;q=0.7,*;q=0.3&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Accept-Encoding&#x27;</span>:<span class="string">&#x27;gzip&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Connection&#x27;</span>:<span class="string">&#x27;close&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Referer&#x27;</span>:<span class="string">&#x27;http://www.baidu.com/link?url=_andhfsjjjKRgEWkj7i9cFmYYGsisrnm2A-TN3XZDQXxvGsM9k9ZZSnikW2Yds4s&amp;amp;amp;wd=&amp;amp;amp;eqid=c3435a7d00146bd600000003582bfd1f&#x27;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 <h3 id="循环抓取列表页信息"><a href="#循环抓取列表页信息" class="headerlink" title="循环抓取列表页信息"></a>循环抓取列表页信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>,<span class="number">2</span>):</span><br><span class="line">     <span class="keyword">if</span> i == <span class="number">1</span>:</span><br><span class="line">          i=<span class="built_in">str</span>(i)</span><br><span class="line">          a=(url+page+i+<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">          r=requests.get(url=a,headers=headers)</span><br><span class="line">          html=r.content</span><br><span class="line">     <span class="keyword">else</span>:</span><br><span class="line">          i=<span class="built_in">str</span>(i)</span><br><span class="line">          a=(url+page+i+<span class="string">&#x27;/&#x27;</span>)</span><br><span class="line">          r=requests.get(url=a,headers=headers)</span><br><span class="line">          html2=r.content</span><br><span class="line">          html = html + html2</span><br><span class="line">     <span class="comment">#每次间隔1秒</span></span><br><span class="line">     time.sleep(<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="解析抓取的页面内容"><a href="#解析抓取的页面内容" class="headerlink" title="解析抓取的页面内容"></a>解析抓取的页面内容</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">lj=BeautifulSoup(html,<span class="string">&#x27;html.parser&#x27;</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="提取房源总价"><a href="#提取房源总价" class="headerlink" title="提取房源总价"></a>提取房源总价</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">price=lj.find_all(<span class="string">&#x27;div&#x27;</span>,<span class="string">&#x27;priceInfo&#x27;</span>)</span><br><span class="line">tp=[]</span><br><span class="line"><span class="keyword">for</span> a <span class="keyword">in</span> price:</span><br><span class="line">    totalPrice=a.span.string</span><br><span class="line">    tp.append(totalPrice)</span><br></pre></td></tr></table></figure>
-
 <h3 id="提取房源信息"><a href="#提取房源信息" class="headerlink" title="提取房源信息"></a>提取房源信息</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">houseInfo=lj.find_all(<span class="string">&#x27;div&#x27;</span>,attrs=&#123;<span class="string">&#x27;class&#x27;</span>:<span class="string">&#x27;houseInfo&#x27;</span>&#125;)</span><br><span class="line"> </span><br><span class="line">hi=[]</span><br><span class="line"><span class="keyword">for</span> b <span class="keyword">in</span> houseInfo:</span><br><span class="line">    house=b.get_text()</span><br><span class="line">    hi.append(house)</span><br></pre></td></tr></table></figure>
-
 <h3 id="提取房源关注度"><a href="#提取房源关注度" class="headerlink" title="提取房源关注度"></a>提取房源关注度</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">followInfo=lj.find_all(<span class="string">&#x27;div&#x27;</span>,attrs=&#123;<span class="string">&#x27;class&#x27;</span>:<span class="string">&#x27;followInfo&#x27;</span>&#125;)</span><br><span class="line"> </span><br><span class="line">fi=[]</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> followInfo:</span><br><span class="line">    follow=c.get_text()</span><br><span class="line">    fi.append(follow)</span><br></pre></td></tr></table></figure>
-
 <h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">house=pd.DataFrame(&#123;<span class="string">&#x27;totalprice&#x27;</span>:tp,<span class="string">&#x27;houseinfo&#x27;</span>:hi,<span class="string">&#x27;followinfo&#x27;</span>:fi&#125;)</span><br><span class="line">house.head()</span><br></pre></td></tr></table></figure>
-
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -284,25 +271,20 @@
 
 
 <h3 id="对房源信息进行分列"><a href="#对房源信息进行分列" class="headerlink" title="对房源信息进行分列"></a>对房源信息进行分列</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">houseinfo_split = pd.DataFrame((x.split(<span class="string">&#x27;|&#x27;</span>) <span class="keyword">for</span> x <span class="keyword">in</span> house.houseinfo),index=house.index,columns=[<span class="string">&#x27;小区&#x27;</span>,<span class="string">&#x27;户型&#x27;</span>,<span class="string">&#x27;面积&#x27;</span>,<span class="string">&#x27;朝向&#x27;</span>,<span class="string">&#x27;装修&#x27;</span>])</span><br><span class="line">houseinfo_split.head()</span><br></pre></td></tr></table></figure>
-
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -362,25 +344,20 @@
 
 
 <h3 id="将分列结果拼接回原数据表"><a href="#将分列结果拼接回原数据表" class="headerlink" title="将分列结果拼接回原数据表"></a>将分列结果拼接回原数据表</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">house=pd.merge(house,houseinfo_split,right_index=<span class="literal">True</span>, left_index=<span class="literal">True</span>)</span><br><span class="line">house.head()</span><br></pre></td></tr></table></figure>
-
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -458,25 +435,20 @@
 
 
 <h3 id="对房源关注度进行分列"><a href="#对房源关注度进行分列" class="headerlink" title="对房源关注度进行分列"></a>对房源关注度进行分列</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">followinfo_split = pd.DataFrame((x.split(<span class="string">&#x27;/&#x27;</span>) <span class="keyword">for</span> x <span class="keyword">in</span> house.followinfo),index=house.index,columns=[<span class="string">&#x27;guanzhu&#x27;</span>,<span class="string">&#x27;fabu&#x27;</span>])</span><br><span class="line">house=pd.merge(house,followinfo_split,right_index=<span class="literal">True</span>, left_index=<span class="literal">True</span>)</span><br><span class="line">house.head()</span><br></pre></td></tr></table></figure>
-
-
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -582,7 +554,7 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/58780/"
+                           href="/Python/58780/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
@@ -598,7 +570,7 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/51103/"
+                           href="/Python/51103/"
                         >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">BeautifulSoup</span>

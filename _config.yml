@@ -87,14 +87,11 @@ admin:
 metadata:
   author_id: defaultAuthorId
   language:
-  mathjax: false
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: keep
-Plugins:
-- hexo-renderer-mathjax
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment

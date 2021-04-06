@@ -11,7 +11,7 @@
         
             两股票历史价格比较 |
         
-        温书笔记
+        温书
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -21,7 +21,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"越简单越好，但不要过度简单"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"简单、专注、坚持"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -54,7 +54,7 @@
     <div class="header-content">
         <div class="left">
             <a class="logo-title" href="/">
-                温书笔记
+                温书
             </a>
         </div>
 
@@ -180,7 +180,7 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>267 Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>263 Words</span>
         </span>
     
     
@@ -208,27 +208,22 @@
 <li>折线图</li>
 </ol>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> tushare <span class="keyword">as</span> ts</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line">context = ssl._create_unverified_context()</span><br></pre></td></tr></table></figure>
-
 <h3 id="获取财务数据"><a href="#获取财务数据" class="headerlink" title="获取财务数据"></a>获取财务数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s_pf = <span class="string">&#x27;600000&#x27;</span></span><br><span class="line">s_gd = <span class="string">&#x27;601818&#x27;</span></span><br><span class="line">sdate = <span class="string">&#x27;2018-01-01&#x27;</span></span><br><span class="line">edate = <span class="string">&#x27;2018-12-31&#x27;</span></span><br><span class="line"></span><br><span class="line">df_pf = ts.get_hist_data(s_pf, start = sdate, end = edate).sort_index(axis = <span class="number">0</span>, ascending = <span class="literal">True</span>)</span><br><span class="line">df_gd = ts.get_hist_data(s_gd, start = sdate, end = edate).sort_index(axis = <span class="number">0</span>, ascending = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
-
 <h3 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">df = pd.concat([df_pf.close, df_gd.close], axis = <span class="number">1</span>, keys = [<span class="string">&#x27;pf_clse&#x27;</span>,<span class="string">&#x27;gd_close&#x27;</span>])</span><br><span class="line">df.ffill(axis = <span class="number">0</span>, inplace = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">df[<span class="string">&#x27;pf_one&#x27;</span>] = df_pf.close / <span class="built_in">float</span>(df_pf.close[<span class="number">0</span>]) * <span class="number">100</span></span><br><span class="line">df[<span class="string">&#x27;gd_one&#x27;</span>] = df_gd.close / <span class="built_in">float</span>(df_gd.close[<span class="number">0</span>]) * <span class="number">100</span></span><br><span class="line"></span><br><span class="line">display(df.corr(method = <span class="string">&#x27;pearson&#x27;</span>, min_periods = <span class="number">1</span>))</span><br></pre></td></tr></table></figure>
-
-
 <div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
         vertical-align: middle;
     }
 
-<pre><code>.dataframe tbody tr th &#123;
-    vertical-align: top;
-&#125;
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-.dataframe thead th &#123;
-    text-align: right;
-&#125;
-</code></pre>
-<p></style></p>
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
 <table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
@@ -274,12 +269,11 @@
 
 
 <h3 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df.pf_one.plot(figsize = (<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line">df.gd_one.plot(figsize = (<span class="number">20</span>,<span class="number">15</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-01_两股票历史价格比较_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-
 <p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/2019-07-01_%E4%B8%A4%E8%82%A1%E7%A5%A8%E5%8E%86%E5%8F%B2%E4%BB%B7%E6%A0%BC%E6%AF%94%E8%BE%83_1.png"
-                     
+                     data-src="/img/2019-07-01_两股票历史价格比较_1.png"
+                      alt=""
                 ></p>
 <blockquote>
 <p>参考：</p>
@@ -299,7 +293,7 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/Python/%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/51103/"
+                           href="/Python/51103/"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
@@ -315,7 +309,7 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/Python/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98/25692/"
+                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/25692/"
                         >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">数据抽取</span>

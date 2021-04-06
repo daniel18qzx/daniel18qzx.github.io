@@ -1,7 +1,9 @@
 options:
   lineNumbers: true
   spellcheck: true
-  askImageFilename: false
+  askImageFilename: true
+  imagePrefix: 20xx-xx-xx_xxxxx
+  imagePath: /img
 editor:
   lineNumbers: true
   inputStyle: contenteditable

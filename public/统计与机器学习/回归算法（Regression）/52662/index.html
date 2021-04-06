@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="丹丹">
+    
+    <title>
+        
+            线性回归 |
+        
+        温书
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"简单、专注、坚持"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                温书
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">线性回归</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">丹丹</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-07-14 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">统计与机器学习</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95%EF%BC%88Regression%EF%BC%89/">回归算法（Regression）</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>630 Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>3 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="创建数据"><a href="#创建数据" class="headerlink" title="创建数据"></a>创建数据</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_data</span>(<span class="params">nDim</span>):</span></span><br><span class="line">    x0 = np.linspace(<span class="number">1</span>, np.pi, <span class="number">50</span>)</span><br><span class="line">    x = np.vstack([[x0,], [i**x0 <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, nDim+<span class="number">1</span>)]])</span><br><span class="line">    y = np.sin(x0) + np.random.normal(<span class="number">0</span>,<span class="number">0.15</span>,<span class="built_in">len</span>(x0))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> x.transpose(), y</span><br></pre></td></tr></table></figure>
+<h2 id="最小二乘法-Ordinary-Least-Squares-OLS"><a href="#最小二乘法-Ordinary-Least-Squares-OLS" class="headerlink" title="最小二乘法 Ordinary Least Squares (OLS)"></a>最小二乘法 Ordinary Least Squares (OLS)</h2><p>目标函数：</p>
+<script type="math/tex; mode=display">argmin(\sum_{}^{} {(\hat{y}-y)^2})</script><p>不足：OLS为了更好的拟合数据，会使用较大的w值，进而导致过度拟合。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.LinearRegression()</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">&#x27;*&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>, label = <span class="string">&#x27;samples&#x27;</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(y))], linestyle = <span class="string">&#x27;--&#x27;</span>, label = <span class="string">&#x27;model&#x27;</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Dimensions: %s&#x27;</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-14_线性回归_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-07-14_线性回归_1.png"
+                      alt=""
+                ></p>
+<h2 id="岭回归-Ridge-Regression-Tikhonov-Regularization"><a href="#岭回归-Ridge-Regression-Tikhonov-Regularization" class="headerlink" title="岭回归 Ridge Regression (Tikhonov Regularization)"></a>岭回归 Ridge Regression (Tikhonov Regularization)</h2><p>目标函数：</p>
+<script type="math/tex; mode=display">argmin(\sum_{}^{} {(\hat{y}-y)^2}+\alpha \sum_{}^{} {w^2})</script><p>优化：为惩罚OLS每个w逐渐增加导致过度拟合的问题，新增的项为L2惩罚项(L2 Penalty)。<br>特点：w有可能特别小的绝对值，但很难达成0，造成贡献很小的系数还是要放，影响性能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.Ridge(alpha = <span class="number">100</span>)</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">&#x27;*&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>, label = <span class="string">&#x27;samples&#x27;</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(y))], linestyle = <span class="string">&#x27;--&#x27;</span>, label = <span class="string">&#x27;model&#x27;</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Dimensions: %s&#x27;</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-14_线性回归_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-07-14_线性回归_2.png"
+                      alt=""
+                ></p>
+<h2 id="Lasso-回归"><a href="#Lasso-回归" class="headerlink" title="Lasso 回归"></a>Lasso 回归</h2><p>目标函数：</p>
+<script type="math/tex; mode=display">argmin(\sum_{}^{} {(\hat{y}-y)^2}+\alpha \sum_{}^{} {|w|})</script><p>优化：为惩罚OLS每个w逐渐增加导致过度拟合的问题，新增的项为L1惩罚项(L1 Penalty)。<br>特点：比L2惩罚项严厉很多，可以产生稀疏回归参数，即多数回归参数为零。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> linear_model</span><br><span class="line"></span><br><span class="line">dims = [<span class="number">2</span>, <span class="number">6</span>, <span class="number">12</span>, <span class="number">24</span>]</span><br><span class="line">plt.figure(figsize=(<span class="number">10</span>, <span class="number">10</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> idx, i <span class="keyword">in</span> <span class="built_in">enumerate</span>(dims):</span><br><span class="line">    </span><br><span class="line">    plt.subplot(<span class="number">2</span>, <span class="number">2</span>, idx+<span class="number">1</span>)</span><br><span class="line">    x, y = make_data(i)</span><br><span class="line"></span><br><span class="line">    reg = linear_model.Lasso(alpha = <span class="number">100</span>)</span><br><span class="line">    reg.fit(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#     reg.intercept_</span></span><br><span class="line"><span class="comment">#     reg.coef_</span></span><br><span class="line"></span><br><span class="line">    plt.scatter(x[:, <span class="number">0</span>], y, marker = <span class="string">&#x27;*&#x27;</span>, color = <span class="string">&#x27;r&#x27;</span>, label = <span class="string">&#x27;samples&#x27;</span>)</span><br><span class="line">    plt.plot(x[:, <span class="number">0</span>], [reg.predict([x[i, :]]) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(y))], linestyle = <span class="string">&#x27;--&#x27;</span>, label = <span class="string">&#x27;model&#x27;</span>)</span><br><span class="line">    plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)</span><br><span class="line">    plt.title(<span class="string">&#x27;Dimensions: %s&#x27;</span> %i, fontsize=<span class="number">19</span>)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-07-14_线性回归_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-07-14_线性回归_3.png"
+                      alt=""
+                ></p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/Python/61322/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">Scipy</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/Python/58780/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">正則表達式</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>&nbsp;-&nbsp;
+            
+            2021;<a href="/">丹丹</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%95%B0%E6%8D%AE"><span class="nav-number">1.</span> <span class="nav-text">创建数据</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%B0%8F%E4%BA%8C%E4%B9%98%E6%B3%95-Ordinary-Least-Squares-OLS"><span class="nav-number">2.</span> <span class="nav-text">最小二乘法 Ordinary Least Squares (OLS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B2%AD%E5%9B%9E%E5%BD%92-Ridge-Regression-Tikhonov-Regularization"><span class="nav-number">3.</span> <span class="nav-text">岭回归 Ridge Regression (Tikhonov Regularization)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lasso-%E5%9B%9E%E5%BD%92"><span class="nav-number">4.</span> <span class="nav-text">Lasso 回归</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>
