@@ -2,7 +2,6 @@
 title: BeautifulSoup
 categories:
   - Python
-  - 基本语法
 abbrlink: 51103
 date: 2019-07-02 00:00:00
 ---

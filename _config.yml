@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 温书笔记
+title: 温书
 subtitle: 越简单越好，但不要过份简单
 description:
 keywords: 
@@ -83,6 +83,11 @@ admin:
   username: daniel18qzx
   password_hash: $2a$10$MqcYK97oTYmgH3ZVksFj6OnVaFH5ioMBij6OWxOX72E/SPRGqab5a
   secret: acc
+
+metadata:
+  author_id: defaultAuthorId
+  language:
+  mathjax: false
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/

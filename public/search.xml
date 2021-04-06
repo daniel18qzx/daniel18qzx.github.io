@@ -1123,66 +1123,6 @@ jvfcho@iwrptlqmyok.edu
       </categories>
   </entry>
   <entry>
-    <title>朴素贝叶斯</title>
-    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/58685/</url>
-    <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li>基于概率，优点是可以对预测标签给出理论上完美的可能性估计</li>
-<li>要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘</li>
-</ul>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：</p>
-<blockquote>
-<p>for label in 所有标签:</p>
-<p>   用贝叶斯公式计算在给定特征情况下出现该label的后验机率</p>
-<p>预测标签 &lt;= 获得最高后验机率的 label</p>
-</blockquote>
-<p>由于实际上计算了所有标签的后验机率，所以贝叶斯分类不仅可以提供该组特征最可能的标签，还能给出其他的标签排序。</p>
-<h2 id="高斯朴素贝叶斯"><a href="#高斯朴素贝叶斯" class="headerlink" title="高斯朴素贝叶斯"></a>高斯朴素贝叶斯</h2><ul>
-<li>假定所有特征都呈高斯分布</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line">gnb = GaussianNB()</span><br><span class="line">gnb.fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数据集大小&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(iris.data.shape)</span><br><span class="line"><span class="built_in">print</span>(iris.target.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看模型的先验机率&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_prior_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看训练集标签数量&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_count_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型期望值&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.theta_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型方差&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.sigma_)</span><br></pre></td></tr></table></figure>
-
-<pre><code>数据集大小
-(150, 4)
-(150,)
-
-察看模型的先验机率
-[0.33333333 0.33333333 0.33333333]
-
-察看训练集标签数量
-[50. 50. 50.]
-
-察看高斯模型期望值
-[[5.006 3.428 1.462 0.246]
- [5.936 2.77  4.26  1.326]
- [6.588 2.974 5.552 2.026]]
-
-察看高斯模型方差
-[[0.121764 0.140816 0.029556 0.010884]
- [0.261104 0.0965   0.2164   0.038324]
- [0.396256 0.101924 0.298496 0.073924]]
-</code></pre>
-<h2 id="伯努利朴素贝叶斯"><a href="#伯努利朴素贝叶斯" class="headerlink" title="伯努利朴素贝叶斯"></a>伯努利朴素贝叶斯</h2><ul>
-<li>每次实验只可能出现两种结果的事件概率分布，也称二值分布</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> BernoulliNB</span><br><span class="line">clf = BernoulliNB(binarize = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以输入非二值特征，BernoulliNB内部会用阈值1将其转换为二值</span></span><br><span class="line">X = [[<span class="number">0.3</span>, <span class="number">0.2</span>], [<span class="number">1.3</span>, <span class="number">1.2</span>], [<span class="number">1.1</span>, <span class="number">1.2</span>]]</span><br><span class="line">Y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">clf.fit(X, Y)</span><br><span class="line"></span><br><span class="line">clf.predict([[<span class="number">0.99</span>, <span class="number">0.99</span>]])</span><br></pre></td></tr></table></figure>
-
-
-
-
-<pre><code>array([0])
-</code></pre>
-<blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>统计与机器学习</category>
-      </categories>
-  </entry>
-  <entry>
     <title>决策树</title>
     <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/51507/</url>
     <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ul>
@@ -1346,6 +1286,66 @@ jvfcho@iwrptlqmyok.edu
 <ol>
 <li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
 <li><a class="link"   href="https://www.cnblogs.com/jin-liang/p/9638197.html" >决策树（四）决策树调参<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>统计与机器学习</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>朴素贝叶斯</title>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/58685/</url>
+    <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>基于概率，优点是可以对预测标签给出理论上完美的可能性估计</li>
+<li>要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：</p>
+<blockquote>
+<p>for label in 所有标签:</p>
+<p>   用贝叶斯公式计算在给定特征情况下出现该label的后验机率</p>
+<p>预测标签 &lt;= 获得最高后验机率的 label</p>
+</blockquote>
+<p>由于实际上计算了所有标签的后验机率，所以贝叶斯分类不仅可以提供该组特征最可能的标签，还能给出其他的标签排序。</p>
+<h2 id="高斯朴素贝叶斯"><a href="#高斯朴素贝叶斯" class="headerlink" title="高斯朴素贝叶斯"></a>高斯朴素贝叶斯</h2><ul>
+<li>假定所有特征都呈高斯分布</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line">gnb = GaussianNB()</span><br><span class="line">gnb.fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数据集大小&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(iris.data.shape)</span><br><span class="line"><span class="built_in">print</span>(iris.target.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看模型的先验机率&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_prior_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看训练集标签数量&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_count_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型期望值&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.theta_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型方差&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.sigma_)</span><br></pre></td></tr></table></figure>
+
+<pre><code>数据集大小
+(150, 4)
+(150,)
+
+察看模型的先验机率
+[0.33333333 0.33333333 0.33333333]
+
+察看训练集标签数量
+[50. 50. 50.]
+
+察看高斯模型期望值
+[[5.006 3.428 1.462 0.246]
+ [5.936 2.77  4.26  1.326]
+ [6.588 2.974 5.552 2.026]]
+
+察看高斯模型方差
+[[0.121764 0.140816 0.029556 0.010884]
+ [0.261104 0.0965   0.2164   0.038324]
+ [0.396256 0.101924 0.298496 0.073924]]
+</code></pre>
+<h2 id="伯努利朴素贝叶斯"><a href="#伯努利朴素贝叶斯" class="headerlink" title="伯努利朴素贝叶斯"></a>伯努利朴素贝叶斯</h2><ul>
+<li>每次实验只可能出现两种结果的事件概率分布，也称二值分布</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> BernoulliNB</span><br><span class="line">clf = BernoulliNB(binarize = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以输入非二值特征，BernoulliNB内部会用阈值1将其转换为二值</span></span><br><span class="line">X = [[<span class="number">0.3</span>, <span class="number">0.2</span>], [<span class="number">1.3</span>, <span class="number">1.2</span>], [<span class="number">1.1</span>, <span class="number">1.2</span>]]</span><br><span class="line">Y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">clf.fit(X, Y)</span><br><span class="line"></span><br><span class="line">clf.predict([[<span class="number">0.99</span>, <span class="number">0.99</span>]])</span><br></pre></td></tr></table></figure>
+
+
+
+
+<pre><code>array([0])
+</code></pre>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 ]]></content>
       <categories>
@@ -1877,41 +1877,6 @@ Freq: D, dtype: float64
       </categories>
   </entry>
   <entry>
-    <title>LeetCode 262_行程和用户</title>
-    <url>/%E9%A1%B9%E7%9B%AE/LeetCode/15284/</url>
-    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Trips 表中存所有出租车的行程信息。每段行程有唯一键 Id，Client_Id 和 Driver_Id 是 Users 表中 Users_Id 的外键。Status 是枚举类型，枚举成员为 (‘completed’, ‘cancelled_by_driver’, ‘cancelled_by_client’)。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br><span class="line">| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|</span><br><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br><span class="line">| 1  |     1     |    10     |    1    |     completed      |2013-10-01|</span><br><span class="line">| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|</span><br><span class="line">| 3  |     3     |    12     |    6    |     completed      |2013-10-01|</span><br><span class="line">| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|</span><br><span class="line">| 5  |     1     |    10     |    1    |     completed      |2013-10-02|</span><br><span class="line">| 6  |     2     |    11     |    6    |     completed      |2013-10-02|</span><br><span class="line">| 7  |     3     |    12     |    6    |     completed      |2013-10-02|</span><br><span class="line">| 8  |     2     |    12     |    12   |     completed      |2013-10-03|</span><br><span class="line">| 9  |     3     |    10     |    12   |     completed      |2013-10-03| </span><br><span class="line">| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|</span><br><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br></pre></td></tr></table></figure>
-
-<p>Users 表存所有用户。每个用户有唯一键 Users_Id。Banned 表示这个用户是否被禁止，Role 则是一个表示（‘client’, ‘driver’, ‘partner’）的枚举类型。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+----------+--------+--------+</span><br><span class="line">| Users_Id | Banned |  Role  |</span><br><span class="line">+----------+--------+--------+</span><br><span class="line">|    1     |   No   | client |</span><br><span class="line">|    2     |   Yes  | client |</span><br><span class="line">|    3     |   No   | client |</span><br><span class="line">|    4     |   No   | client |</span><br><span class="line">|    10    |   No   | driver |</span><br><span class="line">|    11    |   No   | driver |</span><br><span class="line">|    12    |   No   | driver |</span><br><span class="line">|    13    |   No   | driver |</span><br><span class="line">+----------+--------+--------+</span><br></pre></td></tr></table></figure>
-
-<p>写一段 SQL 语句查出 2013年10月1日 至 2013年10月3日 期间非禁止用户的取消率。基于上表，你的 SQL 语句应返回如下结果，取消率（Cancellation Rate）保留两位小数。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+------------+-------------------+</span><br><span class="line">|     Day    | Cancellation Rate |</span><br><span class="line">+------------+-------------------+</span><br><span class="line">| 2013-10-01 |       0.33        |</span><br><span class="line">| 2013-10-02 |       0.00        |</span><br><span class="line">| 2013-10-03 |       0.50        |</span><br><span class="line">+------------+-------------------+</span><br></pre></td></tr></table></figure>
-
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
-<li>将最后的限制先做出来，并保留唯一识别ID</li>
-<li>分组记数</li>
-<li>保留两位应用format，但官网解答写错用了round才对</li>
-</ol>
-<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Write your MySQL query statement below</span></span><br><span class="line">select</span><br><span class="line">    Request_at <span class="keyword">as</span> <span class="string">&#x27;Day&#x27;</span>,</span><br><span class="line">    <span class="built_in">round</span>(<span class="built_in">sum</span>(case when Status <span class="keyword">in</span> (<span class="string">&quot;cancelled_by_driver&quot;</span>,<span class="string">&quot;cancelled_by_client&quot;</span>) then <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> end) / count(*),<span class="number">2</span>) <span class="keyword">as</span> <span class="string">&#x27;Cancellation Rate&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Trips</span><br><span class="line">where <span class="built_in">id</span> <span class="keyword">in</span> </span><br><span class="line">(select</span><br><span class="line">    a.<span class="built_in">id</span> <span class="keyword">as</span> <span class="string">&#x27;id&#x27;</span></span><br><span class="line"><span class="keyword">from</span> Trips a</span><br><span class="line">left join Users b</span><br><span class="line">    on a.Client_Id = b.Users_Id</span><br><span class="line">left join Users c</span><br><span class="line">    on a.Driver_Id = c.Users_Id</span><br><span class="line">where b.Banned = <span class="string">&quot;No&quot;</span> <span class="keyword">and</span> c.Banned = <span class="string">&quot;No&quot;</span> <span class="keyword">and</span> Request_at &gt;= <span class="string">&quot;2013-10-01&quot;</span> <span class="keyword">and</span> Request_at &lt;= <span class="string">&quot;2013-10-03&quot;</span>)</span><br><span class="line"></span><br><span class="line">group by Request_at</span><br></pre></td></tr></table></figure>
-
-<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><ul>
-<li>用时：151 ms</li>
-<li>内存消耗：N/A</li>
-</ul>
-<blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="https://leetcode-cn.com/problems/trips-and-users/" >262. 行程和用户 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>项目</category>
-        <category>LeetCode</category>
-      </categories>
-  </entry>
-  <entry>
     <title>LeetCode 185_部门工资前三高的所有员工</title>
     <url>/%E9%A1%B9%E7%9B%AE/LeetCode/61684/</url>
     <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Employee 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。</p>
@@ -1974,6 +1939,41 @@ Freq: D, dtype: float64
 </blockquote>
 <ol>
 <li><a class="link"   href="https://leetcode-cn.com/problems/human-traffic-of-stadium/" >601. 体育馆的人流量<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>LeetCode</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>LeetCode 262_行程和用户</title>
+    <url>/%E9%A1%B9%E7%9B%AE/LeetCode/15284/</url>
+    <content><![CDATA[<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Trips 表中存所有出租车的行程信息。每段行程有唯一键 Id，Client_Id 和 Driver_Id 是 Users 表中 Users_Id 的外键。Status 是枚举类型，枚举成员为 (‘completed’, ‘cancelled_by_driver’, ‘cancelled_by_client’)。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br><span class="line">| Id | Client_Id | Driver_Id | City_Id |        Status      |Request_at|</span><br><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br><span class="line">| 1  |     1     |    10     |    1    |     completed      |2013-10-01|</span><br><span class="line">| 2  |     2     |    11     |    1    | cancelled_by_driver|2013-10-01|</span><br><span class="line">| 3  |     3     |    12     |    6    |     completed      |2013-10-01|</span><br><span class="line">| 4  |     4     |    13     |    6    | cancelled_by_client|2013-10-01|</span><br><span class="line">| 5  |     1     |    10     |    1    |     completed      |2013-10-02|</span><br><span class="line">| 6  |     2     |    11     |    6    |     completed      |2013-10-02|</span><br><span class="line">| 7  |     3     |    12     |    6    |     completed      |2013-10-02|</span><br><span class="line">| 8  |     2     |    12     |    12   |     completed      |2013-10-03|</span><br><span class="line">| 9  |     3     |    10     |    12   |     completed      |2013-10-03| </span><br><span class="line">| 10 |     4     |    13     |    12   | cancelled_by_driver|2013-10-03|</span><br><span class="line">+----+-----------+-----------+---------+--------------------+----------+</span><br></pre></td></tr></table></figure>
+
+<p>Users 表存所有用户。每个用户有唯一键 Users_Id。Banned 表示这个用户是否被禁止，Role 则是一个表示（‘client’, ‘driver’, ‘partner’）的枚举类型。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+----------+--------+--------+</span><br><span class="line">| Users_Id | Banned |  Role  |</span><br><span class="line">+----------+--------+--------+</span><br><span class="line">|    1     |   No   | client |</span><br><span class="line">|    2     |   Yes  | client |</span><br><span class="line">|    3     |   No   | client |</span><br><span class="line">|    4     |   No   | client |</span><br><span class="line">|    10    |   No   | driver |</span><br><span class="line">|    11    |   No   | driver |</span><br><span class="line">|    12    |   No   | driver |</span><br><span class="line">|    13    |   No   | driver |</span><br><span class="line">+----------+--------+--------+</span><br></pre></td></tr></table></figure>
+
+<p>写一段 SQL 语句查出 2013年10月1日 至 2013年10月3日 期间非禁止用户的取消率。基于上表，你的 SQL 语句应返回如下结果，取消率（Cancellation Rate）保留两位小数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">+------------+-------------------+</span><br><span class="line">|     Day    | Cancellation Rate |</span><br><span class="line">+------------+-------------------+</span><br><span class="line">| 2013-10-01 |       0.33        |</span><br><span class="line">| 2013-10-02 |       0.00        |</span><br><span class="line">| 2013-10-03 |       0.50        |</span><br><span class="line">+------------+-------------------+</span><br></pre></td></tr></table></figure>
+
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
+<li>将最后的限制先做出来，并保留唯一识别ID</li>
+<li>分组记数</li>
+<li>保留两位应用format，但官网解答写错用了round才对</li>
+</ol>
+<h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Write your MySQL query statement below</span></span><br><span class="line">select</span><br><span class="line">    Request_at <span class="keyword">as</span> <span class="string">&#x27;Day&#x27;</span>,</span><br><span class="line">    <span class="built_in">round</span>(<span class="built_in">sum</span>(case when Status <span class="keyword">in</span> (<span class="string">&quot;cancelled_by_driver&quot;</span>,<span class="string">&quot;cancelled_by_client&quot;</span>) then <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span> end) / count(*),<span class="number">2</span>) <span class="keyword">as</span> <span class="string">&#x27;Cancellation Rate&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> Trips</span><br><span class="line">where <span class="built_in">id</span> <span class="keyword">in</span> </span><br><span class="line">(select</span><br><span class="line">    a.<span class="built_in">id</span> <span class="keyword">as</span> <span class="string">&#x27;id&#x27;</span></span><br><span class="line"><span class="keyword">from</span> Trips a</span><br><span class="line">left join Users b</span><br><span class="line">    on a.Client_Id = b.Users_Id</span><br><span class="line">left join Users c</span><br><span class="line">    on a.Driver_Id = c.Users_Id</span><br><span class="line">where b.Banned = <span class="string">&quot;No&quot;</span> <span class="keyword">and</span> c.Banned = <span class="string">&quot;No&quot;</span> <span class="keyword">and</span> Request_at &gt;= <span class="string">&quot;2013-10-01&quot;</span> <span class="keyword">and</span> Request_at &lt;= <span class="string">&quot;2013-10-03&quot;</span>)</span><br><span class="line"></span><br><span class="line">group by Request_at</span><br></pre></td></tr></table></figure>
+
+<h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><ul>
+<li>用时：151 ms</li>
+<li>内存消耗：N/A</li>
+</ul>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="https://leetcode-cn.com/problems/trips-and-users/" >262. 行程和用户 - 力扣（LeetCode）<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 ]]></content>
       <categories>
