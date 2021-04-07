@@ -1,6 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Matplotlib</title>
+    <url>/Python/16372/</url>
+    <content><![CDATA[<h2 id="基本配置与标记"><a href="#基本配置与标记" class="headerlink" title="基本配置与标记"></a>基本配置与标记</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据部分</span></span><br><span class="line">x = np.arange(<span class="number">0.</span>, <span class="number">10</span>, <span class="number">0.2</span>)</span><br><span class="line">y1 = np.cos(x)</span><br><span class="line">y2 = np.sin(x)</span><br><span class="line">y3 = np.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 3 条函数曲线</span></span><br><span class="line">plt.plot(x, y1, color=<span class="string">&#x27;blue&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">r&#x27;$y = cos&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y2, color=<span class="string">&#x27;green&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">r&#x27;$y = sin&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y3, color=<span class="string">&#x27;m&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;x&#x27;</span>, label=<span class="string">r&#x27;$y = \sqrt&#123;x&#125;$&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 坐标轴上移</span></span><br><span class="line">ax = plt.subplot(<span class="number">111</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)     <span class="comment"># 去掉右边的边框线</span></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)       <span class="comment"># 去掉上边的边框线</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动下边边框线，相当于移动 X 轴</span></span><br><span class="line">ax.xaxis.set_ticks_position(<span class="string">&#x27;bottom&#x27;</span>)    </span><br><span class="line">ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动左边边框线，相当于移动 y 轴</span></span><br><span class="line">ax.yaxis.set_ticks_position(<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的取值范围</span></span><br><span class="line">plt.xlim(x.<span class="built_in">min</span>()*<span class="number">1.1</span>, x.<span class="built_in">max</span>()*<span class="number">1.1</span>)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的刻度值</span></span><br><span class="line">plt.xticks([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>], [<span class="string">r&#x27;2&#x27;</span>, <span class="string">r&#x27;4&#x27;</span>, <span class="string">r&#x27;6&#x27;</span>, <span class="string">r&#x27;8&#x27;</span>, <span class="string">r&#x27;10&#x27;</span>])</span><br><span class="line">plt.yticks([-<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>], </span><br><span class="line">    [<span class="string">r&#x27;-1.0&#x27;</span>, <span class="string">r&#x27;0.0&#x27;</span>, <span class="string">r&#x27;1.0&#x27;</span>, <span class="string">r&#x27;2.0&#x27;</span>, <span class="string">r&#x27;3.0&#x27;</span>, <span class="string">r&#x27;4.0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文字</span></span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.68</span>, <span class="string">r&#x27;$x \in [0.0, \ 10.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.38</span>, <span class="string">r&#x27;$y \in [-1.0, \ 4.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊点添加注解</span></span><br><span class="line">plt.scatter([<span class="number">8</span>,],[np.sqrt(<span class="number">8</span>),], <span class="number">50</span>, color =<span class="string">&#x27;m&#x27;</span>)  <span class="comment"># 使用散点图放大当前点</span></span><br><span class="line">plt.annotate(<span class="string">r&#x27;$2\sqrt&#123;2&#125;$&#x27;</span>, xy=(<span class="number">8</span>, np.sqrt(<span class="number">8</span>)), xytext=(<span class="number">8.5</span>, <span class="number">2.2</span>), fontsize=<span class="number">16</span>, color=<span class="string">&#x27;#090909&#x27;</span>, arrowprops=<span class="built_in">dict</span>(arrowstyle=<span class="string">&#x27;-&gt;&#x27;</span>, connectionstyle=<span class="string">&#x27;arc3, rad=0.1&#x27;</span>, color=<span class="string">&#x27;#090909&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题、x轴、y轴</span></span><br><span class="line">plt.title(<span class="string">r&#x27;$the \ function \ figure \ of \ cos(), \ sin() \ and \ sqrt()$&#x27;</span>, fontsize=<span class="number">19</span>)</span><br><span class="line">plt.xlabel(<span class="string">r&#x27;$the \ input \ value \ of \ x$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">88.8</span>)</span><br><span class="line">plt.ylabel(<span class="string">r&#x27;$y = f(x)$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">12.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例及位置</span></span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)    </span><br><span class="line"><span class="comment"># plt.legend([&#x27;cos(x)&#x27;, &#x27;sin(x)&#x27;, &#x27;sqrt(x)&#x27;], loc=&#x27;up right&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示网格线</span></span><br><span class="line">plt.grid(<span class="literal">True</span>)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_1.png"
+                      alt=""
+                ></p>
+<h2 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.arange(-<span class="number">5</span>,<span class="number">5</span>,<span class="number">0.1</span>)</span><br><span class="line">y = x ** <span class="number">2</span></span><br><span class="line">plt.plot(x,y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_2.png"
+                      alt=""
+                ></p>
+<h2 id="散布图"><a href="#散布图" class="headerlink" title="散布图"></a>散布图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">1024</span></span><br><span class="line">X = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">Y = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line">plt.scatter(X,Y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_3.png"
+                      alt=""
+                ></p>
+<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.random.normal(size=<span class="number">1000</span>)</span><br><span class="line">plt.hist(x, bins=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_4.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">12</span></span><br><span class="line">X = np.arange(n)</span><br><span class="line">Y1 = (<span class="number">1</span>- X / <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line">Y2 = (<span class="number">1</span>- X/ <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line"></span><br><span class="line">plt.axes([<span class="number">0.025</span>, <span class="number">0.025</span>, <span class="number">0.95</span>, <span class="number">0.95</span>])</span><br><span class="line">plt.bar(X, +Y1, facecolor = <span class="string">&#x27;#9999ff&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line">plt.bar(X, -Y2, facecolor = <span class="string">&#x27;#ff9999&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y1):</span><br><span class="line">    plt.text(x, y + <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y2):</span><br><span class="line">    plt.text(x, -y - <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va= <span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">.5</span>, n), </span><br><span class="line">plt.ylim(-<span class="number">1.25</span>, +<span class="number">1.25</span>), </span><br><span class="line">plt.xticks([])</span><br><span class="line">plt.yticks([])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_5.png"
+                      alt=""
+                ></p>
+<h2 id="3D图"><a href="#3D图" class="headerlink" title="3D图"></a>3D图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">X = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">Y = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">X, Y = np.meshgrid(X, Y)</span><br><span class="line">R = np.sqrt(X ** <span class="number">2</span> + Y ** <span class="number">2</span>)</span><br><span class="line">Z = np.sin(R)</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X, Y, Z, rstride = <span class="number">1</span>, cstride=<span class="number">1</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.contourf(X, Y, Z, zdir = <span class="string">&#x27;z&#x27;</span>, offset = -<span class="number">2</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.set_zlim(-<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_6.png"
+                      alt=""
+                ></p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>基本语法</title>
     <url>/Python/24578/</url>
     <content><![CDATA[<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===一维数组===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>([i * <span class="number">2</span> <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br><span class="line"><span class="built_in">print</span>([i * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>)])</span><br><span class="line"><span class="built_in">print</span>([i * i <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">10</span>) <span class="keyword">if</span> (i % <span class="number">3</span>) == <span class="number">0</span>])</span><br><span class="line"><span class="built_in">print</span>([(x, y) <span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>) <span class="keyword">for</span> y <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===二维数组===&quot;</span>)</span><br><span class="line">a = [[<span class="number">3</span>] * (i + <span class="number">1</span>) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line"><span class="built_in">print</span>(a[<span class="number">2</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===乘法的问题===&quot;</span>)</span><br><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]] * <span class="number">3</span></span><br><span class="line">a[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===解决方法===&quot;</span>)</span><br><span class="line">a = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>)]</span><br><span class="line">a[<span class="number">1</span>][<span class="number">1</span>] = <span class="number">100</span></span><br><span class="line"><span class="built_in">print</span>(a)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -182,62 +238,6 @@ hey: 100
 <ol>
 <li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
 <li><a class="link"   href="https://www.ibm.com/developerworks/cn/opensource/os-cn-python-yield/" >yield讲解<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Matplotlib</title>
-    <url>/Python/16372/</url>
-    <content><![CDATA[<h2 id="基本配置与标记"><a href="#基本配置与标记" class="headerlink" title="基本配置与标记"></a>基本配置与标记</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据部分</span></span><br><span class="line">x = np.arange(<span class="number">0.</span>, <span class="number">10</span>, <span class="number">0.2</span>)</span><br><span class="line">y1 = np.cos(x)</span><br><span class="line">y2 = np.sin(x)</span><br><span class="line">y3 = np.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 3 条函数曲线</span></span><br><span class="line">plt.plot(x, y1, color=<span class="string">&#x27;blue&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">r&#x27;$y = cos&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y2, color=<span class="string">&#x27;green&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">r&#x27;$y = sin&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y3, color=<span class="string">&#x27;m&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;x&#x27;</span>, label=<span class="string">r&#x27;$y = \sqrt&#123;x&#125;$&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 坐标轴上移</span></span><br><span class="line">ax = plt.subplot(<span class="number">111</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)     <span class="comment"># 去掉右边的边框线</span></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)       <span class="comment"># 去掉上边的边框线</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动下边边框线，相当于移动 X 轴</span></span><br><span class="line">ax.xaxis.set_ticks_position(<span class="string">&#x27;bottom&#x27;</span>)    </span><br><span class="line">ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动左边边框线，相当于移动 y 轴</span></span><br><span class="line">ax.yaxis.set_ticks_position(<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的取值范围</span></span><br><span class="line">plt.xlim(x.<span class="built_in">min</span>()*<span class="number">1.1</span>, x.<span class="built_in">max</span>()*<span class="number">1.1</span>)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的刻度值</span></span><br><span class="line">plt.xticks([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>], [<span class="string">r&#x27;2&#x27;</span>, <span class="string">r&#x27;4&#x27;</span>, <span class="string">r&#x27;6&#x27;</span>, <span class="string">r&#x27;8&#x27;</span>, <span class="string">r&#x27;10&#x27;</span>])</span><br><span class="line">plt.yticks([-<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>], </span><br><span class="line">    [<span class="string">r&#x27;-1.0&#x27;</span>, <span class="string">r&#x27;0.0&#x27;</span>, <span class="string">r&#x27;1.0&#x27;</span>, <span class="string">r&#x27;2.0&#x27;</span>, <span class="string">r&#x27;3.0&#x27;</span>, <span class="string">r&#x27;4.0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文字</span></span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.68</span>, <span class="string">r&#x27;$x \in [0.0, \ 10.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.38</span>, <span class="string">r&#x27;$y \in [-1.0, \ 4.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊点添加注解</span></span><br><span class="line">plt.scatter([<span class="number">8</span>,],[np.sqrt(<span class="number">8</span>),], <span class="number">50</span>, color =<span class="string">&#x27;m&#x27;</span>)  <span class="comment"># 使用散点图放大当前点</span></span><br><span class="line">plt.annotate(<span class="string">r&#x27;$2\sqrt&#123;2&#125;$&#x27;</span>, xy=(<span class="number">8</span>, np.sqrt(<span class="number">8</span>)), xytext=(<span class="number">8.5</span>, <span class="number">2.2</span>), fontsize=<span class="number">16</span>, color=<span class="string">&#x27;#090909&#x27;</span>, arrowprops=<span class="built_in">dict</span>(arrowstyle=<span class="string">&#x27;-&gt;&#x27;</span>, connectionstyle=<span class="string">&#x27;arc3, rad=0.1&#x27;</span>, color=<span class="string">&#x27;#090909&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题、x轴、y轴</span></span><br><span class="line">plt.title(<span class="string">r&#x27;$the \ function \ figure \ of \ cos(), \ sin() \ and \ sqrt()$&#x27;</span>, fontsize=<span class="number">19</span>)</span><br><span class="line">plt.xlabel(<span class="string">r&#x27;$the \ input \ value \ of \ x$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">88.8</span>)</span><br><span class="line">plt.ylabel(<span class="string">r&#x27;$y = f(x)$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">12.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例及位置</span></span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)    </span><br><span class="line"><span class="comment"># plt.legend([&#x27;cos(x)&#x27;, &#x27;sin(x)&#x27;, &#x27;sqrt(x)&#x27;], loc=&#x27;up right&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示网格线</span></span><br><span class="line">plt.grid(<span class="literal">True</span>)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_1.png"
-                      alt=""
-                ></p>
-<h2 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.arange(-<span class="number">5</span>,<span class="number">5</span>,<span class="number">0.1</span>)</span><br><span class="line">y = x ** <span class="number">2</span></span><br><span class="line">plt.plot(x,y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_2.png"
-                      alt=""
-                ></p>
-<h2 id="散布图"><a href="#散布图" class="headerlink" title="散布图"></a>散布图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">1024</span></span><br><span class="line">X = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">Y = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line">plt.scatter(X,Y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_3.png"
-                      alt=""
-                ></p>
-<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.random.normal(size=<span class="number">1000</span>)</span><br><span class="line">plt.hist(x, bins=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_4.png"
-                      alt=""
-                ></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">12</span></span><br><span class="line">X = np.arange(n)</span><br><span class="line">Y1 = (<span class="number">1</span>- X / <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line">Y2 = (<span class="number">1</span>- X/ <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line"></span><br><span class="line">plt.axes([<span class="number">0.025</span>, <span class="number">0.025</span>, <span class="number">0.95</span>, <span class="number">0.95</span>])</span><br><span class="line">plt.bar(X, +Y1, facecolor = <span class="string">&#x27;#9999ff&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line">plt.bar(X, -Y2, facecolor = <span class="string">&#x27;#ff9999&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y1):</span><br><span class="line">    plt.text(x, y + <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y2):</span><br><span class="line">    plt.text(x, -y - <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va= <span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">.5</span>, n), </span><br><span class="line">plt.ylim(-<span class="number">1.25</span>, +<span class="number">1.25</span>), </span><br><span class="line">plt.xticks([])</span><br><span class="line">plt.yticks([])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_5.png"
-                      alt=""
-                ></p>
-<h2 id="3D图"><a href="#3D图" class="headerlink" title="3D图"></a>3D图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">X = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">Y = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">X, Y = np.meshgrid(X, Y)</span><br><span class="line">R = np.sqrt(X ** <span class="number">2</span> + Y ** <span class="number">2</span>)</span><br><span class="line">Z = np.sin(R)</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X, Y, Z, rstride = <span class="number">1</span>, cstride=<span class="number">1</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.contourf(X, Y, Z, zdir = <span class="string">&#x27;z&#x27;</span>, offset = -<span class="number">2</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.set_zlim(-<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_6.png"
-                      alt=""
-                ></p>
-<blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 ]]></content>
       <categories>
@@ -872,33 +872,6 @@ jvfcho@iwrptlqmyok.edu
       </categories>
   </entry>
   <entry>
-    <title>Scipy</title>
-    <url>/Python/61322/</url>
-    <content><![CDATA[<h2 id="数据物理常数"><a href="#数据物理常数" class="headerlink" title="数据物理常数"></a>数据物理常数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> constants</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 圆周率</span></span><br><span class="line"><span class="built_in">print</span>(C.pi)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引力常数</span></span><br><span class="line"><span class="built_in">print</span>(C.g)</span><br></pre></td></tr></table></figure>
-<pre><code>3.141592653589793
-9.80665
-</code></pre><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> integrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(integrate.quad(Y, -<span class="number">2</span>, <span class="number">4</span>)) <span class="comment"># (-2, 4)是上下限  # 返回值第二个是误差预估</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数值采样积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line">x = np.linspace(-<span class="number">2</span>, <span class="number">4</span>, <span class="number">10</span>)</span><br><span class="line">y = Y(x)</span><br><span class="line"><span class="built_in">print</span>(integrate.trapz(y, x))</span><br></pre></td></tr></table></figure>
-<pre><code>(42.0, 4.662936703425657e-13)
-42.44444444444444
-</code></pre><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line">Y = <span class="keyword">lambda</span> x: x[<span class="number">0</span>]**<span class="number">3</span> + x[<span class="number">1</span>]**<span class="number">3</span> + np.cos(x[<span class="number">2</span>]+<span class="number">1</span>)</span><br><span class="line">x0 = np.zeros(<span class="number">4</span>)</span><br><span class="line">res = optimize.minimize(Y, x0)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res.x) <span class="comment">#x</span></span><br><span class="line"><span class="built_in">print</span>(Y(res.x)) <span class="comment">#y</span></span><br></pre></td></tr></table></figure>
-<pre><code>[0.         0.         2.14159739 0.        ]
--0.9999999999887697
-</code></pre><h2 id="拟合"><a href="#拟合" class="headerlink" title="拟合"></a>拟合</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">x, a, b, c</span>):</span></span><br><span class="line">    <span class="keyword">return</span> a * np.exp(-b * x) + c</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">4</span>, <span class="number">50</span>)</span><br><span class="line">y = func(x, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">popt, pcov = optimize.curve_fit(func, x, y)</span><br><span class="line">popt</span><br></pre></td></tr></table></figure>
-<pre><code>array([1., 2., 3.])
-</code></pre><h2 id="方程式求解"><a href="#方程式求解" class="headerlink" title="方程式求解"></a>方程式求解</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> [x[<span class="number">0</span>]+x[<span class="number">1</span>],x[<span class="number">0</span>]+<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">sol = optimize.root(func, [<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">sol.x</span><br></pre></td></tr></table></figure>
-<pre><code>array([-10.,  10.])
-</code></pre><blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
     <title>线性回归</title>
     <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%9B%9E%E5%BD%92%E7%AE%97%E6%B3%95%EF%BC%88Regression%EF%BC%89/52662/</url>
     <content><![CDATA[<h2 id="创建数据"><a href="#创建数据" class="headerlink" title="创建数据"></a>创建数据</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_data</span>(<span class="params">nDim</span>):</span></span><br><span class="line">    x0 = np.linspace(<span class="number">1</span>, np.pi, <span class="number">50</span>)</span><br><span class="line">    x = np.vstack([[x0,], [i**x0 <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">2</span>, nDim+<span class="number">1</span>)]])</span><br><span class="line">    y = np.sin(x0) + np.random.normal(<span class="number">0</span>,<span class="number">0.15</span>,<span class="built_in">len</span>(x0))</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> x.transpose(), y</span><br></pre></td></tr></table></figure>
@@ -942,6 +915,33 @@ jvfcho@iwrptlqmyok.edu
       </categories>
   </entry>
   <entry>
+    <title>Scipy</title>
+    <url>/Python/61322/</url>
+    <content><![CDATA[<h2 id="数据物理常数"><a href="#数据物理常数" class="headerlink" title="数据物理常数"></a>数据物理常数</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> constants</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 圆周率</span></span><br><span class="line"><span class="built_in">print</span>(C.pi)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 引力常数</span></span><br><span class="line"><span class="built_in">print</span>(C.g)</span><br></pre></td></tr></table></figure>
+<pre><code>3.141592653589793
+9.80665
+</code></pre><h2 id="积分"><a href="#积分" class="headerlink" title="积分"></a>积分</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> integrate</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(integrate.quad(Y, -<span class="number">2</span>, <span class="number">4</span>)) <span class="comment"># (-2, 4)是上下限  # 返回值第二个是误差预估</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 数值采样积分</span></span><br><span class="line">Y = <span class="keyword">lambda</span> x: x**<span class="number">2</span>+<span class="number">3</span></span><br><span class="line">x = np.linspace(-<span class="number">2</span>, <span class="number">4</span>, <span class="number">10</span>)</span><br><span class="line">y = Y(x)</span><br><span class="line"><span class="built_in">print</span>(integrate.trapz(y, x))</span><br></pre></td></tr></table></figure>
+<pre><code>(42.0, 4.662936703425657e-13)
+42.44444444444444
+</code></pre><h2 id="优化"><a href="#优化" class="headerlink" title="优化"></a>优化</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line">Y = <span class="keyword">lambda</span> x: x[<span class="number">0</span>]**<span class="number">3</span> + x[<span class="number">1</span>]**<span class="number">3</span> + np.cos(x[<span class="number">2</span>]+<span class="number">1</span>)</span><br><span class="line">x0 = np.zeros(<span class="number">4</span>)</span><br><span class="line">res = optimize.minimize(Y, x0)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(res.x) <span class="comment">#x</span></span><br><span class="line"><span class="built_in">print</span>(Y(res.x)) <span class="comment">#y</span></span><br></pre></td></tr></table></figure>
+<pre><code>[0.         0.         2.14159739 0.        ]
+-0.9999999999887697
+</code></pre><h2 id="拟合"><a href="#拟合" class="headerlink" title="拟合"></a>拟合</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">x, a, b, c</span>):</span></span><br><span class="line">    <span class="keyword">return</span> a * np.exp(-b * x) + c</span><br><span class="line"></span><br><span class="line">x = np.linspace(<span class="number">0</span>, <span class="number">4</span>, <span class="number">50</span>)</span><br><span class="line">y = func(x, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">popt, pcov = optimize.curve_fit(func, x, y)</span><br><span class="line">popt</span><br></pre></td></tr></table></figure>
+<pre><code>array([1., 2., 3.])
+</code></pre><h2 id="方程式求解"><a href="#方程式求解" class="headerlink" title="方程式求解"></a>方程式求解</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> scipy <span class="keyword">import</span> optimize</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">func</span>(<span class="params">x</span>):</span></span><br><span class="line">    <span class="keyword">return</span> [x[<span class="number">0</span>]+x[<span class="number">1</span>],x[<span class="number">0</span>]+<span class="number">10</span>]</span><br><span class="line"></span><br><span class="line">sol = optimize.root(func, [<span class="number">0</span>, <span class="number">0</span>])</span><br><span class="line">sol.x</span><br></pre></td></tr></table></figure>
+<pre><code>array([-10.,  10.])
+</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>梯度下降</title>
     <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/45545/</url>
     <content><![CDATA[<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
@@ -971,6 +971,60 @@ jvfcho@iwrptlqmyok.edu
       <categories>
         <category>统计与机器学习</category>
         <category>其他</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>朴素贝叶斯</title>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95%EF%BC%88Bayesian-Algorithms%EF%BC%89/58685/</url>
+    <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
+<li>基于概率，优点是可以对预测标签给出理论上完美的可能性估计</li>
+<li>要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘</li>
+</ul>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 <script type="math/tex">P(A|B) = \frac{P(A)*P(B|A)}{P(B)}</script> 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：</p>
+<blockquote>
+<p>for label in 所有标签:</p>
+<p>   用贝叶斯公式计算在给定特征情况下出现该label的后验机率</p>
+<p>预测标签 &lt;= 获得最高后验机率的 label</p>
+</blockquote>
+<p>由于实际上计算了所有标签的后验机率，所以贝叶斯分类不仅可以提供该组特征最可能的标签，还能给出其他的标签排序。</p>
+<h2 id="高斯朴素贝叶斯"><a href="#高斯朴素贝叶斯" class="headerlink" title="高斯朴素贝叶斯"></a>高斯朴素贝叶斯</h2><ul>
+<li>假定所有特征都呈高斯分布</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line">gnb = GaussianNB()</span><br><span class="line">gnb.fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数据集大小&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(iris.data.shape)</span><br><span class="line"><span class="built_in">print</span>(iris.target.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看模型的先验机率&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_prior_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看训练集标签数量&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_count_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型期望值&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.theta_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型方差&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.sigma_)</span><br></pre></td></tr></table></figure>
+<pre><code>数据集大小
+(150, 4)
+(150,)
+
+察看模型的先验机率
+[0.33333333 0.33333333 0.33333333]
+
+察看训练集标签数量
+[50. 50. 50.]
+
+察看高斯模型期望值
+[[5.006 3.428 1.462 0.246]
+ [5.936 2.77  4.26  1.326]
+ [6.588 2.974 5.552 2.026]]
+
+察看高斯模型方差
+[[0.121764 0.140816 0.029556 0.010884]
+ [0.261104 0.0965   0.2164   0.038324]
+ [0.396256 0.101924 0.298496 0.073924]]
+</code></pre><h2 id="伯努利朴素贝叶斯"><a href="#伯努利朴素贝叶斯" class="headerlink" title="伯努利朴素贝叶斯"></a>伯努利朴素贝叶斯</h2><ul>
+<li>每次实验只可能出现两种结果的事件概率分布，也称二值分布</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> BernoulliNB</span><br><span class="line">clf = BernoulliNB(binarize = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以输入非二值特征，BernoulliNB内部会用阈值1将其转换为二值</span></span><br><span class="line">X = [[<span class="number">0.3</span>, <span class="number">0.2</span>], [<span class="number">1.3</span>, <span class="number">1.2</span>], [<span class="number">1.1</span>, <span class="number">1.2</span>]]</span><br><span class="line">Y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">clf.fit(X, Y)</span><br><span class="line"></span><br><span class="line">clf.predict([[<span class="number">0.99</span>, <span class="number">0.99</span>]])</span><br></pre></td></tr></table></figure>
+<pre><code>array([0])
+</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>统计与机器学习</category>
+        <category>贝叶斯算法（Bayesian Algorithms）</category>
       </categories>
   </entry>
   <entry>
@@ -1019,60 +1073,6 @@ jvfcho@iwrptlqmyok.edu
       <categories>
         <category>统计与机器学习</category>
         <category>支持向量机（Support Vector Machines）</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>朴素贝叶斯</title>
-    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E8%B4%9D%E5%8F%B6%E6%96%AF%E7%AE%97%E6%B3%95%EF%BC%88Bayesian-Algorithms%EF%BC%89/58685/</url>
-    <content><![CDATA[<h2 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h2><ul>
-<li>基于概率，优点是可以对预测标签给出理论上完美的可能性估计</li>
-<li>要求数据多维特征之间相互独立，因此在计算n维特征的联合分布时，才能简化成各自先验机率相乘</li>
-</ul>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>朴素贝叶斯是应用贝叶斯定理进行有监督学习的一种分类模型。在模型中，将贝叶斯定理公式 $P(A|B) = \frac{P(A)*P(B|A)}{P(B)}$ 中的事件A看成被分类标签，事件B看成数据特征。伪代码如下：</p>
-<blockquote>
-<p>for label in 所有标签:</p>
-<p>   用贝叶斯公式计算在给定特征情况下出现该label的后验机率</p>
-<p>预测标签 &lt;= 获得最高后验机率的 label</p>
-</blockquote>
-<p>由于实际上计算了所有标签的后验机率，所以贝叶斯分类不仅可以提供该组特征最可能的标签，还能给出其他的标签排序。</p>
-<h2 id="高斯朴素贝叶斯"><a href="#高斯朴素贝叶斯" class="headerlink" title="高斯朴素贝叶斯"></a>高斯朴素贝叶斯</h2><ul>
-<li>假定所有特征都呈高斯分布</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> GaussianNB</span><br><span class="line">gnb = GaussianNB()</span><br><span class="line">gnb.fit(iris.data, iris.target)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;数据集大小&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(iris.data.shape)</span><br><span class="line"><span class="built_in">print</span>(iris.target.shape)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看模型的先验机率&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_prior_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看训练集标签数量&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.class_count_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型期望值&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.theta_)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;察看高斯模型方差&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(gnb.sigma_)</span><br></pre></td></tr></table></figure>
-<pre><code>数据集大小
-(150, 4)
-(150,)
-
-察看模型的先验机率
-[0.33333333 0.33333333 0.33333333]
-
-察看训练集标签数量
-[50. 50. 50.]
-
-察看高斯模型期望值
-[[5.006 3.428 1.462 0.246]
- [5.936 2.77  4.26  1.326]
- [6.588 2.974 5.552 2.026]]
-
-察看高斯模型方差
-[[0.121764 0.140816 0.029556 0.010884]
- [0.261104 0.0965   0.2164   0.038324]
- [0.396256 0.101924 0.298496 0.073924]]
-</code></pre><h2 id="伯努利朴素贝叶斯"><a href="#伯努利朴素贝叶斯" class="headerlink" title="伯努利朴素贝叶斯"></a>伯努利朴素贝叶斯</h2><ul>
-<li>每次实验只可能出现两种结果的事件概率分布，也称二值分布</li>
-</ul>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.naive_bayes <span class="keyword">import</span> BernoulliNB</span><br><span class="line">clf = BernoulliNB(binarize = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以输入非二值特征，BernoulliNB内部会用阈值1将其转换为二值</span></span><br><span class="line">X = [[<span class="number">0.3</span>, <span class="number">0.2</span>], [<span class="number">1.3</span>, <span class="number">1.2</span>], [<span class="number">1.1</span>, <span class="number">1.2</span>]]</span><br><span class="line">Y = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">1</span>]</span><br><span class="line">clf.fit(X, Y)</span><br><span class="line"></span><br><span class="line">clf.predict([[<span class="number">0.99</span>, <span class="number">0.99</span>]])</span><br></pre></td></tr></table></figure>
-<pre><code>array([0])
-</code></pre><blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>统计与机器学习</category>
-        <category>贝叶斯算法（Bayesian Algorithms）</category>
       </categories>
   </entry>
   <entry>
@@ -1324,6 +1324,32 @@ Best score on train set:0.79
       </categories>
   </entry>
   <entry>
+    <title>堆糖图片多线程抓取</title>
+    <url>/%E9%A1%B9%E7%9B%AE/%E7%88%AC%E8%99%AB/46912/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="comment">#多线程锁</span></span><br><span class="line">thread_lock = threading.BoundedSemaphore(value = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page</span>(<span class="params">url</span>):</span></span><br><span class="line">    <span class="comment">#GET之后用utf-8解析</span></span><br><span class="line">    page = requests.get(url).content.decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> page</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findall_in_page</span>(<span class="params">page, start_part, end_part</span>):</span></span><br><span class="line">    all_strings = []</span><br><span class="line">    end = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> page.find(start_part,end) != -<span class="number">1</span>:</span><br><span class="line">        start = page.find(start_part, end)+<span class="built_in">len</span>(start_part)</span><br><span class="line">        end = page.find(end_part, start)</span><br><span class="line">        string = page[start: end]</span><br><span class="line">        all_strings.append(string)</span><br><span class="line">    <span class="keyword">return</span> all_strings</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pic_urls_find_part</span>(<span class="params">pages</span>):</span></span><br><span class="line">    pic_pics = []</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> pages:</span><br><span class="line">        urls = findall_in_page(page, <span class="string">&#x27;&quot;path&quot;:&quot;&#x27;</span>, <span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">        pic_pics.extend(urls)</span><br><span class="line">    <span class="keyword">return</span> pic_pics</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pages_usr</span>(<span class="params">label</span>):</span></span><br><span class="line">    pages = []</span><br><span class="line">    url = <span class="string">&#x27;https://www.duitang.com/napi/blog/list/by_search/?kw=&#123;&#125;&amp;start=&#123;&#125;&amp;limit=1000&#x27;</span></span><br><span class="line">    <span class="comment">#将中文转成ASCII码</span></span><br><span class="line">    label = urllib.parse.quote(label)</span><br><span class="line">    <span class="comment">#观察response可发现max=3600</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">3600</span>,<span class="number">100</span>):</span><br><span class="line">        u = url.<span class="built_in">format</span>(label,index)</span><br><span class="line">        page = get_page(u)</span><br><span class="line">        pages.append(page)</span><br><span class="line">        <span class="keyword">return</span> pages</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_pic</span>(<span class="params">url, name</span>):</span></span><br><span class="line">    req = requests.get(url)</span><br><span class="line">    path = <span class="string">&#x27;test/杨幂&#x27;</span>+<span class="built_in">str</span>(name)+<span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&#x27;wb+&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(req.content)</span><br><span class="line">    <span class="comment">#将锁打开避免堵塞</span></span><br><span class="line">    thread_lock.release()</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">label</span>):</span></span><br><span class="line">    pages = pages_usr(label)</span><br><span class="line">    pic_urls = pic_urls_find_part(pages)</span><br><span class="line">    numbers = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> pic_urls:</span><br><span class="line">        numbers += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Now Downloading: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(numbers))</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#锁上，并开始执行</span></span><br><span class="line">        thread_lock.acquire()</span><br><span class="line">        t = threading.Thread(target=download_pic, args=(url, numbers))</span><br><span class="line">        t.start()</span><br><span class="line">        </span><br><span class="line">main(<span class="string">&#x27;杨幂&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>Now Downloading: 1
+Now Downloading: 2
+Now Downloading: 3
+Now Downloading: 4
+Now Downloading: 5
+Now Downloading: 6
+Now Downloading: 7
+Now Downloading: 8
+Now Downloading: 9
+Now Downloading: 10
+</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="https://coding.imooc.com/class/chapter/325.html" >从零起步 系统入门Python爬虫工程师<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>项目</category>
+        <category>爬虫</category>
+      </categories>
+  </entry>
+  <entry>
     <title>数据仓库设计</title>
     <url>/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/22639/</url>
     <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><p>数据仓库是一个<strong>面向主题的</strong>、<strong>集成的</strong>、<strong>相对稳定的</strong>且<strong>反映历史变化的</strong>数据集合，用于支持管理人员的决策</p>
@@ -1533,32 +1559,6 @@ Best score on train set:0.79
 ]]></content>
       <categories>
         <category>数据仓库</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>堆糖图片多线程抓取</title>
-    <url>/%E9%A1%B9%E7%9B%AE/%E7%88%AC%E8%99%AB/46912/</url>
-    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> urllib.parse</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"></span><br><span class="line"><span class="comment">#多线程锁</span></span><br><span class="line">thread_lock = threading.BoundedSemaphore(value = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page</span>(<span class="params">url</span>):</span></span><br><span class="line">    <span class="comment">#GET之后用utf-8解析</span></span><br><span class="line">    page = requests.get(url).content.decode(<span class="string">&quot;utf-8&quot;</span>)</span><br><span class="line">    <span class="keyword">return</span> page</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findall_in_page</span>(<span class="params">page, start_part, end_part</span>):</span></span><br><span class="line">    all_strings = []</span><br><span class="line">    end = <span class="number">0</span></span><br><span class="line">    <span class="keyword">while</span> page.find(start_part,end) != -<span class="number">1</span>:</span><br><span class="line">        start = page.find(start_part, end)+<span class="built_in">len</span>(start_part)</span><br><span class="line">        end = page.find(end_part, start)</span><br><span class="line">        string = page[start: end]</span><br><span class="line">        all_strings.append(string)</span><br><span class="line">    <span class="keyword">return</span> all_strings</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pic_urls_find_part</span>(<span class="params">pages</span>):</span></span><br><span class="line">    pic_pics = []</span><br><span class="line">    <span class="keyword">for</span> page <span class="keyword">in</span> pages:</span><br><span class="line">        urls = findall_in_page(page, <span class="string">&#x27;&quot;path&quot;:&quot;&#x27;</span>, <span class="string">&#x27;&quot;&#x27;</span>)</span><br><span class="line">        pic_pics.extend(urls)</span><br><span class="line">    <span class="keyword">return</span> pic_pics</span><br><span class="line">    </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pages_usr</span>(<span class="params">label</span>):</span></span><br><span class="line">    pages = []</span><br><span class="line">    url = <span class="string">&#x27;https://www.duitang.com/napi/blog/list/by_search/?kw=&#123;&#125;&amp;start=&#123;&#125;&amp;limit=1000&#x27;</span></span><br><span class="line">    <span class="comment">#将中文转成ASCII码</span></span><br><span class="line">    label = urllib.parse.quote(label)</span><br><span class="line">    <span class="comment">#观察response可发现max=3600</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="number">3600</span>,<span class="number">100</span>):</span><br><span class="line">        u = url.<span class="built_in">format</span>(label,index)</span><br><span class="line">        page = get_page(u)</span><br><span class="line">        pages.append(page)</span><br><span class="line">        <span class="keyword">return</span> pages</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">download_pic</span>(<span class="params">url, name</span>):</span></span><br><span class="line">    req = requests.get(url)</span><br><span class="line">    path = <span class="string">&#x27;test/杨幂&#x27;</span>+<span class="built_in">str</span>(name)+<span class="string">&quot;.jpg&quot;</span></span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(path, <span class="string">&#x27;wb+&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(req.content)</span><br><span class="line">    <span class="comment">#将锁打开避免堵塞</span></span><br><span class="line">    thread_lock.release()</span><br><span class="line">        </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>(<span class="params">label</span>):</span></span><br><span class="line">    pages = pages_usr(label)</span><br><span class="line">    pic_urls = pic_urls_find_part(pages)</span><br><span class="line">    numbers = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> pic_urls:</span><br><span class="line">        numbers += <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Now Downloading: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(numbers))</span><br><span class="line">        </span><br><span class="line">        <span class="comment">#锁上，并开始执行</span></span><br><span class="line">        thread_lock.acquire()</span><br><span class="line">        t = threading.Thread(target=download_pic, args=(url, numbers))</span><br><span class="line">        t.start()</span><br><span class="line">        </span><br><span class="line">main(<span class="string">&#x27;杨幂&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<pre><code>Now Downloading: 1
-Now Downloading: 2
-Now Downloading: 3
-Now Downloading: 4
-Now Downloading: 5
-Now Downloading: 6
-Now Downloading: 7
-Now Downloading: 8
-Now Downloading: 9
-Now Downloading: 10
-</code></pre><blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="https://coding.imooc.com/class/chapter/325.html" >从零起步 系统入门Python爬虫工程师<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>项目</category>
-        <category>爬虫</category>
       </categories>
   </entry>
   <entry>
@@ -1814,7 +1814,7 @@ Freq: D, dtype: float64
   </entry>
   <entry>
     <title>探索性数据分析</title>
-    <url>/uncategorized/8366/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%95%86%E6%A5%AD%E7%B5%B1%E8%A8%88/8366/</url>
     <content><![CDATA[<h2 id="数据组成"><a href="#数据组成" class="headerlink" title="数据组成"></a>数据组成</h2><h3 id="结构化"><a href="#结构化" class="headerlink" title="结构化"></a>结构化</h3><ul>
 <li>数值型数据<ul>
 <li>连续型</li>
@@ -1833,7 +1833,7 @@ Freq: D, dtype: float64
 <li>空间数据：关注对象与空间座标</li>
 <li>图形数据：物理、社交网络上的关系，多用在网络优化和推荐系统</li>
 </ul>
-<h2 id="位置估计"><a href="#位置估计" class="headerlink" title="位置估计"></a>位置估计</h2><h3 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h3><ul>
+<h2 id="单变量分析-位置估计"><a href="#单变量分析-位置估计" class="headerlink" title="单变量分析-位置估计"></a>单变量分析-位置估计</h2><h3 id="均值"><a href="#均值" class="headerlink" title="均值"></a>均值</h3><ul>
 <li>一般均值</li>
 <li>切尾均值</li>
 <li>加权均值<ul>
@@ -1846,15 +1846,50 @@ Freq: D, dtype: float64
 <li>一般中位数</li>
 <li>加权中位数</li>
 </ul>
-<h2 id="变异性估计"><a href="#变异性估计" class="headerlink" title="变异性估计"></a>变异性估计</h2><p>变异性是统计学的一个核心概念，统计学关注如何测量变异性、如何降低变异性、如何识别真实变异性的各种来源、如何在存在变异性的情况下做出决策</p>
-<h3 id="偏差"><a href="#偏差" class="headerlink" title="偏差"></a>偏差</h3><ul>
+<h2 id="单变量分析-变异性估计"><a href="#单变量分析-变异性估计" class="headerlink" title="单变量分析-变异性估计"></a>单变量分析-变异性估计</h2><p>变异性是统计学的一个核心概念，统计学关注如何测量变异性、如何降低变异性、如何识别真实变异性的各种来源、如何在存在变异性的情况下做出决策</p>
+<h3 id="标准偏差"><a href="#标准偏差" class="headerlink" title="标准偏差"></a>标准偏差</h3><ul>
 <li>标准偏差<ul>
-<li>负的会抵销正的</li>
+<li>负的会抵销正的 <script type="math/tex; mode=display">\frac{\sum (x-\bar{x})}{n}</script></li>
 </ul>
 </li>
-<li>平均绝对偏差</li>
-<li>方差</li>
-<li>标准偏差</li>
+<li>平均绝对偏差<script type="math/tex; mode=display">\frac{\sum |x-\bar{x} |}{n}</script></li>
+<li>方差<ul>
+<li>如果在方差公式使用了直观的除数n，就会低估方差的真实质和总体的标准偏差，这被称为有偏估计。但如果除以n-1则为无偏估计。在这种情况下自由度是n-1，因为其中有一个限制：标准偏差依赖于计算样本的均值。大多数情况下样本数够大，不用担心这问题<script type="math/tex; mode=display">s^2 = \frac{\sum (x-\bar{x})^2}{n-1}</script></li>
+</ul>
+</li>
+<li>标准偏差<script type="math/tex; mode=display">s = \sqrt{\frac{\sum (x-\bar{x})^2}{n-1}}</script></li>
+<li>中位数绝对偏差（MAD）<ul>
+<li>方差、偏差对于极值会很敏感，因为平方。相对来说MAD就是一个稳健的估计量<script type="math/tex; mode=display">MAD=中位数(|x_1-m|,|x_2-m|,...,|x_n-m|)</script></li>
+</ul>
+</li>
+</ul>
+<h3 id="基于百分位数的估计量"><a href="#基于百分位数的估计量" class="headerlink" title="基于百分位数的估计量"></a>基于百分位数的估计量</h3><ul>
+<li>四分位距</li>
+<li>全距</li>
+</ul>
+<h2 id="单变量分析-探索数据分布"><a href="#单变量分析-探索数据分布" class="headerlink" title="单变量分析-探索数据分布"></a>单变量分析-探索数据分布</h2><h3 id="数值型数据"><a href="#数值型数据" class="headerlink" title="数值型数据"></a>数值型数据</h3><ul>
+<li>箱型图</li>
+<li>频数图/直方图</li>
+<li>核密度图</li>
+</ul>
+<h3 id="分类型数据"><a href="#分类型数据" class="headerlink" title="分类型数据"></a>分类型数据</h3><ul>
+<li>条型图</li>
+<li>饼图</li>
+<li>期望值</li>
+<li>众数</li>
+</ul>
+<h2 id="双变量分析-相关性"><a href="#双变量分析-相关性" class="headerlink" title="双变量分析-相关性"></a>双变量分析-相关性</h2><ul>
+<li>相关矩阵</li>
+<li>散点图</li>
+</ul>
+<h2 id="多变量分析"><a href="#多变量分析" class="headerlink" title="多变量分析"></a>多变量分析</h2><ul>
+<li>六边形图</li>
+<li>等势线图</li>
+<li>列联表<ul>
+<li>两个特征交叉后计数</li>
+</ul>
+</li>
+<li>小提琴图</li>
 </ul>
 <blockquote>
 <p>参考：</p>
@@ -1863,6 +1898,10 @@ Freq: D, dtype: float64
 <li><a class="link"   href="https://book.douban.com/subject/30354581/" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
 </ol>
 ]]></content>
+      <categories>
+        <category>统计与机器学习</category>
+        <category>商業統計</category>
+      </categories>
   </entry>
   <entry>
     <title>Pandas</title>
