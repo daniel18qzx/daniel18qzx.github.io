@@ -1,0 +1,2509 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="丹丹">
+    
+    <title>
+        
+            数据理解与清洗 |
+        
+        温书
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"简单、专注、坚持"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                温书
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">数据理解与清洗</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/avatar.jpg">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">丹丹</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;2019-08-01 00:00:00
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">统计与机器学习</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        &gt; <a href="/categories/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/">其他</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>6.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>34 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <h2 id="数据集载入"><a href="#数据集载入" class="headerlink" title="数据集载入"></a>数据集载入</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sns</span><br><span class="line"><span class="keyword">import</span> warnings</span><br><span class="line">warnings.filterwarnings(<span class="string">&#x27;ignore&#x27;</span>)</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">u&quot;2019-08-01_金融数据描述_data1.csv&quot;</span>,encoding = <span class="string">&#x27;gbk&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.head()</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>custid</th>
+      <th>trade_no</th>
+      <th>bank_card_no</th>
+      <th>low_volume_percent</th>
+      <th>middle_volume_percent</th>
+      <th>take_amount_in_later_12_month_highest</th>
+      <th>trans_amount_increase_rate_lately</th>
+      <th>trans_activity_month</th>
+      <th>trans_activity_day</th>
+      <th>...</th>
+      <th>loans_max_limit</th>
+      <th>loans_avg_limit</th>
+      <th>consfin_credit_limit</th>
+      <th>consfin_credibility</th>
+      <th>consfin_org_count_current</th>
+      <th>consfin_product_count</th>
+      <th>consfin_max_limit</th>
+      <th>consfin_avg_limit</th>
+      <th>latest_query_day</th>
+      <th>loans_latest_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5</td>
+      <td>2791858</td>
+      <td>20180507115231274000000023057383</td>
+      <td>卡号1</td>
+      <td>0.01</td>
+      <td>0.99</td>
+      <td>0</td>
+      <td>0.90</td>
+      <td>0.55</td>
+      <td>0.313</td>
+      <td>...</td>
+      <td>2900.0</td>
+      <td>1688.0</td>
+      <td>1200.0</td>
+      <td>75.0</td>
+      <td>1.0</td>
+      <td>2.0</td>
+      <td>1200.0</td>
+      <td>1200.0</td>
+      <td>12.0</td>
+      <td>18.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>10</td>
+      <td>534047</td>
+      <td>20180507121002192000000023073000</td>
+      <td>卡号1</td>
+      <td>0.02</td>
+      <td>0.94</td>
+      <td>2000</td>
+      <td>1.28</td>
+      <td>1.00</td>
+      <td>0.458</td>
+      <td>...</td>
+      <td>3500.0</td>
+      <td>1758.0</td>
+      <td>15100.0</td>
+      <td>80.0</td>
+      <td>5.0</td>
+      <td>6.0</td>
+      <td>22800.0</td>
+      <td>9360.0</td>
+      <td>4.0</td>
+      <td>2.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>12</td>
+      <td>2849787</td>
+      <td>20180507125159718000000023114911</td>
+      <td>卡号1</td>
+      <td>0.04</td>
+      <td>0.96</td>
+      <td>0</td>
+      <td>1.00</td>
+      <td>1.00</td>
+      <td>0.114</td>
+      <td>...</td>
+      <td>1600.0</td>
+      <td>1250.0</td>
+      <td>4200.0</td>
+      <td>87.0</td>
+      <td>1.0</td>
+      <td>1.0</td>
+      <td>4200.0</td>
+      <td>4200.0</td>
+      <td>2.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>13</td>
+      <td>1809708</td>
+      <td>20180507121358683000000388283484</td>
+      <td>卡号1</td>
+      <td>0.00</td>
+      <td>0.96</td>
+      <td>2000</td>
+      <td>0.13</td>
+      <td>0.57</td>
+      <td>0.777</td>
+      <td>...</td>
+      <td>3200.0</td>
+      <td>1541.0</td>
+      <td>16300.0</td>
+      <td>80.0</td>
+      <td>5.0</td>
+      <td>5.0</td>
+      <td>30000.0</td>
+      <td>12180.0</td>
+      <td>2.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>14</td>
+      <td>2499829</td>
+      <td>20180507115448545000000388205844</td>
+      <td>卡号1</td>
+      <td>0.01</td>
+      <td>0.99</td>
+      <td>0</td>
+      <td>0.46</td>
+      <td>1.00</td>
+      <td>0.175</td>
+      <td>...</td>
+      <td>2300.0</td>
+      <td>1630.0</td>
+      <td>8300.0</td>
+      <td>79.0</td>
+      <td>2.0</td>
+      <td>2.0</td>
+      <td>8400.0</td>
+      <td>8250.0</td>
+      <td>22.0</td>
+      <td>120.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 90 columns</p>
+</div>
+
+
+
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.info()</span><br></pre></td></tr></table></figure>
+<pre><code>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 4754 entries, 0 to 4753
+Data columns (total 90 columns):
+Unnamed: 0                                    4754 non-null int64
+custid                                        4754 non-null int64
+trade_no                                      4754 non-null object
+bank_card_no                                  4754 non-null object
+low_volume_percent                            4752 non-null float64
+middle_volume_percent                         4752 non-null float64
+take_amount_in_later_12_month_highest         4754 non-null int64
+trans_amount_increase_rate_lately             4751 non-null float64
+trans_activity_month                          4752 non-null float64
+trans_activity_day                            4752 non-null float64
+transd_mcc                                    4752 non-null float64
+trans_days_interval_filter                    4746 non-null float64
+trans_days_interval                           4752 non-null float64
+regional_mobility                             4752 non-null float64
+student_feature                               1756 non-null float64
+repayment_capability                          4754 non-null int64
+is_high_user                                  4754 non-null int64
+number_of_trans_from_2011                     4752 non-null float64
+first_transaction_time                        4752 non-null float64
+historical_trans_amount                       4754 non-null int64
+historical_trans_day                          4752 non-null float64
+rank_trad_1_month                             4752 non-null float64
+trans_amount_3_month                          4754 non-null int64
+avg_consume_less_12_valid_month               4752 non-null float64
+abs                                           4754 non-null int64
+top_trans_count_last_1_month                  4752 non-null float64
+avg_price_last_12_month                       4754 non-null int64
+avg_price_top_last_12_valid_month             4650 non-null float64
+reg_preference_for_trad                       4752 non-null object
+trans_top_time_last_1_month                   4746 non-null float64
+trans_top_time_last_6_month                   4746 non-null float64
+consume_top_time_last_1_month                 4746 non-null float64
+consume_top_time_last_6_month                 4746 non-null float64
+cross_consume_count_last_1_month              4328 non-null float64
+trans_fail_top_count_enum_last_1_month        4738 non-null float64
+trans_fail_top_count_enum_last_6_month        4738 non-null float64
+trans_fail_top_count_enum_last_12_month       4738 non-null float64
+consume_mini_time_last_1_month                4728 non-null float64
+max_cumulative_consume_later_1_month          4754 non-null int64
+max_consume_count_later_6_month               4746 non-null float64
+railway_consume_count_last_12_month           4742 non-null float64
+pawns_auctions_trusts_consume_last_1_month    4754 non-null int64
+pawns_auctions_trusts_consume_last_6_month    4754 non-null int64
+jewelry_consume_count_last_6_month            4742 non-null float64
+status                                        4754 non-null int64
+source                                        4754 non-null object
+first_transaction_day                         4752 non-null float64
+trans_day_last_12_month                       4752 non-null float64
+id_name                                       4478 non-null object
+apply_score                                   4450 non-null float64
+apply_credibility                             4450 non-null float64
+query_org_count                               4450 non-null float64
+query_finance_count                           4450 non-null float64
+query_cash_count                              4450 non-null float64
+query_sum_count                               4450 non-null float64
+latest_query_time                             4450 non-null object
+latest_one_month_apply                        4450 non-null float64
+latest_three_month_apply                      4450 non-null float64
+latest_six_month_apply                        4450 non-null float64
+loans_score                                   4457 non-null float64
+loans_credibility_behavior                    4457 non-null float64
+loans_count                                   4457 non-null float64
+loans_settle_count                            4457 non-null float64
+loans_overdue_count                           4457 non-null float64
+loans_org_count_behavior                      4457 non-null float64
+consfin_org_count_behavior                    4457 non-null float64
+loans_cash_count                              4457 non-null float64
+latest_one_month_loan                         4457 non-null float64
+latest_three_month_loan                       4457 non-null float64
+latest_six_month_loan                         4457 non-null float64
+history_suc_fee                               4457 non-null float64
+history_fail_fee                              4457 non-null float64
+latest_one_month_suc                          4457 non-null float64
+latest_one_month_fail                         4457 non-null float64
+loans_long_time                               4457 non-null float64
+loans_latest_time                             4457 non-null object
+loans_credit_limit                            4457 non-null float64
+loans_credibility_limit                       4457 non-null float64
+loans_org_count_current                       4457 non-null float64
+loans_product_count                           4457 non-null float64
+loans_max_limit                               4457 non-null float64
+loans_avg_limit                               4457 non-null float64
+consfin_credit_limit                          4457 non-null float64
+consfin_credibility                           4457 non-null float64
+consfin_org_count_current                     4457 non-null float64
+consfin_product_count                         4457 non-null float64
+consfin_max_limit                             4457 non-null float64
+consfin_avg_limit                             4457 non-null float64
+latest_query_day                              4450 non-null float64
+loans_latest_day                              4457 non-null float64
+dtypes: float64(70), int64(13), object(7)
+memory usage: 3.3+ MB
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">typedic = &#123;&#125; <span class="comment"># 类型字典</span></span><br><span class="line"><span class="keyword">for</span> name <span class="keyword">in</span> df.columns:</span><br><span class="line">    typedic[<span class="built_in">str</span>(df[name].dtype)] = typedic.get(<span class="built_in">str</span>(df[name].dtype),[])+[name]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> key,value <span class="keyword">in</span> typedic.items():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&#123;&#125;格式共有&#123;&#125;个: &#123;&#125;&quot;</span>.<span class="built_in">format</span>(key,<span class="built_in">len</span>(value),value))</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>int64格式共有13个: [&#39;Unnamed: 0&#39;, &#39;custid&#39;, &#39;take_amount_in_later_12_month_highest&#39;, &#39;repayment_capability&#39;, &#39;is_high_user&#39;, &#39;historical_trans_amount&#39;, &#39;trans_amount_3_month&#39;, &#39;abs&#39;, &#39;avg_price_last_12_month&#39;, &#39;max_cumulative_consume_later_1_month&#39;, &#39;pawns_auctions_trusts_consume_last_1_month&#39;, &#39;pawns_auctions_trusts_consume_last_6_month&#39;, &#39;status&#39;]
+
+object格式共有7个: [&#39;trade_no&#39;, &#39;bank_card_no&#39;, &#39;reg_preference_for_trad&#39;, &#39;source&#39;, &#39;id_name&#39;, &#39;latest_query_time&#39;, &#39;loans_latest_time&#39;]
+
+float64格式共有70个: [&#39;low_volume_percent&#39;, &#39;middle_volume_percent&#39;, &#39;trans_amount_increase_rate_lately&#39;, &#39;trans_activity_month&#39;, &#39;trans_activity_day&#39;, &#39;transd_mcc&#39;, &#39;trans_days_interval_filter&#39;, &#39;trans_days_interval&#39;, &#39;regional_mobility&#39;, &#39;student_feature&#39;, &#39;number_of_trans_from_2011&#39;, &#39;first_transaction_time&#39;, &#39;historical_trans_day&#39;, &#39;rank_trad_1_month&#39;, &#39;avg_consume_less_12_valid_month&#39;, &#39;top_trans_count_last_1_month&#39;, &#39;avg_price_top_last_12_valid_month&#39;, &#39;trans_top_time_last_1_month&#39;, &#39;trans_top_time_last_6_month&#39;, &#39;consume_top_time_last_1_month&#39;, &#39;consume_top_time_last_6_month&#39;, &#39;cross_consume_count_last_1_month&#39;, &#39;trans_fail_top_count_enum_last_1_month&#39;, &#39;trans_fail_top_count_enum_last_6_month&#39;, &#39;trans_fail_top_count_enum_last_12_month&#39;, &#39;consume_mini_time_last_1_month&#39;, &#39;max_consume_count_later_6_month&#39;, &#39;railway_consume_count_last_12_month&#39;, &#39;jewelry_consume_count_last_6_month&#39;, &#39;first_transaction_day&#39;, &#39;trans_day_last_12_month&#39;, &#39;apply_score&#39;, &#39;apply_credibility&#39;, &#39;query_org_count&#39;, &#39;query_finance_count&#39;, &#39;query_cash_count&#39;, &#39;query_sum_count&#39;, &#39;latest_one_month_apply&#39;, &#39;latest_three_month_apply&#39;, &#39;latest_six_month_apply&#39;, &#39;loans_score&#39;, &#39;loans_credibility_behavior&#39;, &#39;loans_count&#39;, &#39;loans_settle_count&#39;, &#39;loans_overdue_count&#39;, &#39;loans_org_count_behavior&#39;, &#39;consfin_org_count_behavior&#39;, &#39;loans_cash_count&#39;, &#39;latest_one_month_loan&#39;, &#39;latest_three_month_loan&#39;, &#39;latest_six_month_loan&#39;, &#39;history_suc_fee&#39;, &#39;history_fail_fee&#39;, &#39;latest_one_month_suc&#39;, &#39;latest_one_month_fail&#39;, &#39;loans_long_time&#39;, &#39;loans_credit_limit&#39;, &#39;loans_credibility_limit&#39;, &#39;loans_org_count_current&#39;, &#39;loans_product_count&#39;, &#39;loans_max_limit&#39;, &#39;loans_avg_limit&#39;, &#39;consfin_credit_limit&#39;, &#39;consfin_credibility&#39;, &#39;consfin_org_count_current&#39;, &#39;consfin_product_count&#39;, &#39;consfin_max_limit&#39;, &#39;consfin_avg_limit&#39;, &#39;latest_query_day&#39;, &#39;loans_latest_day&#39;]
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columns</span><br></pre></td></tr></table></figure>
+<pre><code>Index([&#39;Unnamed: 0&#39;, &#39;custid&#39;, &#39;trade_no&#39;, &#39;bank_card_no&#39;,
+       &#39;low_volume_percent&#39;, &#39;middle_volume_percent&#39;,
+       &#39;take_amount_in_later_12_month_highest&#39;,
+       &#39;trans_amount_increase_rate_lately&#39;, &#39;trans_activity_month&#39;,
+       &#39;trans_activity_day&#39;, &#39;transd_mcc&#39;, &#39;trans_days_interval_filter&#39;,
+       &#39;trans_days_interval&#39;, &#39;regional_mobility&#39;, &#39;student_feature&#39;,
+       &#39;repayment_capability&#39;, &#39;is_high_user&#39;, &#39;number_of_trans_from_2011&#39;,
+       &#39;first_transaction_time&#39;, &#39;historical_trans_amount&#39;,
+       &#39;historical_trans_day&#39;, &#39;rank_trad_1_month&#39;, &#39;trans_amount_3_month&#39;,
+       &#39;avg_consume_less_12_valid_month&#39;, &#39;abs&#39;,
+       &#39;top_trans_count_last_1_month&#39;, &#39;avg_price_last_12_month&#39;,
+       &#39;avg_price_top_last_12_valid_month&#39;, &#39;reg_preference_for_trad&#39;,
+       &#39;trans_top_time_last_1_month&#39;, &#39;trans_top_time_last_6_month&#39;,
+       &#39;consume_top_time_last_1_month&#39;, &#39;consume_top_time_last_6_month&#39;,
+       &#39;cross_consume_count_last_1_month&#39;,
+       &#39;trans_fail_top_count_enum_last_1_month&#39;,
+       &#39;trans_fail_top_count_enum_last_6_month&#39;,
+       &#39;trans_fail_top_count_enum_last_12_month&#39;,
+       &#39;consume_mini_time_last_1_month&#39;,
+       &#39;max_cumulative_consume_later_1_month&#39;,
+       &#39;max_consume_count_later_6_month&#39;,
+       &#39;railway_consume_count_last_12_month&#39;,
+       &#39;pawns_auctions_trusts_consume_last_1_month&#39;,
+       &#39;pawns_auctions_trusts_consume_last_6_month&#39;,
+       &#39;jewelry_consume_count_last_6_month&#39;, &#39;status&#39;, &#39;source&#39;,
+       &#39;first_transaction_day&#39;, &#39;trans_day_last_12_month&#39;, &#39;id_name&#39;,
+       &#39;apply_score&#39;, &#39;apply_credibility&#39;, &#39;query_org_count&#39;,
+       &#39;query_finance_count&#39;, &#39;query_cash_count&#39;, &#39;query_sum_count&#39;,
+       &#39;latest_query_time&#39;, &#39;latest_one_month_apply&#39;,
+       &#39;latest_three_month_apply&#39;, &#39;latest_six_month_apply&#39;, &#39;loans_score&#39;,
+       &#39;loans_credibility_behavior&#39;, &#39;loans_count&#39;, &#39;loans_settle_count&#39;,
+       &#39;loans_overdue_count&#39;, &#39;loans_org_count_behavior&#39;,
+       &#39;consfin_org_count_behavior&#39;, &#39;loans_cash_count&#39;,
+       &#39;latest_one_month_loan&#39;, &#39;latest_three_month_loan&#39;,
+       &#39;latest_six_month_loan&#39;, &#39;history_suc_fee&#39;, &#39;history_fail_fee&#39;,
+       &#39;latest_one_month_suc&#39;, &#39;latest_one_month_fail&#39;, &#39;loans_long_time&#39;,
+       &#39;loans_latest_time&#39;, &#39;loans_credit_limit&#39;, &#39;loans_credibility_limit&#39;,
+       &#39;loans_org_count_current&#39;, &#39;loans_product_count&#39;, &#39;loans_max_limit&#39;,
+       &#39;loans_avg_limit&#39;, &#39;consfin_credit_limit&#39;, &#39;consfin_credibility&#39;,
+       &#39;consfin_org_count_current&#39;, &#39;consfin_product_count&#39;,
+       &#39;consfin_max_limit&#39;, &#39;consfin_avg_limit&#39;, &#39;latest_query_day&#39;,
+       &#39;loans_latest_day&#39;],
+      dtype=&#39;object&#39;)
+</code></pre><h2 id="可视化各特征"><a href="#可视化各特征" class="headerlink" title="可视化各特征"></a>可视化各特征</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">name_list_1 = [</span><br><span class="line">       <span class="string">&#x27;low_volume_percent&#x27;</span>, <span class="string">&#x27;middle_volume_percent&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;take_amount_in_later_12_month_highest&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_amount_increase_rate_lately&#x27;</span>, <span class="string">&#x27;trans_activity_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_activity_day&#x27;</span>, <span class="string">&#x27;transd_mcc&#x27;</span>, <span class="string">&#x27;trans_days_interval_filter&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_days_interval&#x27;</span>, <span class="string">&#x27;regional_mobility&#x27;</span>, <span class="string">&#x27;student_feature&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;repayment_capability&#x27;</span>, <span class="string">&#x27;is_high_user&#x27;</span>, <span class="string">&#x27;number_of_trans_from_2011&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;first_transaction_time&#x27;</span></span><br><span class="line">       ]</span><br><span class="line">name_list_2 = [</span><br><span class="line">       <span class="string">&#x27;historical_trans_amount&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;historical_trans_day&#x27;</span>, <span class="string">&#x27;rank_trad_1_month&#x27;</span>, <span class="string">&#x27;trans_amount_3_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;avg_consume_less_12_valid_month&#x27;</span>, <span class="string">&#x27;abs&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;top_trans_count_last_1_month&#x27;</span>, <span class="string">&#x27;avg_price_last_12_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;avg_price_top_last_12_valid_month&#x27;</span>, <span class="string">&#x27;reg_preference_for_trad&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_top_time_last_1_month&#x27;</span>, <span class="string">&#x27;trans_top_time_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consume_top_time_last_1_month&#x27;</span>, <span class="string">&#x27;consume_top_time_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;cross_consume_count_last_1_month&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_3 = [</span><br><span class="line">       <span class="string">&#x27;trans_fail_top_count_enum_last_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_fail_top_count_enum_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;trans_fail_top_count_enum_last_12_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consume_mini_time_last_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;max_cumulative_consume_later_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;max_consume_count_later_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;railway_consume_count_last_12_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;pawns_auctions_trusts_consume_last_1_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;pawns_auctions_trusts_consume_last_6_month&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;jewelry_consume_count_last_6_month&#x27;</span>, </span><br><span class="line">       <span class="string">&#x27;first_transaction_day&#x27;</span>, <span class="string">&#x27;trans_day_last_12_month&#x27;</span>, <span class="string">&#x27;apply_score&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;apply_credibility&#x27;</span>, <span class="string">&#x27;query_org_count&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_4 = [</span><br><span class="line">      <span class="string">&#x27;query_finance_count&#x27;</span>, <span class="string">&#x27;query_cash_count&#x27;</span>, <span class="string">&#x27;query_sum_count&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_query_time&#x27;</span>, <span class="string">&#x27;latest_one_month_apply&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_three_month_apply&#x27;</span>, <span class="string">&#x27;latest_six_month_apply&#x27;</span>, <span class="string">&#x27;loans_score&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_credibility_behavior&#x27;</span>, <span class="string">&#x27;loans_count&#x27;</span>, <span class="string">&#x27;loans_settle_count&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_overdue_count&#x27;</span>, <span class="string">&#x27;loans_org_count_behavior&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consfin_org_count_behavior&#x27;</span>, <span class="string">&#x27;loans_cash_count&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_5 = [</span><br><span class="line">      <span class="string">&#x27;latest_one_month_loan&#x27;</span>, <span class="string">&#x27;latest_three_month_loan&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_six_month_loan&#x27;</span>, <span class="string">&#x27;history_suc_fee&#x27;</span>, <span class="string">&#x27;history_fail_fee&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;latest_one_month_suc&#x27;</span>, <span class="string">&#x27;latest_one_month_fail&#x27;</span>, <span class="string">&#x27;loans_long_time&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_latest_time&#x27;</span>, <span class="string">&#x27;loans_credit_limit&#x27;</span>, <span class="string">&#x27;loans_credibility_limit&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_org_count_current&#x27;</span>, <span class="string">&#x27;loans_product_count&#x27;</span>, <span class="string">&#x27;loans_max_limit&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_avg_limit&#x27;</span>,</span><br><span class="line">       ]</span><br><span class="line">name_list_6 = [</span><br><span class="line">      <span class="string">&#x27;consfin_credit_limit&#x27;</span>, <span class="string">&#x27;consfin_credibility&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consfin_org_count_current&#x27;</span>, <span class="string">&#x27;consfin_product_count&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;consfin_max_limit&#x27;</span>, <span class="string">&#x27;consfin_avg_limit&#x27;</span>, <span class="string">&#x27;latest_query_day&#x27;</span>,</span><br><span class="line">       <span class="string">&#x27;loans_latest_day&#x27;</span></span><br><span class="line">       ]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_1):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_1.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_2):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_2.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_3):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line">    </span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_3.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_4):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_4.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">5</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_5):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_5.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f, ax = plt.subplots(<span class="number">3</span>, <span class="number">3</span>, figsize=(<span class="number">20</span>, <span class="number">20</span>))</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i,name <span class="keyword">in</span> <span class="built_in">enumerate</span>(name_list_6):     </span><br><span class="line">    sns.countplot(data=df, x=name, hue=<span class="string">&#x27;status&#x27;</span>,  ax=ax[i // <span class="number">3</span>][i % <span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_6.png"
+                      alt=""
+                ></p>
+<p>从以上分布图可以看出，连续型数据的特征基本上符合正态分布，指数分布或者泊松分布等，但在[‘rank_trad_1_month’,’trans_top_time_last_1_month’,’trans_top_time_last_6_month’,’consume_top_time_last_1_month’,’consume_top_time_last_6_month’,’loans_credit_limit’,’loans_credibility_limit’,’loans_max_limit’,’consfin_credibility’]这几个特征上出现数据于最左最右位置会出现骤升。从业务层面考虑，暂时未得出满意结论，待确认特征取数逻辑后再分析。<br>  还有，’avg_price_last_12_month’,’consfin_credit_limit’这两个特征虽然是连续型特征，但由图上看，出现标签分段，考虑继续探索，查看是否存在分段。</p>
+<p>  另外几个离散型特征，如’reg_preference_for_trad’,’regional_mobility’等，在标签status上区别明显，感觉是对模型有用的特征。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;consfin_credit_limit&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_7.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_7.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;avg_price_last_12_month&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_8.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_8.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sns.boxplot(y = <span class="string">&#x27;rank_trad_1_month&#x27;</span>,x = <span class="string">&#x27;status&#x27;</span>,data = df)</span><br><span class="line"></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_9.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_9.png"
+                      alt=""
+                ></p>
+<h2 id="数据预处理"><a href="#数据预处理" class="headerlink" title="数据预处理"></a>数据预处理</h2><h3 id="为什么需要处理缺失值？"><a href="#为什么需要处理缺失值？" class="headerlink" title="为什么需要处理缺失值？"></a>为什么需要处理缺失值？</h3><p>不同缺失值的处理方式在一定程度上影响了特征提取、建模和模型训练缺失值太多，可以尝试着直接删除，如果不删除，处理不好，可能会引来噪声缺失值较少，少于某一缺失率时，直接删除又会带来信息的损失，此时可以采取适当的填充方式。</p>
+<h3 id="缺失率大于多少时应当抛弃该特征？"><a href="#缺失率大于多少时应当抛弃该特征？" class="headerlink" title="缺失率大于多少时应当抛弃该特征？"></a>缺失率大于多少时应当抛弃该特征？</h3><p>一般为70%,但是还要分析该特征与训练目标的重要程度</p>
+<h3 id="缺失值填充有哪些方法？"><a href="#缺失值填充有哪些方法？" class="headerlink" title="缺失值填充有哪些方法？"></a>缺失值填充有哪些方法？</h3><h4 id="插值填充"><a href="#插值填充" class="headerlink" title="插值填充"></a>插值填充</h4><ul>
+<li>特殊值</li>
+<li>均值、加权均值（缺点：降低数据的方差，即随机性）</li>
+<li>中位数</li>
+<li>众数（多用在类别变数）</li>
+<li>…</li>
+</ul>
+<h4 id="插补法"><a href="#插补法" class="headerlink" title="插补法"></a>插补法</h4><ul>
+<li>随机插补法：从总体中随机抽取某个样本代替缺失样本</li>
+<li>多重插补法：通过变量之间的关系对缺失数据进行预测，利用蒙特卡洛方法生成多个完整的数据集，在对这些数据集进行分析，最后对分析结果进行汇总处理</li>
+<li>热平台插补：指在非缺失数据集中找到一个与缺失值所在样本相似的样本（匹配样本），利用其中的观测值对缺失值进行插补</li>
+<li>拉格朗日差值法</li>
+<li>牛顿插值法</li>
+</ul>
+<blockquote>
+<p>列的维度上，如果是连续性，就使用平均值插补，如果是离散性，就使用众数来插补; 行的维度上，引入预测模型，可考虑辅助回归，通过变量间的关系来预测缺失数据    </p>
+</blockquote>
+<h4 id="丢弃"><a href="#丢弃" class="headerlink" title="丢弃"></a>丢弃</h4><p>如果行和列的缺失达到一定的比例，建议放弃整行或整列数据</p>
+<h4 id="模型法"><a href="#模型法" class="headerlink" title="模型法"></a>模型法</h4><p>更多时候我们会基于已有的其他字段，将缺失字段作为目标变量进行预测，从而得到最为可能的补全值。如果带有缺失值的列是数值变量，采用回归模型补全；如果是分类变量，则采用分类模型补全</p>
+<h4 id="专家补全"><a href="#专家补全" class="headerlink" title="专家补全"></a>专家补全</h4><p>对于少量且具有重要意义的数据记录，专家补足也是非常重要的一种途径</p>
+<h4 id="不处理"><a href="#不处理" class="headerlink" title="不处理"></a>不处理</h4><ul>
+<li>当缺失值对模型的影响不大时，直接在包含空值的数据上进行数据挖掘</li>
+<li>很多模型对于缺失值有容忍度或灵活的处理方法，因此在预处理阶段可以不做处理</li>
+<li>树模型对于缺失值的敏感度较低，大部分时候可以在数据有缺失时使用</li>
+<li>涉及到距离度量(distance measurement)时，如计算两个点之间的距离，缺失数据就变得比较重要。因为涉及到“距离”这个概念，那么缺失值处理不当就会导致效果很差，如K近邻算法(KNN)和支持向量机(SVM)</li>
+<li>线性模型的代价函数(loss function)往往涉及到距离(distance)的计算，计算预测值和真实值之间的差别，这容易导致对缺失值敏感</li>
+<li>神经网络的鲁棒性强，对于缺失数据不是非常敏感，但一般没有那么多数据可供使用。</li>
+<li>贝叶斯模型对于缺失数据也比较稳定，数据量很小的时候首推贝叶斯模型。</li>
+</ul>
+<h3 id="时间序列"><a href="#时间序列" class="headerlink" title="时间序列"></a>时间序列</h3><p>依情况处理，主要看单独时间字段或时间字段与某些字段的组合属性对目标分析的作用程度，再采取相应方式来进行特征提取比如：可以将时间字段与其他字段属性进行组合，分析每天、每周、每月或特点星期几等情况下特征数据频率信息，总的来说还是得看分析得目标</p>
+<p>通常看到的情况是，除了考虑时间序列这个单独的特征外，往往是将时间序列和具有时间属性的特征联合起来分析，查看组合特征的对所需要分析的内容的影响</p>
+<h3 id="异常值和离群值"><a href="#异常值和离群值" class="headerlink" title="异常值和离群值"></a>异常值和离群值</h3><p>大多数的参数统计数值如均值、标准差、相关系数等，以及基于这些参数的统计分析均对离群值高度敏感。因此离群值的存在会对数据分析造成极大影响</p>
+<h4 id="判断"><a href="#判断" class="headerlink" title="判断"></a>判断</h4><ul>
+<li>用分位数搞定，看跟平均值的偏差超过几倍标准差</li>
+<li>LOF算法</li>
+<li>describe的时候加一个箱型图</li>
+</ul>
+<h4 id="处理"><a href="#处理" class="headerlink" title="处理"></a>处理</h4><ul>
+<li>对数转换</li>
+<li>缩尾</li>
+<li>截尾</li>
+<li>插值</li>
+</ul>
+<h3 id="无用特征删除"><a href="#无用特征删除" class="headerlink" title="无用特征删除"></a>无用特征删除</h3><p>将所有object格式的改为数值格式，其中有部分无用特征则可直接删除</p>
+<p>由上可看出需处理包含：[‘trade_no’, ‘bank_card_no’, ‘reg_preference_for_trad’, ‘source’, ‘id_name’, ‘latest_query_time’, ‘loans_latest_time’]</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;source&#x27;</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>xs    4754
+Name: source, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">to_drop = [<span class="string">&#x27;trade_no&#x27;</span>, <span class="string">&#x27;bank_card_no&#x27;</span>, <span class="string">&#x27;student_feature&#x27;</span>,<span class="string">&#x27;cross_consume_count_last_1_month&#x27;</span>, <span class="string">&#x27;id_name&#x27;</span>, <span class="string">&#x27;source&#x27;</span>]</span><br><span class="line">df = df.drop(to_drop, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="缺失填充"><a href="#缺失填充" class="headerlink" title="缺失填充"></a>缺失填充</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>一线城市    3403
+三线城市    1064
+境外       150
+二线城市     131
+其他城市       4
+NaN        2
+Name: reg_preference_for_trad, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].fillna(<span class="string">&#x27;其他城市&#x27;</span>,inplace = <span class="literal">True</span>)</span><br><span class="line">df[<span class="string">&#x27;reg_preference_for_trad&#x27;</span>].value_counts(dropna = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>一线城市    3403
+三线城市    1064
+境外       150
+二线城市     131
+其他城市       6
+Name: reg_preference_for_trad, dtype: int64
+</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.isnull().<span class="built_in">sum</span>().sort_values(ascending = <span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>latest_three_month_apply                      304
+query_finance_count                           304
+latest_six_month_apply                        304
+latest_query_time                             304
+query_sum_count                               304
+query_cash_count                              304
+latest_one_month_apply                        304
+query_org_count                               304
+apply_credibility                             304
+apply_score                                   304
+latest_query_day                              304
+latest_three_month_loan                       297
+loans_score                                   297
+loans_credibility_behavior                    297
+loans_count                                   297
+loans_settle_count                            297
+loans_overdue_count                           297
+loans_org_count_behavior                      297
+consfin_org_count_behavior                    297
+loans_cash_count                              297
+latest_one_month_loan                         297
+loans_latest_day                              297
+latest_six_month_loan                         297
+loans_product_count                           297
+history_suc_fee                               297
+consfin_avg_limit                             297
+consfin_product_count                         297
+consfin_org_count_current                     297
+consfin_credibility                           297
+consfin_credit_limit                          297
+                                             ... 
+trans_amount_increase_rate_lately               3
+trans_days_interval                             2
+regional_mobility                               2
+number_of_trans_from_2011                       2
+middle_volume_percent                           2
+transd_mcc                                      2
+trans_activity_day                              2
+trans_activity_month                            2
+low_volume_percent                              2
+historical_trans_day                            2
+first_transaction_time                          2
+first_transaction_day                           2
+rank_trad_1_month                               2
+avg_consume_less_12_valid_month                 2
+trans_day_last_12_month                         2
+top_trans_count_last_1_month                    2
+max_cumulative_consume_later_1_month            0
+custid                                          0
+status                                          0
+take_amount_in_later_12_month_highest           0
+pawns_auctions_trusts_consume_last_6_month      0
+pawns_auctions_trusts_consume_last_1_month      0
+reg_preference_for_trad                         0
+historical_trans_amount                         0
+avg_price_last_12_month                         0
+abs                                             0
+repayment_capability                            0
+is_high_user                                    0
+trans_amount_3_month                            0
+Unnamed: 0                                      0
+Length: 84, dtype: int64
+</code></pre><h2 id="特征间探索"><a href="#特征间探索" class="headerlink" title="特征间探索"></a>特征间探索</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">corr = df[:].corr()</span><br><span class="line">plt.figure(figsize=(<span class="number">15</span>, <span class="number">10</span>))</span><br><span class="line">sb.heatmap(corr)</span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-08-01_金融数据描述_10.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-08-01_金融数据描述_10.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">corr</span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>custid</th>
+      <th>low_volume_percent</th>
+      <th>middle_volume_percent</th>
+      <th>take_amount_in_later_12_month_highest</th>
+      <th>trans_amount_increase_rate_lately</th>
+      <th>trans_activity_month</th>
+      <th>trans_activity_day</th>
+      <th>transd_mcc</th>
+      <th>trans_days_interval_filter</th>
+      <th>...</th>
+      <th>loans_max_limit</th>
+      <th>loans_avg_limit</th>
+      <th>consfin_credit_limit</th>
+      <th>consfin_credibility</th>
+      <th>consfin_org_count_current</th>
+      <th>consfin_product_count</th>
+      <th>consfin_max_limit</th>
+      <th>consfin_avg_limit</th>
+      <th>latest_query_day</th>
+      <th>loans_latest_day</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Unnamed: 0</th>
+      <td>1.000000</td>
+      <td>-0.007628</td>
+      <td>0.002861</td>
+      <td>-0.022844</td>
+      <td>-0.019728</td>
+      <td>0.014076</td>
+      <td>-0.021715</td>
+      <td>-0.001027</td>
+      <td>-0.006975</td>
+      <td>-0.021338</td>
+      <td>...</td>
+      <td>0.012189</td>
+      <td>-0.004457</td>
+      <td>0.005967</td>
+      <td>0.007746</td>
+      <td>0.012062</td>
+      <td>0.009583</td>
+      <td>0.004020</td>
+      <td>0.008860</td>
+      <td>0.020774</td>
+      <td>0.026387</td>
+    </tr>
+    <tr>
+      <th>custid</th>
+      <td>-0.007628</td>
+      <td>1.000000</td>
+      <td>0.031430</td>
+      <td>0.090599</td>
+      <td>-0.030282</td>
+      <td>-0.001299</td>
+      <td>-0.118811</td>
+      <td>-0.216062</td>
+      <td>-0.147485</td>
+      <td>0.144513</td>
+      <td>...</td>
+      <td>-0.236185</td>
+      <td>-0.152017</td>
+      <td>-0.093180</td>
+      <td>-0.041979</td>
+      <td>-0.129297</td>
+      <td>-0.139197</td>
+      <td>-0.115324</td>
+      <td>-0.076767</td>
+      <td>0.099208</td>
+      <td>0.098628</td>
+    </tr>
+    <tr>
+      <th>low_volume_percent</th>
+      <td>0.002861</td>
+      <td>0.031430</td>
+      <td>1.000000</td>
+      <td>-0.151504</td>
+      <td>-0.066047</td>
+      <td>0.005331</td>
+      <td>0.023895</td>
+      <td>-0.093754</td>
+      <td>-0.095780</td>
+      <td>0.054680</td>
+      <td>...</td>
+      <td>-0.140173</td>
+      <td>-0.128145</td>
+      <td>-0.083987</td>
+      <td>-0.032534</td>
+      <td>-0.074851</td>
+      <td>-0.067226</td>
+      <td>-0.096647</td>
+      <td>-0.094627</td>
+      <td>0.069301</td>
+      <td>0.047500</td>
+    </tr>
+    <tr>
+      <th>middle_volume_percent</th>
+      <td>-0.022844</td>
+      <td>0.090599</td>
+      <td>-0.151504</td>
+      <td>1.000000</td>
+      <td>-0.135050</td>
+      <td>0.001608</td>
+      <td>-0.031743</td>
+      <td>-0.055491</td>
+      <td>-0.094736</td>
+      <td>0.010146</td>
+      <td>...</td>
+      <td>-0.145599</td>
+      <td>-0.110230</td>
+      <td>-0.153241</td>
+      <td>0.003266</td>
+      <td>-0.007761</td>
+      <td>-0.014847</td>
+      <td>-0.169575</td>
+      <td>-0.174126</td>
+      <td>-0.001628</td>
+      <td>-0.003253</td>
+    </tr>
+    <tr>
+      <th>take_amount_in_later_12_month_highest</th>
+      <td>-0.019728</td>
+      <td>-0.030282</td>
+      <td>-0.066047</td>
+      <td>-0.135050</td>
+      <td>1.000000</td>
+      <td>-0.006699</td>
+      <td>0.060997</td>
+      <td>0.112582</td>
+      <td>0.181435</td>
+      <td>-0.055318</td>
+      <td>...</td>
+      <td>0.071798</td>
+      <td>0.038880</td>
+      <td>0.039328</td>
+      <td>0.015841</td>
+      <td>0.021387</td>
+      <td>0.021337</td>
+      <td>0.054433</td>
+      <td>0.040634</td>
+      <td>-0.000570</td>
+      <td>-0.010231</td>
+    </tr>
+    <tr>
+      <th>trans_amount_increase_rate_lately</th>
+      <td>0.014076</td>
+      <td>-0.001299</td>
+      <td>0.005331</td>
+      <td>0.001608</td>
+      <td>-0.006699</td>
+      <td>1.000000</td>
+      <td>0.015389</td>
+      <td>-0.003061</td>
+      <td>-0.011644</td>
+      <td>0.013220</td>
+      <td>...</td>
+      <td>0.007119</td>
+      <td>0.000119</td>
+      <td>0.028868</td>
+      <td>0.006174</td>
+      <td>-0.019901</td>
+      <td>-0.019603</td>
+      <td>0.007123</td>
+      <td>0.040865</td>
+      <td>-0.001457</td>
+      <td>0.027221</td>
+    </tr>
+    <tr>
+      <th>trans_activity_month</th>
+      <td>-0.021715</td>
+      <td>-0.118811</td>
+      <td>0.023895</td>
+      <td>-0.031743</td>
+      <td>0.060997</td>
+      <td>0.015389</td>
+      <td>1.000000</td>
+      <td>0.063373</td>
+      <td>0.069272</td>
+      <td>-0.091630</td>
+      <td>...</td>
+      <td>0.061847</td>
+      <td>0.037275</td>
+      <td>-0.036822</td>
+      <td>-0.000400</td>
+      <td>0.003332</td>
+      <td>0.005534</td>
+      <td>-0.022388</td>
+      <td>-0.043764</td>
+      <td>-0.024161</td>
+      <td>-0.014880</td>
+    </tr>
+    <tr>
+      <th>trans_activity_day</th>
+      <td>-0.001027</td>
+      <td>-0.216062</td>
+      <td>-0.093754</td>
+      <td>-0.055491</td>
+      <td>0.112582</td>
+      <td>-0.003061</td>
+      <td>0.063373</td>
+      <td>1.000000</td>
+      <td>0.674547</td>
+      <td>-0.491304</td>
+      <td>...</td>
+      <td>0.445155</td>
+      <td>0.202242</td>
+      <td>0.096622</td>
+      <td>0.181157</td>
+      <td>0.553486</td>
+      <td>0.551140</td>
+      <td>0.224509</td>
+      <td>0.085255</td>
+      <td>-0.188965</td>
+      <td>-0.299110</td>
+    </tr>
+    <tr>
+      <th>transd_mcc</th>
+      <td>-0.006975</td>
+      <td>-0.147485</td>
+      <td>-0.095780</td>
+      <td>-0.094736</td>
+      <td>0.181435</td>
+      <td>-0.011644</td>
+      <td>0.069272</td>
+      <td>0.674547</td>
+      <td>1.000000</td>
+      <td>-0.407126</td>
+      <td>...</td>
+      <td>0.313715</td>
+      <td>0.165959</td>
+      <td>0.066250</td>
+      <td>0.131905</td>
+      <td>0.371197</td>
+      <td>0.374660</td>
+      <td>0.156951</td>
+      <td>0.057663</td>
+      <td>-0.120330</td>
+      <td>-0.211593</td>
+    </tr>
+    <tr>
+      <th>trans_days_interval_filter</th>
+      <td>-0.021338</td>
+      <td>0.144513</td>
+      <td>0.054680</td>
+      <td>0.010146</td>
+      <td>-0.055318</td>
+      <td>0.013220</td>
+      <td>-0.091630</td>
+      <td>-0.491304</td>
+      <td>-0.407126</td>
+      <td>1.000000</td>
+      <td>...</td>
+      <td>-0.222970</td>
+      <td>-0.118522</td>
+      <td>-0.055205</td>
+      <td>-0.142221</td>
+      <td>-0.287044</td>
+      <td>-0.286212</td>
+      <td>-0.111345</td>
+      <td>-0.045801</td>
+      <td>0.069560</td>
+      <td>0.163433</td>
+    </tr>
+    <tr>
+      <th>trans_days_interval</th>
+      <td>-0.006297</td>
+      <td>0.200145</td>
+      <td>0.062421</td>
+      <td>-0.000383</td>
+      <td>-0.053329</td>
+      <td>0.000521</td>
+      <td>-0.151579</td>
+      <td>-0.542118</td>
+      <td>-0.447308</td>
+      <td>0.690819</td>
+      <td>...</td>
+      <td>-0.271875</td>
+      <td>-0.163049</td>
+      <td>-0.034716</td>
+      <td>-0.102588</td>
+      <td>-0.285654</td>
+      <td>-0.286510</td>
+      <td>-0.105000</td>
+      <td>-0.024740</td>
+      <td>0.102343</td>
+      <td>0.178628</td>
+    </tr>
+    <tr>
+      <th>regional_mobility</th>
+      <td>0.011694</td>
+      <td>-0.134926</td>
+      <td>-0.042939</td>
+      <td>0.009671</td>
+      <td>0.024089</td>
+      <td>-0.026960</td>
+      <td>-0.219911</td>
+      <td>0.143697</td>
+      <td>0.114936</td>
+      <td>-0.124350</td>
+      <td>...</td>
+      <td>0.099696</td>
+      <td>0.062712</td>
+      <td>0.092796</td>
+      <td>0.054084</td>
+      <td>0.147120</td>
+      <td>0.145322</td>
+      <td>0.091150</td>
+      <td>0.079245</td>
+      <td>-0.051839</td>
+      <td>-0.107139</td>
+    </tr>
+    <tr>
+      <th>student_feature</th>
+      <td>0.014227</td>
+      <td>0.026639</td>
+      <td>-0.007327</td>
+      <td>0.018852</td>
+      <td>-0.013524</td>
+      <td>-0.002682</td>
+      <td>0.004966</td>
+      <td>0.011653</td>
+      <td>0.005921</td>
+      <td>-0.005412</td>
+      <td>...</td>
+      <td>0.021982</td>
+      <td>0.007634</td>
+      <td>0.001860</td>
+      <td>0.009800</td>
+      <td>0.020368</td>
+      <td>0.017777</td>
+      <td>0.000096</td>
+      <td>0.004799</td>
+      <td>-0.020274</td>
+      <td>-0.031571</td>
+    </tr>
+    <tr>
+      <th>repayment_capability</th>
+      <td>-0.006726</td>
+      <td>-0.026254</td>
+      <td>-0.041522</td>
+      <td>-0.178436</td>
+      <td>0.055174</td>
+      <td>-0.000572</td>
+      <td>0.024737</td>
+      <td>0.189494</td>
+      <td>0.115434</td>
+      <td>-0.048998</td>
+      <td>...</td>
+      <td>0.128100</td>
+      <td>0.066266</td>
+      <td>0.052900</td>
+      <td>0.007068</td>
+      <td>0.046341</td>
+      <td>0.046471</td>
+      <td>0.063720</td>
+      <td>0.052120</td>
+      <td>-0.020964</td>
+      <td>-0.049951</td>
+    </tr>
+    <tr>
+      <th>is_high_user</th>
+      <td>-0.002995</td>
+      <td>-0.004640</td>
+      <td>0.018546</td>
+      <td>-0.029172</td>
+      <td>0.068763</td>
+      <td>-0.002017</td>
+      <td>0.044231</td>
+      <td>-0.034766</td>
+      <td>-0.080892</td>
+      <td>0.146678</td>
+      <td>...</td>
+      <td>-0.006073</td>
+      <td>0.014809</td>
+      <td>0.001286</td>
+      <td>-0.000752</td>
+      <td>-0.020497</td>
+      <td>-0.017732</td>
+      <td>0.007764</td>
+      <td>0.013155</td>
+      <td>-0.011908</td>
+      <td>-0.015299</td>
+    </tr>
+    <tr>
+      <th>number_of_trans_from_2011</th>
+      <td>0.016355</td>
+      <td>-0.276856</td>
+      <td>-0.031668</td>
+      <td>-0.084995</td>
+      <td>0.056183</td>
+      <td>-0.013609</td>
+      <td>-0.198322</td>
+      <td>0.286353</td>
+      <td>0.262917</td>
+      <td>-0.181413</td>
+      <td>...</td>
+      <td>0.195444</td>
+      <td>0.142227</td>
+      <td>0.105527</td>
+      <td>0.066191</td>
+      <td>0.212621</td>
+      <td>0.215217</td>
+      <td>0.138342</td>
+      <td>0.088776</td>
+      <td>-0.087938</td>
+      <td>-0.140635</td>
+    </tr>
+    <tr>
+      <th>historical_trans_amount</th>
+      <td>0.002346</td>
+      <td>-0.179652</td>
+      <td>-0.117333</td>
+      <td>-0.255846</td>
+      <td>0.102959</td>
+      <td>-0.002527</td>
+      <td>0.016522</td>
+      <td>0.526801</td>
+      <td>0.392433</td>
+      <td>-0.254563</td>
+      <td>...</td>
+      <td>0.324514</td>
+      <td>0.165218</td>
+      <td>0.137554</td>
+      <td>0.073505</td>
+      <td>0.288324</td>
+      <td>0.288420</td>
+      <td>0.201670</td>
+      <td>0.138920</td>
+      <td>-0.087267</td>
+      <td>-0.156048</td>
+    </tr>
+    <tr>
+      <th>historical_trans_day</th>
+      <td>0.004245</td>
+      <td>-0.345875</td>
+      <td>-0.068345</td>
+      <td>-0.116128</td>
+      <td>0.112908</td>
+      <td>-0.006987</td>
+      <td>0.052108</td>
+      <td>0.855832</td>
+      <td>0.603820</td>
+      <td>-0.424616</td>
+      <td>...</td>
+      <td>0.430792</td>
+      <td>0.223623</td>
+      <td>0.111262</td>
+      <td>0.142560</td>
+      <td>0.472101</td>
+      <td>0.473890</td>
+      <td>0.219427</td>
+      <td>0.097498</td>
+      <td>-0.171007</td>
+      <td>-0.267034</td>
+    </tr>
+    <tr>
+      <th>rank_trad_1_month</th>
+      <td>0.011515</td>
+      <td>0.116798</td>
+      <td>0.102996</td>
+      <td>0.139914</td>
+      <td>-0.089095</td>
+      <td>0.028153</td>
+      <td>-0.017110</td>
+      <td>-0.517923</td>
+      <td>-0.481565</td>
+      <td>0.345540</td>
+      <td>...</td>
+      <td>-0.235028</td>
+      <td>-0.121879</td>
+      <td>-0.120020</td>
+      <td>-0.133787</td>
+      <td>-0.328297</td>
+      <td>-0.327323</td>
+      <td>-0.180749</td>
+      <td>-0.115613</td>
+      <td>0.139572</td>
+      <td>0.243659</td>
+    </tr>
+    <tr>
+      <th>trans_amount_3_month</th>
+      <td>-0.003329</td>
+      <td>-0.069252</td>
+      <td>-0.063526</td>
+      <td>-0.189438</td>
+      <td>0.074279</td>
+      <td>-0.003598</td>
+      <td>0.010864</td>
+      <td>0.293735</td>
+      <td>0.250140</td>
+      <td>-0.139654</td>
+      <td>...</td>
+      <td>0.186909</td>
+      <td>0.084463</td>
+      <td>0.065007</td>
+      <td>0.033856</td>
+      <td>0.151395</td>
+      <td>0.153457</td>
+      <td>0.094556</td>
+      <td>0.063275</td>
+      <td>-0.044342</td>
+      <td>-0.099134</td>
+    </tr>
+    <tr>
+      <th>avg_consume_less_12_valid_month</th>
+      <td>-0.001742</td>
+      <td>-0.087905</td>
+      <td>-0.042251</td>
+      <td>-0.154257</td>
+      <td>0.031360</td>
+      <td>0.006201</td>
+      <td>0.014532</td>
+      <td>0.081550</td>
+      <td>0.194729</td>
+      <td>-0.017535</td>
+      <td>...</td>
+      <td>0.054239</td>
+      <td>0.010832</td>
+      <td>0.024610</td>
+      <td>0.026514</td>
+      <td>0.103333</td>
+      <td>0.101638</td>
+      <td>0.044864</td>
+      <td>0.011955</td>
+      <td>-0.069481</td>
+      <td>-0.090181</td>
+    </tr>
+    <tr>
+      <th>abs</th>
+      <td>-0.004830</td>
+      <td>-0.059940</td>
+      <td>-0.059972</td>
+      <td>-0.247023</td>
+      <td>0.081978</td>
+      <td>-0.003474</td>
+      <td>0.038276</td>
+      <td>0.306292</td>
+      <td>0.160103</td>
+      <td>-0.054408</td>
+      <td>...</td>
+      <td>0.152274</td>
+      <td>0.105389</td>
+      <td>0.072716</td>
+      <td>0.009934</td>
+      <td>0.071542</td>
+      <td>0.074592</td>
+      <td>0.102727</td>
+      <td>0.090651</td>
+      <td>-0.042772</td>
+      <td>-0.065586</td>
+    </tr>
+    <tr>
+      <th>top_trans_count_last_1_month</th>
+      <td>0.021195</td>
+      <td>0.101220</td>
+      <td>0.037765</td>
+      <td>0.059410</td>
+      <td>-0.063713</td>
+      <td>0.029701</td>
+      <td>-0.026923</td>
+      <td>-0.503568</td>
+      <td>-0.475823</td>
+      <td>0.381422</td>
+      <td>...</td>
+      <td>-0.199205</td>
+      <td>-0.082819</td>
+      <td>-0.071977</td>
+      <td>-0.138804</td>
+      <td>-0.323863</td>
+      <td>-0.324179</td>
+      <td>-0.128756</td>
+      <td>-0.058697</td>
+      <td>0.140451</td>
+      <td>0.247943</td>
+    </tr>
+    <tr>
+      <th>avg_price_last_12_month</th>
+      <td>0.011454</td>
+      <td>-0.090752</td>
+      <td>-0.286213</td>
+      <td>-0.556220</td>
+      <td>0.129908</td>
+      <td>-0.004808</td>
+      <td>-0.006858</td>
+      <td>0.068127</td>
+      <td>0.067431</td>
+      <td>-0.003254</td>
+      <td>...</td>
+      <td>0.204154</td>
+      <td>0.186553</td>
+      <td>0.183277</td>
+      <td>-0.017057</td>
+      <td>0.019580</td>
+      <td>0.017570</td>
+      <td>0.179284</td>
+      <td>0.205885</td>
+      <td>-0.033386</td>
+      <td>-0.020140</td>
+    </tr>
+    <tr>
+      <th>avg_price_top_last_12_valid_month</th>
+      <td>-0.018637</td>
+      <td>0.124158</td>
+      <td>0.509637</td>
+      <td>0.369498</td>
+      <td>-0.123202</td>
+      <td>-0.030556</td>
+      <td>0.011839</td>
+      <td>-0.138470</td>
+      <td>-0.145411</td>
+      <td>0.064464</td>
+      <td>...</td>
+      <td>-0.316923</td>
+      <td>-0.285338</td>
+      <td>-0.172475</td>
+      <td>-0.002851</td>
+      <td>-0.087684</td>
+      <td>-0.080339</td>
+      <td>-0.197348</td>
+      <td>-0.195194</td>
+      <td>0.079399</td>
+      <td>0.062422</td>
+    </tr>
+    <tr>
+      <th>trans_top_time_last_1_month</th>
+      <td>-0.007772</td>
+      <td>-0.003624</td>
+      <td>-0.023020</td>
+      <td>-0.015316</td>
+      <td>0.028547</td>
+      <td>-0.021723</td>
+      <td>0.018931</td>
+      <td>0.092705</td>
+      <td>0.143620</td>
+      <td>-0.127328</td>
+      <td>...</td>
+      <td>0.039372</td>
+      <td>0.019334</td>
+      <td>0.005990</td>
+      <td>0.060674</td>
+      <td>0.059770</td>
+      <td>0.056594</td>
+      <td>0.021747</td>
+      <td>0.000811</td>
+      <td>-0.030739</td>
+      <td>-0.069952</td>
+    </tr>
+    <tr>
+      <th>trans_top_time_last_6_month</th>
+      <td>0.012229</td>
+      <td>0.063470</td>
+      <td>0.064055</td>
+      <td>0.025356</td>
+      <td>-0.079647</td>
+      <td>0.032999</td>
+      <td>-0.016856</td>
+      <td>-0.519642</td>
+      <td>-0.400228</td>
+      <td>0.541678</td>
+      <td>...</td>
+      <td>-0.227717</td>
+      <td>-0.111353</td>
+      <td>-0.055343</td>
+      <td>-0.151634</td>
+      <td>-0.336984</td>
+      <td>-0.334724</td>
+      <td>-0.106172</td>
+      <td>-0.042912</td>
+      <td>0.088539</td>
+      <td>0.199473</td>
+    </tr>
+    <tr>
+      <th>consume_top_time_last_1_month</th>
+      <td>-0.012425</td>
+      <td>-0.013828</td>
+      <td>-0.030325</td>
+      <td>-0.024816</td>
+      <td>0.022475</td>
+      <td>-0.020937</td>
+      <td>0.021517</td>
+      <td>0.126348</td>
+      <td>0.162267</td>
+      <td>-0.155562</td>
+      <td>...</td>
+      <td>0.053634</td>
+      <td>0.023311</td>
+      <td>0.018442</td>
+      <td>0.073859</td>
+      <td>0.083782</td>
+      <td>0.080835</td>
+      <td>0.038965</td>
+      <td>0.012452</td>
+      <td>-0.044495</td>
+      <td>-0.078152</td>
+    </tr>
+    <tr>
+      <th>consume_top_time_last_6_month</th>
+      <td>0.010297</td>
+      <td>0.071615</td>
+      <td>0.026853</td>
+      <td>0.033989</td>
+      <td>-0.062038</td>
+      <td>0.032106</td>
+      <td>-0.009154</td>
+      <td>-0.506739</td>
+      <td>-0.371122</td>
+      <td>0.489491</td>
+      <td>...</td>
+      <td>-0.228478</td>
+      <td>-0.109085</td>
+      <td>-0.055605</td>
+      <td>-0.128403</td>
+      <td>-0.331808</td>
+      <td>-0.329305</td>
+      <td>-0.105383</td>
+      <td>-0.042412</td>
+      <td>0.083349</td>
+      <td>0.194636</td>
+    </tr>
+    <tr>
+      <th>cross_consume_count_last_1_month</th>
+      <td>-0.019612</td>
+      <td>-0.015749</td>
+      <td>0.056716</td>
+      <td>-0.076003</td>
+      <td>0.042310</td>
+      <td>-0.004524</td>
+      <td>-0.001588</td>
+      <td>0.217779</td>
+      <td>0.236684</td>
+      <td>-0.098826</td>
+      <td>...</td>
+      <td>0.101269</td>
+      <td>0.038369</td>
+      <td>0.032169</td>
+      <td>0.024935</td>
+      <td>0.129515</td>
+      <td>0.131031</td>
+      <td>0.041163</td>
+      <td>0.025667</td>
+      <td>-0.026850</td>
+      <td>-0.081532</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>loans_score</th>
+      <td>-0.014716</td>
+      <td>-0.006276</td>
+      <td>-0.007019</td>
+      <td>-0.039519</td>
+      <td>-0.003928</td>
+      <td>0.010481</td>
+      <td>-0.020418</td>
+      <td>-0.211471</td>
+      <td>-0.141698</td>
+      <td>0.105373</td>
+      <td>...</td>
+      <td>-0.145502</td>
+      <td>-0.071344</td>
+      <td>0.076157</td>
+      <td>-0.043698</td>
+      <td>-0.242594</td>
+      <td>-0.249384</td>
+      <td>-0.004854</td>
+      <td>0.085289</td>
+      <td>0.035587</td>
+      <td>-0.019444</td>
+    </tr>
+    <tr>
+      <th>loans_credibility_behavior</th>
+      <td>-0.000191</td>
+      <td>-0.023587</td>
+      <td>0.037414</td>
+      <td>-0.031636</td>
+      <td>-0.017790</td>
+      <td>-0.003788</td>
+      <td>0.002694</td>
+      <td>-0.059242</td>
+      <td>-0.028579</td>
+      <td>0.016791</td>
+      <td>...</td>
+      <td>-0.109592</td>
+      <td>-0.059538</td>
+      <td>0.113228</td>
+      <td>0.202241</td>
+      <td>0.132995</td>
+      <td>0.141105</td>
+      <td>0.112848</td>
+      <td>0.110999</td>
+      <td>0.014235</td>
+      <td>-0.034587</td>
+    </tr>
+    <tr>
+      <th>loans_count</th>
+      <td>0.008971</td>
+      <td>-0.104423</td>
+      <td>-0.103643</td>
+      <td>0.093372</td>
+      <td>0.034853</td>
+      <td>-0.011057</td>
+      <td>0.010844</td>
+      <td>0.713700</td>
+      <td>0.433028</td>
+      <td>-0.340780</td>
+      <td>...</td>
+      <td>0.454809</td>
+      <td>0.167113</td>
+      <td>0.097746</td>
+      <td>0.189068</td>
+      <td>0.669975</td>
+      <td>0.658099</td>
+      <td>0.240708</td>
+      <td>0.067635</td>
+      <td>-0.194495</td>
+      <td>-0.388366</td>
+    </tr>
+    <tr>
+      <th>loans_settle_count</th>
+      <td>0.008509</td>
+      <td>-0.106395</td>
+      <td>-0.115451</td>
+      <td>0.084747</td>
+      <td>0.044691</td>
+      <td>-0.011398</td>
+      <td>0.006203</td>
+      <td>0.723008</td>
+      <td>0.440667</td>
+      <td>-0.346732</td>
+      <td>...</td>
+      <td>0.466131</td>
+      <td>0.175771</td>
+      <td>0.109141</td>
+      <td>0.183622</td>
+      <td>0.633814</td>
+      <td>0.618343</td>
+      <td>0.239062</td>
+      <td>0.079620</td>
+      <td>-0.198341</td>
+      <td>-0.374859</td>
+    </tr>
+    <tr>
+      <th>loans_overdue_count</th>
+      <td>-0.002123</td>
+      <td>-0.047870</td>
+      <td>0.003258</td>
+      <td>0.055341</td>
+      <td>-0.018406</td>
+      <td>-0.009483</td>
+      <td>0.026175</td>
+      <td>0.319103</td>
+      <td>0.193574</td>
+      <td>-0.145065</td>
+      <td>...</td>
+      <td>0.189896</td>
+      <td>0.071337</td>
+      <td>0.001805</td>
+      <td>0.089767</td>
+      <td>0.389047</td>
+      <td>0.396295</td>
+      <td>0.109103</td>
+      <td>-0.020359</td>
+      <td>-0.069116</td>
+      <td>-0.166293</td>
+    </tr>
+    <tr>
+      <th>loans_org_count_behavior</th>
+      <td>0.002662</td>
+      <td>-0.107997</td>
+      <td>-0.113256</td>
+      <td>0.086219</td>
+      <td>0.020780</td>
+      <td>-0.012629</td>
+      <td>0.014655</td>
+      <td>0.698811</td>
+      <td>0.451913</td>
+      <td>-0.330187</td>
+      <td>...</td>
+      <td>0.462677</td>
+      <td>0.133557</td>
+      <td>0.065915</td>
+      <td>0.231726</td>
+      <td>0.799828</td>
+      <td>0.784147</td>
+      <td>0.257087</td>
+      <td>0.038651</td>
+      <td>-0.216354</td>
+      <td>-0.402870</td>
+    </tr>
+    <tr>
+      <th>consfin_org_count_behavior</th>
+      <td>0.012062</td>
+      <td>-0.129297</td>
+      <td>-0.074851</td>
+      <td>-0.007761</td>
+      <td>0.021387</td>
+      <td>-0.019901</td>
+      <td>0.003332</td>
+      <td>0.553486</td>
+      <td>0.371197</td>
+      <td>-0.287044</td>
+      <td>...</td>
+      <td>0.357549</td>
+      <td>0.137506</td>
+      <td>0.102057</td>
+      <td>0.297390</td>
+      <td>1.000000</td>
+      <td>0.988027</td>
+      <td>0.345697</td>
+      <td>0.074170</td>
+      <td>-0.185038</td>
+      <td>-0.399885</td>
+    </tr>
+    <tr>
+      <th>loans_cash_count</th>
+      <td>-0.002987</td>
+      <td>-0.078110</td>
+      <td>-0.115566</td>
+      <td>0.123857</td>
+      <td>0.016962</td>
+      <td>-0.006482</td>
+      <td>0.018475</td>
+      <td>0.662281</td>
+      <td>0.420938</td>
+      <td>-0.298750</td>
+      <td>...</td>
+      <td>0.443326</td>
+      <td>0.108990</td>
+      <td>0.034866</td>
+      <td>0.156549</td>
+      <td>0.555002</td>
+      <td>0.539896</td>
+      <td>0.164961</td>
+      <td>0.012515</td>
+      <td>-0.197164</td>
+      <td>-0.337008</td>
+    </tr>
+    <tr>
+      <th>latest_one_month_loan</th>
+      <td>-0.001009</td>
+      <td>-0.082016</td>
+      <td>-0.034938</td>
+      <td>-0.017258</td>
+      <td>0.008845</td>
+      <td>-0.010482</td>
+      <td>0.010030</td>
+      <td>0.251331</td>
+      <td>0.152255</td>
+      <td>-0.109048</td>
+      <td>...</td>
+      <td>0.216387</td>
+      <td>0.078718</td>
+      <td>0.057899</td>
+      <td>0.087776</td>
+      <td>0.328566</td>
+      <td>0.334659</td>
+      <td>0.136317</td>
+      <td>0.039233</td>
+      <td>-0.167327</td>
+      <td>-0.564125</td>
+    </tr>
+    <tr>
+      <th>latest_three_month_loan</th>
+      <td>0.009841</td>
+      <td>-0.102432</td>
+      <td>-0.041141</td>
+      <td>-0.007416</td>
+      <td>0.009611</td>
+      <td>-0.012746</td>
+      <td>0.024060</td>
+      <td>0.277217</td>
+      <td>0.180567</td>
+      <td>-0.132316</td>
+      <td>...</td>
+      <td>0.235019</td>
+      <td>0.083134</td>
+      <td>0.055062</td>
+      <td>0.099953</td>
+      <td>0.410173</td>
+      <td>0.415173</td>
+      <td>0.158521</td>
+      <td>0.038337</td>
+      <td>-0.172112</td>
+      <td>-0.556912</td>
+    </tr>
+    <tr>
+      <th>latest_six_month_loan</th>
+      <td>0.013859</td>
+      <td>-0.084090</td>
+      <td>-0.080426</td>
+      <td>0.080167</td>
+      <td>0.034499</td>
+      <td>-0.007440</td>
+      <td>0.023376</td>
+      <td>0.618386</td>
+      <td>0.381795</td>
+      <td>-0.294128</td>
+      <td>...</td>
+      <td>0.395462</td>
+      <td>0.110447</td>
+      <td>0.067585</td>
+      <td>0.169560</td>
+      <td>0.653119</td>
+      <td>0.646769</td>
+      <td>0.214958</td>
+      <td>0.040151</td>
+      <td>-0.201667</td>
+      <td>-0.457269</td>
+    </tr>
+    <tr>
+      <th>history_suc_fee</th>
+      <td>0.005751</td>
+      <td>-0.154554</td>
+      <td>-0.068576</td>
+      <td>0.038832</td>
+      <td>0.036804</td>
+      <td>-0.013452</td>
+      <td>0.008331</td>
+      <td>0.707752</td>
+      <td>0.432147</td>
+      <td>-0.361614</td>
+      <td>...</td>
+      <td>0.439947</td>
+      <td>0.158091</td>
+      <td>0.129951</td>
+      <td>0.194162</td>
+      <td>0.682134</td>
+      <td>0.674063</td>
+      <td>0.258122</td>
+      <td>0.092018</td>
+      <td>-0.197019</td>
+      <td>-0.392292</td>
+    </tr>
+    <tr>
+      <th>history_fail_fee</th>
+      <td>0.005633</td>
+      <td>-0.039117</td>
+      <td>0.009093</td>
+      <td>0.055486</td>
+      <td>-0.019751</td>
+      <td>-0.006480</td>
+      <td>0.033715</td>
+      <td>0.269878</td>
+      <td>0.148111</td>
+      <td>-0.115664</td>
+      <td>...</td>
+      <td>0.164983</td>
+      <td>0.047106</td>
+      <td>0.008807</td>
+      <td>0.098387</td>
+      <td>0.399674</td>
+      <td>0.411005</td>
+      <td>0.130966</td>
+      <td>-0.011496</td>
+      <td>-0.060527</td>
+      <td>-0.199490</td>
+    </tr>
+    <tr>
+      <th>latest_one_month_suc</th>
+      <td>0.000168</td>
+      <td>-0.078523</td>
+      <td>-0.025131</td>
+      <td>-0.022327</td>
+      <td>0.022699</td>
+      <td>-0.009579</td>
+      <td>0.009873</td>
+      <td>0.228821</td>
+      <td>0.146654</td>
+      <td>-0.111359</td>
+      <td>...</td>
+      <td>0.194397</td>
+      <td>0.056937</td>
+      <td>0.023565</td>
+      <td>0.092642</td>
+      <td>0.349219</td>
+      <td>0.360903</td>
+      <td>0.119473</td>
+      <td>0.014118</td>
+      <td>-0.167496</td>
+      <td>-0.459412</td>
+    </tr>
+    <tr>
+      <th>latest_one_month_fail</th>
+      <td>0.013939</td>
+      <td>-0.041356</td>
+      <td>0.021126</td>
+      <td>-0.018844</td>
+      <td>-0.004671</td>
+      <td>-0.005436</td>
+      <td>0.017951</td>
+      <td>0.133230</td>
+      <td>0.080658</td>
+      <td>-0.053043</td>
+      <td>...</td>
+      <td>0.104707</td>
+      <td>0.041028</td>
+      <td>-0.000725</td>
+      <td>0.053177</td>
+      <td>0.228943</td>
+      <td>0.244784</td>
+      <td>0.078403</td>
+      <td>-0.011238</td>
+      <td>-0.051815</td>
+      <td>-0.232811</td>
+    </tr>
+    <tr>
+      <th>loans_long_time</th>
+      <td>0.000992</td>
+      <td>-0.216323</td>
+      <td>-0.074834</td>
+      <td>0.040822</td>
+      <td>0.012660</td>
+      <td>-0.002678</td>
+      <td>0.030914</td>
+      <td>0.384281</td>
+      <td>0.301560</td>
+      <td>-0.317888</td>
+      <td>...</td>
+      <td>0.368329</td>
+      <td>0.268476</td>
+      <td>0.144168</td>
+      <td>0.229963</td>
+      <td>0.345921</td>
+      <td>0.337877</td>
+      <td>0.198060</td>
+      <td>0.134422</td>
+      <td>-0.134214</td>
+      <td>-0.214274</td>
+    </tr>
+    <tr>
+      <th>loans_credit_limit</th>
+      <td>-0.006194</td>
+      <td>-0.160582</td>
+      <td>-0.138446</td>
+      <td>-0.086706</td>
+      <td>0.050185</td>
+      <td>0.013118</td>
+      <td>0.036172</td>
+      <td>0.229054</td>
+      <td>0.177929</td>
+      <td>-0.146462</td>
+      <td>...</td>
+      <td>0.745694</td>
+      <td>0.901755</td>
+      <td>0.085200</td>
+      <td>0.057358</td>
+      <td>0.151520</td>
+      <td>0.152471</td>
+      <td>0.123290</td>
+      <td>0.087213</td>
+      <td>-0.111170</td>
+      <td>-0.157736</td>
+    </tr>
+    <tr>
+      <th>loans_credibility_limit</th>
+      <td>-0.033850</td>
+      <td>-0.000850</td>
+      <td>-0.051545</td>
+      <td>0.090824</td>
+      <td>-0.025575</td>
+      <td>0.003868</td>
+      <td>-0.005513</td>
+      <td>0.161363</td>
+      <td>0.154721</td>
+      <td>-0.083218</td>
+      <td>...</td>
+      <td>0.328845</td>
+      <td>0.456704</td>
+      <td>-0.022646</td>
+      <td>-0.029875</td>
+      <td>0.115503</td>
+      <td>0.114720</td>
+      <td>0.021164</td>
+      <td>-0.036374</td>
+      <td>-0.127687</td>
+      <td>-0.138313</td>
+    </tr>
+    <tr>
+      <th>loans_org_count_current</th>
+      <td>-0.002987</td>
+      <td>-0.078110</td>
+      <td>-0.115566</td>
+      <td>0.123857</td>
+      <td>0.016962</td>
+      <td>-0.006482</td>
+      <td>0.018475</td>
+      <td>0.662281</td>
+      <td>0.420938</td>
+      <td>-0.298750</td>
+      <td>...</td>
+      <td>0.443326</td>
+      <td>0.108990</td>
+      <td>0.034866</td>
+      <td>0.156549</td>
+      <td>0.555002</td>
+      <td>0.539896</td>
+      <td>0.164961</td>
+      <td>0.012515</td>
+      <td>-0.197164</td>
+      <td>-0.337008</td>
+    </tr>
+    <tr>
+      <th>loans_product_count</th>
+      <td>-0.001941</td>
+      <td>-0.072159</td>
+      <td>-0.114296</td>
+      <td>0.122741</td>
+      <td>0.018572</td>
+      <td>-0.007575</td>
+      <td>0.019401</td>
+      <td>0.656939</td>
+      <td>0.416980</td>
+      <td>-0.295409</td>
+      <td>...</td>
+      <td>0.441316</td>
+      <td>0.108962</td>
+      <td>0.031936</td>
+      <td>0.155744</td>
+      <td>0.553607</td>
+      <td>0.539424</td>
+      <td>0.163650</td>
+      <td>0.009397</td>
+      <td>-0.199549</td>
+      <td>-0.348389</td>
+    </tr>
+    <tr>
+      <th>loans_max_limit</th>
+      <td>0.012189</td>
+      <td>-0.236185</td>
+      <td>-0.140173</td>
+      <td>-0.145599</td>
+      <td>0.071798</td>
+      <td>0.007119</td>
+      <td>0.061847</td>
+      <td>0.445155</td>
+      <td>0.313715</td>
+      <td>-0.222970</td>
+      <td>...</td>
+      <td>1.000000</td>
+      <td>0.716175</td>
+      <td>0.108760</td>
+      <td>0.101659</td>
+      <td>0.357549</td>
+      <td>0.354231</td>
+      <td>0.208389</td>
+      <td>0.109425</td>
+      <td>-0.190074</td>
+      <td>-0.282204</td>
+    </tr>
+    <tr>
+      <th>loans_avg_limit</th>
+      <td>-0.004457</td>
+      <td>-0.152017</td>
+      <td>-0.128145</td>
+      <td>-0.110230</td>
+      <td>0.038880</td>
+      <td>0.000119</td>
+      <td>0.037275</td>
+      <td>0.202242</td>
+      <td>0.165959</td>
+      <td>-0.118522</td>
+      <td>...</td>
+      <td>0.716175</td>
+      <td>1.000000</td>
+      <td>0.091117</td>
+      <td>0.031452</td>
+      <td>0.137506</td>
+      <td>0.137271</td>
+      <td>0.130307</td>
+      <td>0.098641</td>
+      <td>-0.099086</td>
+      <td>-0.144835</td>
+    </tr>
+    <tr>
+      <th>consfin_credit_limit</th>
+      <td>0.005967</td>
+      <td>-0.093180</td>
+      <td>-0.083987</td>
+      <td>-0.153241</td>
+      <td>0.039328</td>
+      <td>0.028868</td>
+      <td>-0.036822</td>
+      <td>0.096622</td>
+      <td>0.066250</td>
+      <td>-0.055205</td>
+      <td>...</td>
+      <td>0.108760</td>
+      <td>0.091117</td>
+      <td>1.000000</td>
+      <td>0.241837</td>
+      <td>0.102057</td>
+      <td>0.081338</td>
+      <td>0.788637</td>
+      <td>0.901470</td>
+      <td>-0.047756</td>
+      <td>-0.110230</td>
+    </tr>
+    <tr>
+      <th>consfin_credibility</th>
+      <td>0.007746</td>
+      <td>-0.041979</td>
+      <td>-0.032534</td>
+      <td>0.003266</td>
+      <td>0.015841</td>
+      <td>0.006174</td>
+      <td>-0.000400</td>
+      <td>0.181157</td>
+      <td>0.131905</td>
+      <td>-0.142221</td>
+      <td>...</td>
+      <td>0.101659</td>
+      <td>0.031452</td>
+      <td>0.241837</td>
+      <td>1.000000</td>
+      <td>0.297390</td>
+      <td>0.288275</td>
+      <td>0.216232</td>
+      <td>0.275861</td>
+      <td>-0.085131</td>
+      <td>-0.230984</td>
+    </tr>
+    <tr>
+      <th>consfin_org_count_current</th>
+      <td>0.012062</td>
+      <td>-0.129297</td>
+      <td>-0.074851</td>
+      <td>-0.007761</td>
+      <td>0.021387</td>
+      <td>-0.019901</td>
+      <td>0.003332</td>
+      <td>0.553486</td>
+      <td>0.371197</td>
+      <td>-0.287044</td>
+      <td>...</td>
+      <td>0.357549</td>
+      <td>0.137506</td>
+      <td>0.102057</td>
+      <td>0.297390</td>
+      <td>1.000000</td>
+      <td>0.988027</td>
+      <td>0.345697</td>
+      <td>0.074170</td>
+      <td>-0.185038</td>
+      <td>-0.399885</td>
+    </tr>
+    <tr>
+      <th>consfin_product_count</th>
+      <td>0.009583</td>
+      <td>-0.139197</td>
+      <td>-0.067226</td>
+      <td>-0.014847</td>
+      <td>0.021337</td>
+      <td>-0.019603</td>
+      <td>0.005534</td>
+      <td>0.551140</td>
+      <td>0.374660</td>
+      <td>-0.286212</td>
+      <td>...</td>
+      <td>0.354231</td>
+      <td>0.137271</td>
+      <td>0.081338</td>
+      <td>0.288275</td>
+      <td>0.988027</td>
+      <td>1.000000</td>
+      <td>0.329687</td>
+      <td>0.054292</td>
+      <td>-0.183685</td>
+      <td>-0.402011</td>
+    </tr>
+    <tr>
+      <th>consfin_max_limit</th>
+      <td>0.004020</td>
+      <td>-0.115324</td>
+      <td>-0.096647</td>
+      <td>-0.169575</td>
+      <td>0.054433</td>
+      <td>0.007123</td>
+      <td>-0.022388</td>
+      <td>0.224509</td>
+      <td>0.156951</td>
+      <td>-0.111345</td>
+      <td>...</td>
+      <td>0.208389</td>
+      <td>0.130307</td>
+      <td>0.788637</td>
+      <td>0.216232</td>
+      <td>0.345697</td>
+      <td>0.329687</td>
+      <td>1.000000</td>
+      <td>0.790580</td>
+      <td>-0.096890</td>
+      <td>-0.193945</td>
+    </tr>
+    <tr>
+      <th>consfin_avg_limit</th>
+      <td>0.008860</td>
+      <td>-0.076767</td>
+      <td>-0.094627</td>
+      <td>-0.174126</td>
+      <td>0.040634</td>
+      <td>0.040865</td>
+      <td>-0.043764</td>
+      <td>0.085255</td>
+      <td>0.057663</td>
+      <td>-0.045801</td>
+      <td>...</td>
+      <td>0.109425</td>
+      <td>0.098641</td>
+      <td>0.901470</td>
+      <td>0.275861</td>
+      <td>0.074170</td>
+      <td>0.054292</td>
+      <td>0.790580</td>
+      <td>1.000000</td>
+      <td>-0.042131</td>
+      <td>-0.088072</td>
+    </tr>
+    <tr>
+      <th>latest_query_day</th>
+      <td>0.020774</td>
+      <td>0.099208</td>
+      <td>0.069301</td>
+      <td>-0.001628</td>
+      <td>-0.000570</td>
+      <td>-0.001457</td>
+      <td>-0.024161</td>
+      <td>-0.188965</td>
+      <td>-0.120330</td>
+      <td>0.069560</td>
+      <td>...</td>
+      <td>-0.190074</td>
+      <td>-0.099086</td>
+      <td>-0.047756</td>
+      <td>-0.085131</td>
+      <td>-0.185038</td>
+      <td>-0.183685</td>
+      <td>-0.096890</td>
+      <td>-0.042131</td>
+      <td>1.000000</td>
+      <td>0.230078</td>
+    </tr>
+    <tr>
+      <th>loans_latest_day</th>
+      <td>0.026387</td>
+      <td>0.098628</td>
+      <td>0.047500</td>
+      <td>-0.003253</td>
+      <td>-0.010231</td>
+      <td>0.027221</td>
+      <td>-0.014880</td>
+      <td>-0.299110</td>
+      <td>-0.211593</td>
+      <td>0.163433</td>
+      <td>...</td>
+      <td>-0.282204</td>
+      <td>-0.144835</td>
+      <td>-0.110230</td>
+      <td>-0.230984</td>
+      <td>-0.399885</td>
+      <td>-0.402011</td>
+      <td>-0.193945</td>
+      <td>-0.088072</td>
+      <td>0.230078</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>82 rows × 82 columns</p>
+</div>
+
+
+
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/datawhalechina/Datawhale_Learning/tree/master/doc/%E7%90%86%E8%AE%BA%E5%BA%94%E7%94%A8/%E6%95%B0%E6%8D%AE%E6%8C%96%E6%8E%98" >DataWhale数据挖掘实战营<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/29ece4592178" >利用Python进行数据分析·第2版<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jianshu.com/p/0c967a1526ef" >Stata：离群值！离群值？离群值！<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.jiqizhixin.com/articles/021704" >机器学习中如何处理不平衡数据？<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+
+        </div>
+
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/17541/"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">特征工程</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%86%B3%E7%AD%96%E6%A0%91%E7%AE%97%E6%B3%95%EF%BC%88Decision-Tree-Algorithm%EF%BC%89/51507/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">决策树</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2019</span>&nbsp;-&nbsp;
+            
+            2021;<a href="/">丹丹</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.2</a>
+        </div>
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86%E8%BD%BD%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">数据集载入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E5%90%84%E7%89%B9%E5%BE%81"><span class="nav-number">2.</span> <span class="nav-text">可视化各特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">3.</span> <span class="nav-text">数据预处理</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E5%A4%84%E7%90%86%E7%BC%BA%E5%A4%B1%E5%80%BC%EF%BC%9F"><span class="nav-number">3.1.</span> <span class="nav-text">为什么需要处理缺失值？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E7%8E%87%E5%A4%A7%E4%BA%8E%E5%A4%9A%E5%B0%91%E6%97%B6%E5%BA%94%E5%BD%93%E6%8A%9B%E5%BC%83%E8%AF%A5%E7%89%B9%E5%BE%81%EF%BC%9F"><span class="nav-number">3.2.</span> <span class="nav-text">缺失率大于多少时应当抛弃该特征？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC%E5%A1%AB%E5%85%85%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%EF%BC%9F"><span class="nav-number">3.3.</span> <span class="nav-text">缺失值填充有哪些方法？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E5%80%BC%E5%A1%AB%E5%85%85"><span class="nav-number">3.3.1.</span> <span class="nav-text">插值填充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E8%A1%A5%E6%B3%95"><span class="nav-number">3.3.2.</span> <span class="nav-text">插补法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A2%E5%BC%83"><span class="nav-number">3.3.3.</span> <span class="nav-text">丢弃</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%B3%95"><span class="nav-number">3.3.4.</span> <span class="nav-text">模型法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%93%E5%AE%B6%E8%A1%A5%E5%85%A8"><span class="nav-number">3.3.5.</span> <span class="nav-text">专家补全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%A4%84%E7%90%86"><span class="nav-number">3.3.6.</span> <span class="nav-text">不处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E5%BA%8F%E5%88%97"><span class="nav-number">3.4.</span> <span class="nav-text">时间序列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%82%E5%B8%B8%E5%80%BC%E5%92%8C%E7%A6%BB%E7%BE%A4%E5%80%BC"><span class="nav-number">3.5.</span> <span class="nav-text">异常值和离群值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD"><span class="nav-number">3.5.1.</span> <span class="nav-text">判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%84%E7%90%86"><span class="nav-number">3.5.2.</span> <span class="nav-text">处理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%A0%E7%94%A8%E7%89%B9%E5%BE%81%E5%88%A0%E9%99%A4"><span class="nav-number">3.6.</span> <span class="nav-text">无用特征删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%A1%AB%E5%85%85"><span class="nav-number">3.7.</span> <span class="nav-text">缺失填充</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E5%BE%81%E9%97%B4%E6%8E%A2%E7%B4%A2"><span class="nav-number">4.</span> <span class="nav-text">特征间探索</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/code-copy.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/lazyload.js"></script>
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.2/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+</html>

@@ -11,7 +11,7 @@
         
             LeetCode 185_部门工资前三高的所有员工 |
         
-        温书笔记
+        温书
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -21,7 +21,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"越简单越好，但不要过度简单"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"简单、专注、坚持"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -54,7 +54,7 @@
     <div class="header-content">
         <div class="left">
             <a class="logo-title" href="/">
-                温书笔记
+                温书
             </a>
         </div>
 
@@ -201,15 +201,12 @@
         
 
         <div class="article-content markdown-body">
-            <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Employee 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。</p>
+            <h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>Employee 表包含所有员工信息，每个员工有其对应的工号 Id，姓名 Name，工资 Salary 和部门编号 DepartmentId 。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| Id | Name  | Salary | DepartmentId |</span><br><span class="line">+----+-------+--------+--------------+</span><br><span class="line">| 1  | Joe   | 85000  | 1            |</span><br><span class="line">| 2  | Henry | 80000  | 2            |</span><br><span class="line">| 3  | Sam   | 60000  | 2            |</span><br><span class="line">| 4  | Max   | 90000  | 1            |</span><br><span class="line">| 5  | Janet | 69000  | 1            |</span><br><span class="line">| 6  | Randy | 85000  | 1            |</span><br><span class="line">| 7  | Will  | 70000  | 1            |</span><br><span class="line">+----+-------+--------+--------------+</span><br></pre></td></tr></table></figure>
-
 <p>Department 表包含公司所有部门的信息。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">+----+----------+</span><br><span class="line">| Id | Name     |</span><br><span class="line">+----+----------+</span><br><span class="line">| 1  | IT       |</span><br><span class="line">| 2  | Sales    |</span><br><span class="line">+----+----------+</span><br></pre></td></tr></table></figure>
-
-<p>编写一个 SQL 查询，找出每个部门获得前三高工资的所有员工。例如，根据上述给定的表，查询结果应返回：</p>
+<p>编写一个 SQL 查询，找出每个部门获得前三高工资的所有员工。例如，根据上述给定的表，查询结果应返回：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">+------------+----------+--------+</span><br><span class="line">| Department | Employee | Salary |</span><br><span class="line">+------------+----------+--------+</span><br><span class="line">| IT         | Max      | 90000  |</span><br><span class="line">| IT         | Randy    | 85000  |</span><br><span class="line">| IT         | Joe      | 85000  |</span><br><span class="line">| IT         | Will     | 70000  |</span><br><span class="line">| Sales      | Henry    | 80000  |</span><br><span class="line">| Sales      | Sam      | 60000  |</span><br><span class="line">+------------+----------+--------+</span><br></pre></td></tr></table></figure>
-
 <p>解释：</p>
 <p>IT 部门中，Max 获得了最高的工资，Randy 和 Joe 都拿到了第二高的工资，Will 的工资排第三。销售部门（Sales）只有两名员工，Henry 的工资最高，Sam 的工资排第二。</p>
 <h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
@@ -218,7 +215,6 @@
 <li>hive中直接用 row_number() over(partition by DepartmentId order by Salary desc) as rank，外面再包一层 rank &lt;= 3 即可</li>
 </ol>
 <h2 id="code"><a href="#code" class="headerlink" title="code"></a>code</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Write your MySQL query statement below</span></span><br><span class="line">select</span><br><span class="line">    d.Name <span class="keyword">as</span> <span class="string">&#x27;Department&#x27;</span>,</span><br><span class="line">    c.Name <span class="keyword">as</span> <span class="string">&#x27;Employee&#x27;</span>,</span><br><span class="line">    c.Salary <span class="keyword">as</span> <span class="string">&#x27;Salary&#x27;</span></span><br><span class="line"><span class="keyword">from</span> Employee c</span><br><span class="line">inner join Department d</span><br><span class="line">    on c.DepartmentId = d.Id</span><br><span class="line">where c.Id <span class="keyword">in</span> </span><br><span class="line">    (select</span><br><span class="line">        a.Id</span><br><span class="line">    <span class="keyword">from</span> Employee a</span><br><span class="line">    left join Employee b</span><br><span class="line">        on a.DepartmentId = b.DepartmentId </span><br><span class="line">            <span class="keyword">and</span> a.Salary &lt; b.Salary</span><br><span class="line">    group by a.Id</span><br><span class="line">    having count(distinct b.Salary) &lt; <span class="number">3</span>)</span><br><span class="line">order by d.Name, c.Salary desc, c.Name</span><br></pre></td></tr></table></figure>
-
 <h2 id="成绩"><a href="#成绩" class="headerlink" title="成绩"></a>成绩</h2><ul>
 <li>用时：331 ms</li>
 <li>内存消耗：N/A</li>

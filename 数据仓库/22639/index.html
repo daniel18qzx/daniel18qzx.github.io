@@ -11,7 +11,7 @@
         
             数据仓库设计 |
         
-        温书笔记
+        温书
     </title>
     
 <link rel="stylesheet" href="/css/style.css">
@@ -21,7 +21,7 @@
     <script id="hexo-configurations">
     let KEEP = window.KEEP || {};
     KEEP.hexo_config = {"hostname":"daniel18qzx.github.io","root":"/","language":"zh-cn","path":"search.xml"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"越简单越好，但不要过度简单"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":true,"init_open":true},"style":{"primary_color":"#0066CC","avatar":"/images/avatar.jpg","favicon":"/images/favicon.ico","article_img_align":"left","left_side_width":"260px","content_max_width":"920px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"简单、专注、坚持"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"3.4.2"};
     KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
 <meta name="generator" content="Hexo 5.4.0"></head>
@@ -54,7 +54,7 @@
     <div class="header-content">
         <div class="left">
             <a class="logo-title" href="/">
-                温书笔记
+                温书
             </a>
         </div>
 
@@ -204,15 +204,17 @@
 <li><strong>相对稳定的</strong>：数据仓库中的数据是经过抽取而形成的分析型数据，主要供企业决策分析之用，执行的主要是‘查询’操作，一般不执行‘更新’操作。一个稳定的数据环境有利于数据分析的纵向和横向对比</li>
 <li><strong>反映历史变化的</strong>：数据仓库中的数据以一定时间段为单位进行统一更新，不断增加新的数据内容、不断删去旧的数据内容、更新与时间有关的综合数据</li>
 </ul>
+<div class="table-container">
 <table>
 <thead>
 <tr>
-<th></th>
+<th>　</th>
 <th>数据库系统设计</th>
 <th>数据仓库系统设计</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>面向的数据类型</td>
 <td>面向应用</td>
 <td>面向分析</td>
@@ -237,12 +239,14 @@
 <td>需求驱动</td>
 <td>数据驱动</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <h2 id="体系结构"><a href="#体系结构" class="headerlink" title="体系结构"></a>体系结构</h2><p><img  
                      lazyload
                      src="/images/loading.svg"
-                     data-src="/img/2019-08-22_%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93%E8%AE%BE%E8%AE%A1_1.png"
-                     
+                     data-src="/img/2019-08-22_数据仓库设计_1.png"
+                      alt=""
                 ></p>
 <h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="星形模型"><a href="#星形模型" class="headerlink" title="星形模型"></a>星形模型</h3><ul>
 <li>星型模型组成：<ul>
@@ -256,7 +260,7 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image005.png"
-                     
+                      alt=""
                 ></p>
 <h3 id="雪花模型"><a href="#雪花模型" class="headerlink" title="雪花模型"></a>雪花模型</h3><ul>
 <li>雪花模型是对星型模型维表的进一步层次化</li>
@@ -266,20 +270,22 @@
                      lazyload
                      src="/images/loading.svg"
                      data-src="http://www.ibm.com/developerworks/cn/rational/r-warehouses/images/image013.png"
-                     
+                      alt=""
                 ></p>
 <h3 id="比较"><a href="#比较" class="headerlink" title="比较"></a>比较</h3><p>雪花模式的维表是规范化的，以减少冗余。这种表易于维护，并节省存储空间。但与巨大的事实表相比，这种空间的节省可以忽略</p>
 <p>由于执行查询需要更多的连接操作，雪花结构可能降低浏览的性能。<br>在数据仓库设计中，星型模式更加常用</p>
-<h2 id="五层模型架构"><a href="#五层模型架构" class="headerlink" title="五层模型架构"></a>五层模型架构</h2><table>
+<h2 id="五层模型架构"><a href="#五层模型架构" class="headerlink" title="五层模型架构"></a>五层模型架构</h2><div class="table-container">
+<table>
 <thead>
 <tr>
-<th></th>
+<th>　　　　　</th>
 <th>数据来源及建模方式</th>
 <th>服务领域</th>
 <th>设计原则</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>DM层</td>
 <td>数据来自DWS和MID层，应用支撑</td>
 <td>前端报表展现，数据分析，产品数据支撑</td>
@@ -309,7 +315,9 @@
 <td>为其它逻辑层提供数据，数据溯源，数据存储</td>
 <td>原始数据，不对外开放查询使用</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
+</div>
 <ul>
 <li>细化DW建模<ul>
 <li>对DW中各个主题业务建模进行了细分，每个层次具有不同的功能。</li>
@@ -317,6 +325,8 @@
 <li>满足了不同维度，不同事实的信息</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li>满足数据重新生成<ul>
 <li>不同层次的数据支持数据重新生成</li>
 <li>无需备份恢复</li>
@@ -324,6 +334,8 @@
 <li>消除了重新初始化数据的烦恼</li>
 </ul>
 </li>
+</ul>
+<ul>
 <li>快速适应需求变更<ul>
 <li>适应维度变化</li>
 <li>明细基础数据层稳定，适应前端应用层业务需求变更</li>
@@ -416,10 +428,10 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/45240/"
+                           href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95%EF%BC%88Ensemble-algorithms%EF%BC%89/45240/"
                         >
                             <span class="title flex-center">
-                                <span class="post-nav-title-item">集成学习（以随机森林与adaboosting为例）</span>
+                                <span class="post-nav-title-item">基本介绍</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex-center">
