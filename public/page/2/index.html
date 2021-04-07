@@ -47,286 +47,86 @@
     <div class="page-main-content">
 
         <div class="page-main-content-top">
-            $logo-title-font-size = 2.2rem;
-$pc-search-icon-font-size = 1.5rem;
-$menu-bar-line-height = 2.5px;
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            <a class="logo-title" href="/">
+                温书
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class="active"
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class="active"
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
 
-.header-wrapper {
-  width: 100%;
-  height: 100%;
-  box-sizing: border-box;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--background-color);
-  padding-top: $scroll-progress-bar-height;
-
-  hover-style(false, 0, 0);
-
-  .header-content {
-    position: relative;
-    height: 100%;
-    width: $main-content-width;
-    max-width: $content-max-width;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    z-index: $z-index-5;
-
-
-    &.has-first-screen {
-      max-width: $content-max-width * 1.2;
-    }
-
-    +keep-tablet() {
-      width: $main-content-width-tablet;
-    }
-
-    +keep-mobile() {
-      width: $main-content-width-mobile;
-    }
-
-    .left {
-      display: flex;
-      align-items: center;
-      transition-t("transform", "0", "0.2", "linear");
-
-      .header-shrink & {
-        transform: scale(0.85);
-        transform-origin: left;
-
-      }
-
-      .logo-title {
-        font-size: $logo-title-font-size;
-        font-weight: bold;
-        letter-spacing: 1px;
-        line-height: 1;
-        color: var(--first-text-color);
-
-        +keep-tablet() {
-          font-size: $logo-title-font-size * 0.9;
-        }
-
-        +keep-mobile() {
-          font-size: $logo-title-font-size * 0.8;
-        }
-      }
-    }
-
-
-    .right {
-
-      .pc {
-
-        .menu-list {
-          display: flex;
-          align-items: center;
-
-          +keep-tablet() {
-            display: none;
-          }
-
-
-          .menu-item {
-            float: left;
-            position: relative;
-            margin-left: 30px;
-            font-size: 1rem;
-            cursor: pointer;
-            color: var(--default-text-color);
-
-            &:first-child {
-              margin-left: 0;
-            }
-
-
-            a:hover, .active {
-
-              &::after {
-                content: '';
-                position: absolute;
-                bottom: -10px;
-                left: 50%;
-                width: 100%;
-                height: 2px;
-                transform: translateX(-50%);
-                background: var(--primary-color);
-                transition-t("transform, bottom", "0, 0", "0.2, 0.2", "linear, linear");
-
-                .header-shrink & {
-                  bottom: -($header-shrink-height / 2 - 12);
-                }
-              }
-            }
-
-            &.search {
-              font-size: $pc-search-icon-font-size;
-              margin-left: 26px;
-
-              i {
-                color: var(--default-text-color);
-              }
-
-            }
-          }
-
-
-        }
-
-      }
-
-
-      .mobile {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        .icon-item {
-          display: none;
-          position: relative;
-          cursor: pointer;
-          font-size: 18px;
-          margin-left: 12px;
-          width: 20px;
-          height: 20px;
-          color: var(--default-text-color);
-
-          i {
-            color: var(--default-text-color);
-          }
-
-          &:first-child {
-            margin-left: 0;
-          }
-
-          +keep-tablet() {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-        }
-
-        .menu-bar {
-
-          .menu-bar-middle {
-            width: 18px;
-            height: $menu-bar-line-height;
-            position: relative;
-            background: var(--default-text-color);
-
-            .header-drawer-show & {
-              background: transparent;
-            }
-
-
-            &::before, &::after {
-              content: '';
-              position: absolute;
-              left: 0;
-              width: 100%;
-              height: $menu-bar-line-height;
-              background: var(--default-text-color);
-              transition-t("transform", "0", "0.38", "ease");
-            }
-
-
-            &::before {
-              top: -6px;
-
-              .header-drawer-show & {
-                transform: translateY(6px) rotate(45deg);
-              }
-            }
-
-
-            &::after {
-              bottom: -6px;
-
-              .header-drawer-show & {
-                transform: translateY(-6px) rotate(-45deg);
-              }
-            }
-          }
-        }
-      }
-    }
-  }
-
-
-  .header-drawer {
-    width: 100%;
-    padding: $header-height 0 20px 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleY(0);
-    transform-origin: top;
-    z-index: $z-index-2;
-    background: var(--background-color);
-    transition-t("transform", "0", "0.38", "ease");
-
-    .header-drawer-show & {
-      transform: scaleY(1);
-    }
-
-    .drawer-menu-list {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-
-      .drawer-menu-item {
-        font-size: 1rem;
-        margin: 6px 0;
-        height: 38px;
-
-        a {
-          padding: 6px 20px;
-          border-radius: 20px;
-          color: var(--default-text-color);
-
-          &:hover {
-            color: var(--second-text-color);
-            border: 1px solid var(--default-text-color);
-          }
-
-
-          &.active {
-            border: 1px solid var(--default-text-color);
-            color: var(--second-text-color);
-          }
-        }
-
-
-      }
-    }
-  }
-
-
-  .window-mask {
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: $z-index-1;
-    visibility: hidden;
-    opacity: 0;
-    transition-t("transform, opacity", "0, 0", "0.38, 0.38", "ease, ease");
-
-    .header-drawer-show & {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-
-}
-
-.header-drawer-show {
-  overflow: hidden;
-}
 
         </div>
 
@@ -337,6 +137,50 @@ $menu-bar-line-height = 2.5px;
                 
                     <div class="home-content-container fade-in-down-animation">
     <ul class="home-article-list">
+        
+            <li class="home-article-item">
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/22639/">
+                        数据仓库设计
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        基本介绍数据仓库是一个面向主题的、集成的、相对稳定的且反映历史变化的数据集合，用于支持管理人员的决策
+
+面向主题的：为特定的数据分析领域与目标提供数据支持，比如交易库、用户库等
+集成的：面向分析的数据仓库需要集成多种不同数据源以及文件以进行比较鉴别
+...
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Thu Aug 22 2019 00:00:00 GMT+0800">2019-08-22</span></span>
+        
+            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/">数据仓库</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+    </div>
+
+    <a href="/%E6%95%B0%E6%8D%AE%E4%BB%93%E5%BA%93/22639/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
+</div>
+
+            </li>
         
             <li class="home-article-item">
 
@@ -775,59 +619,6 @@ Booststrap：有放回的抽样方法，是非参数统计中一种重要的估�
     </div>
 
     <a href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E6%94%AF%E6%8C%81%E5%90%91%E9%87%8F%E6%9C%BA%EF%BC%88Support-Vector-Machines%EF%BC%89/49110/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/45545/">
-                        梯度下降
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        步骤
-任取一点作为起始点
-查看在当前节点向哪个方向移动能得到最小的z值，并向该方向移动
-重复步骤直到找不到更小的z值
-
-SGD的出现计算普通梯度下降时，每次都必须遍历所有样本，计算资源过大。SGD是每次采用单一或小批量样本的方差和作为损失值。
-
-迭代...
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fas fa-history"></i>&nbsp;<span class="home-article-date" data-date="Sat Jul 20 2019 00:00:00 GMT+0800">2019-07-20</span></span>
-        
-            <span class="home-article-category"><i class="fas fa-folder"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/categories/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">统计与机器学习</a>&nbsp;
-                        </li>
-                    
-                    
-                        <li>
-                            &gt; 
-                            <a href="/categories/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/">其他</a>&nbsp;
-                        </li>
-                    
-                    
-                </ul>
-            </span>
-        
-        
-    </div>
-
-    <a href="/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/45545/">Read more&nbsp;<i class="fas fa-angle-right"></i></a>
 </div>
 
             </li>
