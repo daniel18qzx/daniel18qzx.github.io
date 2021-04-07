@@ -189,6 +189,62 @@ hey: 100
       </categories>
   </entry>
   <entry>
+    <title>Matplotlib</title>
+    <url>/Python/16372/</url>
+    <content><![CDATA[<h2 id="基本配置与标记"><a href="#基本配置与标记" class="headerlink" title="基本配置与标记"></a>基本配置与标记</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据部分</span></span><br><span class="line">x = np.arange(<span class="number">0.</span>, <span class="number">10</span>, <span class="number">0.2</span>)</span><br><span class="line">y1 = np.cos(x)</span><br><span class="line">y2 = np.sin(x)</span><br><span class="line">y3 = np.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 3 条函数曲线</span></span><br><span class="line">plt.plot(x, y1, color=<span class="string">&#x27;blue&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">r&#x27;$y = cos&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y2, color=<span class="string">&#x27;green&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">r&#x27;$y = sin&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y3, color=<span class="string">&#x27;m&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;x&#x27;</span>, label=<span class="string">r&#x27;$y = \sqrt&#123;x&#125;$&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 坐标轴上移</span></span><br><span class="line">ax = plt.subplot(<span class="number">111</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)     <span class="comment"># 去掉右边的边框线</span></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)       <span class="comment"># 去掉上边的边框线</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动下边边框线，相当于移动 X 轴</span></span><br><span class="line">ax.xaxis.set_ticks_position(<span class="string">&#x27;bottom&#x27;</span>)    </span><br><span class="line">ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动左边边框线，相当于移动 y 轴</span></span><br><span class="line">ax.yaxis.set_ticks_position(<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的取值范围</span></span><br><span class="line">plt.xlim(x.<span class="built_in">min</span>()*<span class="number">1.1</span>, x.<span class="built_in">max</span>()*<span class="number">1.1</span>)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的刻度值</span></span><br><span class="line">plt.xticks([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>], [<span class="string">r&#x27;2&#x27;</span>, <span class="string">r&#x27;4&#x27;</span>, <span class="string">r&#x27;6&#x27;</span>, <span class="string">r&#x27;8&#x27;</span>, <span class="string">r&#x27;10&#x27;</span>])</span><br><span class="line">plt.yticks([-<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>], </span><br><span class="line">    [<span class="string">r&#x27;-1.0&#x27;</span>, <span class="string">r&#x27;0.0&#x27;</span>, <span class="string">r&#x27;1.0&#x27;</span>, <span class="string">r&#x27;2.0&#x27;</span>, <span class="string">r&#x27;3.0&#x27;</span>, <span class="string">r&#x27;4.0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文字</span></span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.68</span>, <span class="string">r&#x27;$x \in [0.0, \ 10.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.38</span>, <span class="string">r&#x27;$y \in [-1.0, \ 4.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊点添加注解</span></span><br><span class="line">plt.scatter([<span class="number">8</span>,],[np.sqrt(<span class="number">8</span>),], <span class="number">50</span>, color =<span class="string">&#x27;m&#x27;</span>)  <span class="comment"># 使用散点图放大当前点</span></span><br><span class="line">plt.annotate(<span class="string">r&#x27;$2\sqrt&#123;2&#125;$&#x27;</span>, xy=(<span class="number">8</span>, np.sqrt(<span class="number">8</span>)), xytext=(<span class="number">8.5</span>, <span class="number">2.2</span>), fontsize=<span class="number">16</span>, color=<span class="string">&#x27;#090909&#x27;</span>, arrowprops=<span class="built_in">dict</span>(arrowstyle=<span class="string">&#x27;-&gt;&#x27;</span>, connectionstyle=<span class="string">&#x27;arc3, rad=0.1&#x27;</span>, color=<span class="string">&#x27;#090909&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题、x轴、y轴</span></span><br><span class="line">plt.title(<span class="string">r&#x27;$the \ function \ figure \ of \ cos(), \ sin() \ and \ sqrt()$&#x27;</span>, fontsize=<span class="number">19</span>)</span><br><span class="line">plt.xlabel(<span class="string">r&#x27;$the \ input \ value \ of \ x$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">88.8</span>)</span><br><span class="line">plt.ylabel(<span class="string">r&#x27;$y = f(x)$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">12.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例及位置</span></span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)    </span><br><span class="line"><span class="comment"># plt.legend([&#x27;cos(x)&#x27;, &#x27;sin(x)&#x27;, &#x27;sqrt(x)&#x27;], loc=&#x27;up right&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示网格线</span></span><br><span class="line">plt.grid(<span class="literal">True</span>)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_1.png"
+                      alt=""
+                ></p>
+<h2 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.arange(-<span class="number">5</span>,<span class="number">5</span>,<span class="number">0.1</span>)</span><br><span class="line">y = x ** <span class="number">2</span></span><br><span class="line">plt.plot(x,y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_2.png"
+                      alt=""
+                ></p>
+<h2 id="散布图"><a href="#散布图" class="headerlink" title="散布图"></a>散布图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">1024</span></span><br><span class="line">X = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">Y = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line">plt.scatter(X,Y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_3.png"
+                      alt=""
+                ></p>
+<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.random.normal(size=<span class="number">1000</span>)</span><br><span class="line">plt.hist(x, bins=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_4.png"
+                      alt=""
+                ></p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">12</span></span><br><span class="line">X = np.arange(n)</span><br><span class="line">Y1 = (<span class="number">1</span>- X / <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line">Y2 = (<span class="number">1</span>- X/ <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line"></span><br><span class="line">plt.axes([<span class="number">0.025</span>, <span class="number">0.025</span>, <span class="number">0.95</span>, <span class="number">0.95</span>])</span><br><span class="line">plt.bar(X, +Y1, facecolor = <span class="string">&#x27;#9999ff&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line">plt.bar(X, -Y2, facecolor = <span class="string">&#x27;#ff9999&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y1):</span><br><span class="line">    plt.text(x, y + <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y2):</span><br><span class="line">    plt.text(x, -y - <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va= <span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">.5</span>, n), </span><br><span class="line">plt.ylim(-<span class="number">1.25</span>, +<span class="number">1.25</span>), </span><br><span class="line">plt.xticks([])</span><br><span class="line">plt.yticks([])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_5.png"
+                      alt=""
+                ></p>
+<h2 id="3D图"><a href="#3D图" class="headerlink" title="3D图"></a>3D图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">X = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">Y = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">X, Y = np.meshgrid(X, Y)</span><br><span class="line">R = np.sqrt(X ** <span class="number">2</span> + Y ** <span class="number">2</span>)</span><br><span class="line">Z = np.sin(R)</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X, Y, Z, rstride = <span class="number">1</span>, cstride=<span class="number">1</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.contourf(X, Y, Z, zdir = <span class="string">&#x27;z&#x27;</span>, offset = -<span class="number">2</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.set_zlim(-<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
+<p><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/img/2019-06-24_Matplotlib基本语法_6.png"
+                      alt=""
+                ></p>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Numpy</title>
     <url>/Python/54426/</url>
     <content><![CDATA[<h2 id="生成数组"><a href="#生成数组" class="headerlink" title="生成数组"></a>生成数组</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用普通一维数组生成NumPy一维数组===&quot;</span>)</span><br><span class="line">data = [<span class="number">6</span>, <span class="number">7.5</span>, <span class="number">8</span>, <span class="number">0</span>, <span class="number">1</span>]</span><br><span class="line">arr = np.array(data)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"><span class="built_in">print</span>(arr.dtype) <span class="comment"># 类型</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用普通二维数组生成NumPy二维数组===&quot;</span>)</span><br><span class="line">data = [[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>], [<span class="number">5</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>]]</span><br><span class="line">arr = np.array(data)</span><br><span class="line"><span class="built_in">print</span>(arr)</span><br><span class="line"><span class="built_in">print</span>(arr.shape) <span class="comment"># 维度</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用内置函数创建数组===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.zeros(<span class="number">10</span>)) <span class="comment"># 生成包含10个0的一维数组</span></span><br><span class="line"><span class="built_in">print</span>(np.zeros((<span class="number">3</span>, <span class="number">6</span>))) <span class="comment"># 生成3*6的二维数组</span></span><br><span class="line"><span class="built_in">print</span>(np.empty((<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>))) <span class="comment"># 生成2*3*2的三维数组，所有元素未初始化。</span></span><br><span class="line"><span class="built_in">print</span>(np.empty_like((<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>))) <span class="comment"># 生成2*3*2的三维数组，所有元素未初始化。</span></span><br><span class="line"><span class="built_in">print</span>(np.ones((<span class="number">1</span>,<span class="number">2</span>)))</span><br><span class="line"><span class="built_in">print</span>(np.full((<span class="number">2</span>,<span class="number">2</span>), <span class="number">8</span>))</span><br><span class="line"><span class="built_in">print</span>(np.eye(<span class="number">3</span>))</span><br><span class="line"><span class="built_in">print</span>(np.random.random((<span class="number">3</span>,<span class="number">2</span>)))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===使用arrange生成连续元素===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.arange(<span class="number">15</span>))  <span class="comment"># [0, 1, 2, ..., 14]</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;===broadcasting===&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(np.arange(<span class="number">3</span>).reshape((<span class="number">3</span>,<span class="number">1</span>))+np.arange(<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
@@ -294,62 +350,6 @@ float64
 0.25273704528808594
 0.02255988121032715
 </code></pre><blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>Python</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Matplotlib</title>
-    <url>/Python/16372/</url>
-    <content><![CDATA[<h2 id="基本配置与标记"><a href="#基本配置与标记" class="headerlink" title="基本配置与标记"></a>基本配置与标记</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#coding:utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> pylab <span class="keyword">import</span> *</span><br><span class="line"></span><br><span class="line"><span class="comment"># 定义数据部分</span></span><br><span class="line">x = np.arange(<span class="number">0.</span>, <span class="number">10</span>, <span class="number">0.2</span>)</span><br><span class="line">y1 = np.cos(x)</span><br><span class="line">y2 = np.sin(x)</span><br><span class="line">y3 = np.sqrt(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制 3 条函数曲线</span></span><br><span class="line">plt.plot(x, y1, color=<span class="string">&#x27;blue&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;.&#x27;</span>, label=<span class="string">r&#x27;$y = cos&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y2, color=<span class="string">&#x27;green&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;*&#x27;</span>, label=<span class="string">r&#x27;$y = sin&#123;x&#125;$&#x27;</span>)</span><br><span class="line">plt.plot(x, y3, color=<span class="string">&#x27;m&#x27;</span>, linewidth=<span class="number">1.5</span>, linestyle=<span class="string">&#x27;-&#x27;</span>, marker=<span class="string">&#x27;x&#x27;</span>, label=<span class="string">r&#x27;$y = \sqrt&#123;x&#125;$&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 坐标轴上移</span></span><br><span class="line">ax = plt.subplot(<span class="number">111</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;right&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)     <span class="comment"># 去掉右边的边框线</span></span><br><span class="line">ax.spines[<span class="string">&#x27;top&#x27;</span>].set_color(<span class="string">&#x27;none&#x27;</span>)       <span class="comment"># 去掉上边的边框线</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动下边边框线，相当于移动 X 轴</span></span><br><span class="line">ax.xaxis.set_ticks_position(<span class="string">&#x27;bottom&#x27;</span>)    </span><br><span class="line">ax.spines[<span class="string">&#x27;bottom&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 移动左边边框线，相当于移动 y 轴</span></span><br><span class="line">ax.yaxis.set_ticks_position(<span class="string">&#x27;left&#x27;</span>)</span><br><span class="line">ax.spines[<span class="string">&#x27;left&#x27;</span>].set_position((<span class="string">&#x27;data&#x27;</span>, <span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的取值范围</span></span><br><span class="line">plt.xlim(x.<span class="built_in">min</span>()*<span class="number">1.1</span>, x.<span class="built_in">max</span>()*<span class="number">1.1</span>)</span><br><span class="line">plt.ylim(-<span class="number">1.5</span>, <span class="number">4.0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置 x, y 轴的刻度值</span></span><br><span class="line">plt.xticks([<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">8</span>, <span class="number">10</span>], [<span class="string">r&#x27;2&#x27;</span>, <span class="string">r&#x27;4&#x27;</span>, <span class="string">r&#x27;6&#x27;</span>, <span class="string">r&#x27;8&#x27;</span>, <span class="string">r&#x27;10&#x27;</span>])</span><br><span class="line">plt.yticks([-<span class="number">1.0</span>, <span class="number">0.0</span>, <span class="number">1.0</span>, <span class="number">2.0</span>, <span class="number">3.0</span>, <span class="number">4.0</span>], </span><br><span class="line">    [<span class="string">r&#x27;-1.0&#x27;</span>, <span class="string">r&#x27;0.0&#x27;</span>, <span class="string">r&#x27;1.0&#x27;</span>, <span class="string">r&#x27;2.0&#x27;</span>, <span class="string">r&#x27;3.0&#x27;</span>, <span class="string">r&#x27;4.0&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加文字</span></span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.68</span>, <span class="string">r&#x27;$x \in [0.0, \ 10.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line">plt.text(<span class="number">4</span>, <span class="number">1.38</span>, <span class="string">r&#x27;$y \in [-1.0, \ 4.0]$&#x27;</span>, color=<span class="string">&#x27;k&#x27;</span>, fontsize=<span class="number">15</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特殊点添加注解</span></span><br><span class="line">plt.scatter([<span class="number">8</span>,],[np.sqrt(<span class="number">8</span>),], <span class="number">50</span>, color =<span class="string">&#x27;m&#x27;</span>)  <span class="comment"># 使用散点图放大当前点</span></span><br><span class="line">plt.annotate(<span class="string">r&#x27;$2\sqrt&#123;2&#125;$&#x27;</span>, xy=(<span class="number">8</span>, np.sqrt(<span class="number">8</span>)), xytext=(<span class="number">8.5</span>, <span class="number">2.2</span>), fontsize=<span class="number">16</span>, color=<span class="string">&#x27;#090909&#x27;</span>, arrowprops=<span class="built_in">dict</span>(arrowstyle=<span class="string">&#x27;-&gt;&#x27;</span>, connectionstyle=<span class="string">&#x27;arc3, rad=0.1&#x27;</span>, color=<span class="string">&#x27;#090909&#x27;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置标题、x轴、y轴</span></span><br><span class="line">plt.title(<span class="string">r&#x27;$the \ function \ figure \ of \ cos(), \ sin() \ and \ sqrt()$&#x27;</span>, fontsize=<span class="number">19</span>)</span><br><span class="line">plt.xlabel(<span class="string">r&#x27;$the \ input \ value \ of \ x$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">88.8</span>)</span><br><span class="line">plt.ylabel(<span class="string">r&#x27;$y = f(x)$&#x27;</span>, fontsize=<span class="number">18</span>, labelpad=<span class="number">12.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置图例及位置</span></span><br><span class="line">plt.legend(loc=<span class="string">&#x27;upper right&#x27;</span>)    </span><br><span class="line"><span class="comment"># plt.legend([&#x27;cos(x)&#x27;, &#x27;sin(x)&#x27;, &#x27;sqrt(x)&#x27;], loc=&#x27;up right&#x27;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示网格线</span></span><br><span class="line">plt.grid(<span class="literal">True</span>)    </span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_1.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_1.png"
-                      alt=""
-                ></p>
-<h2 id="曲线图"><a href="#曲线图" class="headerlink" title="曲线图"></a>曲线图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.arange(-<span class="number">5</span>,<span class="number">5</span>,<span class="number">0.1</span>)</span><br><span class="line">y = x ** <span class="number">2</span></span><br><span class="line">plt.plot(x,y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_2.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_2.png"
-                      alt=""
-                ></p>
-<h2 id="散布图"><a href="#散布图" class="headerlink" title="散布图"></a>散布图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">1024</span></span><br><span class="line">X = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line">Y = np.random.normal(<span class="number">0</span>, <span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line">plt.scatter(X,Y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_3.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_3.png"
-                      alt=""
-                ></p>
-<h2 id="柱状图"><a href="#柱状图" class="headerlink" title="柱状图"></a>柱状图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x = np.random.normal(size=<span class="number">1000</span>)</span><br><span class="line">plt.hist(x, bins=<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_4.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_4.png"
-                      alt=""
-                ></p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">n = <span class="number">12</span></span><br><span class="line">X = np.arange(n)</span><br><span class="line">Y1 = (<span class="number">1</span>- X / <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line">Y2 = (<span class="number">1</span>- X/ <span class="built_in">float</span>(n)) * np.random.uniform(<span class="number">0.5</span>, <span class="number">1.0</span>, n)</span><br><span class="line"></span><br><span class="line">plt.axes([<span class="number">0.025</span>, <span class="number">0.025</span>, <span class="number">0.95</span>, <span class="number">0.95</span>])</span><br><span class="line">plt.bar(X, +Y1, facecolor = <span class="string">&#x27;#9999ff&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line">plt.bar(X, -Y2, facecolor = <span class="string">&#x27;#ff9999&#x27;</span>, edgecolor = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y1):</span><br><span class="line">    plt.text(x, y + <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;bottom&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x,y <span class="keyword">in</span> <span class="built_in">zip</span>(X,Y2):</span><br><span class="line">    plt.text(x, -y - <span class="number">0.08</span>, <span class="string">&#x27;%.2f&#x27;</span> % y, ha = <span class="string">&#x27;center&#x27;</span>, va= <span class="string">&#x27;top&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlim(-<span class="number">.5</span>, n), </span><br><span class="line">plt.ylim(-<span class="number">1.25</span>, +<span class="number">1.25</span>), </span><br><span class="line">plt.xticks([])</span><br><span class="line">plt.yticks([])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_5.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_5.png"
-                      alt=""
-                ></p>
-<h2 id="3D图"><a href="#3D图" class="headerlink" title="3D图"></a>3D图</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> mpl_toolkits.mplot3d <span class="keyword">import</span> Axes3D</span><br><span class="line"></span><br><span class="line">fig = plt.figure()</span><br><span class="line">ax = Axes3D(fig)</span><br><span class="line">X = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">Y = np.arange(-<span class="number">4</span>, <span class="number">4</span>, <span class="number">0.25</span>)</span><br><span class="line">X, Y = np.meshgrid(X, Y)</span><br><span class="line">R = np.sqrt(X ** <span class="number">2</span> + Y ** <span class="number">2</span>)</span><br><span class="line">Z = np.sin(R)</span><br><span class="line"></span><br><span class="line">ax.plot_surface(X, Y, Z, rstride = <span class="number">1</span>, cstride=<span class="number">1</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.contourf(X, Y, Z, zdir = <span class="string">&#x27;z&#x27;</span>, offset = -<span class="number">2</span>, cmap = plt.cm.hot)</span><br><span class="line">ax.set_zlim(-<span class="number">2</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘图</span></span><br><span class="line">plt.savefig(<span class="string">&quot;../img/2019-06-24_Matplotlib基本语法_6.png&quot;</span>)</span><br><span class="line">plt.close()</span><br></pre></td></tr></table></figure>
-<p><img  
-                     lazyload
-                     src="/images/loading.svg"
-                     data-src="/img/2019-06-24_Matplotlib基本语法_6.png"
-                      alt=""
-                ></p>
-<blockquote>
 <p>参考：</p>
 </blockquote>
 <ol>
@@ -1562,51 +1562,6 @@ Now Downloading: 10
       </categories>
   </entry>
   <entry>
-    <title>随机森林</title>
-    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95%EF%BC%88Ensemble-algorithms%EF%BC%89/47295/</url>
-    <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ol>
-<li>从原始训练数据集中，应⽤bootstrap⽅法有放回地随机抽取k个新的⾃助样本集，并由此构建k棵分类回归树，每次未被抽到的样本组成了Ｋ个袋外数据（out-of-bag,BBB）</li>
-<li>设有n个特征，则在每⼀棵树的每个节点处随机抽取m个特征，通过计算每个特征蕴含的信息量，特征中选择⼀个最具有分类能⼒的特征进⾏节点分裂</li>
-<li>每棵树最⼤限度地⽣长， 不做任何剪裁</li>
-<li>将⽣成的多棵树组成随机森林， ⽤随机森林对新的数据进⾏分类，分类结果按树分类器投票多少⽽定</li>
-</ol>
-<h2 id="RandomForestClassifier"><a href="#RandomForestClassifier" class="headerlink" title="RandomForestClassifier"></a>RandomForestClassifier</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier          <span class="comment"># 导入随机森林的包</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line">iris_data = iris[<span class="string">&#x27;data&#x27;</span>]</span><br><span class="line">iris_label = iris[<span class="string">&#x27;target&#x27;</span>]</span><br><span class="line">iris_target_name = iris[<span class="string">&#x27;target_names&#x27;</span>]</span><br><span class="line">X = np.array(iris_data)</span><br><span class="line">Y = np.array(iris_label)</span><br><span class="line"></span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=<span class="number">0.25</span>)</span><br><span class="line"></span><br><span class="line">clf = RandomForestClassifier()</span><br><span class="line">clf = clf.fit(x_train, y_train)</span><br></pre></td></tr></table></figure>
-<pre><code>/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/forest.py:246: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
-  &quot;10 in version 0.20 to 100 in 0.22.&quot;, FutureWarning)
-</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc</span><br><span class="line"></span><br><span class="line">y_pred = clf.predict(x_test)</span><br><span class="line"></span><br><span class="line">false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">    y_test, y_pred, pos_label=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">roc_auc</span><br></pre></td></tr></table></figure>
-<pre><code>0.9821428571428571
-</code></pre><h3 id="调参"><a href="#调参" class="headerlink" title="调参"></a>调参</h3><ul>
-<li>n_estimators: int 默认10</li>
-<li>criterion：gini” or “entropy”(default=”gini”)表示使用基尼不纯度还是信息增益来计算属性，来选择最合适的节点</li>
-<li>max_depth：(default=None)设置树的最大深度，默认为None，直到使每一个叶节点只有一个类别，或是达到min_samples_split</li>
-<li>min_samples_split：默认2，int（可以被分割的所含最小样本数），float（总样本的百分比）</li>
-<li>min_samples_leaf：默认1，int或float，叶子节点所含最少样本数</li>
-<li>min_weight_fraction_leaf：(default=0) 叶子节点所需要的最小权值（当样本采样权重设置时才有意义，叶子节点的权重为属于该节点的所有样本权重和）</li>
-<li>max_features：(default=”auto”) 每次找最好的分割点是可以考虑的特征数</li>
-<li>max_leaf_nodes:最大叶节点数 和树的最大深度同样作用</li>
-<li>bootstrap：是否有放回采样，默认True</li>
-<li>oob_score：默认False，是否使用袋外数据统计泛华误差。利用在某次决策树训练中没有被采样选中的数据对该单个模型进行验证，算是一个简单的交叉验证。性能消耗小，但是效果不错</li>
-<li>n_jobs：默认1.可并行job数。-1代表有多少job=core</li>
-<li>random_state:如果给定相同的参数和训练数据，random_state的确定值将始终产生相同的结果</li>
-<li>verbose：(default=0) 是否显示任务进程</li>
-<li>warm_start：False热启动，决定是否使用上次调用该类的结果然后增加新的</li>
-<li>class_weight：None，各个label的权重</li>
-</ul>
-<blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   href="https://blog.csdn.net/qwq1503/article/details/91535494" >sklearn 随机森林分类iris花<i class="fas fa-external-link-alt"></i></a></li>
-<li><a class="link"   href="https://blog.csdn.net/wangqi880/article/details/49765673" >快速理解bootstrap,bagging,boosting-三个概念<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
-]]></content>
-      <categories>
-        <category>统计与机器学习</category>
-        <category>集成算法（Ensemble algorithms）</category>
-      </categories>
-  </entry>
-  <entry>
     <title>Pandas移动窗口</title>
     <url>/Python/24354/</url>
     <content><![CDATA[<h2 id="简单范例"><a href="#简单范例" class="headerlink" title="简单范例"></a>简单范例</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">index = pd.date_range(<span class="string">&#x27;20190116&#x27;</span>, <span class="string">&#x27;20190130&#x27;</span>)</span><br><span class="line">data = [<span class="number">4</span>, <span class="number">8</span>, <span class="number">6</span>, <span class="number">5</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>, <span class="number">7</span>, <span class="number">9</span>, <span class="number">13</span>, <span class="number">6</span>]</span><br><span class="line">ser_data = pd.Series(data, index=index)</span><br><span class="line">ser_data</span><br></pre></td></tr></table></figure>
@@ -1678,6 +1633,51 @@ Freq: D, dtype: float64
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>随机森林</title>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E9%9B%86%E6%88%90%E7%AE%97%E6%B3%95%EF%BC%88Ensemble-algorithms%EF%BC%89/47295/</url>
+    <content><![CDATA[<h2 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h2><ol>
+<li>从原始训练数据集中，应⽤bootstrap⽅法有放回地随机抽取k个新的⾃助样本集，并由此构建k棵分类回归树，每次未被抽到的样本组成了Ｋ个袋外数据（out-of-bag,BBB）</li>
+<li>设有n个特征，则在每⼀棵树的每个节点处随机抽取m个特征，通过计算每个特征蕴含的信息量，特征中选择⼀个最具有分类能⼒的特征进⾏节点分裂</li>
+<li>每棵树最⼤限度地⽣长， 不做任何剪裁</li>
+<li>将⽣成的多棵树组成随机森林， ⽤随机森林对新的数据进⾏分类，分类结果按树分类器投票多少⽽定</li>
+</ol>
+<h2 id="RandomForestClassifier"><a href="#RandomForestClassifier" class="headerlink" title="RandomForestClassifier"></a>RandomForestClassifier</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier          <span class="comment"># 导入随机森林的包</span></span><br><span class="line"><span class="keyword">from</span> sklearn <span class="keyword">import</span> datasets</span><br><span class="line"><span class="keyword">from</span> sklearn.model_selection <span class="keyword">import</span> train_test_split</span><br><span class="line"></span><br><span class="line">iris = datasets.load_iris()</span><br><span class="line">iris_data = iris[<span class="string">&#x27;data&#x27;</span>]</span><br><span class="line">iris_label = iris[<span class="string">&#x27;target&#x27;</span>]</span><br><span class="line">iris_target_name = iris[<span class="string">&#x27;target_names&#x27;</span>]</span><br><span class="line">X = np.array(iris_data)</span><br><span class="line">Y = np.array(iris_label)</span><br><span class="line"></span><br><span class="line">x_train, x_test, y_train, y_test = train_test_split(X, Y, test_size=<span class="number">0.25</span>)</span><br><span class="line"></span><br><span class="line">clf = RandomForestClassifier()</span><br><span class="line">clf = clf.fit(x_train, y_train)</span><br></pre></td></tr></table></figure>
+<pre><code>/anaconda3/lib/python3.7/site-packages/sklearn/ensemble/forest.py:246: FutureWarning: The default value of n_estimators will change from 10 in version 0.20 to 100 in 0.22.
+  &quot;10 in version 0.20 to 100 in 0.22.&quot;, FutureWarning)
+</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> sklearn.metrics <span class="keyword">import</span> roc_curve, auc</span><br><span class="line"></span><br><span class="line">y_pred = clf.predict(x_test)</span><br><span class="line"></span><br><span class="line">false_positive_rate, true_positive_rate, thresholds = roc_curve(</span><br><span class="line">    y_test, y_pred, pos_label=<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">roc_auc = auc(false_positive_rate, true_positive_rate)</span><br><span class="line">roc_auc</span><br></pre></td></tr></table></figure>
+<pre><code>0.9821428571428571
+</code></pre><h3 id="调参"><a href="#调参" class="headerlink" title="调参"></a>调参</h3><ul>
+<li>n_estimators: int 默认10</li>
+<li>criterion：gini” or “entropy”(default=”gini”)表示使用基尼不纯度还是信息增益来计算属性，来选择最合适的节点</li>
+<li>max_depth：(default=None)设置树的最大深度，默认为None，直到使每一个叶节点只有一个类别，或是达到min_samples_split</li>
+<li>min_samples_split：默认2，int（可以被分割的所含最小样本数），float（总样本的百分比）</li>
+<li>min_samples_leaf：默认1，int或float，叶子节点所含最少样本数</li>
+<li>min_weight_fraction_leaf：(default=0) 叶子节点所需要的最小权值（当样本采样权重设置时才有意义，叶子节点的权重为属于该节点的所有样本权重和）</li>
+<li>max_features：(default=”auto”) 每次找最好的分割点是可以考虑的特征数</li>
+<li>max_leaf_nodes:最大叶节点数 和树的最大深度同样作用</li>
+<li>bootstrap：是否有放回采样，默认True</li>
+<li>oob_score：默认False，是否使用袋外数据统计泛华误差。利用在某次决策树训练中没有被采样选中的数据对该单个模型进行验证，算是一个简单的交叉验证。性能消耗小，但是效果不错</li>
+<li>n_jobs：默认1.可并行job数。-1代表有多少job=core</li>
+<li>random_state:如果给定相同的参数和训练数据，random_state的确定值将始终产生相同的结果</li>
+<li>verbose：(default=0) 是否显示任务进程</li>
+<li>warm_start：False热启动，决定是否使用上次调用该类的结果然后增加新的</li>
+<li>class_weight：None，各个label的权重</li>
+</ul>
+<blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="http://www.broadview.com.cn/book/5337" >从机器学习到深度学习：基于Scikit-learn与TensorFlow的高效开发实战<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://blog.csdn.net/qwq1503/article/details/91535494" >sklearn 随机森林分类iris花<i class="fas fa-external-link-alt"></i></a></li>
+<li><a class="link"   href="https://blog.csdn.net/wangqi880/article/details/49765673" >快速理解bootstrap,bagging,boosting-三个概念<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>统计与机器学习</category>
+        <category>集成算法（Ensemble algorithms）</category>
       </categories>
   </entry>
   <entry>
@@ -1814,7 +1814,7 @@ Freq: D, dtype: float64
   </entry>
   <entry>
     <title>探索性数据分析</title>
-    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%95%86%E6%A5%AD%E7%B5%B1%E8%A8%88/8366/</url>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%95%86%E4%B8%9A%E7%BB%9F%E8%AE%A1/8366/</url>
     <content><![CDATA[<h2 id="数据组成"><a href="#数据组成" class="headerlink" title="数据组成"></a>数据组成</h2><h3 id="结构化"><a href="#结构化" class="headerlink" title="结构化"></a>结构化</h3><ul>
 <li>数值型数据<ul>
 <li>连续型</li>
@@ -1900,605 +1900,192 @@ Freq: D, dtype: float64
 ]]></content>
       <categories>
         <category>统计与机器学习</category>
-        <category>商業統計</category>
+        <category>商业统计</category>
       </categories>
   </entry>
   <entry>
-    <title>数据抽取</title>
-    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/25692/</url>
-    <content><![CDATA[<h2 id="csv-I-O"><a href="#csv-I-O" class="headerlink" title="csv I/O"></a>csv I/O</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data1.csv&#x27;</span>))</span><br><span class="line">display(pd.read_table(<span class="string">&#x27;2019-06-30_数据抽取_data1.csv&#x27;</span>, sep=<span class="string">&#x27;,&#x27;</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data2.csv&#x27;</span>, header=<span class="literal">None</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data2.csv&#x27;</span>, names=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;message&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># data.to_csv(&#x27;output.csv&#x27;)</span></span><br></pre></td></tr></table></figure>
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>a</th>
-      <th>b</th>
-      <th>c</th>
-      <th>d</th>
-      <th>message</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>hello</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>8</td>
-      <td>world</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9</td>
-      <td>10</td>
-      <td>11</td>
-      <td>12</td>
-      <td>foo</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>a</th>
-      <th>b</th>
-      <th>c</th>
-      <th>d</th>
-      <th>message</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>hello</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>8</td>
-      <td>world</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9</td>
-      <td>10</td>
-      <td>11</td>
-      <td>12</td>
-      <td>foo</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-      <th>1</th>
-      <th>2</th>
-      <th>3</th>
-      <th>4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>hello</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>8</td>
-      <td>world</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9</td>
-      <td>10</td>
-      <td>11</td>
-      <td>12</td>
-      <td>foo</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>a</th>
-      <th>b</th>
-      <th>c</th>
-      <th>d</th>
-      <th>message</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1</td>
-      <td>2</td>
-      <td>3</td>
-      <td>4</td>
-      <td>hello</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5</td>
-      <td>6</td>
-      <td>7</td>
-      <td>8</td>
-      <td>world</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>9</td>
-      <td>10</td>
-      <td>11</td>
-      <td>12</td>
-      <td>foo</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-<h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">obj = \</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;&quot;姓名&quot;: &quot;张三&quot;,</span></span><br><span class="line"><span class="string"> &quot;住处&quot;: [&quot;天朝&quot;, &quot;挖煤国&quot;, &quot;万恶的资本主义日不落帝国&quot;],</span></span><br><span class="line"><span class="string"> &quot;宠物&quot;: null,</span></span><br><span class="line"><span class="string"> &quot;兄弟&quot;: [&#123;&quot;姓名&quot;: &quot;李四&quot;, &quot;年龄&quot;: 25, &quot;宠物&quot;: &quot;汪星人&quot;&#125;,</span></span><br><span class="line"><span class="string">              &#123;&quot;姓名&quot;: &quot;王五&quot;, &quot;年龄&quot;: 23, &quot;宠物&quot;: &quot;喵星人&quot;&#125;]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">result = json.loads(obj)  <span class="comment">#&lt;class &#x27;dict&#x27;&gt;</span></span><br><span class="line">result = json.dumps(result, ensure_ascii=<span class="literal">False</span>)  <span class="comment">#&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
-<pre><code>&#123;&quot;姓名&quot;: &quot;张三&quot;, &quot;住处&quot;: [&quot;天朝&quot;, &quot;挖煤国&quot;, &quot;万恶的资本主义日不落帝国&quot;], &quot;宠物&quot;: null, &quot;兄弟&quot;: [&#123;&quot;姓名&quot;: &quot;李四&quot;, &quot;年龄&quot;: 25, &quot;宠物&quot;: &quot;汪星人&quot;&#125;, &#123;&quot;姓名&quot;: &quot;王五&quot;, &quot;年龄&quot;: 23, &quot;宠物&quot;: &quot;喵星人&quot;&#125;]&#125;
-</code></pre><h2 id="XML-HTML"><a href="#XML-HTML" class="headerlink" title="XML/HTML"></a>XML/HTML</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml.html <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">parsed = parse(urlopen(<span class="string">&#x27;https://ask.julyedu.com/&#x27;</span>))</span><br><span class="line"></span><br><span class="line">doc = parsed.getroot()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#拿所有&lt;a&gt;</span></span><br><span class="line">urls = [lnk.get(<span class="string">&#x27;href&#x27;</span>) <span class="keyword">for</span> lnk <span class="keyword">in</span> doc.findall(<span class="string">&#x27;.//a&#x27;</span>)]</span><br><span class="line">urls</span><br></pre></td></tr></table></figure>
-<pre><code>[&#39;http://www.julyedu.com/weekend/train9?v=m1&#39;,
- &#39;https://www.julyedu.com&#39;,
- &#39;https://www.julyedu.com/category/index&#39;,
- &#39;https://www.julyedu.com/question&#39;,
- &#39;https://oj.julyedu.com/&#39;,
- &#39;http://jingsai.julyedu.com/&#39;,
- &#39;https://www.julyedu.com/video/index&#39;,
- &#39;https://ask.julyedu.com&#39;,
- &#39;https://www.julyedu.com/active/qiye&#39;,
- None,
- &#39;https://www.julyedu.com/cart&#39;,
- &#39;https://passport.julyedu.com/login?redirect=http%3A%2F%2Fask.julyedu.com%2F&#39;,
- &#39;https://www.julyedu.com&#39;,
- &#39;https://passport.julyedu.com/login?redirect=https%3A%2F%2Fask.julyedu.com%2F&#39;,
- &#39;https://www.julyedu.com&#39;,
- &#39;https://www.julyedu.com/category/index&#39;,
- &#39;https://www.julyedu.com/question/index&#39;,
- &#39;https://www.julyedu.com/video/index&#39;,
- &#39;https://ask.julyedu.com&#39;,
- &#39;https://www.julyedu.com/cart/&#39;,
- &#39;https://ask.julyedu.com/explore/&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/explore/category-15&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/explore/category-18&#39;,
- &#39;https://ask.julyedu.com/explore/category-17&#39;,
- &#39;https://ask.julyedu.com/explore/category-10&#39;,
- &#39;https://ask.julyedu.com/explore/category-16&#39;,
- &#39;https://ask.julyedu.com/explore/category-14&#39;,
- &#39;https://ask.julyedu.com/explore/category-11&#39;,
- &#39;https://ask.julyedu.com/explore/category-4&#39;,
- &#39;https://ask.julyedu.com/setting/privacy/#notifications&#39;,
- &#39;javascript:;&#39;,
- &#39;https://ask.julyedu.com/notifications/&#39;,
- &#39;&#39;,
- &#39;https://ask.julyedu.com/sort_type-hot__day-7&#39;,
- &#39;https://ask.julyedu.com/sort_type-unresponsive&#39;,
- &#39;&#39;,
- &#39;https://ask.julyedu.com/sort_type-hot__day-7&#39;,
- &#39;https://ask.julyedu.com/sort_type-unresponsive&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88655&#39;,
- &#39;https://ask.julyedu.com/question/88655#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-14&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88654&#39;,
- &#39;https://ask.julyedu.com/question/88654#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88653&#39;,
- &#39;https://ask.julyedu.com/question/88653#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88652&#39;,
- &#39;https://ask.julyedu.com/question/88652#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88651&#39;,
- &#39;https://ask.julyedu.com/question/88651#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88650&#39;,
- &#39;https://ask.julyedu.com/question/88650#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-14&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88649&#39;,
- &#39;https://ask.julyedu.com/question/88649#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88648&#39;,
- &#39;https://ask.julyedu.com/question/88648#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88647&#39;,
- &#39;https://ask.julyedu.com/question/88647#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-15&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88646&#39;,
- &#39;https://ask.julyedu.com/question/88646#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1007&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://dwz.cn/O9VznNuY&#39;,
- &#39;https://ask.julyedu.com/uploads/article/20190621/489e6c00af84ab51a832781134568131.png&#39;,
- &#39;https://ask.julyedu.com/uploads/article/20190621/424770863c018c01543b2630ed9f0153.png&#39;,
- &#39;https://ask.julyedu.com/article/1007&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1006&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://dwz.cn/bwUTiuHL&#39;,
- &#39;https://ask.julyedu.com/article/1006&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1005&#39;,
- &#39;https://ask.julyedu.com/explore/category-15&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://dwz.cn/ZmFmFUmY&#39;,
- &#39;https://ask.julyedu.com/article/1005&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1004&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://dwz.cn/kFJZuxek&#39;,
- &#39;https://ask.julyedu.com/uploads/article/20190619/eab24a8a5b30672d260dd446d7b21c8b.png&#39;,
- &#39;https://ask.julyedu.com/article/1004&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88645&#39;,
- &#39;https://ask.julyedu.com/question/88645#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1003&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://dwz.cn/Ar8fDfbn&#39;,
- &#39;https://ask.julyedu.com/uploads/article/20190618/ad20b22eee771ee56e4f674f341ee397.png&#39;,
- &#39;https://ask.julyedu.com/article/1003&#39;,
- &#39;https://ask.julyedu.com/people/Darlingpan&#39;,
- &#39;https://ask.julyedu.com/question/86722&#39;,
- &#39;https://ask.julyedu.com/people/%E8%8E%B9%E5%AE%9D%E5%AE%9D&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E8%8E%B9%E5%AE%9D%E5%AE%9D&#39;,
- &#39;https://ask.julyedu.com/people/Darlingpan&#39;,
- &#39;https://ask.julyedu.com/question/85510&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7545057&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7545057&#39;,
- &#39;https://ask.julyedu.com/people/zdl&#39;,
- &#39;https://ask.julyedu.com/question/88644&#39;,
- &#39;https://ask.julyedu.com/question/88644#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/zdl&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1002&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://dwz.cn/kRg2NTm0&#39;,
- &#39;https://ask.julyedu.com/article/1002&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88643&#39;,
- &#39;https://ask.julyedu.com/question/88643#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/question/88642&#39;,
- &#39;https://ask.julyedu.com/question/88642#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/question/88641&#39;,
- &#39;https://ask.julyedu.com/question/88641#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
- &#39;https://ask.julyedu.com/question/88640&#39;,
- &#39;https://ask.julyedu.com/question/88640#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-4&#39;,
- &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88639&#39;,
- &#39;https://ask.julyedu.com/question/88639#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88638&#39;,
- &#39;https://ask.julyedu.com/question/88638#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1001&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1001&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1000&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/1000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/article/999&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/uploads/article/20190605/6dcda1628e00ed7dfab23d18431f6c9b.png&#39;,
- &#39;https://ask.julyedu.com/article/999&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88634&#39;,
- &#39;https://ask.julyedu.com/question/88634#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88633&#39;,
- &#39;https://ask.julyedu.com/question/88633#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-18&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88632&#39;,
- &#39;https://ask.julyedu.com/question/88632#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-14&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E9%80%86%E8%BD%AC&#39;,
- &#39;https://ask.julyedu.com/question/88584&#39;,
- &#39;https://ask.julyedu.com/people/%E8%8B%A5%E6%99%B4&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7479632&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/qq%E7%94%A8%E6%88%B7497804&#39;,
- &#39;https://ask.julyedu.com/people/&#39;,
- &#39;https://ask.julyedu.com/question/86859&#39;,
- &#39;https://ask.julyedu.com/people/%E5%BE%AE%E4%BF%A1%E7%94%A8%E6%88%B7488524&#39;,
- &#39;https://ask.julyedu.com/people/%E5%BE%AE%E4%BF%A1%E7%94%A8%E6%88%B7480301&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/Michael+Michael&#39;,
- &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
- &#39;https://ask.julyedu.com/question/88631&#39;,
- &#39;https://ask.julyedu.com/question/88631#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/question/88629&#39;,
- &#39;https://ask.julyedu.com/question/88629#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/question/88630&#39;,
- &#39;https://ask.julyedu.com/question/88630#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/question/88628&#39;,
- &#39;https://ask.julyedu.com/question/88628#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88627&#39;,
- &#39;https://ask.julyedu.com/question/88627#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88626&#39;,
- &#39;https://ask.julyedu.com/question/88626#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88625&#39;,
- &#39;https://ask.julyedu.com/question/88625#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88624&#39;,
- &#39;https://ask.julyedu.com/question/88624#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88623&#39;,
- &#39;https://ask.julyedu.com/question/88623#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-14&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88622&#39;,
- &#39;https://ask.julyedu.com/question/88622#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-1&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88621&#39;,
- &#39;https://ask.julyedu.com/question/88621#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/question/88619&#39;,
- &#39;https://ask.julyedu.com/question/88619#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-7&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
- &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
- &#39;https://ask.julyedu.com/question/88617&#39;,
- &#39;https://ask.julyedu.com/question/88617#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
- &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
- &#39;https://ask.julyedu.com/question/88618&#39;,
- &#39;https://ask.julyedu.com/question/88618#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/question/88616&#39;,
- &#39;https://ask.julyedu.com/question/88616#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-5&#39;,
- &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
- &#39;https://ask.julyedu.com/people/afei3009&#39;,
- &#39;https://ask.julyedu.com/question/88615&#39;,
- &#39;https://ask.julyedu.com/question/88615#!answer_form&#39;,
- &#39;https://ask.julyedu.com/explore/category-13&#39;,
- &#39;https://ask.julyedu.com/people/afei3009&#39;,
- &#39;javascript:;&#39;,
- &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-2&#39;,
- &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-3&#39;,
- &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-4&#39;,
- &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-2&#39;,
- &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-56&#39;,
- &#39;https://ask.julyedu.com/topic/channel-hot&#39;,
- &#39;https://ask.julyedu.com/topic/python&#39;,
- &#39;https://ask.julyedu.com/topic/python&#39;,
- &#39;https://ask.julyedu.com/topic/活动&#39;,
- &#39;https://ask.julyedu.com/topic/活动&#39;,
- &#39;https://ask.julyedu.com/topic/GAN&#39;,
- &#39;https://ask.julyedu.com/topic/GAN&#39;,
- &#39;https://ask.julyedu.com/topic/面试&#39;,
- &#39;https://ask.julyedu.com/topic/面试&#39;,
- &#39;https://ask.julyedu.com/people/&#39;,
- &#39;https://ask.julyedu.com/people/xiaoyan2015&#39;,
- &#39;https://ask.julyedu.com/people/xiaoyan2015&#39;,
- &#39;https://ask.julyedu.com/people/qyzx_zhx&#39;,
- &#39;https://ask.julyedu.com/people/qyzx_zhx&#39;,
- &#39;https://ask.julyedu.com/people/%E7%A4%BE%E5%8C%BA%E5%B0%8F%E7%AE%A1%E5%AE%B6&#39;,
- &#39;https://ask.julyedu.com/people/%E7%A4%BE%E5%8C%BA%E5%B0%8F%E7%AE%A1%E5%AE%B6&#39;,
- &#39;https://ask.julyedu.com/people/unasm&#39;,
- &#39;https://ask.julyedu.com/people/unasm&#39;,
- &#39;https://ask.julyedu.com/people/Alina&#39;,
- &#39;https://ask.julyedu.com/people/Alina&#39;,
- &#39;http://www.julyedu.com/weekend/train9?v=m1&#39;,
- &#39;http://q.url.cn/AB8aue?_type=wpa&amp;qidian=true&#39;,
- &#39;http://www.julyedu.com/distribution/index&#39;,
- &#39;http://weibo.com/askjulyedu&#39;,
- None,
- &#39;https://www.julyedu.com/help/index/about&#39;,
- &#39;https://www.julyedu.com/help/index/contact&#39;,
- &#39;https://www.julyedu.com/help/index/join&#39;,
- &#39;https://ask.julyedu.com/question/55&#39;,
- &#39;https://tianchi.aliyun.com&#39;,
- &#39;https://cloud.tencent.com/developer/edu&#39;,
- &#39;https://www.aidaxue.com/?ch=qyzx&#39;,
- &#39;https://www.epubit.com&#39;,
- &#39;http://www.miitbeian.gov.cn/&#39;,
- &#39;https://www.cnzz.com/stat/website.php?web_id=1259748782&#39;,
- &#39;https://www.julyedu.com&#39;,
- &#39;https://www.julyedu.com/help/index/about&#39;,
- &#39;https://www.julyedu.com/help/index/join&#39;,
- &#39;http://weibo.com/askjulyedu&#39;,
- &#39;javascript:&#39;,
- &#39;https://tianchi.aliyun.com&#39;,
- &#39;https://cloud.tencent.com/developer/edu&#39;,
- &#39;https://www.aidaxue.com/?ch=qyzx&#39;,
- &#39;https://www.epubit.com&#39;]
-</code></pre><blockquote>
-<p>参考：</p>
-</blockquote>
-<ol>
-<li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
-</ol>
+    <title>目录规划</title>
+    <url>/0-%E5%AD%A6%E4%B9%A0%E8%AE%A1%E5%88%92/20429/</url>
+    <content><![CDATA[<h2 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h2><h2 id="商业分析"><a href="#商业分析" class="headerlink" title="商业分析"></a>商业分析</h2><ul>
+<li><p>企业增长/竞争战略</p>
+<ul>
+<li>CASE框架：Growth/Competition Strategy</li>
+<li>企业增长战略</li>
+<li>竞争策略</li>
+</ul>
+</li>
+<li><p>内部运营效率</p>
+<ul>
+<li>CASE框架：Operation</li>
+<li>运营效率提升</li>
+<li>企业转型与数字化策略</li>
+</ul>
+</li>
+<li><p>市场营销</p>
+<ul>
+<li>CASE框架：New Product Launch</li>
+<li>品牌定位</li>
+<li>品牌传播</li>
+</ul>
+</li>
+<li><p>行业及商业模式</p>
+<ul>
+<li>CASE框架：Market Sizing</li>
+<li>CASE框架：Market Entry</li>
+<li>CASE框架：Profitability</li>
+<li>市场分析</li>
+<li>收入分析</li>
+<li>利润分析</li>
+<li>估值分析</li>
+</ul>
+</li>
+<li><p>金融及投资</p>
+<ul>
+<li>CASE框架：M&amp;A/Financial Investment</li>
+<li>战略并购与合作</li>
+<li>金融机构介绍</li>
+<li>投资组合与风险</li>
+<li>对冲基金投资</li>
+<li>公司投资分析</li>
+<li>VC投资分析</li>
+<li>PE投资逻辑</li>
+<li>PE投后管理</li>
+<li>A股IPO解析</li>
+<li>跨国并购</li>
+<li>产业并购逻辑</li>
+</ul>
+</li>
+<li><p>宏观经济及财经</p>
+<ul>
+<li>货币政策与央行基础</li>
+<li>主权债务危机分析</li>
+<li>美联储</li>
+<li>重要经济数据与政策</li>
+<li>中国央行与经济政策</li>
+</ul>
+</li>
+<li><p>企业人力管理</p>
+<ul>
+<li>组织架构设计</li>
+<li>管理团队</li>
+<li>领导变革</li>
+<li>职业发展计画</li>
+<li>领导力</li>
+</ul>
+</li>
+</ul>
+<h2 id="数据仓库"><a href="#数据仓库" class="headerlink" title="数据仓库"></a>数据仓库</h2><h2 id="统计与机器学习"><a href="#统计与机器学习" class="headerlink" title="统计与机器学习"></a>统计与机器学习</h2><ul>
+<li>商業統計</li>
+<li>正则化算法（Regularization Algorithms）<ul>
+<li>岭回归（Ridge Regression）</li>
+<li>最小绝对收缩与选择算子（LASSO）</li>
+<li>GLASSO</li>
+<li>弹性网络（Elastic Net）</li>
+<li>最小角回归（Least-Angle Regression）</li>
+</ul>
+</li>
+<li>人工神经网络（Artificial Neural Network）<ul>
+<li>感知器</li>
+<li>反向传播</li>
+<li>Hopfield 网络</li>
+<li>径向基函数网络（Radial Basis Function Network，RBFN）</li>
+</ul>
+</li>
+<li>决策树算法（Decision Tree Algorithm）<ul>
+<li>分类和回归树（Classification and Regression Tree，CART）</li>
+<li>Iterative Dichotomiser 3（ID3）</li>
+<li>C4.5 和 C5.0（一种强大方法的两个不同版本）</li>
+</ul>
+</li>
+<li>回归算法（Regression）<ul>
+<li>普通最小二乘回归（Ordinary Least Squares Regression，OLSR）</li>
+<li>线性回归（Linear Regression）</li>
+<li>逻辑回归（Logistic Regression）</li>
+<li>逐步回归（Stepwise Regression）</li>
+<li>多元自适应回归样条（Multivariate Adaptive Regression Splines，MARS）</li>
+<li>本地散点平滑估计（Locally Estimated Scatterplot Smoothing，LOESS）</li>
+</ul>
+</li>
+<li>支持向量机（Support Vector Machines）</li>
+<li>贝叶斯算法（Bayesian Algorithms）<ul>
+<li>朴素贝叶斯（Naive Bayes）</li>
+<li>高斯朴素贝叶斯（Gaussian Naive Bayes）</li>
+<li>多项式朴素贝叶斯（Multinomial Naive Bayes）</li>
+<li>平均一致依赖估计器（Averaged One-Dependence Estimators (AODE)）</li>
+<li>贝叶斯信念网络（Bayesian Belief Network (BBN)）</li>
+<li>贝叶斯网络（Bayesian Network (BN)）</li>
+</ul>
+</li>
+<li>集成算法（Ensemble algorithms）<ul>
+<li>Boosting</li>
+<li>Bootstrapped Aggregation（Bagging）</li>
+<li>AdaBoost</li>
+<li>层叠泛化（Stacked Generalization）（blending）</li>
+<li>梯度推进机（Gradient Boosting Machines，GBM）</li>
+<li>梯度提升回归树（Gradient Boosted Regression Trees，GBRT）</li>
+<li>随机森林（Random Forest）</li>
+</ul>
+</li>
+<li>深度学习（Deep Learning）<ul>
+<li>深玻耳兹曼机（Deep Boltzmann Machine，DBM）</li>
+<li>Deep Belief Networks（DBN）</li>
+<li>卷积神经网络（CNN）</li>
+<li>Stacked Auto-Encoders</li>
+</ul>
+</li>
+<li>降维算法（Dimensionality Reduction Algorithms）<ul>
+<li>主成分分析（Principal Component Analysis (PCA)）</li>
+<li>主成分回归（Principal Component Regression (PCR)）</li>
+<li>偏最小二乘回归（Partial Least Squares Regression (PLSR)）</li>
+<li>Sammon 映射（Sammon Mapping）</li>
+<li>多维尺度变换（Multidimensional Scaling (MDS)）</li>
+<li>投影寻踪（Projection Pursuit）</li>
+<li>线性判别分析（Linear Discriminant Analysis (LDA)）</li>
+<li>混合判别分析（Mixture Discriminant Analysis (MDA)）</li>
+<li>二次判别分析（Quadratic Discriminant Analysis (QDA)）</li>
+<li>灵活判别分析（Flexible Discriminant Analysis (FDA)）</li>
+</ul>
+</li>
+<li>聚类算法（Clustering Algorithms）<ul>
+<li>K-均值（k-Means）</li>
+<li>k-Medians 算法</li>
+<li>Expectation Maximi 封层 ation (EM)</li>
+<li>最大期望算法（EM）</li>
+<li>分层集群（Hierarchical Clstering）</li>
+</ul>
+</li>
+<li>基于实例的算法（Instance-based Algorithms）<ul>
+<li>K 最近邻（k-Nearest Neighbor (kNN)）</li>
+<li>学习向量量化（Learning Vector Quantization (LVQ)）</li>
+<li>自组织映射（Self-Organizing Map (SOM)）</li>
+<li>局部加权学习（Locally Weighted Learning (LWL)）</li>
+</ul>
+</li>
+<li>关联规则学习算法（Association Rule Learning Algorithms）<ul>
+<li>Apriori 算法（Apriori algorithm）</li>
+<li>Eclat 算法（Eclat algorithm）</li>
+<li>FP-growth</li>
+</ul>
+</li>
+<li>图模型（Graphical Models）<ul>
+<li>贝叶斯网络（Bayesian network）</li>
+<li>马尔可夫随机域（Markov random field）</li>
+<li>链图（Chain Graphs）</li>
+<li>祖先图（Ancestral graph）</li>
+</ul>
+</li>
+<li>其他</li>
+</ul>
+<p>参考：<a class="link"   href="https://zhuanlan.zhihu.com/p/25327755" >https://zhuanlan.zhihu.com/p/25327755<i class="fas fa-external-link-alt"></i></a></p>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><ul>
+<li>LeetCode</li>
+<li>数据科学</li>
+<li>爬虫</li>
+<li>金融分析</li>
+</ul>
 ]]></content>
       <categories>
-        <category>统计与机器学习</category>
-        <category>其他</category>
+        <category>0_学习计划</category>
       </categories>
   </entry>
   <entry>
@@ -3120,6 +2707,604 @@ dtype: int64
 ]]></content>
       <categories>
         <category>Python</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>数据抽取</title>
+    <url>/%E7%BB%9F%E8%AE%A1%E4%B8%8E%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/%E5%85%B6%E4%BB%96/25692/</url>
+    <content><![CDATA[<h2 id="csv-I-O"><a href="#csv-I-O" class="headerlink" title="csv I/O"></a>csv I/O</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data1.csv&#x27;</span>))</span><br><span class="line">display(pd.read_table(<span class="string">&#x27;2019-06-30_数据抽取_data1.csv&#x27;</span>, sep=<span class="string">&#x27;,&#x27;</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data2.csv&#x27;</span>, header=<span class="literal">None</span>))</span><br><span class="line">display(pd.read_csv(<span class="string">&#x27;2019-06-30_数据抽取_data2.csv&#x27;</span>, names=[<span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;b&#x27;</span>, <span class="string">&#x27;c&#x27;</span>, <span class="string">&#x27;d&#x27;</span>, <span class="string">&#x27;message&#x27;</span>]))</span><br><span class="line"></span><br><span class="line"><span class="comment"># data.to_csv(&#x27;output.csv&#x27;)</span></span><br></pre></td></tr></table></figure>
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>a</th>
+      <th>b</th>
+      <th>c</th>
+      <th>d</th>
+      <th>message</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+      <td>4</td>
+      <td>hello</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>5</td>
+      <td>6</td>
+      <td>7</td>
+      <td>8</td>
+      <td>world</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>9</td>
+      <td>10</td>
+      <td>11</td>
+      <td>12</td>
+      <td>foo</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<h2 id="json"><a href="#json" class="headerlink" title="json"></a>json</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">obj = \</span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">&#123;&quot;姓名&quot;: &quot;张三&quot;,</span></span><br><span class="line"><span class="string"> &quot;住处&quot;: [&quot;天朝&quot;, &quot;挖煤国&quot;, &quot;万恶的资本主义日不落帝国&quot;],</span></span><br><span class="line"><span class="string"> &quot;宠物&quot;: null,</span></span><br><span class="line"><span class="string"> &quot;兄弟&quot;: [&#123;&quot;姓名&quot;: &quot;李四&quot;, &quot;年龄&quot;: 25, &quot;宠物&quot;: &quot;汪星人&quot;&#125;,</span></span><br><span class="line"><span class="string">              &#123;&quot;姓名&quot;: &quot;王五&quot;, &quot;年龄&quot;: 23, &quot;宠物&quot;: &quot;喵星人&quot;&#125;]</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">&quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> json</span><br><span class="line">result = json.loads(obj)  <span class="comment">#&lt;class &#x27;dict&#x27;&gt;</span></span><br><span class="line">result = json.dumps(result, ensure_ascii=<span class="literal">False</span>)  <span class="comment">#&lt;class &#x27;str&#x27;&gt;</span></span><br><span class="line"><span class="built_in">print</span>(result)</span><br></pre></td></tr></table></figure>
+<pre><code>&#123;&quot;姓名&quot;: &quot;张三&quot;, &quot;住处&quot;: [&quot;天朝&quot;, &quot;挖煤国&quot;, &quot;万恶的资本主义日不落帝国&quot;], &quot;宠物&quot;: null, &quot;兄弟&quot;: [&#123;&quot;姓名&quot;: &quot;李四&quot;, &quot;年龄&quot;: 25, &quot;宠物&quot;: &quot;汪星人&quot;&#125;, &#123;&quot;姓名&quot;: &quot;王五&quot;, &quot;年龄&quot;: 23, &quot;宠物&quot;: &quot;喵星人&quot;&#125;]&#125;
+</code></pre><h2 id="XML-HTML"><a href="#XML-HTML" class="headerlink" title="XML/HTML"></a>XML/HTML</h2><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> lxml.html <span class="keyword">import</span> parse</span><br><span class="line"><span class="keyword">from</span> urllib.request <span class="keyword">import</span> urlopen</span><br><span class="line"><span class="keyword">import</span> ssl</span><br><span class="line"></span><br><span class="line">ssl._create_default_https_context = ssl._create_unverified_context</span><br><span class="line">parsed = parse(urlopen(<span class="string">&#x27;https://ask.julyedu.com/&#x27;</span>))</span><br><span class="line"></span><br><span class="line">doc = parsed.getroot()</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#拿所有&lt;a&gt;</span></span><br><span class="line">urls = [lnk.get(<span class="string">&#x27;href&#x27;</span>) <span class="keyword">for</span> lnk <span class="keyword">in</span> doc.findall(<span class="string">&#x27;.//a&#x27;</span>)]</span><br><span class="line">urls</span><br></pre></td></tr></table></figure>
+<pre><code>[&#39;http://www.julyedu.com/weekend/train9?v=m1&#39;,
+ &#39;https://www.julyedu.com&#39;,
+ &#39;https://www.julyedu.com/category/index&#39;,
+ &#39;https://www.julyedu.com/question&#39;,
+ &#39;https://oj.julyedu.com/&#39;,
+ &#39;http://jingsai.julyedu.com/&#39;,
+ &#39;https://www.julyedu.com/video/index&#39;,
+ &#39;https://ask.julyedu.com&#39;,
+ &#39;https://www.julyedu.com/active/qiye&#39;,
+ None,
+ &#39;https://www.julyedu.com/cart&#39;,
+ &#39;https://passport.julyedu.com/login?redirect=http%3A%2F%2Fask.julyedu.com%2F&#39;,
+ &#39;https://www.julyedu.com&#39;,
+ &#39;https://passport.julyedu.com/login?redirect=https%3A%2F%2Fask.julyedu.com%2F&#39;,
+ &#39;https://www.julyedu.com&#39;,
+ &#39;https://www.julyedu.com/category/index&#39;,
+ &#39;https://www.julyedu.com/question/index&#39;,
+ &#39;https://www.julyedu.com/video/index&#39;,
+ &#39;https://ask.julyedu.com&#39;,
+ &#39;https://www.julyedu.com/cart/&#39;,
+ &#39;https://ask.julyedu.com/explore/&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/explore/category-15&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/explore/category-18&#39;,
+ &#39;https://ask.julyedu.com/explore/category-17&#39;,
+ &#39;https://ask.julyedu.com/explore/category-10&#39;,
+ &#39;https://ask.julyedu.com/explore/category-16&#39;,
+ &#39;https://ask.julyedu.com/explore/category-14&#39;,
+ &#39;https://ask.julyedu.com/explore/category-11&#39;,
+ &#39;https://ask.julyedu.com/explore/category-4&#39;,
+ &#39;https://ask.julyedu.com/setting/privacy/#notifications&#39;,
+ &#39;javascript:;&#39;,
+ &#39;https://ask.julyedu.com/notifications/&#39;,
+ &#39;&#39;,
+ &#39;https://ask.julyedu.com/sort_type-hot__day-7&#39;,
+ &#39;https://ask.julyedu.com/sort_type-unresponsive&#39;,
+ &#39;&#39;,
+ &#39;https://ask.julyedu.com/sort_type-hot__day-7&#39;,
+ &#39;https://ask.julyedu.com/sort_type-unresponsive&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88655&#39;,
+ &#39;https://ask.julyedu.com/question/88655#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-14&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88654&#39;,
+ &#39;https://ask.julyedu.com/question/88654#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88653&#39;,
+ &#39;https://ask.julyedu.com/question/88653#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88652&#39;,
+ &#39;https://ask.julyedu.com/question/88652#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88651&#39;,
+ &#39;https://ask.julyedu.com/question/88651#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88650&#39;,
+ &#39;https://ask.julyedu.com/question/88650#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-14&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88649&#39;,
+ &#39;https://ask.julyedu.com/question/88649#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88648&#39;,
+ &#39;https://ask.julyedu.com/question/88648#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88647&#39;,
+ &#39;https://ask.julyedu.com/question/88647#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-15&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88646&#39;,
+ &#39;https://ask.julyedu.com/question/88646#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1007&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://dwz.cn/O9VznNuY&#39;,
+ &#39;https://ask.julyedu.com/uploads/article/20190621/489e6c00af84ab51a832781134568131.png&#39;,
+ &#39;https://ask.julyedu.com/uploads/article/20190621/424770863c018c01543b2630ed9f0153.png&#39;,
+ &#39;https://ask.julyedu.com/article/1007&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1006&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://dwz.cn/bwUTiuHL&#39;,
+ &#39;https://ask.julyedu.com/article/1006&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1005&#39;,
+ &#39;https://ask.julyedu.com/explore/category-15&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://dwz.cn/ZmFmFUmY&#39;,
+ &#39;https://ask.julyedu.com/article/1005&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1004&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://dwz.cn/kFJZuxek&#39;,
+ &#39;https://ask.julyedu.com/uploads/article/20190619/eab24a8a5b30672d260dd446d7b21c8b.png&#39;,
+ &#39;https://ask.julyedu.com/article/1004&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88645&#39;,
+ &#39;https://ask.julyedu.com/question/88645#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1003&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://dwz.cn/Ar8fDfbn&#39;,
+ &#39;https://ask.julyedu.com/uploads/article/20190618/ad20b22eee771ee56e4f674f341ee397.png&#39;,
+ &#39;https://ask.julyedu.com/article/1003&#39;,
+ &#39;https://ask.julyedu.com/people/Darlingpan&#39;,
+ &#39;https://ask.julyedu.com/question/86722&#39;,
+ &#39;https://ask.julyedu.com/people/%E8%8E%B9%E5%AE%9D%E5%AE%9D&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E8%8E%B9%E5%AE%9D%E5%AE%9D&#39;,
+ &#39;https://ask.julyedu.com/people/Darlingpan&#39;,
+ &#39;https://ask.julyedu.com/question/85510&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7545057&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7545057&#39;,
+ &#39;https://ask.julyedu.com/people/zdl&#39;,
+ &#39;https://ask.julyedu.com/question/88644&#39;,
+ &#39;https://ask.julyedu.com/question/88644#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/zdl&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1002&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://dwz.cn/kRg2NTm0&#39;,
+ &#39;https://ask.julyedu.com/article/1002&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88643&#39;,
+ &#39;https://ask.julyedu.com/question/88643#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/question/88642&#39;,
+ &#39;https://ask.julyedu.com/question/88642#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/question/88641&#39;,
+ &#39;https://ask.julyedu.com/question/88641#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
+ &#39;https://ask.julyedu.com/question/88640&#39;,
+ &#39;https://ask.julyedu.com/question/88640#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-4&#39;,
+ &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88639&#39;,
+ &#39;https://ask.julyedu.com/question/88639#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88638&#39;,
+ &#39;https://ask.julyedu.com/question/88638#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1001&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1001&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1000&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/1000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/article/999&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/uploads/article/20190605/6dcda1628e00ed7dfab23d18431f6c9b.png&#39;,
+ &#39;https://ask.julyedu.com/article/999&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88634&#39;,
+ &#39;https://ask.julyedu.com/question/88634#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88633&#39;,
+ &#39;https://ask.julyedu.com/question/88633#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-18&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88632&#39;,
+ &#39;https://ask.julyedu.com/question/88632#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-14&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E9%80%86%E8%BD%AC&#39;,
+ &#39;https://ask.julyedu.com/question/88584&#39;,
+ &#39;https://ask.julyedu.com/people/%E8%8B%A5%E6%99%B4&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7479632&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/qq%E7%94%A8%E6%88%B7497804&#39;,
+ &#39;https://ask.julyedu.com/people/&#39;,
+ &#39;https://ask.julyedu.com/question/86859&#39;,
+ &#39;https://ask.julyedu.com/people/%E5%BE%AE%E4%BF%A1%E7%94%A8%E6%88%B7488524&#39;,
+ &#39;https://ask.julyedu.com/people/%E5%BE%AE%E4%BF%A1%E7%94%A8%E6%88%B7480301&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/Michael+Michael&#39;,
+ &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
+ &#39;https://ask.julyedu.com/question/88631&#39;,
+ &#39;https://ask.julyedu.com/question/88631#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E4%B8%83%E6%9C%88%E5%9C%A8%E7%BA%BF&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/question/88629&#39;,
+ &#39;https://ask.julyedu.com/question/88629#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/question/88630&#39;,
+ &#39;https://ask.julyedu.com/question/88630#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/question/88628&#39;,
+ &#39;https://ask.julyedu.com/question/88628#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88627&#39;,
+ &#39;https://ask.julyedu.com/question/88627#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88626&#39;,
+ &#39;https://ask.julyedu.com/question/88626#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88625&#39;,
+ &#39;https://ask.julyedu.com/question/88625#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88624&#39;,
+ &#39;https://ask.julyedu.com/question/88624#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88623&#39;,
+ &#39;https://ask.julyedu.com/question/88623#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-14&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88622&#39;,
+ &#39;https://ask.julyedu.com/question/88622#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-1&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88621&#39;,
+ &#39;https://ask.julyedu.com/question/88621#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/question/88619&#39;,
+ &#39;https://ask.julyedu.com/question/88619#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-7&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7527000&#39;,
+ &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
+ &#39;https://ask.julyedu.com/question/88617&#39;,
+ &#39;https://ask.julyedu.com/question/88617#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
+ &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
+ &#39;https://ask.julyedu.com/question/88618&#39;,
+ &#39;https://ask.julyedu.com/question/88618#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E5%BC%A0%E7%BF%94&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/question/88616&#39;,
+ &#39;https://ask.julyedu.com/question/88616#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-5&#39;,
+ &#39;https://ask.julyedu.com/people/%E6%89%8B%E6%9C%BA%E7%94%A8%E6%88%B7505476&#39;,
+ &#39;https://ask.julyedu.com/people/afei3009&#39;,
+ &#39;https://ask.julyedu.com/question/88615&#39;,
+ &#39;https://ask.julyedu.com/question/88615#!answer_form&#39;,
+ &#39;https://ask.julyedu.com/explore/category-13&#39;,
+ &#39;https://ask.julyedu.com/people/afei3009&#39;,
+ &#39;javascript:;&#39;,
+ &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-2&#39;,
+ &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-3&#39;,
+ &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-4&#39;,
+ &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-2&#39;,
+ &#39;https://ask.julyedu.com/sort_type-new__day-0__is_recommend-0__page-56&#39;,
+ &#39;https://ask.julyedu.com/topic/channel-hot&#39;,
+ &#39;https://ask.julyedu.com/topic/python&#39;,
+ &#39;https://ask.julyedu.com/topic/python&#39;,
+ &#39;https://ask.julyedu.com/topic/活动&#39;,
+ &#39;https://ask.julyedu.com/topic/活动&#39;,
+ &#39;https://ask.julyedu.com/topic/GAN&#39;,
+ &#39;https://ask.julyedu.com/topic/GAN&#39;,
+ &#39;https://ask.julyedu.com/topic/面试&#39;,
+ &#39;https://ask.julyedu.com/topic/面试&#39;,
+ &#39;https://ask.julyedu.com/people/&#39;,
+ &#39;https://ask.julyedu.com/people/xiaoyan2015&#39;,
+ &#39;https://ask.julyedu.com/people/xiaoyan2015&#39;,
+ &#39;https://ask.julyedu.com/people/qyzx_zhx&#39;,
+ &#39;https://ask.julyedu.com/people/qyzx_zhx&#39;,
+ &#39;https://ask.julyedu.com/people/%E7%A4%BE%E5%8C%BA%E5%B0%8F%E7%AE%A1%E5%AE%B6&#39;,
+ &#39;https://ask.julyedu.com/people/%E7%A4%BE%E5%8C%BA%E5%B0%8F%E7%AE%A1%E5%AE%B6&#39;,
+ &#39;https://ask.julyedu.com/people/unasm&#39;,
+ &#39;https://ask.julyedu.com/people/unasm&#39;,
+ &#39;https://ask.julyedu.com/people/Alina&#39;,
+ &#39;https://ask.julyedu.com/people/Alina&#39;,
+ &#39;http://www.julyedu.com/weekend/train9?v=m1&#39;,
+ &#39;http://q.url.cn/AB8aue?_type=wpa&amp;qidian=true&#39;,
+ &#39;http://www.julyedu.com/distribution/index&#39;,
+ &#39;http://weibo.com/askjulyedu&#39;,
+ None,
+ &#39;https://www.julyedu.com/help/index/about&#39;,
+ &#39;https://www.julyedu.com/help/index/contact&#39;,
+ &#39;https://www.julyedu.com/help/index/join&#39;,
+ &#39;https://ask.julyedu.com/question/55&#39;,
+ &#39;https://tianchi.aliyun.com&#39;,
+ &#39;https://cloud.tencent.com/developer/edu&#39;,
+ &#39;https://www.aidaxue.com/?ch=qyzx&#39;,
+ &#39;https://www.epubit.com&#39;,
+ &#39;http://www.miitbeian.gov.cn/&#39;,
+ &#39;https://www.cnzz.com/stat/website.php?web_id=1259748782&#39;,
+ &#39;https://www.julyedu.com&#39;,
+ &#39;https://www.julyedu.com/help/index/about&#39;,
+ &#39;https://www.julyedu.com/help/index/join&#39;,
+ &#39;http://weibo.com/askjulyedu&#39;,
+ &#39;javascript:&#39;,
+ &#39;https://tianchi.aliyun.com&#39;,
+ &#39;https://cloud.tencent.com/developer/edu&#39;,
+ &#39;https://www.aidaxue.com/?ch=qyzx&#39;,
+ &#39;https://www.epubit.com&#39;]
+</code></pre><blockquote>
+<p>参考：</p>
+</blockquote>
+<ol>
+<li><a class="link"   href="https://www.julyedu.com/course/getDetail/66/" >廖雪峰Python数据分析<i class="fas fa-external-link-alt"></i></a></li>
+</ol>
+]]></content>
+      <categories>
+        <category>统计与机器学习</category>
+        <category>其他</category>
       </categories>
   </entry>
   <entry>
